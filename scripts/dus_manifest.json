@@ -1,0 +1,1048 @@
+{
+  "dus-strategy::CLAUDE.md": {
+    "mtime": "2026-04-04",
+    "ids": [
+      "ds::6ebdb617::000"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-progress::DECISIONS.md": {
+    "mtime": "2026-04-03",
+    "ids": [
+      "dp::be5c3eb5::000",
+      "dp::be5c3eb5::001",
+      "dp::be5c3eb5::002"
+    ],
+    "namespace": "dus-progress"
+  },
+  "dus-strategy::INDEX.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "ds::869681e9::000",
+      "ds::869681e9::001",
+      "ds::869681e9::002",
+      "ds::869681e9::003",
+      "ds::869681e9::004",
+      "ds::869681e9::005"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-strategy::MEMORY.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "ds::fe1ee863::000",
+      "ds::fe1ee863::001"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-progress::PROGRESS.md": {
+    "mtime": "2026-04-11",
+    "ids": [
+      "dp::142edaf4::000",
+      "dp::142edaf4::001",
+      "dp::142edaf4::002",
+      "dp::142edaf4::003",
+      "dp::142edaf4::004",
+      "dp::142edaf4::005",
+      "dp::142edaf4::006"
+    ],
+    "namespace": "dus-progress"
+  },
+  "dus-strategy::README.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "ds::b3356305::000",
+      "ds::b3356305::001"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-strategy::STRATEGY.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "ds::d479cc86::000",
+      "ds::d479cc86::001",
+      "ds::d479cc86::002",
+      "ds::d479cc86::003",
+      "ds::d479cc86::004",
+      "ds::d479cc86::005",
+      "ds::d479cc86::006",
+      "ds::d479cc86::007",
+      "ds::d479cc86::008",
+      "ds::d479cc86::009"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-progress::STUCK_POINTS.md": {
+    "mtime": "2026-04-03",
+    "ids": [
+      "dp::9247387d::000",
+      "dp::9247387d::001",
+      "dp::9247387d::002"
+    ],
+    "namespace": "dus-progress"
+  },
+  "dus-curriculum::CURRICULUM\\BİYOKİMYA.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::cb48c97a::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\CERRAHİ_ANATOMİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::5cbf3697::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\ENDODONTİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::4c881200::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\FARMAKOLOJİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::e9263c86::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\FİZYOLOJİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::b817c6a3::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\HİSTOLOJİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::b5e79608::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\MİKROBİYOLOJİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::e1f954cd::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\ORTODONTİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::3362f08d::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\PATOLOJI.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dc::378ddabd::000",
+      "dc::378ddabd::001",
+      "dc::378ddabd::002",
+      "dc::378ddabd::003"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\PEDODONTİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::91134404::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\PERİODONTOLOJİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::8bf1ff7b::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\PROTEZ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::1364b41a::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\RADYOLOJİ.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::6c1ca7ba::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::CURRICULUM\\RESTORATİF.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dc::bdd89123::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-progress::GUNLUK\\2026-03-22.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dp::cd5976c9::000"
+    ],
+    "namespace": "dus-progress"
+  },
+  "dus-progress::GUNLUK\\2026-03-29.md": {
+    "mtime": "2026-03-30",
+    "ids": [
+      "dp::12228387::000"
+    ],
+    "namespace": "dus-progress"
+  },
+  "dus-strategy::memory\\MEMORY.md": {
+    "mtime": "2026-04-03",
+    "ids": [
+      "ds::43f356f5::000"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-memory::memory\\project_dus_directory_map.md": {
+    "mtime": "2026-04-03",
+    "ids": [
+      "dm::fd91eb4b::000",
+      "dm::fd91eb4b::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\README.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::51b65414::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\session_20260401.md": {
+    "mtime": "2026-04-01",
+    "ids": [
+      "dm::64727710::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "claude-profile::memory\\user_configuration.md": {
+    "mtime": "2026-04-03",
+    "ids": [
+      "cp::8f969787::000",
+      "cp::8f969787::001"
+    ],
+    "namespace": "claude-profile"
+  },
+  "dus-reference::REFERENCE\\DERS_ANALIZ_480.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::61de5032::000",
+      "dr::61de5032::001",
+      "dr::61de5032::002",
+      "dr::61de5032::003",
+      "dr::61de5032::004"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::REFERENCE\\DOPAMINE.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::e5ee71bc::000"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::REFERENCE\\ENDODONTI_U16.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::39c86183::000"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::REFERENCE\\FABRIC_100.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::c8c31a3e::000",
+      "dr::c8c31a3e::001"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::REFERENCE\\FABRIC_30.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::9c7b6c4b::000",
+      "dr::9c7b6c4b::001"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::REFERENCE\\SKILLS.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::84adf923::000"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::REFERENCE\\SORU_CEVAP.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::6aefa735::000"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::SYSTEMS\\ANKI_MCP.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::18a3d828::000"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::SYSTEMS\\ANKI_STATS.md": {
+    "mtime": "2026-04-03",
+    "ids": [
+      "dr::5a71d48f::000"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::SYSTEMS\\TICKTICK_REVIEW_SYSTEM.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::55b23986::000",
+      "dr::55b23986::001",
+      "dr::55b23986::002",
+      "dr::55b23986::003"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::SYSTEMS\\WORKFLOW_AUTOMATION_PROMPT.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::84607d28::000",
+      "dr::84607d28::001",
+      "dr::84607d28::002"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-reference::SYSTEMS\\WORKFLOW_TEMPLATE.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dr::a336d6d6::000",
+      "dr::a336d6d6::001",
+      "dr::a336d6d6::002",
+      "dr::a336d6d6::003"
+    ],
+    "namespace": "dus-reference"
+  },
+  "dus-progress::WEEKLY\\2026-03-26-w1-template.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dp::cc391b46::000"
+    ],
+    "namespace": "dus-progress"
+  },
+  "dus-memory::memory\\projects\\feedback_anki_kart_standartlari.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::9f9dc415::000",
+      "dm::9f9dc415::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_cloze_tek_deletion.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::c6e41d77::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_destructive_ops.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::0e5aa0c5::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_dus_progress_canonical.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::58f42828::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_model_routing_optimization.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::aa122454::000",
+      "dm::aa122454::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_mode_routing_optimization.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::cd256b8a::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_output_always_turkish.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::44d1b3e8::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_output_format_professional.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::faaa2aee::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_skill_permission.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::c61af65d::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\feedback_soru_cevap_modu.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::8f048813::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-strategy::memory\\projects\\MEMORY.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "ds::dba91090::000",
+      "ds::dba91090::001"
+    ],
+    "namespace": "dus-strategy"
+  },
+  "dus-memory::memory\\projects\\project_anki_mcp_server.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::47b361ef::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_anki_stats.md": {
+    "mtime": "2026-04-02",
+    "ids": [
+      "dm::c1e1247d::000",
+      "dm::c1e1247d::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_didikle_workflow.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::df2b4781::000",
+      "dm::df2b4781::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_dus_automation.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::7c7f3c97::000",
+      "dm::7c7f3c97::001",
+      "dm::7c7f3c97::002"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_dus_decisions.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::820ac93f::000",
+      "dm::820ac93f::001",
+      "dm::820ac93f::002"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_dus_pipeline.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::32b92161::000",
+      "dm::32b92161::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_dus_pipeline_v2.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::c9a2287c::000",
+      "dm::c9a2287c::001",
+      "dm::c9a2287c::002",
+      "dm::c9a2287c::003",
+      "dm::c9a2287c::004"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_dus_progress.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::6369ebc3::000",
+      "dm::6369ebc3::001",
+      "dm::6369ebc3::002",
+      "dm::6369ebc3::003",
+      "dm::6369ebc3::004",
+      "dm::6369ebc3::005",
+      "dm::6369ebc3::006",
+      "dm::6369ebc3::007",
+      "dm::6369ebc3::008"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_endodonti_unit16_completion.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::c232efe2::000",
+      "dm::c232efe2::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_fabric_100patterns.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::d59ad0b3::000",
+      "dm::d59ad0b3::001",
+      "dm::d59ad0b3::002",
+      "dm::d59ad0b3::003",
+      "dm::d59ad0b3::004",
+      "dm::d59ad0b3::005",
+      "dm::d59ad0b3::006"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_fabric_30patterns.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::9584b887::000",
+      "dm::9584b887::001",
+      "dm::9584b887::002",
+      "dm::9584b887::003",
+      "dm::9584b887::004"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_notebooklm_setup.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::d449c3bc::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_patoloji_curriculum.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::08f72ce5::000",
+      "dm::08f72ce5::001",
+      "dm::08f72ce5::002",
+      "dm::08f72ce5::003"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_pdf_to_md_pipeline.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::586eb651::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_skills_organization.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::87564afd::000",
+      "dm::87564afd::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\project_youtube_dopamine_insights.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::bad3e85d::000",
+      "dm::bad3e85d::001",
+      "dm::bad3e85d::002"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\reference_claude_personal_data.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::9957d06d::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\reference_dus_soru_uretim_promptu.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::ffaa14ab::000",
+      "dm::ffaa14ab::001",
+      "dm::ffaa14ab::002"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\reference_dus_soru_uretim_prompt_v1.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::1a0186a1::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\reference_dus_soru_uretim_prompt_v2_final.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::bdfd5b8b::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\reference_ticktick_structure.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::b862998d::000",
+      "dm::b862998d::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "claude-profile::memory\\projects\\user_preferences.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "cp::ae8e897c::000",
+      "cp::ae8e897c::001",
+      "cp::ae8e897c::002",
+      "cp::ae8e897c::003",
+      "cp::ae8e897c::004"
+    ],
+    "namespace": "claude-profile"
+  },
+  "claude-profile::memory\\projects\\user_profile.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "cp::76728d1a::000"
+    ],
+    "namespace": "claude-profile"
+  },
+  "claude-profile::memory\\projects\\user_sleep.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "cp::f2e80e8a::000"
+    ],
+    "namespace": "claude-profile"
+  },
+  "dus-memory::memory\\projects\\workflow_dus_template_v2.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::23897ec3::000",
+      "dm::23897ec3::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\workflow_lesson_completion.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::a86087d9::000",
+      "dm::a86087d9::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_unite16_anki_cards.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::53e36b4a::000",
+      "dm::53e36b4a::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\MEMORY\\WORK\\20260320-143000_endodonti-unit-17-dus-hazirligi\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::48db9417::000",
+      "dm::48db9417::001",
+      "dm::48db9417::002",
+      "dm::48db9417::003"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260319_unite15_anki_pipeline\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::2fdf3d8f::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320-140000_skills-organization-dus\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::fa0dfe7a::000",
+      "dm::fa0dfe7a::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320-140000_telos-deep-interview\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::9f302133::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320-200000_anki-card-batch-eval\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::24080287::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320-200000_pai-token-optimization\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::12ceef1e::000",
+      "dm::12ceef1e::001",
+      "dm::12ceef1e::002",
+      "dm::12ceef1e::003",
+      "dm::12ceef1e::004"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320-pulpa-first-principles\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::d7a27553::000",
+      "dm::d7a27553::001",
+      "dm::d7a27553::002",
+      "dm::d7a27553::003",
+      "dm::d7a27553::004",
+      "dm::d7a27553::005",
+      "dm::d7a27553::006"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_anki-quality-test-skill\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::c1b46e95::000",
+      "dm::c1b46e95::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_dus-endodonti-tamamlama\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::9204f069::000",
+      "dm::9204f069::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_extract-alpha-youtube-insights\\deep-analysis.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::dcfd6fe3::000",
+      "dm::dcfd6fe3::001",
+      "dm::dcfd6fe3::002",
+      "dm::dcfd6fe3::003",
+      "dm::dcfd6fe3::004",
+      "dm::dcfd6fe3::005",
+      "dm::dcfd6fe3::006",
+      "dm::dcfd6fe3::007"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_extract-alpha-youtube-insights\\extract-alpha.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::f48a1450::000",
+      "dm::f48a1450::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_extract-alpha-youtube-insights\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::13552844::000",
+      "dm::13552844::001",
+      "dm::13552844::002",
+      "dm::13552844::003"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260320_ünite17_qa_kartları\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::5137c38b::000"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260321-142500_didikle-unite16-endod-cerr\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::d22abb9c::000",
+      "dm::d22abb9c::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260321_create-recursive-outline-unit18\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::2412c35b::000",
+      "dm::2412c35b::001",
+      "dm::2412c35b::002",
+      "dm::2412c35b::003"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260322-dus-unite-workflow\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::88ab480c::000",
+      "dm::88ab480c::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260322-endo-didikle-11unite\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::5081ac8f::000",
+      "dm::5081ac8f::001"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-memory::memory\\projects\\WORK\\20260322-soru-bankasi-endo-bleaching\\PRD.md": {
+    "mtime": "2026-03-29",
+    "ids": [
+      "dm::b20b7995::000",
+      "dm::b20b7995::001",
+      "dm::b20b7995::002"
+    ],
+    "namespace": "dus-memory"
+  },
+  "dus-curriculum::SYSTEMS\\KONU\\COURSE_REGISTRY.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dc::60a7e876::000",
+      "dc::60a7e876::001",
+      "dc::60a7e876::002",
+      "dc::60a7e876::003",
+      "dc::60a7e876::004",
+      "dc::60a7e876::005"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::SYSTEMS\\KONU\\ENDODONTİ\\Endodonti_Units_Completed.md": {
+    "mtime": "2026-03-22",
+    "ids": [
+      "dc::372f7beb::000",
+      "dc::372f7beb::001",
+      "dc::372f7beb::002",
+      "dc::372f7beb::003"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "dus-curriculum::SYSTEMS\\KONU\\Patoloji\\Patoloji_Units_Completed.md": {
+    "mtime": "2026-03-28",
+    "ids": [
+      "dc::007a6276::000"
+    ],
+    "namespace": "dus-curriculum"
+  },
+  "telos::ARCHETYPES.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::ee6acf64::000",
+      "tl::ee6acf64::001",
+      "tl::ee6acf64::002",
+      "tl::ee6acf64::003",
+      "tl::ee6acf64::004",
+      "tl::ee6acf64::005"
+    ],
+    "namespace": "telos"
+  },
+  "telos::BELIEFS.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::45de5fed::000",
+      "tl::45de5fed::001",
+      "tl::45de5fed::002",
+      "tl::45de5fed::003",
+      "tl::45de5fed::004",
+      "tl::45de5fed::005"
+    ],
+    "namespace": "telos"
+  },
+  "telos::CHALLENGES.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::a1db4342::000",
+      "tl::a1db4342::001",
+      "tl::a1db4342::002"
+    ],
+    "namespace": "telos"
+  },
+  "telos::DEPENDENCIES.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::73c2e4c2::000",
+      "tl::73c2e4c2::001",
+      "tl::73c2e4c2::002"
+    ],
+    "namespace": "telos"
+  },
+  "telos::GOALS.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::5bbc2983::000",
+      "tl::5bbc2983::001"
+    ],
+    "namespace": "telos"
+  },
+  "telos::PERSONALITY.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::7e114cc7::000",
+      "tl::7e114cc7::001",
+      "tl::7e114cc7::002",
+      "tl::7e114cc7::003",
+      "tl::7e114cc7::004"
+    ],
+    "namespace": "telos"
+  },
+  "telos::PROJECTS.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::85439a42::000",
+      "tl::85439a42::001",
+      "tl::85439a42::002",
+      "tl::85439a42::003"
+    ],
+    "namespace": "telos"
+  },
+  "telos::README.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::b3356305::000"
+    ],
+    "namespace": "telos"
+  },
+  "telos::TELOS.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::3d4f39b8::000",
+      "tl::3d4f39b8::001",
+      "tl::3d4f39b8::002"
+    ],
+    "namespace": "telos"
+  },
+  "telos::updates.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::c2326f5b::000",
+      "tl::c2326f5b::001",
+      "tl::c2326f5b::002",
+      "tl::c2326f5b::003"
+    ],
+    "namespace": "telos"
+  },
+  "telos::WISDOM.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::1bbea38f::000",
+      "tl::1bbea38f::001",
+      "tl::1bbea38f::002",
+      "tl::1bbea38f::003",
+      "tl::1bbea38f::004",
+      "tl::1bbea38f::005"
+    ],
+    "namespace": "telos"
+  },
+  "telos::WORKFLOWS.md": {
+    "mtime": "2026-03-20",
+    "ids": [
+      "tl::14869d65::000",
+      "tl::14869d65::001",
+      "tl::14869d65::002"
+    ],
+    "namespace": "telos"
+  },
+  "chathistory::antigravity_session_1776945387.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::8cb4be8d::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::antigravity_session_1776949165.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::c4bb75a1::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::brown_tumoru.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::48fcf6b3::000",
+      "ch::48fcf6b3::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::gomulu_dis_lezyonlari.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::d1a1f918::000",
+      "ch::d1a1f918::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::santral_dev_hucreli_granulom.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::b0a2432f::000",
+      "ch::b0a2432f::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::session_log_2026-04-23_1859.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::259695a2::000",
+      "ch::259695a2::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::session_summary_2026-04-23_1739.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::da4e4731::000",
+      "ch::da4e4731::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::session_summary_2026-04-23_1903.md": {
+    "mtime": "2026-04-23",
+    "ids": [
+      "ch::06ca5763::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::dus_2025_standardization_session.md": {
+    "mtime": "2026-04-26",
+    "ids": [
+      "ch::074bac36::000",
+      "ch::074bac36::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::patoloji_tamamlandi.md": {
+    "mtime": "2026-04-24",
+    "ids": [
+      "ch::9d8c793b::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::dus_full_vectorization_session.md": {
+    "mtime": "2026-04-26",
+    "ids": [
+      "ch::daf42a7d::000",
+      "ch::daf42a7d::001"
+    ],
+    "namespace": "chathistory"
+  }
+}

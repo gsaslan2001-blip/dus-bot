@@ -1,0 +1,2282 @@
+[
+  {
+    "id": "dus_2025-1_q001",
+    "soru_no": 1,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Anatomi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Endoskopik sinüs cerrahisi sırasında sinus sphenoidalis’in hemen altından seyreden ve septum nasi’ye doğru uzanan damar yaralanıyor. Bu hastada yaralanan en olası arter aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Arteria externa nasi",
+      "B": "Arteria ethmoidalis posterior",
+      "C": "Arteria ethmoidalis anterior",
+      "D": "Arteria palatina major",
+      "E": "Arteria sphenopalatina"
+    },
+    "raw_text": "Endoskopik sinüs cerrahisi sırasında sinus sphenoidalis’in hemen altından seyreden ve septum nasi’ye doğru uzanan damar yaralanıyor. Bu hastada yaralanan en olası arter aşağıdakilerden hangisidir? A) Arteria externa nasi B) Arteria ethmoidalis posterior C) Arteria ethmoidalis anterior D) Arteria palatina major E) Arteria sphenopalatina"
+  },
+  {
+    "id": "dus_2025-1_q002",
+    "soru_no": 2,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Anatomi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Arteria facialis nabzının alınması için aşağıdakilerden hangisinin palpe edilmesi en olasıdır?",
+    "secenekler": {
+      "A": "Tragus’un hemen önü",
+      "B": "Musculus masseter’in hemen önü, corpus mandibulae üzeri",
+      "C": "Arcus zygomaticus’un orta noktası",
+      "D": "Foramen mentale’nin üzerindeki deri",
+      "E": "Os zygomaticum’un tepesi"
+    },
+    "raw_text": "Arteria facialis nabzının alınması için aşağıdakilerden hangisinin palpe edilmesi en olasıdır? A) Tragus’un hemen önü B) Musculus masseter’in hemen önü, corpus mandibulae üzeri C) Arcus zygomaticus’un orta noktası D) Foramen mentale’nin üzerindeki deri E) Os zygomaticum’un tepesi"
+  },
+  {
+    "id": "dus_2025-1_q003",
+    "soru_no": 3,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Anatomi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Basis cranii inferior’a dıştan bakarak sphenoid kemiği ele alan bir uzman processus pterygoideus’un lamina lateralis ile medialis’i arasındaki kasların liflerini inceliyor. Bu çalışmada incelenen en olası kas aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Musculus pterygoideus medialis",
+      "B": "Musculus pterygoideus lateralis",
+      "C": "Musculus masseter",
+      "D": "Musculus temporalis",
+      "E": "Musculus levator veli palatini"
+    },
+    "raw_text": "Basis cranii inferior’a dıştan bakarak sphenoid kemiği ele alan bir uzman processus pterygoideus’un lamina lateralis ile medialis’i arasındaki kasların liflerini inceliyor. Bu çalışmada incelenen en olası kas aşağıdakilerden hangisidir? A) Musculus pterygoideus medialis B) Musculus pterygoideus lateralis C) Musculus masseter D) Musculus temporalis E) Musculus levator veli palatini"
+  },
+  {
+    "id": "dus_2025-1_q004",
+    "soru_no": 4,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Anatomi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Musculus digastricus’un iki karnı arasındaki tendonu hyoid kemiğe asan yapı aşağıdakilerden hangisinin kalınlaşmasıyla oluşur?",
+    "secenekler": {
+      "A": "Fascia cervicalis profunda, lamina superficialis",
+      "B": "Fascia pretrachealis",
+      "C": "Fascia prevertebralis",
+      "D": "Vagina carotica",
+      "E": "Fascia alaris"
+    },
+    "raw_text": "Musculus digastricus’un iki karnı arasındaki tendonu hyoid kemiğe asan yapı aşağıdakilerden hangisinin kalınlaşmasıyla oluşur? A) Fascia cervicalis profunda, lamina superficialis B) Fascia pretrachealis C) Fascia prevertebralis D) Vagina carotica E) Fascia alaris"
+  },
+  {
+    "id": "dus_2025-1_q005",
+    "soru_no": 5,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Anatomi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Tonsillektomi sırasında küretajın derinden yapılmasına bağlı kanaması olan hastada ameliyat sonrası sinir hasarı oluştuğu fark ediliyor. Bu hastada aşağıdakilerden hangisinin görülmesi en olasıdır?",
+    "secenekler": {
+      "A": "Bukkal mukozada ağız köşesi ve çevresinde duyu kaybı",
+      "B": "Mandibular molar dişler ve çevre gingivada duyu kaybı",
+      "C": "Yumuşak damakta motor kayıp",
+      "D": "Dilin arka 1/3’ünde tat duyusu kaybı",
+      "E": "Dil çıkarma sırasında dilin bir tarafa deviye olması"
+    },
+    "raw_text": "Tonsillektomi sırasında küretajın derinden yapılmasına bağlı kanaması olan hastada ameliyat sonrası sinir hasarı oluştuğu fark ediliyor. Bu hastada aşağıdakilerden hangisinin görülmesi en olasıdır? A) Bukkal mukozada ağız köşesi ve çevresinde duyu kaybı B) Mandibular molar dişler ve çevre gingivada duyu kaybı C) Yumuşak damakta motor kayıp D) Dilin arka 1/3’ünde tat duyusu kaybı E) Dil çıkarma sırasında dilin bir tarafa deviye olması"
+  },
+  {
+    "id": "dus_2025-1_q006",
+    "soru_no": 6,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Anatomi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Foramen ovale’yi daraltan tümör nedeniyle takip edilen hastada motor fonksiyon kaybı tespit ediliyor. Bu kaybın aşağıdak, kaslardan hangisinde görülmesi en olasıdır?",
+    "secenekler": {
+      "A": "Musculus buccinator",
+      "B": "Musculus zygomaticus major",
+      "C": "Musculus masseter",
+      "D": "Musculus risorius",
+      "E": "Musculus procerus"
+    },
+    "raw_text": "Foramen ovale’yi daraltan tümör nedeniyle takip edilen hastada motor fonksiyon kaybı tespit ediliyor. Bu kaybın aşağıdak, kaslardan hangisinde görülmesi en olasıdır? A) Musculus buccinator B) Musculus zygomaticus major C) Musculus masseter D) Musculus risorius E) Musculus procerus"
+  },
+  {
+    "id": "dus_2025-1_q007",
+    "soru_no": 7,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Histoloji ve Embriyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi tek hücreli ekzokrin salgı bezidir?",
+    "secenekler": {
+      "A": "Leydig hücresi",
+      "B": "Tiroid C hücresi",
+      "C": "Goblet hücresi",
+      "D": "Sertoli hücresi",
+      "E": "Mikrofold hücresi"
+    },
+    "raw_text": "Aşağıdakilerden hangisi tek hücreli ekzokrin salgı bezidir? A) Leydig hücresi B) Tiroid C hücresi C) Goblet hücresi D) Sertoli hücresi E) Mikrofold hücresi"
+  },
+  {
+    "id": "dus_2025-1_q008",
+    "soru_no": 8,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Histoloji ve Embriyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Diş erüpsiyonu sonrası dejenere olan ve erişkinlerde bulunmayan hücreler aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Ameloblastlar",
+      "B": "Odontoblastlar",
+      "C": "Osteoblastlar",
+      "D": "Fibroblastlar",
+      "E": "Sementoblastlar"
+    },
+    "raw_text": "Diş erüpsiyonu sonrası dejenere olan ve erişkinlerde bulunmayan hücreler aşağıdakilerden hangisidir? A) Ameloblastlar B) Odontoblastlar C) Osteoblastlar D) Fibroblastlar E) Sementoblastlar"
+  },
+  {
+    "id": "dus_2025-1_q009",
+    "soru_no": 9,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Histoloji ve Embriyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Dilden alınan biyopsi örneği ışık mikroskobu ile inceleniyor. Kesit alanında papilla yapısı gözlenmezken müköz bezler ve lenfoid doku izleniyor. İncelenen bu kesit aşağıdaki dil bölgelerinden hangisine aittir?",
+    "secenekler": {
+      "A": "Dil ucu",
+      "B": "Dil kökü",
+      "C": "Sulkus terminalisin önü",
+      "D": "Von Ebner bezlerini içeren lamina propriya",
+      "E": "Dilin ventral yüzü"
+    },
+    "raw_text": "Dilden alınan biyopsi örneği ışık mikroskobu ile inceleniyor. Kesit alanında papilla yapısı gözlenmezken müköz bezler ve lenfoid doku izleniyor. İncelenen bu kesit aşağıdaki dil bölgelerinden hangisine aittir? A) Dil ucu B) Dil kökü C) Sulkus terminalisin önü D) Von Ebner bezlerini içeren lamina propriya E) Dilin ventral yüzü"
+  },
+  {
+    "id": "dus_2025-1_q010",
+    "soru_no": 10,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Histoloji ve Embriyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki yapılar – embriyolojik kökenleri eşleştirmelerinden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Birinci faringeal cep – Timpanik kavite",
+      "B": "İkinci faringeal cep – Tonsilla palatina",
+      "C": "Birinci faringeal yay – Maksilla",
+      "D": "İkinci faringeal yay – Stapes",
+      "E": "Üçüncü faringeal cep – Östaki borusu"
+    },
+    "raw_text": "Aşağıdaki yapılar – embriyolojik kökenleri eşleştirmelerinden hangisi yanlıştır? A) Birinci faringeal cep – Timpanik kavite B) İkinci faringeal cep – Tonsilla palatina C) Birinci faringeal yay – Maksilla D) İkinci faringeal yay – Stapes E) Üçüncü faringeal cep – Östaki borusu"
+  },
+  {
+    "id": "dus_2025-1_q011",
+    "soru_no": 11,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Fizyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Tükürük bezi apikal membranının anyon geçirgenliği ve tükürük salgısında artışa neden olan ikinci haberciler aşağıdakilerin hangisinde birlikte verilmiştir?",
+    "secenekler": {
+      "A": "IP3 - cGMP",
+      "B": "cGMP - NO",
+      "C": "DAG - Na+",
+      "D": "cAMP - Ca +2",
+      "E": "Ca +2 - Kalmodulin"
+    },
+    "raw_text": "Tükürük bezi apikal membranının anyon geçirgenliği ve tükürük salgısında artışa neden olan ikinci haberciler aşağıdakilerin hangisinde birlikte verilmiştir? A) IP3 - cGMP B) cGMP - NO C) DAG - Na+ D) cAMP - Ca +2 E) Ca +2 - Kalmodulin"
+  },
+  {
+    "id": "dus_2025-1_q012",
+    "soru_no": 12,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Fizyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Henle kulbunun inen kolunda pasif su geri emilimi olur. II. Henle kulbunun çıkan kolu suya geçirgen değildir. III. Henle kulbunun çıkan kolunda aktif Cl- geri emilimi, pasif Na+ geri emilimi olur. Henle kulbunun fonksiyonel özellikleri ile ilgili yukarıdaki ifadelerden hangileri doğrudur?",
+    "secenekler": {
+      "A": "I, II ve III",
+      "B": "I ve III",
+      "C": "I ve II",
+      "D": "Yalnız I",
+      "E": "Yalnız II"
+    },
+    "raw_text": "I. Henle kulbunun inen kolunda pasif su geri emilimi olur. II. Henle kulbunun çıkan kolu suya geçirgen değildir. III. Henle kulbunun çıkan kolunda aktif Cl- geri emilimi, pasif Na+ geri emilimi olur. Henle kulbunun fonksiyonel özellikleri ile ilgili yukarıdaki ifadelerden hangileri doğrudur? A) I, II ve III B) I ve III C) I ve II D) Yalnız I E) Yalnız II"
+  },
+  {
+    "id": "dus_2025-1_q013",
+    "soru_no": 13,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Fizyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. pH II. PCO2 III. 2,3-difosfogliserat Yukarıdakilerden hangilerinin kanda artışı oksijen – hemoglobin disosiasyon eğrisini sağa kaydırır?",
+    "secenekler": {
+      "A": "I, II ve III",
+      "B": "I ve II",
+      "C": "II ve III",
+      "D": "Yalnız II",
+      "E": "Yalnız III"
+    },
+    "raw_text": "I. pH II. PCO2 III. 2,3-difosfogliserat Yukarıdakilerden hangilerinin kanda artışı oksijen – hemoglobin disosiasyon eğrisini sağa kaydırır? A) I, II ve III B) I ve II C) II ve III D) Yalnız II E) Yalnız III"
+  },
+  {
+    "id": "dus_2025-1_q014",
+    "soru_no": 14,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Fizyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi ghrelin hormonuna ait bir özellik değildir?",
+    "secenekler": {
+      "A": "Plazma ghrelin düzeyi açlık sırasında artarken tokluk durumunda azalır.",
+      "B": "Esas olarak midedeki endokrin hücrelerden salgılanır.",
+      "C": "Hipotalamik arkuat nükleusta bulunan oreksijenik etkili nöropeptit Y nöronlarını uyarır.",
+      "D": "Büyüme hormonu salgısını artırır.",
+      "E": "Fizyolojik etkilerinde enzim bağlantılı membran reseptörleri rol alır."
+    },
+    "raw_text": "Aşağıdakilerden hangisi ghrelin hormonuna ait bir özellik değildir? A) Plazma ghrelin düzeyi açlık sırasında artarken tokluk durumunda azalır. B) Esas olarak midedeki endokrin hücrelerden salgılanır. C) Hipotalamik arkuat nükleusta bulunan oreksijenik etkili nöropeptit Y nöronlarını uyarır. D) Büyüme hormonu salgısını artırır. E) Fizyolojik etkilerinde enzim bağlantılı membran reseptörleri rol alır."
+  },
+  {
+    "id": "dus_2025-1_q015",
+    "soru_no": 15,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Fizyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki durumlardan hangisinde mide asit salgısı artar?",
+    "secenekler": {
+      "A": "CCK-B reseptörlerinin bloke edilmesi",
+      "B": "Prostaglandin sentezinin inhibe edilmesi",
+      "C": "Proton pompa inhibitörleri verilmesi",
+      "D": "H2 reseptörlerinin bloke edilmesi",
+      "E": "Kolinerjik M3 reseptörlerinin bloke edilmesi"
+    },
+    "raw_text": "Aşağıdaki durumlardan hangisinde mide asit salgısı artar? A) CCK-B reseptörlerinin bloke edilmesi B) Prostaglandin sentezinin inhibe edilmesi C) Proton pompa inhibitörleri verilmesi D) H2 reseptörlerinin bloke edilmesi E) Kolinerjik M3 reseptörlerinin bloke edilmesi"
+  },
+  {
+    "id": "dus_2025-1_q016",
+    "soru_no": 16,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Fizyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Sempatik sinir sistemi aktivasyonu olan bir kişiyle ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "secenekler": {
+      "A": "Gastrointestinal sistemde sfinkterler 2 reseptörler aracılığı ile kasılır.",
+      "B": "Kalbin ventriküllerinin kasılması 1 reseptörleri aracılığı ile azalır.",
+      "C": "Mesanenin sfinkterleri 1 reseptörleri aracılığı ile kasılır.",
+      "D": "Ter bezleri 2 reseptörleri aracılığı ile daha fazla salgı yaparlar.",
+      "E": "Yağ dokusunda reseptörleri aracılığı ile artmış lipoliz gerçekleşir."
+    },
+    "raw_text": "Sempatik sinir sistemi aktivasyonu olan bir kişiyle ilgili aşağıdaki ifadelerden hangisi doğrudur? A) Gastrointestinal sistemde sfinkterler 2 reseptörler aracılığı ile kasılır. B) Kalbin ventriküllerinin kasılması 1 reseptörleri aracılığı ile azalır. C) Mesanenin sfinkterleri 1 reseptörleri aracılığı ile kasılır. D) Ter bezleri 2 reseptörleri aracılığı ile daha fazla salgı yaparlar. E) Yağ dokusunda reseptörleri aracılığı ile artmış lipoliz gerçekleşir."
+  },
+  {
+    "id": "dus_2025-1_q017",
+    "soru_no": 17,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyokimya",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kırk yaşındaki erkek hasta kronik öksürük ve egzersiz yaparken aşırı yorgunluk şikâyetleriyle başvuruyor. Öyküsünden uzun yıllar sigara kullandığı, son 5 yıldır kullanmayı bıraktığı öğreniliyor. Fizik muayenesinde amfizem olduğunu düşündüren solunum seslerinde artış gözleniyor. Bu hastada aşağıdakilerden hangisinin eksikliği en olasıdır?",
+    "secenekler": {
+      "A": "Seruloplazmin",
+      "B": "2- mikroglobulin",
+      "C": "2- makroglobulin",
+      "D": "1- antitripsin",
+      "E": "Haptoglobin"
+    },
+    "raw_text": "Kırk yaşındaki erkek hasta kronik öksürük ve egzersiz yaparken aşırı yorgunluk şikâyetleriyle başvuruyor. Öyküsünden uzun yıllar sigara kullandığı, son 5 yıldır kullanmayı bıraktığı öğreniliyor. Fizik muayenesinde amfizem olduğunu düşündüren solunum seslerinde artış gözleniyor. Bu hastada aşağıdakilerden hangisinin eksikliği en olasıdır? A) Seruloplazmin B) 2- mikroglobulin C) 2- makroglobulin D) 1- antitripsin E) Haptoglobin"
+  },
+  {
+    "id": "dus_2025-1_q018",
+    "soru_no": 18,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyokimya",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki vitaminlerden hangisi pirimidinlerin sentezinde timidilat sentaz enziminin katalizlediği basamakta yer alır?",
+    "secenekler": {
+      "A": "Biotin",
+      "B": "Folik asit",
+      "C": "Niasin",
+      "D": "Tiamin",
+      "E": "Siyanokobalamin"
+    },
+    "raw_text": "Aşağıdaki vitaminlerden hangisi pirimidinlerin sentezinde timidilat sentaz enziminin katalizlediği basamakta yer alır? A) Biotin B) Folik asit C) Niasin D) Tiamin E) Siyanokobalamin"
+  },
+  {
+    "id": "dus_2025-1_q019",
+    "soru_no": 19,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyokimya",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi dokulardan karaciğere kolesterol taşınımında görev yapan lipoproteinin yapısında bulunan ve lesitin kolesterol açil transferaz enziminin aktivatörü olarak kabul edilen apolipoproteindir?",
+    "secenekler": {
+      "A": "ApoA-I",
+      "B": "ApoA-II",
+      "C": "ApoB-48",
+      "D": "ApoC-II",
+      "E": "ApoE"
+    },
+    "raw_text": "Aşağıdakilerden hangisi dokulardan karaciğere kolesterol taşınımında görev yapan lipoproteinin yapısında bulunan ve lesitin kolesterol açil transferaz enziminin aktivatörü olarak kabul edilen apolipoproteindir? A) ApoA-I B) ApoA-II C) ApoB-48 D) ApoC-II E) ApoE"
+  },
+  {
+    "id": "dus_2025-1_q020",
+    "soru_no": 20,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyokimya",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Diş çekimi sonrasında kanama kontrolünü sağlamakta zorlanılan hastanın yapılan kan sayımı analizinde trombosit sayısının normal olduğu görülüyor. Bu hastada kanama süresinin uzamasının en olası nedeni aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "C vitamini toksisitesi",
+      "B": "İmmün trombositopeni",
+      "C": "Varfarin kullanımı",
+      "D": "Yeşil yapraklı sebzelerin aşırı tüketimi",
+      "E": "Heparin kaynaklı trombositopeni"
+    },
+    "raw_text": "Diş çekimi sonrasında kanama kontrolünü sağlamakta zorlanılan hastanın yapılan kan sayımı analizinde trombosit sayısının normal olduğu görülüyor. Bu hastada kanama süresinin uzamasının en olası nedeni aşağıdakilerden hangisidir? A) C vitamini toksisitesi B) İmmün trombositopeni C) Varfarin kullanımı D) Yeşil yapraklı sebzelerin aşırı tüketimi E) Heparin kaynaklı trombositopeni"
+  },
+  {
+    "id": "dus_2025-1_q021",
+    "soru_no": 21,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyokimya",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki hormonlardan hangisi hücre içi reseptörüne bağlanarak etki gösterir?",
+    "secenekler": {
+      "A": "Tiroid stimüle edici hormon",
+      "B": "Oksitosin",
+      "C": "İnsülin",
+      "D": "Prolaktin",
+      "E": "Tiroksin"
+    },
+    "raw_text": "Aşağıdaki hormonlardan hangisi hücre içi reseptörüne bağlanarak etki gösterir? A) Tiroid stimüle edici hormon B) Oksitosin C) İnsülin D) Prolaktin E) Tiroksin"
+  },
+  {
+    "id": "dus_2025-1_q022",
+    "soru_no": 22,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyokimya",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "İnsanda glukoz-6-fosfat dehidrogenaz enzim eksikliğinde hemolizin oluşmasının en olası nedeni aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Yüksek miktarda NADP",
+      "B": "Yüksek miktarda NAD",
+      "C": "Düşük miktarda redükte glutatyon",
+      "D": "Düşük derişimde glukoz",
+      "E": "Düşük derişimde glukoz-6-fosfat"
+    },
+    "raw_text": "İnsanda glukoz-6-fosfat dehidrogenaz enzim eksikliğinde hemolizin oluşmasının en olası nedeni aşağıdakilerden hangisidir? A) Yüksek miktarda NADP B) Yüksek miktarda NAD C) Düşük miktarda redükte glutatyon D) Düşük derişimde glukoz E) Düşük derişimde glukoz-6-fosfat"
+  },
+  {
+    "id": "dus_2025-1_q023",
+    "soru_no": 23,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Mikrobiyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi yalnızca gram-pozitif bakterilerin yapısında bulunur?",
+    "secenekler": {
+      "A": "N-asetilmuramik asit",
+      "B": "N-asetilglukozamin",
+      "C": "D-alanin",
+      "D": "L-alanin",
+      "E": "Teikoik asit"
+    },
+    "raw_text": "Aşağıdakilerden hangisi yalnızca gram-pozitif bakterilerin yapısında bulunur? A) N-asetilmuramik asit B) N-asetilglukozamin C) D-alanin D) L-alanin E) Teikoik asit"
+  },
+  {
+    "id": "dus_2025-1_q024",
+    "soru_no": 24,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Mikrobiyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki antimikrobiyal ajanlardan hangisinin anaerob enfeksiyonların tedavisinde etkili olması en az olasıdır?",
+    "secenekler": {
+      "A": "Amikasin",
+      "B": "İmipenem",
+      "C": "Kloramfenikol",
+      "D": "Metronidazol",
+      "E": "Klindamisin"
+    },
+    "raw_text": "Aşağıdaki antimikrobiyal ajanlardan hangisinin anaerob enfeksiyonların tedavisinde etkili olması en az olasıdır? A) Amikasin B) İmipenem C) Kloramfenikol D) Metronidazol E) Klindamisin"
+  },
+  {
+    "id": "dus_2025-1_q025",
+    "soru_no": 25,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Mikrobiyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki bakteriyel toksinlerden hangisi faj tarafından kodlanır?",
+    "secenekler": {
+      "A": "Tetanoz toksini",
+      "B": "Şarbon toksini",
+      "C": "Boğmaca toksini",
+      "D": "Eksfoliyatif toksin",
+      "E": "Botulinum toksini"
+    },
+    "raw_text": "Aşağıdaki bakteriyel toksinlerden hangisi faj tarafından kodlanır? A) Tetanoz toksini B) Şarbon toksini C) Boğmaca toksini D) Eksfoliyatif toksin E) Botulinum toksini"
+  },
+  {
+    "id": "dus_2025-1_q026",
+    "soru_no": 26,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Mikrobiyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kuduz riski temasta, aşağıdaki uygulamalardan hangisinin ilk yapılması en uygundur?",
+    "secenekler": {
+      "A": "Spesifik immünoglobulin uygulanması",
+      "B": "Yaraya dikiş atılması",
+      "C": "Antibiyotik profilaksisi verilmesi",
+      "D": "Yara yerinin bol su ve sabunla yıkanması",
+      "E": "Kuduz aşısı yapılması"
+    },
+    "raw_text": "Kuduz riski temasta, aşağıdaki uygulamalardan hangisinin ilk yapılması en uygundur? A) Spesifik immünoglobulin uygulanması B) Yaraya dikiş atılması C) Antibiyotik profilaksisi verilmesi D) Yara yerinin bol su ve sabunla yıkanması E) Kuduz aşısı yapılması"
+  },
+  {
+    "id": "dus_2025-1_q027",
+    "soru_no": 27,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Mikrobiyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi küf mantarlarında bulunan morfolojik biri değildir?",
+    "secenekler": {
+      "A": "Yalancı hif",
+      "B": "Konidyum",
+      "C": "Septalı hif",
+      "D": "Septasız hif",
+      "E": "Miçelyum"
+    },
+    "raw_text": "Aşağıdakilerden hangisi küf mantarlarında bulunan morfolojik biri değildir? A) Yalancı hif B) Konidyum C) Septalı hif D) Septasız hif E) Miçelyum"
+  },
+  {
+    "id": "dus_2025-1_q028",
+    "soru_no": 28,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Mikrobiyoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Doğal öldürücü (NK) hücrelerin, aşağıdaki enfeksiyon etkenlerinden hangisine karşı oluşan bağışık yanıtta görev alması en olasıdır?",
+    "secenekler": {
+      "A": "Staphylococcus aureus",
+      "B": "Entamoeba histolytica",
+      "C": "Herpes simplex virus",
+      "D": "Candida albicans",
+      "E": "Enterobius vermicularis"
+    },
+    "raw_text": "Doğal öldürücü (NK) hücrelerin, aşağıdaki enfeksiyon etkenlerinden hangisine karşı oluşan bağışık yanıtta görev alması en olasıdır? A) Staphylococcus aureus B) Entamoeba histolytica C) Herpes simplex virus D) Candida albicans E) Enterobius vermicularis"
+  },
+  {
+    "id": "dus_2025-1_q029",
+    "soru_no": 29,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Patoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki morfolojik özelliklerden hangisinin apoptoziste görülmesi en az olasıdır?",
+    "secenekler": {
+      "A": "Hücre boyutunda küçülme",
+      "B": "Kromatin kondensasyonu",
+      "C": "Membranöz bleb oluşumu",
+      "D": "Plazma membranının parçalanması",
+      "E": "Eozinofilik sitoplazma"
+    },
+    "raw_text": "Aşağıdaki morfolojik özelliklerden hangisinin apoptoziste görülmesi en az olasıdır? A) Hücre boyutunda küçülme B) Kromatin kondensasyonu C) Membranöz bleb oluşumu D) Plazma membranının parçalanması E) Eozinofilik sitoplazma"
+  },
+  {
+    "id": "dus_2025-1_q030",
+    "soru_no": 30,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Patoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin yağ embolisine neden olma riski en yüksektir?",
+    "secenekler": {
+      "A": "Diabetes mellitus",
+      "B": "Kardiyopulmoner by-pass",
+      "C": "Doğum",
+      "D": "Uzun kemik kırığı",
+      "E": "Yanık"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin yağ embolisine neden olma riski en yüksektir? A) Diabetes mellitus B) Kardiyopulmoner by-pass C) Doğum D) Uzun kemik kırığı E) Yanık"
+  },
+  {
+    "id": "dus_2025-1_q031",
+    "soru_no": 31,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Patoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kırk sekiz yaşındaki k",
+    "secenekler": {
+      "A": "Nazopalatin duktus kisti",
+      "B": "Nazolabial kist",
+      "C": "Lenfoepitelyal kist",
+      "D": "Radiküler kist",
+      "E": "Dermoid kist"
+    },
+    "raw_text": "Kırk sekiz yaşındaki k A) Nazopalatin duktus kisti B) Nazolabial kist C) Lenfoepitelyal kist D) Radiküler kist E) Dermoid kist"
+  },
+  {
+    "id": "dus_2025-1_q032",
+    "soru_no": 32,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Patoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Minör tükürük bezi tümörleri en sık damakta ortaya çıkar. II. Üst dudakta ortaya çıkan minör tükürük bezi tümörü sıklıkla maligndir. III. Sublingual bezde ortaya çıkan tükürük bezi tümörü sıklıkla maligndir. Tükürük bezi tümörleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur?",
+    "secenekler": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II ve III"
+    },
+    "raw_text": "I. Minör tükürük bezi tümörleri en sık damakta ortaya çıkar. II. Üst dudakta ortaya çıkan minör tükürük bezi tümörü sıklıkla maligndir. III. Sublingual bezde ortaya çıkan tükürük bezi tümörü sıklıkla maligndir. Tükürük bezi tümörleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur? A) Yalnız I B) Yalnız II C) I ve II D) I ve III E) I, II ve III"
+  },
+  {
+    "id": "dus_2025-1_q033",
+    "soru_no": 33,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Farmakoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki ilaçlardan hangisi hayvansal kökenli değildir?",
+    "secenekler": {
+      "A": "Eksenatid",
+      "B": "Hirudin",
+      "C": "Protamin sülfat",
+      "D": "Alfa-bungarotoksin",
+      "E": "Digoksin"
+    },
+    "raw_text": "Aşağıdaki ilaçlardan hangisi hayvansal kökenli değildir? A) Eksenatid B) Hirudin C) Protamin sülfat D) Alfa-bungarotoksin E) Digoksin"
+  },
+  {
+    "id": "dus_2025-1_q034",
+    "soru_no": 34,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Farmakoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki lokal anesteziklerden hangisi ester yapısında ve plazma kolinesterazıyla metabolize edilen kısa etki süreli bir ilaçtır?",
+    "secenekler": {
+      "A": "Prokain",
+      "B": "Lidokain",
+      "C": "Mepivakain",
+      "D": "Bupivakain",
+      "E": "Ropivakain"
+    },
+    "raw_text": "Aşağıdaki lokal anesteziklerden hangisi ester yapısında ve plazma kolinesterazıyla metabolize edilen kısa etki süreli bir ilaçtır? A) Prokain B) Lidokain C) Mepivakain D) Bupivakain E) Ropivakain"
+  },
+  {
+    "id": "dus_2025-1_q035",
+    "soru_no": 35,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Farmakoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki florokinolonlardan hangisinin gram-pozitif bakterilere karşı etkinliği diğerlerine göre daha fazl",
+    "secenekler": {
+      "A": "Ofloksasin",
+      "B": "Siprofloksasin",
+      "C": "Gemifloksasin",
+      "D": "Enoksasin",
+      "E": "Levofloksasin"
+    },
+    "raw_text": "Aşağıdaki florokinolonlardan hangisinin gram-pozitif bakterilere karşı etkinliği diğerlerine göre daha fazl A) Ofloksasin B) Siprofloksasin C) Gemifloksasin D) Enoksasin E) Levofloksasin"
+  },
+  {
+    "id": "dus_2025-1_q036",
+    "soru_no": 36,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Farmakoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki ilaçlardan hangisinin ilaca bağlı çenede gelişen osteonekroz (MRONJ) oluşturma olasılığı en azdır?",
+    "secenekler": {
+      "A": "Sunitinib",
+      "B": "Ziv-aflibersept",
+      "C": "Denosumab",
+      "D": "Bisalutamid",
+      "E": "Bevasizumab"
+    },
+    "raw_text": "Aşağıdaki ilaçlardan hangisinin ilaca bağlı çenede gelişen osteonekroz (MRONJ) oluşturma olasılığı en azdır? A) Sunitinib B) Ziv-aflibersept C) Denosumab D) Bisalutamid E) Bevasizumab"
+  },
+  {
+    "id": "dus_2025-1_q037",
+    "soru_no": 37,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyoloji ve Genetik",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Hücre döngüsünde aşağıdaki protein komplekslerinden hangisi metafaz-anafaz geçişini sağlar?",
+    "secenekler": {
+      "A": "APC/C",
+      "B": "G1 siklinleri-Cdk",
+      "C": "G1/S siklinleri-Cdk",
+      "D": "S siklinleri-Cdk",
+      "E": "M siklinleri-Cdk"
+    },
+    "raw_text": "Hücre döngüsünde aşağıdaki protein komplekslerinden hangisi metafaz-anafaz geçişini sağlar? A) APC/C B) G1 siklinleri-Cdk C) G1/S siklinleri-Cdk D) S siklinleri-Cdk E) M siklinleri-Cdk"
+  },
+  {
+    "id": "dus_2025-1_q038",
+    "soru_no": 38,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyoloji ve Genetik",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki yapısal proteinlerden hangisi, memelilerde hücre tiplerine göre nitel ve nicel değişkenlik gösterir?",
+    "secenekler": {
+      "A": "Keratin",
+      "B": "Aktin",
+      "C": "Tübülin",
+      "D": "Lamin",
+      "E": "Dinein"
+    },
+    "raw_text": "Aşağıdaki yapısal proteinlerden hangisi, memelilerde hücre tiplerine göre nitel ve nicel değişkenlik gösterir? A) Keratin B) Aktin C) Tübülin D) Lamin E) Dinein"
+  },
+  {
+    "id": "dus_2025-1_q039",
+    "soru_no": 39,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyoloji ve Genetik",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin ökaryotik hücrelerde görülen epigenetik mekanizmalarla ilişkili olması en az olasıdır?",
+    "secenekler": {
+      "A": "DNA metilasyonu",
+      "B": "DNA fosforilasyonu",
+      "C": "Histon asetilasyonu",
+      "D": "Histon metilasyonu",
+      "E": "miRNA işlevi"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin ökaryotik hücrelerde görülen epigenetik mekanizmalarla ilişkili olması en az olasıdır? A) DNA metilasyonu B) DNA fosforilasyonu C) Histon asetilasyonu D) Histon metilasyonu E) miRNA işlevi"
+  },
+  {
+    "id": "dus_2025-1_q040",
+    "soru_no": 40,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Temel Bilimler",
+    "ders": "Tıbbi Biyoloji ve Genetik",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi pre-mRNA’da amioasit dizisini kodlayan gen bölgelerini içermektedir?",
+    "secenekler": {
+      "A": "Poliadenilasyon dizileri",
+      "B": "İntron",
+      "C": "Ekzon",
+      "D": "Promotor",
+      "E": "CpG adaları"
+    },
+    "raw_text": "Aşağıdakilerden hangisi pre-mRNA’da amioasit dizisini kodlayan gen bölgelerini içermektedir? A) Poliadenilasyon dizileri B) İntron C) Ekzon D) Promotor E) CpG adaları"
+  },
+  {
+    "id": "dus_2025-1_q041",
+    "soru_no": 41,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi tükürüğün antibakteriyel etkiye sahip olup, enzim yapısında olmayan proteinlerindendir?",
+    "secenekler": {
+      "A": "Amilaz",
+      "B": "Laktoferrin",
+      "C": "Lipaz",
+      "D": "Laktoperoksidaz",
+      "E": "Lizozim"
+    },
+    "raw_text": "Aşağıdakilerden hangisi tükürüğün antibakteriyel etkiye sahip olup, enzim yapısında olmayan proteinlerindendir? A) Amilaz B) Laktoferrin C) Lipaz D) Laktoperoksidaz E) Lizozim"
+  },
+  {
+    "id": "dus_2025-1_q042",
+    "soru_no": 42,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki minimal invaziv tekniklerden hangisinde sodyum bikarbonat kullanılır?",
+    "secenekler": {
+      "A": "Air polishing",
+      "B": "Air abrazyon",
+      "C": "Kemomekanik",
+      "D": "Lazer uygulaması",
+      "E": "Döner aletlerin kullanımı"
+    },
+    "raw_text": "Aşağıdaki minimal invaziv tekniklerden hangisinde sodyum bikarbonat kullanılır? A) Air polishing B) Air abrazyon C) Kemomekanik D) Lazer uygulaması E) Döner aletlerin kullanımı"
+  },
+  {
+    "id": "dus_2025-1_q043",
+    "soru_no": 43,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin direkt pulpa kuafajında kanamayı durdurmak üzere kullanılması en olasıdır?",
+    "secenekler": {
+      "A": "Sodyum hipoklorit",
+      "B": "Mineral trioksit agregat",
+      "C": "Etoksi benzoik asit",
+      "D": "Kalsiyum sülfat dihidrat",
+      "E": "Hidroksietil metakrilat"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin direkt pulpa kuafajında kanamayı durdurmak üzere kullanılması en olasıdır? A) Sodyum hipoklorit B) Mineral trioksit agregat C) Etoksi benzoik asit D) Kalsiyum sülfat dihidrat E) Hidroksietil metakrilat"
+  },
+  {
+    "id": "dus_2025-1_q044",
+    "soru_no": 44,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Elli yaşındaki erkek hasta, ağzını kapattığında bir dişinde elektrik çarpmasına benzer bir his ve ağızda metal t",
+    "secenekler": {
+      "A": "Korozyon",
+      "B": "Tarnish",
+      "C": "Galvanizm",
+      "D": "Metamerizm",
+      "E": "Kristalizasyon"
+    },
+    "raw_text": "Elli yaşındaki erkek hasta, ağzını kapattığında bir dişinde elektrik çarpmasına benzer bir his ve ağızda metal t A) Korozyon B) Tarnish C) Galvanizm D) Metamerizm E) Kristalizasyon"
+  },
+  {
+    "id": "dus_2025-1_q045",
+    "soru_no": 45,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Diş hekimliğinde en fazla kullanılan renk sistemi Munsell renk sistemidir. II. Görsel renk tespitinde renk skalalarından yararlanılabilir. III. Dijital fotoğraf makineleri renk tespitinde tercih edilmez. IV. Farklı aydınlatma koşullarında rengin değerlendirilmesi metamerizmi engelleyebilir. Diş hekimliğinde kullanılan renk sistemleri ve renk tespit yöntemleri ile ilgili yukarıdaki ifadelerden hangileri doğrudur?",
+    "secenekler": {
+      "A": "Yalnız I",
+      "B": "II ve IV",
+      "C": "Yalnız II",
+      "D": "Yalnız IV",
+      "E": "I ve III"
+    },
+    "raw_text": "I. Diş hekimliğinde en fazla kullanılan renk sistemi Munsell renk sistemidir. II. Görsel renk tespitinde renk skalalarından yararlanılabilir. III. Dijital fotoğraf makineleri renk tespitinde tercih edilmez. IV. Farklı aydınlatma koşullarında rengin değerlendirilmesi metamerizmi engelleyebilir. Diş hekimliğinde kullanılan renk sistemleri ve renk tespit yöntemleri ile ilgili yukarıdaki ifadelerden hangileri doğrudur? A) Yalnız I B) II ve IV C) Yalnız II D) Yalnız IV E) I ve III"
+  },
+  {
+    "id": "dus_2025-1_q046",
+    "soru_no": 46,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kırk yaşındaki k",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Kırk yaşındaki k"
+  },
+  {
+    "id": "dus_2025-1_q047",
+    "soru_no": 47,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Posterior geleneksel rezin kompozit restorasyon yapan bir diş hekimi, restorasyonu bitirdikten sonra, uygulama esnasında restorasyonu üretici firma talimatlarında önerilen süreden daha kısa süre polimerize ettiğinin farkına varıyor. I. Sertlik II. Dönüşüm derecesi (oranı) III. Suda çözünme IV. Biyouyumluluk V. Su emilimi VI. Renk kararlılığı Bu durumda uygulanan rezin kompozit restorasyonun azalan özellikleri aşağıdakilerden hangisinde birlikte verilmiştir?",
+    "secenekler": {
+      "A": "I-III-V-VI",
+      "B": "I-II-IV-VI",
+      "C": "II-III-V-VI",
+      "D": "II-III-IV-V",
+      "E": "I-IV-V-VI"
+    },
+    "raw_text": "Posterior geleneksel rezin kompozit restorasyon yapan bir diş hekimi, restorasyonu bitirdikten sonra, uygulama esnasında restorasyonu üretici firma talimatlarında önerilen süreden daha kısa süre polimerize ettiğinin farkına varıyor. I. Sertlik II. Dönüşüm derecesi (oranı) III. Suda çözünme IV. Biyouyumluluk V. Su emilimi VI. Renk kararlılığı Bu durumda uygulanan rezin kompozit restorasyonun azalan özellikleri aşağıdakilerden hangisinde birlikte verilmiştir? A) I-III-V-VI B) I-II-IV-VI C) II-III-V-VI D) II-III-IV-V E) I-IV-V-VI"
+  },
+  {
+    "id": "dus_2025-1_q048",
+    "soru_no": 48,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi hem tükürükte hem de evde plakla uygulanan vital ağartma ajanlarının içerisinde bulunan bir bileşendir?",
+    "secenekler": {
+      "A": "Peroksidaz",
+      "B": "Lipaz",
+      "C": "Katalaz",
+      "D": "Üre",
+      "E": "Amilaz"
+    },
+    "raw_text": "Aşağıdakilerden hangisi hem tükürükte hem de evde plakla uygulanan vital ağartma ajanlarının içerisinde bulunan bir bileşendir? A) Peroksidaz B) Lipaz C) Katalaz D) Üre E) Amilaz"
+  },
+  {
+    "id": "dus_2025-1_q049",
+    "soru_no": 49,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Dentin hassasiyetinin giderilmesi için aşağıdakilerden hangisinin diş macumu içeriğine eklenmesi en az olasıdır?",
+    "secenekler": {
+      "A": "Stronsiyum",
+      "B": "Potasyum",
+      "C": "Palladyum",
+      "D": "Oksalat",
+      "E": "Florür"
+    },
+    "raw_text": "Dentin hassasiyetinin giderilmesi için aşağıdakilerden hangisinin diş macumu içeriğine eklenmesi en az olasıdır? A) Stronsiyum B) Potasyum C) Palladyum D) Oksalat E) Florür"
+  },
+  {
+    "id": "dus_2025-1_q050",
+    "soru_no": 50,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Restoratif Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Dentin formasyonu ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Dentin oluşumu mine oluşumundan önce başlar.",
+      "B": "Dentin oluşumu tüberkül tepelerinden ve insizal kenardan başlar ve mine-dentin sınırına doğru giderek yayılır.",
+      "C": "Dentin oluşumu dişin sürmesinin ardından sona erer.",
+      "D": "En son oluşan dentin, pulpa yüzeyini kaplar.",
+      "E": "Dişin ilk şeklini oluşturan dentin, primer dentin olarak adlandırılır."
+    },
+    "raw_text": "Dentin formasyonu ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Dentin oluşumu mine oluşumundan önce başlar. B) Dentin oluşumu tüberkül tepelerinden ve insizal kenardan başlar ve mine-dentin sınırına doğru giderek yayılır. C) Dentin oluşumu dişin sürmesinin ardından sona erer. D) En son oluşan dentin, pulpa yüzeyini kaplar. E) Dişin ilk şeklini oluşturan dentin, primer dentin olarak adlandırılır."
+  },
+  {
+    "id": "dus_2025-1_q051",
+    "soru_no": 51,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Çinko oksit öjenol simanların özellikleri ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "secenekler": {
+      "A": "Simanın karıştırılması esnasında az miktar su reaksiyona hızlandırıcı etki yapar.",
+      "B": "Fosfat simanlar grubunda sınıflandırılırlar.",
+      "C": "Çinko oksit öjenol simanın çekme dayanıklılığı oldukça yüksektir.",
+      "D": "Karıştırma camının soğutulması sertleşme reaksiyonunu hızlandırır.",
+      "E": "Ağız sıvılarında çözünürlüğü düşüktür."
+    },
+    "raw_text": "Çinko oksit öjenol simanların özellikleri ile ilgili aşağıdaki ifadelerden hangisi doğrudur? A) Simanın karıştırılması esnasında az miktar su reaksiyona hızlandırıcı etki yapar. B) Fosfat simanlar grubunda sınıflandırılırlar. C) Çinko oksit öjenol simanın çekme dayanıklılığı oldukça yüksektir. D) Karıştırma camının soğutulması sertleşme reaksiyonunu hızlandırır. E) Ağız sıvılarında çözünürlüğü düşüktür."
+  },
+  {
+    "id": "dus_2025-1_q052",
+    "soru_no": 52,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Adeziv simantasyon tekniğinde kullanılan yapıştırma simanı aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Çinko fosfat siman",
+      "B": "Çinko polikarboksilat siman",
+      "C": "Cam iyonomer siman",
+      "D": "Hibrit iyonomer siman",
+      "E": "Rezin siman"
+    },
+    "raw_text": "Adeziv simantasyon tekniğinde kullanılan yapıştırma simanı aşağıdakilerden hangisidir? A) Çinko fosfat siman B) Çinko polikarboksilat siman C) Cam iyonomer siman D) Hibrit iyonomer siman E) Rezin siman"
+  },
+  {
+    "id": "dus_2025-1_q053",
+    "soru_no": 53,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi gülüş tasarımında öncelikli olarak değerlendirilmez?",
+    "secenekler": {
+      "A": "Gingival marjin ve dudak çizgisi arasında görünen gingival dokunun mesafesi",
+      "B": "Maksiller dişlerin zenith noktaları",
+      "C": "Mandibular orta hat çizgisi",
+      "D": "İnterproksimal kontak nokta ve yüzeyleri",
+      "E": "Bukkal koridor alanı"
+    },
+    "raw_text": "Aşağıdakilerden hangisi gülüş tasarımında öncelikli olarak değerlendirilmez? A) Gingival marjin ve dudak çizgisi arasında görünen gingival dokunun mesafesi B) Maksiller dişlerin zenith noktaları C) Mandibular orta hat çizgisi D) İnterproksimal kontak nokta ve yüzeyleri E) Bukkal koridor alanı"
+  },
+  {
+    "id": "dus_2025-1_q054",
+    "soru_no": 54,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Yirmi beş yaşındaki k",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Yirmi beş yaşındaki k"
+  },
+  {
+    "id": "dus_2025-1_q055",
+    "soru_no": 55,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Hareketli bölümlü protez planlamasında ilk ölçü sonrası elde edilen tanı modelinin paralelometreye bağlanmasının ardından destek olabilecek doğal dişler değerlendirilirken aşağıdaki işlemlerden hangisi yapılmaz?",
+    "secenekler": {
+      "A": "Mum modelaj ile direkt tutucuların hazırlanması",
+      "B": "Destek dişler üzerinde rest (tırnak) yuvalarının çizimi",
+      "C": "Destek dişler üzerinde retantif alan oluşturulması",
+      "D": "Dişlerin kronlanması gerekliliğinin değerlendirilmesi",
+      "E": "Rehber düzlemlerin değerlendirilmesi"
+    },
+    "raw_text": "Hareketli bölümlü protez planlamasında ilk ölçü sonrası elde edilen tanı modelinin paralelometreye bağlanmasının ardından destek olabilecek doğal dişler değerlendirilirken aşağıdaki işlemlerden hangisi yapılmaz? A) Mum modelaj ile direkt tutucuların hazırlanması B) Destek dişler üzerinde rest (tırnak) yuvalarının çizimi C) Destek dişler üzerinde retantif alan oluşturulması D) Dişlerin kronlanması gerekliliğinin değerlendirilmesi E) Rehber düzlemlerin değerlendirilmesi"
+  },
+  {
+    "id": "dus_2025-1_q056",
+    "soru_no": 56,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Hareketli bölümlü protez yapımında kullanılan hassas tutucular ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Dişi ve erkek parçalar hem intrakoronal hem de ekstrakoronal hassas tutucularda bulunur.",
+      "B": "Ekstrakoronal hassas tutucular oral hijyen sağlanmasını zorlaştırırlar.",
+      "C": "Ekstrakoronal hassas tutucular destek dişler üzerinde istenmeyen yüklere sebep olurlar.",
+      "D": "İntrakoronal hassas tutucular kroşeyi elimine ederek estetik bir görüntü sağlar.",
+      "E": "İntrakoronal hassas tutucular kısa ve dar forma sahip vital dişlerde tercih edilirler."
+    },
+    "raw_text": "Hareketli bölümlü protez yapımında kullanılan hassas tutucular ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Dişi ve erkek parçalar hem intrakoronal hem de ekstrakoronal hassas tutucularda bulunur. B) Ekstrakoronal hassas tutucular oral hijyen sağlanmasını zorlaştırırlar. C) Ekstrakoronal hassas tutucular destek dişler üzerinde istenmeyen yüklere sebep olurlar. D) İntrakoronal hassas tutucular kroşeyi elimine ederek estetik bir görüntü sağlar. E) İntrakoronal hassas tutucular kısa ve dar forma sahip vital dişlerde tercih edilirler."
+  },
+  {
+    "id": "dus_2025-1_q057",
+    "soru_no": 57,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "RPI kroşe sistemi ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Sistem içerisindeki mezio-oklüzal tırnak rotasyonel hareketlerde fulkrum noktasıdır.",
+      "B": "Vestibül derinlik dikkate alınarak I-bar kroşe kullanılabilir.",
+      "C": "Bar kroşe destek diş yüzeyinde distobukkal andırkat varlığında kullanılabilir.",
+      "D": "Minör bağlayıcı destek dişin komşuluğundaki diş ile temasta olmamalıdır.",
+      "E": "Proksimal plak dayanak dişin distalinde dişsiz krete komşu distal rehber düzlemde hazırlanır."
+    },
+    "raw_text": "RPI kroşe sistemi ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Sistem içerisindeki mezio-oklüzal tırnak rotasyonel hareketlerde fulkrum noktasıdır. B) Vestibül derinlik dikkate alınarak I-bar kroşe kullanılabilir. C) Bar kroşe destek diş yüzeyinde distobukkal andırkat varlığında kullanılabilir. D) Minör bağlayıcı destek dişin komşuluğundaki diş ile temasta olmamalıdır. E) Proksimal plak dayanak dişin distalinde dişsiz krete komşu distal rehber düzlemde hazırlanır."
+  },
+  {
+    "id": "dus_2025-1_q058",
+    "soru_no": 58,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "İmplant destekli metal-akrilik hibrit sabit protezler ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Sıklıkla maksilla ve mandibulada 4-6 implantla desteklenirler.",
+      "B": "Bu protez tipinin endikasyonunda kemik ve yumuşak doku kaybı miktarı önemlidir.",
+      "C": "Metal bir altyapı üzerinde akrilik kaide ve akrilik takım dişler bulunur.",
+      "D": "Hastanın oral hijyen sağlaması kolaydır.",
+      "E": "Uygun vakalarda, metal-akrilik hibrit protez öncesinde immediat yükleme tam akrilik protezler ile uygulanabilir."
+    },
+    "raw_text": "İmplant destekli metal-akrilik hibrit sabit protezler ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Sıklıkla maksilla ve mandibulada 4-6 implantla desteklenirler. B) Bu protez tipinin endikasyonunda kemik ve yumuşak doku kaybı miktarı önemlidir. C) Metal bir altyapı üzerinde akrilik kaide ve akrilik takım dişler bulunur. D) Hastanın oral hijyen sağlaması kolaydır. E) Uygun vakalarda, metal-akrilik hibrit protez öncesinde immediat yükleme tam akrilik protezler ile uygulanabilir."
+  },
+  {
+    "id": "dus_2025-1_q059",
+    "soru_no": 59,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki oklüzal aparey çeşitlerinden hangisi temporomandibular eklemde redüksiyonlu disk deplasmanı teşhisi olan bir hastada spesifik olarak endikedir?",
+    "secenekler": {
+      "A": "Pivot apareyi",
+      "B": "Anterior pozisyonlandırıcı aparey",
+      "C": "Posterior ısırma apareyi",
+      "D": "Rezilient oklüzal aparey",
+      "E": "Kas gevşetici aparey"
+    },
+    "raw_text": "Aşağıdaki oklüzal aparey çeşitlerinden hangisi temporomandibular eklemde redüksiyonlu disk deplasmanı teşhisi olan bir hastada spesifik olarak endikedir? A) Pivot apareyi B) Anterior pozisyonlandırıcı aparey C) Posterior ısırma apareyi D) Rezilient oklüzal aparey E) Kas gevşetici aparey"
+  },
+  {
+    "id": "dus_2025-1_q060",
+    "soru_no": 60,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Protetik Diş Tedavisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Poliüretan II. Polivinil klorid III. Silikon lastik IV. Polivinil siloksan Yukarıdakilerden hangileri maksillofasiyal protez üretim materyali olarak kullanılmakt",
+    "secenekler": {
+      "A": "I ve III",
+      "B": "I, II ve III",
+      "C": "II ve IV",
+      "D": "I ve IV",
+      "E": "I, II, III ve IV"
+    },
+    "raw_text": "I. Poliüretan II. Polivinil klorid III. Silikon lastik IV. Polivinil siloksan Yukarıdakilerden hangileri maksillofasiyal protez üretim materyali olarak kullanılmakt A) I ve III B) I, II ve III C) II ve IV D) I ve IV E) I, II, III ve IV"
+  },
+  {
+    "id": "dus_2025-1_q061",
+    "soru_no": 61,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Baş ağrısı ve temporomandibuler eklem (TME) bölgesinde sürekli mevcut olan ağrının şiddetlenmesi nedeniyle başvuran 30 yaşındaki k",
+    "secenekler": {
+      "A": "Stage I",
+      "B": "Stage II",
+      "C": "Stage III",
+      "D": "Stage IV",
+      "E": "Stage V"
+    },
+    "raw_text": "Baş ağrısı ve temporomandibuler eklem (TME) bölgesinde sürekli mevcut olan ağrının şiddetlenmesi nedeniyle başvuran 30 yaşındaki k A) Stage I B) Stage II C) Stage III D) Stage IV E) Stage V"
+  },
+  {
+    "id": "dus_2025-1_q062",
+    "soru_no": 62,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Trigeminal nevraljiyle ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Ağrıyı başlatan tetik noktalar vardır.",
+      "B": "Ağrının karakteri nokturnaldir.",
+      "C": "Elektrik çarpması şeklinde çok şiddetli ağrılarla karakterizedir.",
+      "D": "Medikal tedavide antiepileptiklerden yararlanılır.",
+      "E": "Tedavi edilmezse nöbetler sıklaşabilir."
+    },
+    "raw_text": "Trigeminal nevraljiyle ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Ağrıyı başlatan tetik noktalar vardır. B) Ağrının karakteri nokturnaldir. C) Elektrik çarpması şeklinde çok şiddetli ağrılarla karakterizedir. D) Medikal tedavide antiepileptiklerden yararlanılır. E) Tedavi edilmezse nöbetler sıklaşabilir."
+  },
+  {
+    "id": "dus_2025-1_q063",
+    "soru_no": 63,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Sinüs taban ogmentasyonu ile simültane yerleştirilen implantlarda primer stabilite osseointegrasyonun başarısını etkileyen faktörler arasında sayılmamakt",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "I. Sinüs taban ogmentasyonu ile simültane yerleştirilen implantlarda primer stabilite osseointegrasyonun başarısını etkileyen faktörler arasında sayılmamakt"
+  },
+  {
+    "id": "dus_2025-1_q064",
+    "soru_no": 64,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Beyin ölümü gerçekleşmiş, organ transplantasyonu için hazır olan bir hasta American Society of Anaesthesiologist (ASA) sınıflamasına göre hangi sınıfta yer alır?",
+    "secenekler": {
+      "A": "ASA 2",
+      "B": "ASA 3",
+      "C": "ASA 4",
+      "D": "ASA 5",
+      "E": "ASA 6"
+    },
+    "raw_text": "Beyin ölümü gerçekleşmiş, organ transplantasyonu için hazır olan bir hasta American Society of Anaesthesiologist (ASA) sınıflamasına göre hangi sınıfta yer alır? A) ASA 2 B) ASA 3 C) ASA 4 D) ASA 5 E) ASA 6"
+  },
+  {
+    "id": "dus_2025-1_q065",
+    "soru_no": 65,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Gow-Gates lokal anestezi tekniğinde aşağıdaki anatomik oluşumlardan hangisinin hasar görmesi en olasıdır?",
+    "secenekler": {
+      "A": "Nervus infraorbitalis",
+      "B": "Vena azygos",
+      "C": "Arteria maxillaris",
+      "D": "Arteria lingualis",
+      "E": "Arterica facialis"
+    },
+    "raw_text": "Gow-Gates lokal anestezi tekniğinde aşağıdaki anatomik oluşumlardan hangisinin hasar görmesi en olasıdır? A) Nervus infraorbitalis B) Vena azygos C) Arteria maxillaris D) Arteria lingualis E) Arterica facialis"
+  },
+  {
+    "id": "dus_2025-1_q066",
+    "soru_no": 66,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki maddelerden hangisi Carnoy solüsyonunun bileşenleri arasında yer almaz?",
+    "secenekler": {
+      "A": "Gliserin",
+      "B": "Glasiyal asetik asit",
+      "C": "Ferrik klorid",
+      "D": "Saf alkol",
+      "E": "Kloroform"
+    },
+    "raw_text": "Aşağıdaki maddelerden hangisi Carnoy solüsyonunun bileşenleri arasında yer almaz? A) Gliserin B) Glasiyal asetik asit C) Ferrik klorid D) Saf alkol E) Kloroform"
+  },
+  {
+    "id": "dus_2025-1_q067",
+    "soru_no": 67,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kırk beş yaşındaki erkek hastanın konik ışınlı bilgisayarlı tomografi (CBCT) incelemesinde mandibula angulus bölgesinde mandibular kanal altında lokalize, mandibula lingual yüzeyinde kortikal kemikte fokal konkaviteye neden olan, biyopsisinde normal tükürük bezi dokusu görülen asemptomatik bir lezyon tespit ediliyor. Bu lezyon için en olası tanı aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Apikal apse",
+      "B": "Periapikal semental displazi",
+      "C": "Stafne kemik kisti",
+      "D": "Schwannoma",
+      "E": "Kondensing osteitis"
+    },
+    "raw_text": "Kırk beş yaşındaki erkek hastanın konik ışınlı bilgisayarlı tomografi (CBCT) incelemesinde mandibula angulus bölgesinde mandibular kanal altında lokalize, mandibula lingual yüzeyinde kortikal kemikte fokal konkaviteye neden olan, biyopsisinde normal tükürük bezi dokusu görülen asemptomatik bir lezyon tespit ediliyor. Bu lezyon için en olası tanı aşağıdakilerden hangisidir? A) Apikal apse B) Periapikal semental displazi C) Stafne kemik kisti D) Schwannoma E) Kondensing osteitis"
+  },
+  {
+    "id": "dus_2025-1_q068",
+    "soru_no": 68,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Makroglossia, gingival hiperplazi, tek bir geniş folikülde birçok gömülü dişin görülebildiği; birçok enzim eksikliği ile karakterize otozomal resesif geçiş gösterebilen en olası metabolik durum aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Plummer-Vinson sendromu",
+      "B": "Addison hastalığı",
+      "C": "Crohn hastalığı",
+      "D": "Gaucher hastalığı",
+      "E": "Mukopolisakkaridozis"
+    },
+    "raw_text": "Makroglossia, gingival hiperplazi, tek bir geniş folikülde birçok gömülü dişin görülebildiği; birçok enzim eksikliği ile karakterize otozomal resesif geçiş gösterebilen en olası metabolik durum aşağıdakilerden hangisidir? A) Plummer-Vinson sendromu B) Addison hastalığı C) Crohn hastalığı D) Gaucher hastalığı E) Mukopolisakkaridozis"
+  },
+  {
+    "id": "dus_2025-1_q069",
+    "soru_no": 69,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi ilaca bağlı çenede gelişen osteonekrozun (MRONJ) tedavi yaklaşımında yer almaz?",
+    "secenekler": {
+      "A": "İntralezyonel kalsitonin enjeksiyonu",
+      "B": "Antibiyotik tedavisi",
+      "C": "Cerrahi debridman",
+      "D": "Antibakteriyel ağız gargaraları",
+      "E": "Çene rezeksiyonu"
+    },
+    "raw_text": "Aşağıdakilerden hangisi ilaca bağlı çenede gelişen osteonekrozun (MRONJ) tedavi yaklaşımında yer almaz? A) İntralezyonel kalsitonin enjeksiyonu B) Antibiyotik tedavisi C) Cerrahi debridman D) Antibakteriyel ağız gargaraları E) Çene rezeksiyonu"
+  },
+  {
+    "id": "dus_2025-1_q070",
+    "soru_no": 70,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Cerrahisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Birinci premolar diş II. İkinci premolar diş III. İkinci molar diş IV. Üçüncü molar diş Submandibular apse oluşumuna yol açması en olası iki diş aşağıdakilerin hangisinde birlikte verilmiştir?",
+    "secenekler": {
+      "A": "I ve II",
+      "B": "III ve IV",
+      "C": "I ve III",
+      "D": "II ve IV",
+      "E": "I ve IV"
+    },
+    "raw_text": "I. Birinci premolar diş II. İkinci premolar diş III. İkinci molar diş IV. Üçüncü molar diş Submandibular apse oluşumuna yol açması en olası iki diş aşağıdakilerin hangisinde birlikte verilmiştir? A) I ve II B) III ve IV C) I ve III D) II ve IV E) I ve IV"
+  },
+  {
+    "id": "dus_2025-1_q071",
+    "soru_no": 71,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Elli beş yaşındaki erkek hasta üst çenesinde gelişen şişlik ve yanma şikâyetiyle başvuruyor. İntraoral muayenede palatinal mukozada yüzeye yakın mavi renkte fluktuan şişlik gözleniyor ve bölgedeki komşu dişlerin vital olduğu saptanıyor. Radyolojik incelemede santral dişlerin kökleri hizasında, düzgün sınırlı, yuvarlak bir radyolusensi izleniyor. Bu hasta için en olası ön tanı aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Basit kemik kisti",
+      "B": "Radiküler kist",
+      "C": "Nazopalatin kanal kisti",
+      "D": "Nazolabial kist",
+      "E": "Tiroglossal kanal kisti"
+    },
+    "raw_text": "Elli beş yaşındaki erkek hasta üst çenesinde gelişen şişlik ve yanma şikâyetiyle başvuruyor. İntraoral muayenede palatinal mukozada yüzeye yakın mavi renkte fluktuan şişlik gözleniyor ve bölgedeki komşu dişlerin vital olduğu saptanıyor. Radyolojik incelemede santral dişlerin kökleri hizasında, düzgün sınırlı, yuvarlak bir radyolusensi izleniyor. Bu hasta için en olası ön tanı aşağıdakilerden hangisidir? A) Basit kemik kisti B) Radiküler kist C) Nazopalatin kanal kisti D) Nazolabial kist E) Tiroglossal kanal kisti"
+  },
+  {
+    "id": "dus_2025-1_q072",
+    "soru_no": 72,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Sistemik hastalığı bulunmayan 40 yaşındaki erkek hasta damak mukozasında şişlik nedeniyle kliniğe başvuruyor. Öyküsünden günde 1 paket sigara kullandığı ve lezyonun üç hafta önce ilgili bölgeye uygulanan lokal anestezi sonrasında geliştiği öğreniliyor. Klinik muayenede sert damakta ağrılı, yüzeyi ülsere, çevresi eritemli 2 cm boyutunda fokal bir lezyon saptanıyor. Biyopsi materyalinin histopatolojik incelemesi sonucunda nekroze alanlar, granülasyon dokusu, mikst inflamatuvar hücre infiltratı, mukoza epitelinde psödoepitelyomatöz hiperplazi ve duktus yapısında skuamöz metaplazi olduğu ancak malign hücre proliferasyonu bulunm",
+    "secenekler": {
+      "A": "Hareketli vidalı bir plak ile üst kesici dişlere tipping hareketi yaptırılması",
+      "B": "Yüz maskesi ile üst çenenin öne alınması",
+      "C": "Frankel-III apareyi ile alt çene gelişiminin engellenmesi",
+      "D": "Yalnızca erken temasların kaldırılarak hastanın dişlenmesinin takip edilmesi",
+      "E": "Süt dişlerinden aşındırma yapılarak sürme rehberliği yapılması"
+    },
+    "raw_text": "Sistemik hastalığı bulunmayan 40 yaşındaki erkek hasta damak mukozasında şişlik nedeniyle kliniğe başvuruyor. Öyküsünden günde 1 paket sigara kullandığı ve lezyonun üç hafta önce ilgili bölgeye uygulanan lokal anestezi sonrasında geliştiği öğreniliyor. Klinik muayenede sert damakta ağrılı, yüzeyi ülsere, çevresi eritemli 2 cm boyutunda fokal bir lezyon saptanıyor. Biyopsi materyalinin histopatolojik incelemesi sonucunda nekroze alanlar, granülasyon dokusu, mikst inflamatuvar hücre infiltratı, mukoza epitelinde psödoepitelyomatöz hiperplazi ve duktus yapısında skuamöz metaplazi olduğu ancak malign hücre proliferasyonu bulunm A) Hareketli vidalı bir plak ile üst kesici dişlere tipping hareketi yaptırılması B) Yüz maskesi ile üst çenenin öne alınması C) Frankel-III apareyi ile alt çene gelişiminin engellenmesi D) Yalnızca erken temasların kaldırılarak hastanın dişlenmesinin takip edilmesi E) Süt dişlerinden aşındırma yapılarak sürme rehberliği yapılması"
+  },
+  {
+    "id": "dus_2025-1_q073",
+    "soru_no": 73,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Otuz dokuz yaşındaki k",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Otuz dokuz yaşındaki k"
+  },
+  {
+    "id": "dus_2025-1_q074",
+    "soru_no": 74,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Diş eksikliği şikâyetiyle getirilen 15 yaşındaki erkek hastanın yapılan klinik muayenesinde çoklu diş eksikliği, diş sürmesinde gecikme ve periodontal olarak sağlıklı olmasına rağmen mevcut dişlerinde orta seviyede mobilite olduğu izleniyor. Hastanın mevcut diş kronlarında herhangi bir şekil ya da renk değişikliği izlenmiyor. Yapılan radyografik muayenede diş köklerinin genel olarak kısa, konik şekilli olduğu ve molar köklerinin dış konturunun “W” benzeri görüntü oluşturduğu saptanıyor ve birkaç dişin kök apekslerinde radyolusent alanlar dikkati çekiyor. Ayrıca bazı dişlerin pulpa odalarının tamamen tıkalı olduğu, bazılarının ise pulpa kanallarının yer yer yarım ay şeklinde olduğu izleniyor. Klinik ve radyolojik özellikleri verilen bu olgu için en olası tanı aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Amelogenezis imperfekta (hipoplastik tip)",
+      "B": "Turner hipoplazisi",
+      "C": "Dentin displazisi tip 1",
+      "D": "Odontogenezis imperfekta",
+      "E": "Rejyonel odontodisplazi"
+    },
+    "raw_text": "Diş eksikliği şikâyetiyle getirilen 15 yaşındaki erkek hastanın yapılan klinik muayenesinde çoklu diş eksikliği, diş sürmesinde gecikme ve periodontal olarak sağlıklı olmasına rağmen mevcut dişlerinde orta seviyede mobilite olduğu izleniyor. Hastanın mevcut diş kronlarında herhangi bir şekil ya da renk değişikliği izlenmiyor. Yapılan radyografik muayenede diş köklerinin genel olarak kısa, konik şekilli olduğu ve molar köklerinin dış konturunun “W” benzeri görüntü oluşturduğu saptanıyor ve birkaç dişin kök apekslerinde radyolusent alanlar dikkati çekiyor. Ayrıca bazı dişlerin pulpa odalarının tamamen tıkalı olduğu, bazılarının ise pulpa kanallarının yer yer yarım ay şeklinde olduğu izleniyor. Klinik ve radyolojik özellikleri verilen bu olgu için en olası tanı aşağıdakilerden hangisidir? A) Amelogenezis imperfekta (hipoplastik tip) B) Turner hipoplazisi C) Dentin displazisi tip 1 D) Odontogenezis imperfekta E) Rejyonel odontodisplazi"
+  },
+  {
+    "id": "dus_2025-1_q075",
+    "soru_no": 75,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Yüzde asimetri şikâyetiyle kliniğe getirilen 12 yaşındaki erkek hastanın ekstraoral muayenesinde sol tarafta hipertrikozis ve dudakta pigmentasyon saptanıyor. İntraoral muayenede sol üst posterior alveoler kemik bölgesini ve diş etini içeren ekspansiyon ve premolar dişlerde eksiklik izleniyor. Radyolojik incelemede maksiller sol alveoler kemik trabekülasyonunda artış ile vertikal olarak hizalanmış çok sayıda kalın trabeküllerin varlığı dikkat çekiyor. Sol maksiller sinüs boşluğunun ise sağ sinüs boşluğuna kıyasla daha küçük olduğu gözleniyor. Bu hasta için en olası tanı aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Gardner sendromu",
+      "B": "Monostotik fibröz displazi",
+      "C": "Mandibulofasiyal disostozis",
+      "D": "Kleidokraniyal disostozis",
+      "E": "Segmental odontomaksiller displazi"
+    },
+    "raw_text": "Yüzde asimetri şikâyetiyle kliniğe getirilen 12 yaşındaki erkek hastanın ekstraoral muayenesinde sol tarafta hipertrikozis ve dudakta pigmentasyon saptanıyor. İntraoral muayenede sol üst posterior alveoler kemik bölgesini ve diş etini içeren ekspansiyon ve premolar dişlerde eksiklik izleniyor. Radyolojik incelemede maksiller sol alveoler kemik trabekülasyonunda artış ile vertikal olarak hizalanmış çok sayıda kalın trabeküllerin varlığı dikkat çekiyor. Sol maksiller sinüs boşluğunun ise sağ sinüs boşluğuna kıyasla daha küçük olduğu gözleniyor. Bu hasta için en olası tanı aşağıdakilerden hangisidir? A) Gardner sendromu B) Monostotik fibröz displazi C) Mandibulofasiyal disostozis D) Kleidokraniyal disostozis E) Segmental odontomaksiller displazi"
+  },
+  {
+    "id": "dus_2025-1_q076",
+    "soru_no": 76,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kalsifiye epitelyal odontojenik tümörle ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "İçerisinde amiloid benzeri materyal bulunur.",
+      "B": "Radyografik olarak multiloküler veya uniloküler olabilir.",
+      "C": "Palpasyonda genellikle sert bir şişlik saptanır.",
+      "D": "En belirgin semptomu ağrıdır.",
+      "E": "Mandibulada maksillaya göre daha sık gözlenir."
+    },
+    "raw_text": "Kalsifiye epitelyal odontojenik tümörle ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) İçerisinde amiloid benzeri materyal bulunur. B) Radyografik olarak multiloküler veya uniloküler olabilir. C) Palpasyonda genellikle sert bir şişlik saptanır. D) En belirgin semptomu ağrıdır. E) Mandibulada maksillaya göre daha sık gözlenir."
+  },
+  {
+    "id": "dus_2025-1_q077",
+    "soru_no": 77,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Diğer tüm ışınlama parametrelerinin sabit tutulduğu, sadece kVp değerinin azaltıldığı durumda radyografik densite ve kontrastta meydana gelecek değişikliklerle ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "secenekler": {
+      "A": "Densite azalır, kontrast azalır.",
+      "B": "Densite artar, kontrast azalır.",
+      "C": "Densite artar, kontrast artar.",
+      "D": "Densite azalır, kontrast artar.",
+      "E": "Densite azalır, kontrast değişmez."
+    },
+    "raw_text": "Diğer tüm ışınlama parametrelerinin sabit tutulduğu, sadece kVp değerinin azaltıldığı durumda radyografik densite ve kontrastta meydana gelecek değişikliklerle ilgili aşağıdaki ifadelerden hangisi doğrudur? A) Densite azalır, kontrast azalır. B) Densite artar, kontrast azalır. C) Densite artar, kontrast artar. D) Densite azalır, kontrast artar. E) Densite azalır, kontrast değişmez."
+  },
+  {
+    "id": "dus_2025-1_q078",
+    "soru_no": 78,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aynı objenin farklı zamanlarda standardizasyon ile alınmış radyografik görüntülerinin birbiri üzerine çakıştırılması sonucu, ilgilenilen bölgelerde densite farklılığına bağlı olarak daha koyu ya da daha açık yerler üzerinden doku kaybı veya kazanımı gibi değerlendirmelerin yapıldığı en olası yöntem aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Kseroradyografi",
+      "B": "Le Master tekniği",
+      "C": "Artrografi tekniği",
+      "D": "Floroskopi tekniği",
+      "E": "Dijital subtraksiyon radyografisi"
+    },
+    "raw_text": "Aynı objenin farklı zamanlarda standardizasyon ile alınmış radyografik görüntülerinin birbiri üzerine çakıştırılması sonucu, ilgilenilen bölgelerde densite farklılığına bağlı olarak daha koyu ya da daha açık yerler üzerinden doku kaybı veya kazanımı gibi değerlendirmelerin yapıldığı en olası yöntem aşağıdakilerden hangisidir? A) Kseroradyografi B) Le Master tekniği C) Artrografi tekniği D) Floroskopi tekniği E) Dijital subtraksiyon radyografisi"
+  },
+  {
+    "id": "dus_2025-1_q079",
+    "soru_no": 79,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Yumuşak doku kontrast çözünürlüğünün daha yüksek olması II. Radyasyon dozunun daha düşük olması III. Uzaysal çözünürlüğünün daha yüksek olması Yukarıdakilerden hangileri konik ışınlı bilgisayarlı tomografinin multidedektör bilgisayarlı tomografiye göre üstün özelliklerindendir?",
+    "secenekler": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "I, II ve III",
+      "D": "Yalnız II",
+      "E": "I ve III"
+    },
+    "raw_text": "I. Yumuşak doku kontrast çözünürlüğünün daha yüksek olması II. Radyasyon dozunun daha düşük olması III. Uzaysal çözünürlüğünün daha yüksek olması Yukarıdakilerden hangileri konik ışınlı bilgisayarlı tomografinin multidedektör bilgisayarlı tomografiye göre üstün özelliklerindendir? A) I ve II B) II ve III C) I, II ve III D) Yalnız II E) I ve III"
+  },
+  {
+    "id": "dus_2025-1_q080",
+    "soru_no": 80,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ağız, Diş ve Çene Radyolojisi",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki x-ışını tüpünde yer alan parça – parçanın bulunduğu bölüm – parçanın görevi eşleştirmelerinden hangisi doğrudur?",
+    "secenekler": {
+      "A": "Filament – Katot – Elektron kaynağı",
+      "B": "Fokal spot – Anot – Elektron kaynağı",
+      "C": "Filament – Anot – X-ışını fotonu oluşumu",
+      "D": "Target – Katot – X-ışını fotonu oluşumu",
+      "E": "Target – Anot – Elektron kaynağı"
+    },
+    "raw_text": "Aşağıdaki x-ışını tüpünde yer alan parça – parçanın bulunduğu bölüm – parçanın görevi eşleştirmelerinden hangisi doğrudur? A) Filament – Katot – Elektron kaynağı B) Fokal spot – Anot – Elektron kaynağı C) Filament – Anot – X-ışını fotonu oluşumu D) Target – Katot – X-ışını fotonu oluşumu E) Target – Anot – Elektron kaynağı"
+  },
+  {
+    "id": "dus_2025-1_q081",
+    "soru_no": 81,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Sement dokusu ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Mineralizasyon düzeyi dentinden daha düşüktür.",
+      "B": "Yaşlanma ile kalınlığı artar.",
+      "C": "Geçirgenliği yaş ile birlikte azalır.",
+      "D": "En kalın olduğu alan kökün apikal üçlüsündedir.",
+      "E": "Dişlerin mezial yüzeyindeki kalınlığı distal yüzeyindekinden fazl"
+    },
+    "raw_text": "Sement dokusu ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Mineralizasyon düzeyi dentinden daha düşüktür. B) Yaşlanma ile kalınlığı artar. C) Geçirgenliği yaş ile birlikte azalır. D) En kalın olduğu alan kökün apikal üçlüsündedir. E) Dişlerin mezial yüzeyindeki kalınlığı distal yüzeyindekinden fazl"
+  },
+  {
+    "id": "dus_2025-1_q082",
+    "soru_no": 82,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin interdental papillanın formunu etkileyen faktörlerden biri olması en az olasıdır?",
+    "secenekler": {
+      "A": "Dişler arasında kontak olup olmaması",
+      "B": "Dişler arasındaki kontak alanının genişliği",
+      "C": "Periodontal ligament aralığının genişliği",
+      "D": "Dişlerin kontak noktası ile alveoler kret tepesi arasındaki mesafe",
+      "E": "Diş eti fenotipi"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin interdental papillanın formunu etkileyen faktörlerden biri olması en az olasıdır? A) Dişler arasında kontak olup olmaması B) Dişler arasındaki kontak alanının genişliği C) Periodontal ligament aralığının genişliği D) Dişlerin kontak noktası ile alveoler kret tepesi arasındaki mesafe E) Diş eti fenotipi"
+  },
+  {
+    "id": "dus_2025-1_q083",
+    "soru_no": 83,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Diş etlerinde büyüme şikâyeti olan 32 yaşındaki erkek hastadan alınan anamnez sonucu herhangi bir sistemik hastalığı ve kullandığı ilacı bulunm",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Diş etlerinde büyüme şikâyeti olan 32 yaşındaki erkek hastadan alınan anamnez sonucu herhangi bir sistemik hastalığı ve kullandığı ilacı bulunm"
+  },
+  {
+    "id": "dus_2025-1_q084",
+    "soru_no": 84,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "HIV pozitif bir hastanın oral muayenesinde, yoğun olarak dilin lateralinde ve daha az sıklıkla retromolar bölgede, ağız tabanı ve damağı tutan bilateral, asemptomatik, düzenli sınırı olmayan keratotik lezyonlar gözlemleniyor. Yapılan histolojik inceleme sonrası etiyolojisinde Epstein-Barr virus olduğu tespit ediliyor. Bu hasta için en olası tanı aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Kaposi sarkomu",
+      "B": "Linear gingival eritem",
+      "C": "Kıllı lökoplaki",
+      "D": "Non-Hodgkin lenfoma",
+      "E": "Oral kandidiyazis"
+    },
+    "raw_text": "HIV pozitif bir hastanın oral muayenesinde, yoğun olarak dilin lateralinde ve daha az sıklıkla retromolar bölgede, ağız tabanı ve damağı tutan bilateral, asemptomatik, düzenli sınırı olmayan keratotik lezyonlar gözlemleniyor. Yapılan histolojik inceleme sonrası etiyolojisinde Epstein-Barr virus olduğu tespit ediliyor. Bu hasta için en olası tanı aşağıdakilerden hangisidir? A) Kaposi sarkomu B) Linear gingival eritem C) Kıllı lökoplaki D) Non-Hodgkin lenfoma E) Oral kandidiyazis"
+  },
+  {
+    "id": "dus_2025-1_q085",
+    "soru_no": 85,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Osteoindüksiyon; greftin alıcı kemikten gelen vasküler, perivasküler invazyona ve hücresel infiltrasyona izin veren bir matriks görevini üstlenmesidir. II. Osteogenezis; greft materyali içinde canlı kalan hücrelerin yeni kemik oluşturabilmesidir. III. Osteokondüksiyon; transplante greftin özellikle kortikal mineral matriksinden derive olan kemik oluşturucu proteinler sayesinde yeni kemik oluşumunu indükleyerek mediatör rolü oynamasıdır. Kemik greftlerinin özellikleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur?",
+    "secenekler": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II ve III"
+    },
+    "raw_text": "I. Osteoindüksiyon; greftin alıcı kemikten gelen vasküler, perivasküler invazyona ve hücresel infiltrasyona izin veren bir matriks görevini üstlenmesidir. II. Osteogenezis; greft materyali içinde canlı kalan hücrelerin yeni kemik oluşturabilmesidir. III. Osteokondüksiyon; transplante greftin özellikle kortikal mineral matriksinden derive olan kemik oluşturucu proteinler sayesinde yeni kemik oluşumunu indükleyerek mediatör rolü oynamasıdır. Kemik greftlerinin özellikleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur? A) Yalnız I B) Yalnız II C) I ve II D) I ve III E) I, II ve III"
+  },
+  {
+    "id": "dus_2025-1_q086",
+    "soru_no": 86,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Öyküsünden 6 yıldır kontrol altında olan diyabet hastası (HbA1c: %6) olduğu, başka bir sistemik sağlık probleminin bulunm",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Öyküsünden 6 yıldır kontrol altında olan diyabet hastası (HbA1c: %6) olduğu, başka bir sistemik sağlık probleminin bulunm"
+  },
+  {
+    "id": "dus_2025-1_q087",
+    "soru_no": 87,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Sağ alt kanin dişinde diş eti çekilmesi şikâyetiyle başvuran 42 yaşındaki k",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Sağ alt kanin dişinde diş eti çekilmesi şikâyetiyle başvuran 42 yaşındaki k"
+  },
+  {
+    "id": "dus_2025-1_q088",
+    "soru_no": 88,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Alt çenesinde diş eksikliği olmayan hastanın üst çenesinde tüm dişlerini kaybettiği tespit ediliyor. Üst çenede 6 implant üzeri sabit restorasyon ile tedavi edilen hastanın durumu aşağıdaki gibi raporlanıyor. I. 10 yıldır günde 15 adet sigara kullanımı II. Üst çene dişlerinin periodontal hastalık nedeniyle kaybedilmiş olması III. İmplant yerleşimi sırasında 2 mm’lik bukkal kemik varlığı IV. Kontrol altında olan diyabet varlığı (HbA1c %5,9) Bu hastada yukarıdakilerden hangileri peri-implantitis riskini artıran durum veya faktörlerdendir?",
+    "secenekler": {
+      "A": "I ve IV",
+      "B": "I, II ve IV",
+      "C": "I ve II",
+      "D": "II ve III",
+      "E": "III ve IV"
+    },
+    "raw_text": "Alt çenesinde diş eksikliği olmayan hastanın üst çenesinde tüm dişlerini kaybettiği tespit ediliyor. Üst çenede 6 implant üzeri sabit restorasyon ile tedavi edilen hastanın durumu aşağıdaki gibi raporlanıyor. I. 10 yıldır günde 15 adet sigara kullanımı II. Üst çene dişlerinin periodontal hastalık nedeniyle kaybedilmiş olması III. İmplant yerleşimi sırasında 2 mm’lik bukkal kemik varlığı IV. Kontrol altında olan diyabet varlığı (HbA1c %5,9) Bu hastada yukarıdakilerden hangileri peri-implantitis riskini artıran durum veya faktörlerdendir? A) I ve IV B) I, II ve IV C) I ve II D) II ve III E) III ve IV"
+  },
+  {
+    "id": "dus_2025-1_q089",
+    "soru_no": 89,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Dalga boyu büyük çoğunluğunda 655-980 nm aralığında olan, hemoglobin ve diğer pigmentler tarafından yüksek düzeyde absorpsiyon gösteren ve oluşturduğu ısı etkisiyle de hemostaz etkisi sağlayabilen periodontolojide çoğunlukla yumuşak doku cerrahi yaklaşımlarında kullanılan en olası lazer sistemi aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Er:YAG lazerler",
+      "B": "Diode lazerler",
+      "C": "CO2 lazerler",
+      "D": "Nd:YAG lazerler",
+      "E": "Argon lazerler"
+    },
+    "raw_text": "Dalga boyu büyük çoğunluğunda 655-980 nm aralığında olan, hemoglobin ve diğer pigmentler tarafından yüksek düzeyde absorpsiyon gösteren ve oluşturduğu ısı etkisiyle de hemostaz etkisi sağlayabilen periodontolojide çoğunlukla yumuşak doku cerrahi yaklaşımlarında kullanılan en olası lazer sistemi aşağıdakilerden hangisidir? A) Er:YAG lazerler B) Diode lazerler C) CO2 lazerler D) Nd:YAG lazerler E) Argon lazerler"
+  },
+  {
+    "id": "dus_2025-1_q090",
+    "soru_no": 90,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Periodontoloji",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin absorbe olmayan ve artmış plak birikimi riski oluşturan bir sütur materyali olması en olasıdır?",
+    "secenekler": {
+      "A": "İpek",
+      "B": "Polipropilen",
+      "C": "Naylon",
+      "D": "e-PTFE",
+      "E": "Polglaktin"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin absorbe olmayan ve artmış plak birikimi riski oluşturan bir sütur materyali olması en olasıdır? A) İpek B) Polipropilen C) Naylon D) e-PTFE E) Polglaktin"
+  },
+  {
+    "id": "dus_2025-1_q091",
+    "soru_no": 91,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin uzun yüz büyüme modeli gösteren bir hastada görülebilecek özelliklerden biri olması en az olasıdır?",
+    "secenekler": {
+      "A": "Ramus yüksekliği kısalmıştır",
+      "B": "Mandibula posterior rotasyon gösterir",
+      "C": "Anterior açık kapanışa meyil vardır",
+      "D": "Alt ve üst kesici dişler protrüzivdir",
+      "E": "Geniş bir simfiz yapısı vardır"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin uzun yüz büyüme modeli gösteren bir hastada görülebilecek özelliklerden biri olması en az olasıdır? A) Ramus yüksekliği kısalmıştır B) Mandibula posterior rotasyon gösterir C) Anterior açık kapanışa meyil vardır D) Alt ve üst kesici dişler protrüzivdir E) Geniş bir simfiz yapısı vardır"
+  },
+  {
+    "id": "dus_2025-1_q092",
+    "soru_no": 92,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi, daimi dentisyonda Ricketts’in sefalometrik analizinde üst ve alt dudağın E doğrusuna göre normal konumudur?",
+    "secenekler": {
+      "A": "Üst dudak 2±2 mm önde, alt dudak 2±2 mm geride yer almalıdır.",
+      "B": "Alt ve üst dudak bu doğruya teğet geçmelidir.",
+      "C": "Üst dudak E doğrusuna teğet, alt dudak 2±2 mm geride yer almalıdır.",
+      "D": "Üst dudak 4±2 mm, alt dudak 2±2 mm geride yer almalıdır.",
+      "E": "Üst dudak 2±2 mm önde, alt dudak E doğrusuna teğer geçmelidir."
+    },
+    "raw_text": "Aşağıdakilerden hangisi, daimi dentisyonda Ricketts’in sefalometrik analizinde üst ve alt dudağın E doğrusuna göre normal konumudur? A) Üst dudak 2±2 mm önde, alt dudak 2±2 mm geride yer almalıdır. B) Alt ve üst dudak bu doğruya teğet geçmelidir. C) Üst dudak E doğrusuna teğet, alt dudak 2±2 mm geride yer almalıdır. D) Üst dudak 4±2 mm, alt dudak 2±2 mm geride yer almalıdır. E) Üst dudak 2±2 mm önde, alt dudak E doğrusuna teğer geçmelidir."
+  },
+  {
+    "id": "dus_2025-1_q093",
+    "soru_no": 93,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Sentrik kapanışta dişlerin birbirleriyle mümkün olduğunca fazla teması II. Stabil sentrik ilişki III. Alt çenenin yan hareketlerinde kanin rehberliği Yukarıdakilerden hangileri ideal fonksiyonel kapanışın özelliklerinden olabilir?",
+    "secenekler": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I, II ve III",
+      "D": "II ve III",
+      "E": "I ve III"
+    },
+    "raw_text": "I. Sentrik kapanışta dişlerin birbirleriyle mümkün olduğunca fazla teması II. Stabil sentrik ilişki III. Alt çenenin yan hareketlerinde kanin rehberliği Yukarıdakilerden hangileri ideal fonksiyonel kapanışın özelliklerinden olabilir? A) Yalnız I B) Yalnız II C) I, II ve III D) II ve III E) I ve III"
+  },
+  {
+    "id": "dus_2025-1_q094",
+    "soru_no": 94,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Üst arka dişlerindeki çapraşıklık şikayeti ile getirilen hastanın önceden ortodontik tedavi gördüğü ve tedavi için Twin-blok apareyi kullanıldığı öğreniliyor. Hastanın velisinden kooperasyon eksikliği olduğu bilgisi alınıyor. Klinik muayenede molar ilişkisinin başabaş konumda olduğu ve arka dişlerde çapraşıklığın yaklaşık 5mm olduğu görülüyor. Ayrıca gülümsemede karanlık bukkal koridorların bulunduğu tespit ediliyor. Bu hasta için aşağıdakilerden hangisinin uygulanması en uygundur?",
+    "secenekler": {
+      "A": "Pendulum",
+      "B": "Monoblok",
+      "C": "Frankel-III",
+      "D": "High-pull headgear",
+      "E": "Pendex"
+    },
+    "raw_text": "Üst arka dişlerindeki çapraşıklık şikayeti ile getirilen hastanın önceden ortodontik tedavi gördüğü ve tedavi için Twin-blok apareyi kullanıldığı öğreniliyor. Hastanın velisinden kooperasyon eksikliği olduğu bilgisi alınıyor. Klinik muayenede molar ilişkisinin başabaş konumda olduğu ve arka dişlerde çapraşıklığın yaklaşık 5mm olduğu görülüyor. Ayrıca gülümsemede karanlık bukkal koridorların bulunduğu tespit ediliyor. Bu hasta için aşağıdakilerden hangisinin uygulanması en uygundur? A) Pendulum B) Monoblok C) Frankel-III D) High-pull headgear E) Pendex"
+  },
+  {
+    "id": "dus_2025-1_q095",
+    "soru_no": 95,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "On beş yaşındaki geç adölesan dönemdeki hasta üst çenesindeki darlık şikayetiyle başvuruyor. Öyküsünden daha önce başka bir klinikte Quad-helix apareyi uygulandığı öğreniliyor. Klinik ve radyografik değerlendirmesinde üst çenede iskeletsel darlık ve üst posterior dişlerde bukkale devrilme olduğu gözleniyor. Bu hasta için tercih edilebilecek en uygun aparey aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Mini vida destekli palatal genişletme apareyi",
+      "B": "W-ark apareyi",
+      "C": "Vidalı Hawley apareyi",
+      "D": "Akrilik splintli bonded genişletme apareyi",
+      "E": "Bantı Hyrax apareyi"
+    },
+    "raw_text": "On beş yaşındaki geç adölesan dönemdeki hasta üst çenesindeki darlık şikayetiyle başvuruyor. Öyküsünden daha önce başka bir klinikte Quad-helix apareyi uygulandığı öğreniliyor. Klinik ve radyografik değerlendirmesinde üst çenede iskeletsel darlık ve üst posterior dişlerde bukkale devrilme olduğu gözleniyor. Bu hasta için tercih edilebilecek en uygun aparey aşağıdakilerden hangisidir? A) Mini vida destekli palatal genişletme apareyi B) W-ark apareyi C) Vidalı Hawley apareyi D) Akrilik splintli bonded genişletme apareyi E) Bantı Hyrax apareyi"
+  },
+  {
+    "id": "dus_2025-1_q096",
+    "soru_no": 96,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Ön dişlerindeki hafif çapraşıklık şikayetiyle başvuran konkav profile sahip yetişkin bir hastada SNA 78°, SNB 82°, Witts değeri -3mm, IMPA 100°, 1-SN 103°, SN-GoGn ise 40° olarak saptanıyor. Klinik muayenesinde ise negatif overjet gözleniyor. Aşağıdakilerden hangisi bu hasta için başarılı bir kamuflaj tedavisinde istenilen değişikliklerden değildir?",
+    "secenekler": {
+      "A": "1-SN açısında artış",
+      "B": "IMPA açısında azalma",
+      "C": "Maksiller dişlerde öne hareket",
+      "D": "Mandibular dişlerde geri hareket",
+      "E": "Üst molar dişlerde ekstrüzyon"
+    },
+    "raw_text": "Ön dişlerindeki hafif çapraşıklık şikayetiyle başvuran konkav profile sahip yetişkin bir hastada SNA 78°, SNB 82°, Witts değeri -3mm, IMPA 100°, 1-SN 103°, SN-GoGn ise 40° olarak saptanıyor. Klinik muayenesinde ise negatif overjet gözleniyor. Aşağıdakilerden hangisi bu hasta için başarılı bir kamuflaj tedavisinde istenilen değişikliklerden değildir? A) 1-SN açısında artış B) IMPA açısında azalma C) Maksiller dişlerde öne hareket D) Mandibular dişlerde geri hareket E) Üst molar dişlerde ekstrüzyon"
+  },
+  {
+    "id": "dus_2025-1_q097",
+    "soru_no": 97,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Frankel tarafından geliştirilen apareyler ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Amaç doğru fonksiyon gören bir stomatognatik sisteme ulaşmakt",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Frankel tarafından geliştirilen apareyler ile ilgili aşağıdakilerden hangisi yanlıştır? A) Amaç doğru fonksiyon gören bir stomatognatik sisteme ulaşmakt"
+  },
+  {
+    "id": "dus_2025-1_q098",
+    "soru_no": 98,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Üst ön dişlerinin görünümünden memnun olmama ve dudaklarını zor kapatma şikâyetleriyle ortodonti kliniğine getirilen kız çocuktan teşhis amaçlı sefalometrik ve el-bilek filmleri alınıyor. Değerlendirmede SNA 83°, SNB 76°, IMPA 98° ve SN-GoGn 38° ölçülüyor. El-bilek dönemi ise sesamoid aşamasında bulunuyor. Bu hastada uygulanabilecek en uygun tedavi yöntemi aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Yüz maskesi",
+      "B": "Oksipital headgear ile monoblok",
+      "C": "Servikal headgear",
+      "D": "Monoblok",
+      "E": "Kombine headgear"
+    },
+    "raw_text": "Üst ön dişlerinin görünümünden memnun olmama ve dudaklarını zor kapatma şikâyetleriyle ortodonti kliniğine getirilen kız çocuktan teşhis amaçlı sefalometrik ve el-bilek filmleri alınıyor. Değerlendirmede SNA 83°, SNB 76°, IMPA 98° ve SN-GoGn 38° ölçülüyor. El-bilek dönemi ise sesamoid aşamasında bulunuyor. Bu hastada uygulanabilecek en uygun tedavi yöntemi aşağıdakilerden hangisidir? A) Yüz maskesi B) Oksipital headgear ile monoblok C) Servikal headgear D) Monoblok E) Kombine headgear"
+  },
+  {
+    "id": "dus_2025-1_q099",
+    "soru_no": 99,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Üst dişlerinin alt dişlerinin önünde olması şikâyetiyle başvuran k",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Üst dişlerinin alt dişlerinin önünde olması şikâyetiyle başvuran k"
+  },
+  {
+    "id": "dus_2025-1_q100",
+    "soru_no": 100,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Ortodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Erken karışık dişlenme döneminde olan hastanın üst 4 kesici dişinin çapraz kapanışta olduğu görülüyor. Üst anterior çapraşıklığı 2 mm olan hastada ANB 2°, SNA 80°, SN-GoGn 32°, 1-SN 94° ve IMPA 90° olarak ölçülüyor. İstirahat pozisyonunda hafif konveks bir profile sahip olan hastada, kapanış esnasında 11 ve 21 numaralı dişlerinde erken temas saptanıyor. Bu hastada aşağıdaki tedavi seçeneklerinden hangisinin tercih edilmesi en uygundur?",
+    "secenekler": {
+      "A": "Hareketli vidalı bir plak ile üst kesici dişlere tipping hareketi yaptırılması",
+      "B": "Yüz maskesi ile üst çenenin öne alınması",
+      "C": "Frankel-III apareyi ile alt çene gelişiminin engellenmesi",
+      "D": "Yalnızca erken temasların kaldırılarak hastanın dişlenmesinin takip edilmesi",
+      "E": "Süt dişlerinden aşındırma yapılarak sürme rehberliği yapılması"
+    },
+    "raw_text": "Erken karışık dişlenme döneminde olan hastanın üst 4 kesici dişinin çapraz kapanışta olduğu görülüyor. Üst anterior çapraşıklığı 2 mm olan hastada ANB 2°, SNA 80°, SN-GoGn 32°, 1-SN 94° ve IMPA 90° olarak ölçülüyor. İstirahat pozisyonunda hafif konveks bir profile sahip olan hastada, kapanış esnasında 11 ve 21 numaralı dişlerinde erken temas saptanıyor. Bu hastada aşağıdaki tedavi seçeneklerinden hangisinin tercih edilmesi en uygundur? A) Hareketli vidalı bir plak ile üst kesici dişlere tipping hareketi yaptırılması B) Yüz maskesi ile üst çenenin öne alınması C) Frankel-III apareyi ile alt çene gelişiminin engellenmesi D) Yalnızca erken temasların kaldırılarak hastanın dişlenmesinin takip edilmesi E) Süt dişlerinden aşındırma yapılarak sürme rehberliği yapılması"
+  },
+  {
+    "id": "dus_2025-1_q101",
+    "soru_no": 101,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin pulpa hastalıklarının gelişmesine etkisi diğerlerine göre daha azdır?",
+    "secenekler": {
+      "A": "Kavite preparasyonu esnasında açığa çıkan pulpanın tükürük ile kontaminasyonu",
+      "B": "Çürüğün uzaklaştırılması sonrasında kalan dentin kalınlığının 0,5 mm’den az olması",
+      "C": "Kuron preparasyonu esnasında ısı artışı",
+      "D": "Ortodontik tedavi esnasında fizyolojik toleransı aşan kuvvetlerin uygulanması",
+      "E": "Fissür örtücülerin uygulanması"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin pulpa hastalıklarının gelişmesine etkisi diğerlerine göre daha azdır? A) Kavite preparasyonu esnasında açığa çıkan pulpanın tükürük ile kontaminasyonu B) Çürüğün uzaklaştırılması sonrasında kalan dentin kalınlığının 0,5 mm’den az olması C) Kuron preparasyonu esnasında ısı artışı D) Ortodontik tedavi esnasında fizyolojik toleransı aşan kuvvetlerin uygulanması E) Fissür örtücülerin uygulanması"
+  },
+  {
+    "id": "dus_2025-1_q102",
+    "soru_no": 102,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki pulpa hastalıkları – ilişkilendirilmiş ağrı özellikleri eşleştirmelerinden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Geri dönüşümsüz pulpitis – Soğuk ve sıcak uyaran ile uzun süreli ağrı",
+      "B": "Geri dönüşümsüz pulpitis – Gece uykuda başlayan ağrı",
+      "C": "Geri dönüşümlü pulpitis – Tatlı/ekşi uyaran ile kısa süreli ağrı",
+      "D": "Geri dönüşümsüz pulpitis – Sıcak uyaran ile artan ağrının soğuk uyaran ile hafiflemesi",
+      "E": "Geri dönüşümlü pulpitis – Sürekli devam eden kendiliğinden oluşan ağrı"
+    },
+    "raw_text": "Aşağıdaki pulpa hastalıkları – ilişkilendirilmiş ağrı özellikleri eşleştirmelerinden hangisi yanlıştır? A) Geri dönüşümsüz pulpitis – Soğuk ve sıcak uyaran ile uzun süreli ağrı B) Geri dönüşümsüz pulpitis – Gece uykuda başlayan ağrı C) Geri dönüşümlü pulpitis – Tatlı/ekşi uyaran ile kısa süreli ağrı D) Geri dönüşümsüz pulpitis – Sıcak uyaran ile artan ağrının soğuk uyaran ile hafiflemesi E) Geri dönüşümlü pulpitis – Sürekli devam eden kendiliğinden oluşan ağrı"
+  },
+  {
+    "id": "dus_2025-1_q103",
+    "soru_no": 103,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Vertikal kök kırıkları ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Aşırı geniş kök kanal preparasyonu yapılmış dişlerde vertikal kök kırığı riski fazladır.",
+      "B": "Alveol kemiğinde istenmeyen harabiyetin önlenmesi için vertikal kök kırığı mevcut olan dişin vakit kaybetmeden çekilmesi gerekmektedir.",
+      "C": "Erken dönemde vertikal kök kırığını tespit etmek kolaydır.",
+      "D": "Vertikal kök kırıklarıyla ilişkili erken dönemde oluşan ceplerin tespitinde esnek periodontal sondlar tercih edilmelidir.",
+      "E": "Vertikal kök kırığının kesin teşhisi için diğer klinik ve radyografik yöntemler yetersiz kaldığında keşifsel cerrahiye başvurulabilir."
+    },
+    "raw_text": "Vertikal kök kırıkları ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Aşırı geniş kök kanal preparasyonu yapılmış dişlerde vertikal kök kırığı riski fazladır. B) Alveol kemiğinde istenmeyen harabiyetin önlenmesi için vertikal kök kırığı mevcut olan dişin vakit kaybetmeden çekilmesi gerekmektedir. C) Erken dönemde vertikal kök kırığını tespit etmek kolaydır. D) Vertikal kök kırıklarıyla ilişkili erken dönemde oluşan ceplerin tespitinde esnek periodontal sondlar tercih edilmelidir. E) Vertikal kök kırığının kesin teşhisi için diğer klinik ve radyografik yöntemler yetersiz kaldığında keşifsel cerrahiye başvurulabilir."
+  },
+  {
+    "id": "dus_2025-1_q104",
+    "soru_no": 104,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. İlişkide bulunduğu periodontal dokunun sağlık durumu II. Perforasyonun boyutu III. Perforasyonun konumu IV. Perforasyon oluşumundan itibaren geçen süre Yukarıdaki kriterlerden hangileri perforasyon tedavisinin prognozunda etkilidir?",
+    "secenekler": {
+      "A": "I ve II",
+      "B": "III ve IV",
+      "C": "I, II ve III",
+      "D": "II ve III",
+      "E": "I, II, III ve IV"
+    },
+    "raw_text": "I. İlişkide bulunduğu periodontal dokunun sağlık durumu II. Perforasyonun boyutu III. Perforasyonun konumu IV. Perforasyon oluşumundan itibaren geçen süre Yukarıdaki kriterlerden hangileri perforasyon tedavisinin prognozunda etkilidir? A) I ve II B) III ve IV C) I, II ve III D) II ve III E) I, II, III ve IV"
+  },
+  {
+    "id": "dus_2025-1_q105",
+    "soru_no": 105,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Doku sıvılarından etkilenmemelidir. II. Radyografide izlenebilmesi için radyolusent olmalıdır. III. Perir",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "I. Doku sıvılarından etkilenmemelidir. II. Radyografide izlenebilmesi için radyolusent olmalıdır. III. Perir"
+  },
+  {
+    "id": "dus_2025-1_q106",
+    "soru_no": 106,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Hücreli ve hücresiz sement ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Hücreli sement hücresiz sementten daha az kalsifiyedir.",
+      "B": "Hücresiz sement, dişler oklüzyona gelmeden, hücreli sement ise dişler oklüzyona geldikten sonra oluşur.",
+      "C": "Hücresiz sementin ana fonksiyonu ankraj iken hücreli sementin adaptasyondur.",
+      "D": "Sharpey lifleri hücresiz sementte, hücreli sementten daha az sayıda bulunur.",
+      "E": "Hücresiz sement çoğunlukla kökün servikalinde bulunurken, hücreli sement ise çoğunlukla kökün apikalinde ve çok köklü dişlerde furkasyon bölgesinde bulunur."
+    },
+    "raw_text": "Hücreli ve hücresiz sement ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Hücreli sement hücresiz sementten daha az kalsifiyedir. B) Hücresiz sement, dişler oklüzyona gelmeden, hücreli sement ise dişler oklüzyona geldikten sonra oluşur. C) Hücresiz sementin ana fonksiyonu ankraj iken hücreli sementin adaptasyondur. D) Sharpey lifleri hücresiz sementte, hücreli sementten daha az sayıda bulunur. E) Hücresiz sement çoğunlukla kökün servikalinde bulunurken, hücreli sement ise çoğunlukla kökün apikalinde ve çok köklü dişlerde furkasyon bölgesinde bulunur."
+  },
+  {
+    "id": "dus_2025-1_q107",
+    "soru_no": 107,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Odontoblastlar sayıca azalır. II. Sekonder dentin birikmesinden dolayı pulpa odasının hacmi azalır. III. Miyelinli lifler azalıp, miyelinsiz lifler artar. IV. Pulpanın dış uyaranlara karşı cevabı azalır. Yaş artışıyla birlikte diş dokularında görülen değişikliklerle ilgili yukarıdaki ifadelerden hangileri doğrudur?",
+    "secenekler": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "I, II ve III",
+      "D": "I, II ve IV",
+      "E": "I, II, III ve IV"
+    },
+    "raw_text": "I. Odontoblastlar sayıca azalır. II. Sekonder dentin birikmesinden dolayı pulpa odasının hacmi azalır. III. Miyelinli lifler azalıp, miyelinsiz lifler artar. IV. Pulpanın dış uyaranlara karşı cevabı azalır. Yaş artışıyla birlikte diş dokularında görülen değişikliklerle ilgili yukarıdaki ifadelerden hangileri doğrudur? A) I ve II B) II ve III C) I, II ve III D) I, II ve IV E) I, II, III ve IV"
+  },
+  {
+    "id": "dus_2025-1_q108",
+    "soru_no": 108,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerin hangisinde 110-120-130-140 numaralı kanal eğelerinin renk kodları doğru sırada verilmiştir?",
+    "secenekler": {
+      "A": "Sarı-Mavi-Yeşil-Siyah",
+      "B": "Mavi-Yeşil-Siyah-Beyaz",
+      "C": "Kırmızı-Mavi-Yeşil-Siyah",
+      "D": "Beyaz-Sarı-Mavi- Yeşil",
+      "E": "Yeşil-Siyah-Beyaz-Sarı"
+    },
+    "raw_text": "Aşağıdakilerin hangisinde 110-120-130-140 numaralı kanal eğelerinin renk kodları doğru sırada verilmiştir? A) Sarı-Mavi-Yeşil-Siyah B) Mavi-Yeşil-Siyah-Beyaz C) Kırmızı-Mavi-Yeşil-Siyah D) Beyaz-Sarı-Mavi- Yeşil E) Yeşil-Siyah-Beyaz-Sarı"
+  },
+  {
+    "id": "dus_2025-1_q109",
+    "soru_no": 109,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "I. Isırma testi ile dişin vital ya da devital olduğu belirlenebilir. II. Perküsyon testine pozitif cevap alınması periodontal ligamentin inflamasyonunu belirtir. III. Anestezi testi dişin vitalitesi hakkında bilgi verir. Tanı testleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur?",
+    "secenekler": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "Yalnız III",
+      "D": "I ve II",
+      "E": "II ve III"
+    },
+    "raw_text": "I. Isırma testi ile dişin vital ya da devital olduğu belirlenebilir. II. Perküsyon testine pozitif cevap alınması periodontal ligamentin inflamasyonunu belirtir. III. Anestezi testi dişin vitalitesi hakkında bilgi verir. Tanı testleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur? A) Yalnız I B) Yalnız II C) Yalnız III D) I ve II E) II ve III"
+  },
+  {
+    "id": "dus_2025-1_q110",
+    "soru_no": 110,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Endodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Erişkinlerde aşağıdakilerin hangisinde kökte iltihabi rezorpsiyon görülmesi en az olasıdır?",
+    "secenekler": {
+      "A": "Avülsiyon",
+      "B": "Lateral lüksasyon",
+      "C": "Ekstrüzyon",
+      "D": "Sublüksasyon",
+      "E": "İntrüzyon"
+    },
+    "raw_text": "Erişkinlerde aşağıdakilerin hangisinde kökte iltihabi rezorpsiyon görülmesi en az olasıdır? A) Avülsiyon B) Lateral lüksasyon C) Ekstrüzyon D) Sublüksasyon E) İntrüzyon"
+  },
+  {
+    "id": "dus_2025-1_q111",
+    "soru_no": 111,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki sendromlardan hangisi sklerotik yapıda kemik, kalın ve kıvırcık saçlar, mine defektleri ve taurodontizmle karakterizedir?",
+    "secenekler": {
+      "A": "Gardner sendromu",
+      "B": "Tricho-dento-osseoz sendrom",
+      "C": "Christ-Siemens-Touraine sendromu",
+      "D": "Witkop sendromu",
+      "E": "Stickler sendromu"
+    },
+    "raw_text": "Aşağıdaki sendromlardan hangisi sklerotik yapıda kemik, kalın ve kıvırcık saçlar, mine defektleri ve taurodontizmle karakterizedir? A) Gardner sendromu B) Tricho-dento-osseoz sendrom C) Christ-Siemens-Touraine sendromu D) Witkop sendromu E) Stickler sendromu"
+  },
+  {
+    "id": "dus_2025-1_q112",
+    "soru_no": 112,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisi nöral krest hücreleri kökenli, genellikle yaşamın ilk yılında ve maksillada hızlı bir şekilde büyüyerek kemik yıkımı ve mavi-siyah pigmentasyona neden olan ve yüksek tekrarlama potansiyeli gösteren en olası çocukluk çağı patolojisidir?",
+    "secenekler": {
+      "A": "Kondromiksoid fibroma",
+      "B": "Granüler hücreli tümör",
+      "C": "Oral mukozal nöroma",
+      "D": "Melanotik nöroektodermal tümör",
+      "E": "Desmoplastik fibroma"
+    },
+    "raw_text": "Aşağıdakilerden hangisi nöral krest hücreleri kökenli, genellikle yaşamın ilk yılında ve maksillada hızlı bir şekilde büyüyerek kemik yıkımı ve mavi-siyah pigmentasyona neden olan ve yüksek tekrarlama potansiyeli gösteren en olası çocukluk çağı patolojisidir? A) Kondromiksoid fibroma B) Granüler hücreli tümör C) Oral mukozal nöroma D) Melanotik nöroektodermal tümör E) Desmoplastik fibroma"
+  },
+  {
+    "id": "dus_2025-1_q113",
+    "soru_no": 113,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Sağlıklı bir bireyde 2. küçük azı diş eksikliğinin diş gelişiminin hangi safhasındaki bozulma sonucu gözlenmiş olması en olasıdır?",
+    "secenekler": {
+      "A": "Şapka",
+      "B": "Matürasyon",
+      "C": "Çan",
+      "D": "Apozisyon",
+      "E": "Başlangıç"
+    },
+    "raw_text": "Sağlıklı bir bireyde 2. küçük azı diş eksikliğinin diş gelişiminin hangi safhasındaki bozulma sonucu gözlenmiş olması en olasıdır? A) Şapka B) Matürasyon C) Çan D) Apozisyon E) Başlangıç"
+  },
+  {
+    "id": "dus_2025-1_q114",
+    "soru_no": 114,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Yüksek çürük riskine sahip 8 yaşındaki bir çocukta ICDAS 1 (International Caries Detection and Assessment System 1) tanısı alan üst daimî 1. molar diş için aşağıdaki yaklaşımlardan hangisi en uygundur?",
+    "secenekler": {
+      "A": "Kompozit restorasyon uygulaması yapılmalıdır.",
+      "B": "Paslanmaz çelik kron uygulaması yapılmalıdır.",
+      "C": "Fissür örtücü uygulaması yapılmalıdır.",
+      "D": "Zirkonyum kron uygulaması yapılmalıdır.",
+      "E": "Tedaviye gerek yoktur."
+    },
+    "raw_text": "Yüksek çürük riskine sahip 8 yaşındaki bir çocukta ICDAS 1 (International Caries Detection and Assessment System 1) tanısı alan üst daimî 1. molar diş için aşağıdaki yaklaşımlardan hangisi en uygundur? A) Kompozit restorasyon uygulaması yapılmalıdır. B) Paslanmaz çelik kron uygulaması yapılmalıdır. C) Fissür örtücü uygulaması yapılmalıdır. D) Zirkonyum kron uygulaması yapılmalıdır. E) Tedaviye gerek yoktur."
+  },
+  {
+    "id": "dus_2025-1_q115",
+    "soru_no": 115,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdaki oral lezyonlardan hangisinin B12 vitamini eksikliğinde görülebilmesi en olasıdır?",
+    "secenekler": {
+      "A": "Atrofik glossit",
+      "B": "Koplik lekeleri",
+      "C": "Kaposi sarkomu",
+      "D": "Piyojenik granülom",
+      "E": "Hemanjiyom"
+    },
+    "raw_text": "Aşağıdaki oral lezyonlardan hangisinin B12 vitamini eksikliğinde görülebilmesi en olasıdır? A) Atrofik glossit B) Koplik lekeleri C) Kaposi sarkomu D) Piyojenik granülom E) Hemanjiyom"
+  },
+  {
+    "id": "dus_2025-1_q116",
+    "soru_no": 116,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Gümüş diamin florür ile birlikte potasyum iyodürün kullanımının en olası nedeni aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Diş renklenmesini azaltmak",
+      "B": "Çürük oluşumunu durdurmak",
+      "C": "Dentin hassasiyetini azaltmak",
+      "D": "Hidroksiapatit oluşumunu hızlandırmak",
+      "E": "Pulpa irritasyonunu azaltmak"
+    },
+    "raw_text": "Gümüş diamin florür ile birlikte potasyum iyodürün kullanımının en olası nedeni aşağıdakilerden hangisidir? A) Diş renklenmesini azaltmak B) Çürük oluşumunu durdurmak C) Dentin hassasiyetini azaltmak D) Hidroksiapatit oluşumunu hızlandırmak E) Pulpa irritasyonunu azaltmak"
+  },
+  {
+    "id": "dus_2025-1_q117",
+    "soru_no": 117,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Daimî dişlerde post-travmatik komplikasyonlar ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "secenekler": {
+      "A": "Pulpa kanal obliterasyonu görülen dişlerde elektrikli pulpa testlerine yanıt azalmıştır.",
+      "B": "Pulpa nekrozu en yaygın post-travmatik komplikasyondur.",
+      "C": "İnflamatuvar kök rezorpsiyonu sıklıkla ciddi lüksasyon yaralanmaları sonrası görülür.",
+      "D": "Ankiloz görülen dişlerde dekoronasyon ile alveoler konturun korunması sağlanabilir.",
+      "E": "Servikal kök rezorpsiyonu erken dönem post-travmatik komplikasyondur."
+    },
+    "raw_text": "Daimî dişlerde post-travmatik komplikasyonlar ile ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Pulpa kanal obliterasyonu görülen dişlerde elektrikli pulpa testlerine yanıt azalmıştır. B) Pulpa nekrozu en yaygın post-travmatik komplikasyondur. C) İnflamatuvar kök rezorpsiyonu sıklıkla ciddi lüksasyon yaralanmaları sonrası görülür. D) Ankiloz görülen dişlerde dekoronasyon ile alveoler konturun korunması sağlanabilir. E) Servikal kök rezorpsiyonu erken dönem post-travmatik komplikasyondur."
+  },
+  {
+    "id": "dus_2025-1_q118",
+    "soru_no": 118,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Koşarken düşmeye bağlı diş yaralanması şikâyetiyle getirilen 4 yaşındaki erkek çocuğun intraoral muayenesinde sol üst süt santral kesici dişin soketi dışına kısmen yer değiştirdiği ve yaklaşık 2 mm uz",
+    "secenekler": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "raw_text": "Koşarken düşmeye bağlı diş yaralanması şikâyetiyle getirilen 4 yaşındaki erkek çocuğun intraoral muayenesinde sol üst süt santral kesici dişin soketi dışına kısmen yer değiştirdiği ve yaklaşık 2 mm uz"
+  },
+  {
+    "id": "dus_2025-1_q119",
+    "soru_no": 119,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Aşağıdakilerden hangisinin Down sendromu olan çocuk ve adölesanlarda sık gözlenen kraniyofasiyal ve oral bulgulardan biri olması en az olasıdır?",
+    "secenekler": {
+      "A": "Fissürlü dil",
+      "B": "Genişlemiş damak kubbesi",
+      "C": "Mandibular prognatizm",
+      "D": "Burun köprüsünde çökme",
+      "E": "Sürekli diş sürmesinde gecikme"
+    },
+    "raw_text": "Aşağıdakilerden hangisinin Down sendromu olan çocuk ve adölesanlarda sık gözlenen kraniyofasiyal ve oral bulgulardan biri olması en az olasıdır? A) Fissürlü dil B) Genişlemiş damak kubbesi C) Mandibular prognatizm D) Burun köprüsünde çökme E) Sürekli diş sürmesinde gecikme"
+  },
+  {
+    "id": "dus_2025-1_q120",
+    "soru_no": 120,
+    "yil": "2025-1",
+    "donem": "Bahar 2025",
+    "bolum": "Klinik Bilimler",
+    "ders": "Pedodonti",
+    "kaynak_pdf": "DUS 2025 1. Dönem Soruları (2).pdf",
+    "iptal": false,
+    "soru_metni": "Kliniğe erken diş kaybı şikâyetiyle getirilen 8 yaşındaki kız çocuğun anamnezinden otozomal dominant geçişli kollajen sentezi bozukluğu nedeniyle bağ dokusu kaynaklı kalıtsal bir hastalığının olduğu öğreniliyor. Klinik muayenesinde deri elastikiyetinde artma, süt molar dişlerinin periodontal yıkım nedeniyle erken kaybı, temporomandibular ekleminde hipermobilite bulunduğu gözleniyor. Bu çocuktaki en olası sendrom aşağıdakilerden hangisidir?",
+    "secenekler": {
+      "A": "Down sendromu",
+      "B": "Chediak-Higashi sendromu",
+      "C": "Crohn sendromu",
+      "D": "Ehlers-Danlos sendromu",
+      "E": "Papillon-Lefévre sendromu"
+    },
+    "raw_text": "Kliniğe erken diş kaybı şikâyetiyle getirilen 8 yaşındaki kız çocuğun anamnezinden otozomal dominant geçişli kollajen sentezi bozukluğu nedeniyle bağ dokusu kaynaklı kalıtsal bir hastalığının olduğu öğreniliyor. Klinik muayenesinde deri elastikiyetinde artma, süt molar dişlerinin periodontal yıkım nedeniyle erken kaybı, temporomandibular ekleminde hipermobilite bulunduğu gözleniyor. Bu çocuktaki en olası sendrom aşağıdakilerden hangisidir? A) Down sendromu B) Chediak-Higashi sendromu C) Crohn sendromu D) Ehlers-Danlos sendromu E) Papillon-Lefévre sendromu"
+  }
+]

@@ -1,0 +1,48 @@
+# Güvenlik — API Anahtarları ve Gizli Bilgiler
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+wheels/
+
+# Geçici Alanlar
+tmp/
+*.log
+*.tmp
+
+# IDE ve Sistem Dosyaları
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Docker
+*.dockerignore
+
+# Pinecone / AI Loglar
+*.cache
+
+# Log Dosyaları
+*log.txt
+
+# Geçici Çalışma Alanları
+scratch/
+vektörlenecek/*
+!vektörlenecek/.gitkeep
+
+# Çalıştırılabilir Dosyalar
+*.exe

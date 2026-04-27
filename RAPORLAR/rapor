@@ -1,0 +1,25 @@
+Antigravity projelerinde `gemini.md` (veya `claude.md`, `agents.md`) dosyası, sistemin rotasını belirleyen bir "beyin" veya projenin "anayasası" olarak işlev görür. Ajanın projeye yaklaşımını, davranış sınırlarını ve kullanacağı teknolojileri bu dosya belirler. 
+
+Kaynaklara göre, sadece çalışır bir dosya değil, **en ideal, verimli ve profesyonel `gemini.md` dosyasını oluşturmak** için şu stratejik adımları ve yapıları uygulamalısınız:
+
+**1. "Az Çoktur" (Less is More) Prensibini Benimseyin**
+İdeal bir `gemini.md` dosyasının en önemli özelliği **şişkin olmamasıdır**. Dosyayı 700 satırlık uzun metinlerle doldurmak, yapay zeka ajanının bağlam penceresini (context window) gereksiz yere doldurur, maliyetli token israfına yol açar ve ajanın halüsinasyon görmesine (context rot) sebep olur.
+*   Uzun yönergeler yerine kısa, net ve hap niteliğinde (yüksek bilgi yoğunluklu) talimatlar kullanın.
+*   Ajanın tüm detayları bu dosyada okuması yerine, gerektiğinde okuyabileceği alt dosyalar (`rules`, `skills` vb.) kurarak bu dosyayı yalnızca ana yönlendirici bir harita olarak hafif tutun.
+
+**2. Birlikte Çalışabilirlik (Interoperability) İçin Klonlayın**
+Sisteminizi en esnek hale getirmek için hazırladığınız ideal dosyanın ismine takılı kalmayın. İçeriği tamamen aynı olan bu sistem yönergesi dosyasını; **`gemini.md`, `claude.md`, `agents.md` ve hatta `cursor.md`** adlarında çoğaltarak projenizin kök dizinine yerleştirin. Bu sayede Antigravity içinde GPT, Claude veya Gemini gibi farklı modeller arasında geçiş yaptığınızda, her model kendi adını taşıyan anayasayı anında bulup projeye kusursuzca adapte olacaktır.
+
+**3. İdeal `gemini.md` Anatomisi (İçermesi Gereken Bölümler)**
+En verimli sistem promptu dosyası şu başlıkları ve mantığı içermelidir:
+*   **Kimlik ve Misyon (Persona):** Ajanın nasıl davranacağını netleştirin. Örneğin "Sen güvenilir sonuçlar üreten deterministik bir sistem pilotusun" veya güvenlik odaklı bir projeyse "Sen paranoyak bir güvenlik uzmanısın" gibi katı kimlikler atayın.
+*   **Katı Kurallar ve Kırmızı Çizgiler:** Ajanın asla yapmaması gerekenleri tanımlayın. Örneğin; "Benim açık onayım olmadan asla terminal komutu çalıştırma", ".env dosyalarını asla silme" veya "`rm` (silme) gibi potansiyel yıkıcı komutları asla kullanma" diyerek projeyi güvenceye alın.
+*   **Proje Mimarisi ve Bağlamı:** Ajanın her defasında neyi inşa ettiğini anlaması için kullanılacak teknolojileri (tech stack), proje fikrini, renk paletlerini ve hedefleri kısaca özetleyin.
+*   **Kendi Kendini Onarma (Self-Annealing / Error Handling):** Ajan kod yazarken bir API hatasıyla veya bug ile karşılaştığında panikleyip size dönmek yerine, bunu otonom olarak nasıl çözmesi gerektiğini belirten hata ayıklama süreçleri (self-healing) tanımlayın.
+*   **Dosya Yapısı Rehberi:** Ajanın geçici dosyalar için `tmp/` klasörünü, yetenekleri için `skills/` klasörünü kullanması gerektiği gibi dizin standartlarınızı belirtin.
+
+**4. Sürekli Evrimleşen (Dinamik) Bir Yapı Kurun**
+İdeal `gemini.md` dosyası durağan değildir. Çalışırken ajanın tekrar eden (2-3 defa üst üste) bir hata yaptığını veya bir konuyu unuttuğunu fark ederseniz, hatayı sadece o anlık sohbette çözmeyin. Ajana açıkça *"Bu hatayı bir daha yapmaman için mevcut `gemini.md` dosyasına yeni bir kural ekle"* komutunu verin. Bu sayede anayasa dosyanız sürekli öğrenen ve her projede daha da kusursuzlaşan bir tecrübe deposuna dönüşür.
+
+**5. Yapay Zekaya Yazdırın (Otomasyon)**
+Sıfırdan mükemmel bir bağlam (context) mühendisliği yapmak zor geliyorsa, bunu yapay zekanın kendisine devredebilirsiniz. Proje fikrinizi, kullanmak istediğiniz araçları ve hedeflerinizi planlama modundaki ajana veya AI Studio'ya anlatarak, bu projeyi yönetebilecek en optimal `gemini.md` veya sistem promptu dosyasını sizin için üretmesini isteyebilirsiniz.
