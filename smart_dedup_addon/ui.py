@@ -67,7 +67,8 @@ class SmartDedupWindow(QDialog):
             self.update_ui(f"Tamamlandı! {len(pairs)} aday bulundu.", 100)
             mw.taskman.run_on_main(lambda: self.display_results(pairs))
         except Exception as e:
-            mw.taskman.run_on_main(lambda: self.show_error(str(e)))
+            err_msg = str(e)
+            mw.taskman.run_on_main(lambda: self.show_error(err_msg))
 
     def update_ui(self, text, val):
         mw.taskman.run_on_main(lambda: self.status_label.setText(text))
