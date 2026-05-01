@@ -4,6 +4,7 @@ import urllib.request
 import urllib.error
 import math
 from aqt import mw
+from anki.utils import strip_html
 
 class SmartDedupLogic:
     def __init__(self, api_key, threshold=0.88):
@@ -40,6 +41,10 @@ class SmartDedupLogic:
                     text_to_vector = f"{note[front_field]} {note[back_field]}"
                     display_q = note[front_field]
                     display_a = note[back_field]
+
+                text_to_vector = strip_html(text_to_vector).strip()
+                if not text_to_vector:
+                    continue
 
                 extracted_data.append({
                     "nid": nid, "guid": note.guid, "text_to_vector": text_to_vector,
