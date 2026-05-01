@@ -11,8 +11,10 @@ import fitz, re, json, os, argparse, io, sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 # ── Sabit Yollar ──────────────────────────────────────────────
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(PROJECT_DIR, "scripts"))
 PDF_DIR  = r"C:\Users\FURKAN\Desktop\DUS\Çıkmış\dus çıkmış\dus eski"
-JSON_DIR = r"C:\Users\FURKAN\Desktop\Projeler\Pinecone\dus_jsonlari"
+JSON_DIR = os.path.join(PROJECT_DIR, "dus_jsonlari")
 
 # ── Ders / Bölüm Tablosu ─────────────────────────────────────
 DERS_MAP = [
@@ -342,6 +344,60 @@ def cmd_patch(args):
         json.dump(records, f, ensure_ascii=False, indent=2)
     print(f"  → {json_path} güncellendi.")
 
+MYPPDFS_HOST = os.environ.get("MYPPDFS_HOST", "myppdfs-0crkhvy.svc.aped-4627-b74a.pinecone.io")
+UPLOAD_BATCH = 96  # Pinecone upsert batch boyutu
+
+def cmd_upload(args):
+    """JSON dosyasını myppdfs/cikmis namespace'ine yükle."""
+    from pinecone import Pinecone
+    from embedding_utils import get_local_embedder
+
+    json_path = args.upload
+    if not os.path.isabs(json_path):
+        json_path = os.path.join(JSON_DIR, json_path)
+
+    if not os.path.exists(json_path):
+        print(f"[HATA] JSON bulunamadı: {json_path}")
+        return
+
+    api_key = os.environ.get("PINECONE_API_KEY", "")
+    if not api_key:
+        print("[HATA] PINECONE_API_KEY ortam değişkeni ayarlanmamış.")
+        return
+
+    records = json.load(open(json_path, encoding="utf-8"))
+    active  = [r for r in records if not r.get("iptal") and r.get("raw_text", "").strip()]
+    print(f"Upload: {json_path}")
+    print(f"  Aktif kayıt: {len(active)}/{len(records)}")
+
+    embedder = get_local_embedder()
+    pc       = Pinecone(api_key=api_key)
+    index    = pc.Index(host=MYPPDFS_HOST)
+
+    vectors  = []
+    for r in active:
+        vec = embedder.embed_text(r["raw_text"], is_query=False)
+        vectors.append({
+            "id": r["id"],
+            "values": vec,
+            "metadata": {
+                "text":    r["raw_text"],
+                "soru_no": r["soru_no"],
+                "yil":     r["yil"],
+                "donem":   r["donem"],
+                "bolum":   r["bolum"],
+                "ders":    r["ders"],
+            }
+        })
+
+    batches = [vectors[i:i + UPLOAD_BATCH] for i in range(0, len(vectors), UPLOAD_BATCH)]
+    for i, batch in enumerate(batches, 1):
+        index.upsert(vectors=batch, namespace="cikmis")
+        print(f"  Batch {i}/{len(batches)} → {len(batch)} vektör")
+
+    print(f"  Toplam yüklendi: {len(vectors)} vektör → myppdfs/cikmis")
+
+
 def main():
     p = argparse.ArgumentParser(description="DUS Çıkmış Soru Pipeline")
     p.add_argument("--pdf",       help="PDF dosya adı (PDF_DIR içinde)")
@@ -351,12 +407,15 @@ def main():
     p.add_argument("--audit",     help="JSON dosyasını denetle")
     p.add_argument("--patch-md",  dest="patch_md", help="MD dosya adı (patch için)")
     p.add_argument("--json",      help="Patch uygulanacak JSON dosyası")
+    p.add_argument("--upload",    help="JSON dosyasını myppdfs/cikmis namespace'ine yükle")
     args = p.parse_args()
 
     if args.audit:
         cmd_audit(args)
     elif args.patch_md:
         cmd_patch(args)
+    elif args.upload:
+        cmd_upload(args)
     elif args.pdf:
         cmd_parse(args)
     else:

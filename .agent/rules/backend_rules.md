@@ -38,8 +38,8 @@ Bu parametreler tüm upload scriptlerinde sabit kalır.
 
 ## 6. Namespace İzolasyonu
 - Her branş kendi namespace'inde tutulur (karışma riski yok)
-- Yeni branş eklerken yeni namespace aç, `dus-data` veya `claude_memory`'ye veri ekleme
+- Yeni branş eklerken yeni namespace aç, `chathistory` veya `dus-memory`'ye veri ekleme
 
 ## 7. Kod Değişikliği Sonrası
 - Önemli değişiklikleri `Gemini.MD`'nin "Görev Kuyruğu" veya "Oturum Raporu" bölümüne yaz
-- Mimari karar aldıysan `mybrain/dus-data`'ya kaydet
+- Mimari karar aldıysan `vektörlenecek/` klasörüne kaydet ve senkronize et

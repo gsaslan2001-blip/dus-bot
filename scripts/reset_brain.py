@@ -2,11 +2,13 @@
 import os
 import sys
 from pinecone import Pinecone
-from config import PINECONE_API_KEY, MYBRAIN_HOST
 
 def reset_namespaces():
     print("🧹 MyBrain Reset Protocol başlatılıyor...")
     
+    PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
+    MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io")
+
     if not PINECONE_API_KEY:
         print("❌ PINECONE_API_KEY bulunamadı!")
         return
@@ -14,8 +16,22 @@ def reset_namespaces():
     pc = Pinecone(api_key=PINECONE_API_KEY)
     index = pc.Index(host=MYBRAIN_HOST)
     
-    namespaces = ["claude_memory", "dus-data"]
+    # Guncel namespace listesi (Gemini.MD)
+    namespaces = [
+        "dus-curriculum", "dus-memory", "dus-progress", 
+        "dus-strategy", "dus-reference", "telos", 
+        "chathistory", "claude-profile"
+    ]
     
+    print("⚠️ DİKKAT: Bu işlem aşağıdaki namespace'leri TAMAMEN SİLECEKTİR:")
+    for ns in namespaces:
+        print(f"  - {ns}")
+    
+    confirm = input("Emin misiniz? (evet/HAYIR): ")
+    if confirm.lower() != "evet":
+        print("İptal edildi.")
+        return
+
     for ns in namespaces:
         try:
             print(f"🗑️ Namespace siliniyor: {ns}...")

@@ -2,9 +2,16 @@
 auto_sync_dus.py — Günlük otomatik sync (Windows Task Scheduler tarafından çağrılır)
 Sadece son 25 saatte değişen dosyaları yükler (mtime kontrolü manifest'te).
 """
-import subprocess, sys, logging
+import subprocess, sys, logging, codecs
 from pathlib import Path
 from datetime import datetime
+
+# Windows UTF-8 Fix
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+    except Exception:
+        pass
 
 LOG_FILE = Path(__file__).parent.parent / "logs" / "auto_sync.log"
 LOG_FILE.parent.mkdir(exist_ok=True)

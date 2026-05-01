@@ -1,80 +1,63 @@
 """
-dus_uploader.py — .claude/DUS → mybrain Pinecone (Yerel E5)
+dus_uploader.py — .claude/DUS -> mybrain Pinecone (Yerel E5)
 Manifest tabanlı overwrite: dosya değiştiğinde eski chunk'lar silinir, yenisi yazılır.
-
-Kullanım:
-  python scripts/dus_uploader.py --dry-run
-  python scripts/dus_uploader.py                      # tümünü sync et
-  python scripts/dus_uploader.py --namespace dus-progress
-  python scripts/dus_uploader.py --file PROGRESS.md
-  python scripts/dus_uploader.py --chathistory        # vektörlenecek/ → chathistory
 """
 
-import os, sys, json, re, hashlib, argparse, time
+import os
+import sys
+import json
+import re
+import hashlib
+import argparse
+import time
+import logging
+import functools
+import codecs
 from pathlib import Path
 from datetime import datetime
+from typing import List, Tuple, Optional, Dict, Any
 
-# ── Yol sabitleri ─────────────────────────────────────────────────────────────
-SCRIPT_DIR    = Path(__file__).parent
-PROJECT_DIR   = SCRIPT_DIR.parent
-DUS_ROOT      = Path(r"C:\Users\FURKAN\.claude\DUS")
-TELOS_ROOT    = Path(r"C:\Users\FURKAN\.claude\PAI\USER\TELOS")
-VEKTORLENECEK = Path(r"C:\Users\FURKAN\Desktop\Projeler\Pinecone\vektörlenecek")
-MANIFEST_PATH = PROJECT_DIR / "scripts" / "dus_manifest.json"
-MYBRAIN_HOST  = "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io"
+from dotenv import load_dotenv
 
-# ── Pinecone ──────────────────────────────────────────────────────────────────
+# --- Initialization & Configuration ---
+load_dotenv()
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logger = logging.getLogger(__name__)
+
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(SCRIPT_DIR))
+
+# Local modules
 try:
-    from config import PINECONE_API_KEY
+    from embedding_utils import get_local_embedder
 except ImportError:
-    PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
+    logger.error("embedding_utils module not found. Make sure it is in SCRIPT_DIR.")
+    sys.exit(1)
 
 from pinecone import Pinecone
 
-# Sadece local embedder — Llama/bulut singleton'u atla
-import sys as _sys, importlib as _importlib
-# embedding_utils modül-düzeyinde singleton başlatmasını engellemek için
-# doğrudan LocalE5Embedder sınıfını yükleyip örnekliyoruz
-def _get_local_embedder():
-    import os
-    os.environ.setdefault("HF_HUB_OFFLINE", "1")
-    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
-    import torch
-    from sentence_transformers import SentenceTransformer
-    E5_SNAPSHOT = (
-        r"C:\Users\FURKAN\.cache\huggingface\hub"
-        r"\models--intfloat--multilingual-e5-large"
-        r"\snapshots\3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3"
-    )
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"[embedder] Local E5 yükleniyor ({device})...", flush=True)
-    model = SentenceTransformer(E5_SNAPSHOT, device=device, local_files_only=True)
-    print("[embedder] Model hazır.", flush=True)
-    return model
+# --- Environment & Constants ---
+HOME_DIR = Path.home()
+DUS_ROOT = Path(os.environ.get("DUS_ROOT", HOME_DIR / ".claude" / "DUS"))
+TELOS_ROOT = Path(os.environ.get("TELOS_ROOT", HOME_DIR / ".claude" / "PAI" / "USER" / "TELOS"))
+VEKTORLENECEK = Path(os.environ.get("VEKTORLENECEK_ROOT", PROJECT_DIR / "vektörlenecek"))
 
-_e5_model = None
-def get_e5_model():
-    global _e5_model
-    if _e5_model is None:
-        _e5_model = _get_local_embedder()
-    return _e5_model
+MANIFEST_PATH = SCRIPT_DIR / "dus_manifest.json"
+MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io")
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 
-def embed_batch_local(texts: list[str], is_query: bool = False) -> list[list[float]]:
-    if not texts:
-        return []
-    model = get_e5_model()
-    prefix = "query: " if is_query else "passage: "
-    prefixed = [t if t.startswith(prefix) else f"{prefix}{t}" for t in texts]
-    return model.encode(prefixed, normalize_embeddings=True).tolist()
+BATCH_SIZE = 50
+MAX_CHARS = 1000
+OVERLAP_CHARS = 200
 
-pc = Pinecone(api_key=PINECONE_API_KEY)
-index = pc.Index(host=MYBRAIN_HOST)
+# --- Clients ---
+pc = Pinecone(api_key=PINECONE_API_KEY) if PINECONE_API_KEY else None
+index = pc.Index(host=MYBRAIN_HOST) if pc else None
 
-# ── Namespace Routing ─────────────────────────────────────────────────────────
-# Her dosya/dizin → hangi namespace + doc_type
+# --- Namespace Routing ---
+# In a real-world scenario, this could be loaded from an external JSON/YAML file.
 NS_RULES = [
-    # (glob pattern veya prefix, namespace, doc_type, lesson)
     ("memory/projects/user_profile.md",     "claude-profile", "user_profile",    None),
     ("memory/user_configuration.md",        "claude-profile", "user_profile",    None),
     ("memory/projects/user_preferences.md", "claude-profile", "user_pref",       None),
@@ -111,23 +94,55 @@ NS_RULES = [
     ("REFERENCE/",                        "dus-reference",  "reference_tool",  None),
     ("SYSTEMS/",                          "dus-reference",  "reference_tool",  None),
     ("memory/",                           "dus-memory",     "project_memory",  None),
-    ("",                                  "dus-strategy",   "strategy_doc",    None),  # fallback
+    ("",                                  "dus-strategy",   "strategy_doc",    None),
 ]
 
-SKIP_DIRS  = {".git", "__pycache__", ".mypy_cache", "memory/WORK"}
-SKIP_EXTS  = {".py", ".json", ".yaml", ".yml", ".ps1", ".sh", ".txt"}
+SKIP_DIRS = {".git", "__pycache__", ".mypy_cache", "memory/WORK"}
 VALID_EXTS = {".md"}
 
-# ── Chunking ──────────────────────────────────────────────────────────────────
-MAX_CHARS    = 1600  # ~400 token @ 4 char/tok
-OVERLAP_CHARS = 200
+NS_PREFIX = {
+    "claude-profile": "cp",
+    "dus-progress":   "dp",
+    "dus-strategy":   "ds",
+    "dus-curriculum": "dc",
+    "dus-memory":     "dm",
+    "dus-reference":  "dr",
+    "chathistory":    "ch",
+    "telos":          "tl",
+}
 
-def smart_chunk(text: str, source_file: str) -> list[str]:
-    """Başlık sınırında böl, tablo/kod bloklarını koru."""
+
+# --- Decorators & Helpers ---
+def retry_operation(retries: int = 3, delay: float = 1.0):
+    """Ağ işlemlerinde hata anında tekrar deneme sağlayan decorator."""
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            for attempt in range(retries):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    logger.warning(f"[{func.__name__}] Başarısız (Deneme {attempt+1}/{retries}): {e}")
+                    if attempt == retries - 1:
+                        logger.error(f"[{func.__name__}] İşlem tamamen başarısız oldu.")
+                        return None
+                    time.sleep(delay)
+        return wrapper
+    return decorator
+
+
+def embed_batch_local(texts: List[str], is_query: bool = False) -> List[List[float]]:
+    if not texts:
+        return []
+    # DUS Mentörü Kararı: Hafıza ve Sohbet vektörleme için yerel E5 (1024-dim) kullanıyoruz.
+    return get_local_embedder(provider="local").embed_batch(texts, is_query=is_query)
+
+
+def smart_chunk(text: str, source_file: str) -> List[str]:
+    """Başlık sınırında böl, paragraf bazlı ilerle."""
     if len(text) <= MAX_CHARS:
         return [text.strip()]
 
-    # Başlıklarda böl (## veya ###)
     header_re = re.compile(r'(?=^#{1,3} )', re.MULTILINE)
     sections = header_re.split(text)
     sections = [s.strip() for s in sections if s.strip()]
@@ -140,7 +155,6 @@ def smart_chunk(text: str, source_file: str) -> list[str]:
         else:
             if current:
                 chunks.append(current)
-            # Bölüm kendisi çok büyükse paragraf bazlı böl
             if len(sec) > MAX_CHARS:
                 paras = sec.split("\n\n")
                 buf = ""
@@ -158,37 +172,26 @@ def smart_chunk(text: str, source_file: str) -> list[str]:
     if current:
         chunks.append(current)
 
-    # Kısa chunk'ları filtrele
     return [c for c in chunks if len(c) >= 80] or [text[:MAX_CHARS].strip()]
 
-# ── ID & Metadata ─────────────────────────────────────────────────────────────
-NS_PREFIX = {
-    "claude-profile": "cp",
-    "dus-progress":   "dp",
-    "dus-strategy":   "ds",
-    "dus-curriculum": "dc",
-    "dus-memory":     "dm",
-    "dus-reference":  "dr",
-    "chathistory":    "ch",
-    "telos":          "tl",
-}
 
 def make_id(namespace: str, rel_path: str, chunk_idx: int) -> str:
     h = hashlib.sha256(rel_path.encode()).hexdigest()[:8]
     prefix = NS_PREFIX.get(namespace, "xx")
     return f"{prefix}::{h}::{chunk_idx:03d}"
 
-def route_file(rel_path: str) -> tuple[str, str, str | None]:
-    """rel_path → (namespace, doc_type, lesson)"""
+
+def route_file(rel_path: str) -> Tuple[str, str, Optional[str]]:
     norm = rel_path.replace("\\", "/")
     for pattern, ns, dtype, lesson in NS_RULES:
         if pattern and pattern in norm:
             return ns, dtype, lesson
     return "dus-strategy", "strategy_doc", None
 
+
 def build_metadata(rel_path: str, chunk_text: str, chunk_idx: int,
                    total_chunks: int, namespace: str, doc_type: str,
-                   lesson: str | None, mtime: str) -> dict:
+                   lesson: Optional[str], mtime: str) -> Dict[str, Any]:
     meta = {
         "text":         chunk_text,
         "source_file":  rel_path.replace("\\", "/"),
@@ -202,86 +205,94 @@ def build_metadata(rel_path: str, chunk_text: str, chunk_idx: int,
         meta["lesson"] = lesson
     return meta
 
-# ── Manifest ──────────────────────────────────────────────────────────────────
-def load_manifest() -> dict:
+
+# --- Manifest ---
+def load_manifest() -> Dict[str, Any]:
     if MANIFEST_PATH.exists():
         with open(MANIFEST_PATH, encoding="utf-8") as f:
             return json.load(f)
     return {}
 
-def save_manifest(manifest: dict):
+
+def save_manifest(manifest: Dict[str, Any]):
     with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-# ── Pinecone Upsert / Delete ──────────────────────────────────────────────────
-BATCH_SIZE = 50
 
-def upsert_chunks(vectors: list[dict], namespace: str, dry_run: bool):
+# --- Pinecone Operations ---
+@retry_operation(retries=3, delay=1.0)
+def upsert_batch(batch: List[Dict[str, Any]], namespace: str):
+    if index:
+        index.upsert(vectors=batch, namespace=namespace)
+
+@retry_operation(retries=3, delay=1.0)
+def delete_batch(batch: List[str], namespace: str):
+    if index:
+        index.delete(ids=batch, namespace=namespace)
+
+
+def upsert_chunks(vectors: List[Dict[str, Any]], namespace: str, dry_run: bool):
     if dry_run:
-        print(f"    [DRY-RUN] upsert {len(vectors)} chunk → ns={namespace}")
+        logger.info(f"[DRY-RUN] upsert {len(vectors)} chunk -> ns={namespace}")
+        return
+    if not index:
+        logger.error("Pinecone client başlatılamadı (API Key yok).")
         return
     for i in range(0, len(vectors), BATCH_SIZE):
-        batch = vectors[i:i + BATCH_SIZE]
-        index.upsert(vectors=batch, namespace=namespace)
-        time.sleep(0.1)
+        upsert_batch(vectors[i:i + BATCH_SIZE], namespace)
 
-def delete_ids(ids: list[str], namespace: str, dry_run: bool):
+
+def delete_ids(ids: List[str], namespace: str, dry_run: bool):
     if not ids:
         return
     if dry_run:
-        print(f"    [DRY-RUN] delete {len(ids)} eski chunk ← ns={namespace}")
+        logger.info(f"[DRY-RUN] delete {len(ids)} eski chunk <- ns={namespace}")
+        return
+    if not index:
         return
     for i in range(0, len(ids), BATCH_SIZE):
-        index.delete(ids=ids[i:i + BATCH_SIZE], namespace=namespace)
+        delete_batch(ids[i:i + BATCH_SIZE], namespace)
 
-# ── Tek Dosya İşle ────────────────────────────────────────────────────────────
-def process_file(filepath: Path, root: Path, manifest: dict,
+
+# --- File Processing ---
+def process_file(filepath: Path, root: Path, manifest: Dict[str, Any],
                  dry_run: bool, force: bool,
-                 namespace_filter: str | None = None,
-                 chathistory_mode: bool = False,
-                 telos_mode: bool = False) -> int:
+                 target_namespace: Optional[str] = None,
+                 target_doc_type: Optional[str] = None,
+                 target_lesson: Optional[str] = None) -> int:
     """Dosyayı chunk'la, embed et, upsert et. Eklenen chunk sayısını döndür."""
     rel_path = str(filepath.relative_to(root))
-    mtime = datetime.fromtimestamp(filepath.stat().st_mtime).strftime("%Y-%m-%d")
+    mtime = datetime.fromtimestamp(filepath.stat().st_mtime).strftime("%Y-%m-%dT%H:%M:%S")
 
-    if chathistory_mode:
-        namespace, doc_type, lesson = "chathistory", "chat_note", None
-    elif telos_mode:
-        namespace, doc_type, lesson = "telos", "user_telos", None
+    # Routing
+    if target_namespace and target_doc_type:
+        namespace, doc_type, lesson = target_namespace, target_doc_type, target_lesson
     else:
         namespace, doc_type, lesson = route_file(rel_path)
 
-    if namespace_filter and namespace != namespace_filter:
-        return 0
-
     manifest_key = f"{namespace}::{rel_path}"
 
-    # Değişmedi mi? (force değilse atla)
     if not force and manifest_key in manifest:
-        stored_mtime = manifest[manifest_key].get("mtime", "")
-        if stored_mtime == mtime:
+        if manifest[manifest_key].get("mtime", "") == mtime:
             return 0  # Değişmemiş, atla
 
-    text = filepath.read_text(encoding="utf-8", errors="ignore").strip()
+    text = filepath.read_text(encoding="utf-8", errors="replace").strip()
     if not text:
         return 0
 
     chunks = smart_chunk(text, rel_path)
-    total  = len(chunks)
+    total = len(chunks)
 
     # Eski chunk'ları sil
     old_ids = manifest.get(manifest_key, {}).get("ids", [])
     delete_ids(old_ids, namespace, dry_run)
 
-    # Dry-run: embedding atla, sadece say
     if dry_run:
-        print(f"  [DRY-RUN] {rel_path} → {namespace} ({total} chunk)")
+        logger.info(f"[DRY-RUN] {rel_path} -> {namespace} ({total} chunk)")
         return total
 
-    # Embed — sadece local E5
     vectors_raw = embed_batch_local([f"passage: {c}" for c in chunks], is_query=False)
 
-    # Vektör listesi hazırla
     new_ids = []
     upsert_list = []
     for idx, (chunk, vec) in enumerate(zip(chunks, vectors_raw)):
@@ -292,91 +303,96 @@ def process_file(filepath: Path, root: Path, manifest: dict,
 
     upsert_chunks(upsert_list, namespace, dry_run)
 
-    # Manifest güncelle
-    if not dry_run:
-        manifest[manifest_key] = {"mtime": mtime, "ids": new_ids, "namespace": namespace}
-
-    print(f"  ✓ {rel_path} → {namespace} ({total} chunk)", flush=True)
+    manifest[manifest_key] = {"mtime": mtime, "ids": new_ids, "namespace": namespace}
+    logger.info(f"[OK] {rel_path} -> {namespace} ({total} chunk)")
     return total
 
-# ── Dizin Tara ────────────────────────────────────────────────────────────────
+
 def should_skip(path: Path, root: Path) -> bool:
     rel = str(path.relative_to(root)).replace("\\", "/")
-    for skip in SKIP_DIRS:
-        if skip in rel:
-            return True
-    return False
+    return any(skip in rel for skip in SKIP_DIRS)
 
-def scan_dir(root: Path, manifest: dict, dry_run: bool, force: bool,
-             namespace_filter: str | None, 
-             chathistory_mode: bool = False,
-             telos_mode: bool = False) -> int:
+
+def scan_dir(root: Path, manifest: Dict[str, Any], dry_run: bool, force: bool,
+             target_namespace: Optional[str] = None,
+             target_doc_type: Optional[str] = None,
+             target_lesson: Optional[str] = None) -> int:
     total_chunks = 0
     for filepath in root.rglob("*"):
-        if not filepath.is_file():
+        if not filepath.is_file() or filepath.suffix not in VALID_EXTS or should_skip(filepath, root):
             continue
-        if filepath.suffix not in VALID_EXTS:
-            continue
-        if should_skip(filepath, root):
-            continue
+        
+        # If a specific namespace is requested via filter, and we are using auto-routing
+        if target_namespace and not target_doc_type:
+            ns, _, _ = route_file(str(filepath.relative_to(root)))
+            if ns != target_namespace:
+                continue
+
         total_chunks += process_file(
             filepath, root, manifest, dry_run, force,
-            namespace_filter, chathistory_mode, telos_mode
+            target_namespace if target_doc_type else None,
+            target_doc_type, target_lesson
         )
     return total_chunks
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+
+# --- Main ---
 def main():
-    parser = argparse.ArgumentParser(description="DUS → mybrain uploader")
+    # Windows UTF-8 Fix
+    if sys.stdout.encoding != 'utf-8':
+        try:
+            sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+        except Exception:
+            pass
+
+    parser = argparse.ArgumentParser(description="DUS -> mybrain uploader")
     parser.add_argument("--dry-run",    action="store_true", help="Yükleme yapma, sadece say")
     parser.add_argument("--force",      action="store_true", help="mtime fark etmeksizin tümünü yeniden yükle")
-    parser.add_argument("--namespace",  type=str, default=None,
-                        help="Sadece belirtilen namespace (örn: dus-progress)")
-    parser.add_argument("--file",       type=str, default=None,
-                        help="Sadece bu dosya (örn: PROGRESS.md)")
-    parser.add_argument("--chathistory",action="store_true",
-                        help="vektörlenecek/ → chathistory namespace")
-    parser.add_argument("--telos",      action="store_true",
-                        help="PAI/USER/TELOS/ → telos namespace")
+    parser.add_argument("--namespace",  type=str, default=None, help="Sadece belirtilen namespace (örn: dus-progress)")
+    parser.add_argument("--file",       type=str, default=None, help="Sadece bu dosya (örn: PROGRESS.md)")
+    parser.add_argument("--chathistory",action="store_true", help="vektörlenecek/ -> chathistory namespace")
+    parser.add_argument("--telos",      action="store_true", help="PAI/USER/TELOS/ -> telos namespace")
     args = parser.parse_args()
 
     manifest = load_manifest()
     total = 0
 
     if args.chathistory:
-        print(f"\n=== vektörlenecek/ → chathistory ===")
+        logger.info("=== vektörlenecek/ -> chathistory ===")
         if not VEKTORLENECEK.exists():
-            print("  vektörlenecek/ bulunamadı, atlanıyor.")
+            logger.warning("vektörlenecek/ bulunamadı, atlanıyor.")
         else:
-            total += scan_dir(VEKTORLENECEK, manifest, args.dry_run, args.force,
-                              "chathistory", chathistory_mode=True)
+            total += scan_dir(VEKTORLENECEK, manifest, args.dry_run, args.force, 
+                              target_namespace="chathistory", target_doc_type="chat_note")
     elif args.telos:
-        print(f"\n=== PAI/USER/TELOS → telos ===")
+        logger.info("=== PAI/USER/TELOS -> telos ===")
         if not TELOS_ROOT.exists():
-            print("  TELOS dizini bulunamadı.")
+            logger.warning("TELOS dizini bulunamadı.")
         else:
-            total += scan_dir(TELOS_ROOT, manifest, args.dry_run, args.force,
-                              "telos", telos_mode=True)
+            total += scan_dir(TELOS_ROOT, manifest, args.dry_run, args.force, 
+                              target_namespace="telos", target_doc_type="user_telos")
     else:
-        print(f"\n=== .claude/DUS → mybrain ===")
+        logger.info("=== .claude/DUS -> mybrain ===")
         if args.file:
-            # Tek dosya modu
             matches = list(DUS_ROOT.rglob(args.file))
             if not matches:
-                print(f"Dosya bulunamadı: {args.file}")
+                logger.error(f"Dosya bulunamadı: {args.file}")
                 sys.exit(1)
             for fp in matches:
-                total += process_file(fp, DUS_ROOT, manifest, args.dry_run,
-                                      force=True,
-                                      namespace_filter=args.namespace)
+                ns_filter = args.namespace
+                ns, doc_type, lesson = route_file(str(fp.relative_to(DUS_ROOT)))
+                if ns_filter and ns != ns_filter:
+                    continue
+                total += process_file(fp, DUS_ROOT, manifest, args.dry_run, force=True, 
+                                      target_namespace=ns, target_doc_type=doc_type, target_lesson=lesson)
         else:
-            total += scan_dir(DUS_ROOT, manifest, args.dry_run, args.force,
-                              args.namespace)
+            total += scan_dir(DUS_ROOT, manifest, args.dry_run, args.force, target_namespace=args.namespace)
 
     if not args.dry_run:
         save_manifest(manifest)
 
-    print(f"\n{'[DRY-RUN] ' if args.dry_run else ''}Toplam: {total} chunk yüklendi.")
+    logger.info(f"{'[DRY-RUN] ' if args.dry_run else ''}Toplam: {total} chunk yüklendi.")
+
 
 if __name__ == "__main__":
     main()

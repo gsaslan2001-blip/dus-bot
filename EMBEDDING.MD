@@ -1,99 +1,55 @@
-# 🧠 DUS Mentörü — Embedding Mimari Rehberi
+# 🚀 OpenAI Vektör ve Analiz Altyapısı (DUS Mentörü)
 
-> Bu dosya, projenin vektör tabanına veri işleme ve arama mimarisini açıklar.
-> Son güncelleme: 2026-04-23 | v7.0 — **Tam Yerel (Local-First) Mimari**
+Bu belge, DUS Mentörü projesinde kullanılan yüksek performanslı OpenAI tabanlı embedding ve analiz altyapısını açıklar.
 
----
+## 1. Temel Bileşenler
 
-## 1. Local-First Model Yapısı
+| Görev | Model | Detay |
+|-------|-------|-------|
+| **Embedding** | `text-embedding-3-large` | 3072 Boyut, Maksimum Keskinlik |
+| **LLM Judge** | `gpt-4o-mini` | Akıllı Tekilleştirme ve Pedagojik Karar Mekanizması |
+| **Orchestrator** | `scripts/embedding_utils.py` | Sağlayıcı bağımsız (OpenAI/Gemini/E5) soyutlama katmanı |
 
-Proje, bulut kotalarından bağımsız, yüksek performanslı ve gizlilik odaklı bir yerel embedding mimarisi kullanır.
+## 2. Neden OpenAI `text-embedding-3-large`?
 
-| Model | Tip | Konum | Kullanım Alanı | Boyut |
-|-------|-----|-------|----------------|-------|
-| **Multilingual-E5-Large** | Local | CPU/GPU (Offline) | `mybrain`, `myppdfs`, `chathistory` | 1024 |
-| **bge-reranker-v2-m3** | Remote | Pinecone Rerank API | Tüm Arama Sonuçlarını Sıralama | — |
+Eski sistemdeki Gemini ve Yerel E5 modellerinden bu modele geçiş yapılmasının temel nedenleri:
+1. **Yüksek Boyut (3072):** 1024 boyutlu modellere göre tıbbi terimler arasındaki anlamsal farkları (örn: *Tip 1 vs Tip 2 Diyabet*) çok daha keskin ayırır.
+2. **Hız ve Kota:** OpenAI'ın yüksek rate-limitleri sayesinde 13.000 kartlık setler dakikalar içinde vektörlenebilir.
+3. **Tutarlılık:** "Basic" ve "Cloze" kartları arasındaki benzerlikleri yakalamada %98+ başarı oranı.
 
-> **MİMARİ DEĞİŞİKLİK:** Pinecone Inference API (Llama) kotaları aşıldığı ve yerel performans daha stabil olduğu için tüm hibrit yapı yerel E5'e taşınmıştır. Llama artık aktif akışta kullanılmamaktadır.
+## 3. Akıllı Tekilleştirme İş Akışı (Smart Dedup)
 
----
+Sistem 3 aşamalı bir huni (funnel) mantığıyla çalışır:
 
-## 2. Aktif İş Akışı (myppdfs — Yerel Embedding + Uzak Arama)
+1. **Vektör Taraması (OpenAI Embedder):** 
+   - Tüm kartlar 3072 boyutlu uzaya aktarılır.
+   - Kosinüs benzerliği hesaplanır (Eşik: **0.94**).
+2. **Lexical Guard (Kural Tabanlı):**
+   - Vektör olarak benzeyen ancak zıt anlamlı (Anterior/Posterior, Tip 1/2 vb.) kartlar elenir.
+3. **LLM Judge (gpt-4o-mini):**
+   - Kalan şüpheli çiftler LLM'e gönderilir.
+   - LLM, kartların pedagojik olarak aynı bilgiyi mi test ettiğine karar verir.
 
-> **⚠️ Pinecone bulut kotası (5M token) dolduğu için bu akış zorunludur.**
+## 4. Kullanım (Geliştiriciler İçin)
 
-### Adım 1 — Sorgu Al
-Kullanıcıdan konu başlığı veya DUS sorusu alınır (örn: "Gorlin Sendromu").
-
-### Adım 2 — Yerel Vektörleme (Local Embedding)
-`scripts/search_engine.py` altyapısı, sorguyu yerel CPU'da **Multilingual-E5-Large** modeli ile 1024 boyutlu bir vektöre dönüştürür.
-
+### Vektörleme Başlatma
 ```python
-from embedding_utils import embedder
-vec = embedder.embed_text("query: Gorlin Sendromu", is_query=True)  # 1024-dim
+from scripts.embedding_utils import get_local_embedder
+
+# OpenAI embedder'ı çağır
+embedder = get_local_embedder("openai")
+vectors = embedder.embed_batch(["Tıp terimi 1", "Tıp terimi 2"])
 ```
 
-**Neden yerel?** Pinecone Inference API bulut kotası doldu → tüm embedding işlemleri offline yapılır.
-
-### Adım 3 — Pinecone Araması (Remote Search)
-Yerelde oluşturulan ham vektör, `myppdfs` indeksinin ilgili namespace(ler)ine gönderilir. Pinecone yalnızca matematiksel benzerlik (cosine similarity) hesaplayarak en ilgili 15 PDF parçasını döndürür.
-
-```python
-index = pc.Index(host="myppdfs-0crkhvy.svc.aped-4627-b74a.pinecone.io")
-results = index.query(vector=vec, top_k=15, namespace="patoloji", include_metadata=True)
+### Akıllı Tekilleştirme Scripti
+```bash
+python scripts/anki_dedup_smart.py
 ```
 
-### Adım 4 — Yeniden Sıralama (Reranking)
-Pinecone'dan dönen 15 sonuç, `bge-reranker-v2-m3` API'sinden geçirilir. En alakalı 5–10 parça seçilir.
-
-```python
-pc.inference.rerank(
-    model="bge-reranker-v2-m3",
-    query="Gorlin Sendromu",
-    documents=[r["metadata"]["text"] for r in results.matches],
-    top_n=5
-)
-```
-
-### Adım 5 — Sentez ve Sunum
-Gelen ham PDF metinleri ayıklanır ve DUS formatına (Adım 0–6 kaskadı: tablo, madde işaretleri, high-yield notlar, 5 soru) dönüştürülerek sunulur.
-
-### Adım 6 — Hafıza Mühürleme (Staging)
-Konuşulan rafine bilgiler `vektörlenecek/` klasörüne `.md` olarak kaydedilir. Kota açıldığında `mybrain` indeksine (`dus-data` namespace) kalıcı olarak yüklenir.
-
-```
-vektörlenecek/gorlin_sendromu.md  →  (ileride) mybrain / dus-data
-```
+## 5. Önemli Notlar
+- `.env` dosyasında `OPENAI_API_KEY` tanımlı olmalıdır.
+- Büyük dosyalarda (2000+ kart) `embed_batch` metodu 500'lük paketler halinde otomatik çalışır.
+- Raporlar `anki_jsonlar/` klasörüne dinamik isimlerle kaydedilir.
 
 ---
-
-## 4. Arama ve Uyum Protokolü
-
-Arama sırasında, hedef indekse göre otomatik model seçimi yapılır:
-
-- **`mybrain` Sorgusu:** Llama ile vektörlenir (Eğer kota doluysa Yerel E5'e fallback yapar).
-- **`myppdfs` Sorgusu:** Yerel E5 ile vektörlenir (Hassasiyet için zorunlu).
-
-### Reranker (Zorunlu)
-Vektör aramasından dönen sonuçlar her zaman `bge-reranker-v2-m3` (Pinecone Rerank API) üzerinden geçirilerek en alakalı 5 parça seçilir.
-
----
-
-## 5. Local-First Kayıt Stratejisi
-
-Bulut kotaları (5M token/ay) dolduğunda veya çevrimdışı çalışma gerektirdiğinde şu protokol izlenir:
-
-1. **Staging:** Veriler `vektörlenecek/` klasörüne `.md` olarak kaydedilir.
-2. **Local Processing:** PDF'ler `upload_pdf_local.py` ile yerelde işlenir.
-3. **Delayed Sync:** Kota açıldığında `master_upload.py` ile tüm yerel veriler Pinecone'a senkronize edilir.
-
----
-
-## 6. Dosya Referansları
-
-- `scripts/embedding_utils.py`: Hibrit model sınıflarını (Llama + E5) içerir.
-- `scripts/search_engine.py`: Reranker ve çoklu indeks tarama mantığını içerir.
-- `scripts/upload_pdf_local.py`: PDF'leri yerel E5 ile işleyen araçtır.
-
----
-*v6.2 | 2026-04-23 | DUS Mentörü Teknik Ekibi*
+*DUS Mentörü - 2026-05-01*

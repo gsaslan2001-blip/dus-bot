@@ -1,0 +1,353 @@
+# Anki Kart Duplikasyon Tespiti: Teknik İş Akışı Raporu
+
+## Sorunun Kök Nedeni: Neden Önceki Yaklaşım Başarısız Oldu?
+
+Mevcut sistemin temel hatası, **benzerliği yanlış boyutta ölçmesi**. Embedding large 5 + Jaccard birleşimi, iki şeyi ayırt edemez:
+
+1. **Aynı topic, farklı entity** → Tip I vs Tip II Pnömosit (senin örneğin): Aynı başlıkta, aynı token havuzunda, ama tamamen farklı sorular. Embedder bunu "benzer" görür çünkü bağlam (solunum fizyolojisi) aynı.
+2. **Aynı soru, farklı formülasyon** → "Gaz değişiminin yeri neresidir?" vs "Alveol-kapiller membranda ne olur?" — bunlar aslında duplikat ama embedding farklı gösterebilir.
+
+Sorun model kalitesinde değil, **mimari seçiminde**: Sadece soru metnini vektörlemek yanlış. Çözüm, iki aşamalı bir huni sistemi.
+
+---
+
+## Temel İlke: İki Aşamalı Huni (Retrieve → Judge)
+
+```
+13.000 kart
+    │
+    ▼ [AŞAMA 1] Vektör Retrieval — hız öncelikli, yüksek recall
+Candidate çiftler (~%20 false positive beklenir)
+    │
+    ▼ [AŞAMA 2] LLM Semantic Judge — kesinlik öncelikli
+Gerçek duplikatlar
+```
+
+Aşama 1 ucuz ve hızlı (API maliyeti minimumdur). Aşama 2 yalnızca filtreden geçen çiftlere uygulanır — bu, LLM maliyetini 50-100x düşürür.
+
+---
+
+## Vektör Altyapısı Seçenekleri
+
+### Seçenek A: Supabase + pgvector ⭐ ÖNERİLEN
+
+**Neden?** Zaten biliyorsun, SQL ile native filtreleme yapılabilir (deck adı, kart tipi, oluşturma tarihi), 13k kart için over-engineering değil.
+
+```
+Maliyet:   Free tier yeterli (500 MB, ~13k kart için bolca)
+Latency:   Local'e yakın (pgvector index = HNSW)
+Avantaj:   Kart metadata'sını (guid, baslik, tip) aynı tabloda tutarsın
+Dezavantaj: Hosted Supabase'de çok büyük batches yavaşlayabilir
+```
+
+**Tablo Şeması:**
+```sql
+CREATE TABLE anki_cards (
+  id          TEXT PRIMARY KEY,           -- guid
+  deck        TEXT,
+  card_type   TEXT,                       -- basic | cloze
+  question    TEXT,
+  answer      TEXT,
+  full_text   TEXT,                       -- question + " [SEP] " + answer
+  embedding   VECTOR(3072),              -- text-embedding-3-large boyutu
+  created_at  TIMESTAMPTZ
+);
+
+CREATE INDEX ON anki_cards
+  USING hnsw (embedding vector_cosine_ops)
+  WITH (m = 16, ef_construction = 64);
+```
+
+**Similarity Query:**
+```sql
+SELECT
+  b.id,
+  b.question,
+  1 - (a.embedding <=> b.embedding) AS cosine_similarity
+FROM anki_cards a, anki_cards b
+WHERE a.id = 'hedef_kart_guid'
+  AND b.id != a.id
+  AND 1 - (a.embedding <=> b.embedding) > 0.82
+ORDER BY cosine_similarity DESC
+LIMIT 20;
+```
+
+---
+
+### Seçenek B: Pinecone Serverless
+
+```
+Maliyet:   Free tier = 2GB storage (~100k vektör için yeterli)
+Latency:   ~50-100ms (hosted)
+Avantaj:   Metadata filtering native, namespace ile deck ayrımı
+Dezavantaj: SQL yok, Python SDK üzerinden; overkill 13k için
+```
+
+13k kart için Pinecone'un gücüne ihtiyaç duymayacaksın. Supabase'e kıyasla operasyonel avantajı yok. Eğer kart sayısı 500k+'ya çıkarsa veya multi-user olacaksa anlamlı hale gelir.
+
+---
+
+### Seçenek C: Qdrant (Local / Self-hosted) ⭐ GÜÇLÜ ALTERNATİF
+
+```
+Maliyet:   Tamamen ücretsiz (Docker ile local)
+Latency:   Supabase'den hızlı (local process)
+Avantaj:   Sparse + Dense hybrid search native destekli
+Dezavantaj: Infrastructure yönetimi senin üzerinde
+```
+
+Qdrant'ın kritik avantajı: **Hybrid search** (dense embedding + sparse BM25) yerleşik gelir. Bu, senin "Tip I vs Tip II" sorununu doğrudan çözer çünkü sparse (token-level) sinyali, dense vektörle birlikte ağırlıklandırılabilir.
+
+```python
+# Qdrant hybrid search örneği
+client.search(
+    collection_name="anki_cards",
+    query_vector=models.NamedVector(name="dense", vector=embedding),
+    query_sparse_vector=models.NamedSparseVector(
+        name="sparse",
+        vector=sparse_vector  # BM25 ile oluşturulmuş
+    ),
+    limit=20
+)
+```
+
+---
+
+### Seçenek D: ChromaDB (Ultra-basit local)
+
+```
+Maliyet:   Ücretsiz
+Latency:   En hızlı (in-process)
+Avantaj:   5 satır kod ile çalışır
+Dezavantaj: Hybrid search yok, production için zayıf
+```
+
+Hızlı prototip için kullanılabilir ama production iş akışı için Qdrant veya Supabase'i seç.
+
+---
+
+## Embedding Model Seçimi
+
+Senin senaryonun için kısıtlar:
+- Türkçe tıp terminolojisi
+- Kısa metinler (ortalama 10-30 token)
+- "Tip I" vs "Tip II" gibi numeral ayrımların kritik olması
+
+### Karşılaştırma Tablosu
+
+| Model | Boyut | Türkçe | Numeral Hassasiyeti | Maliyet (13k kart) |
+|---|---|---|---|---|
+| **text-embedding-3-large** | 3072 | ✅ İyi | ✅ İyi | ~$0.07 (tek seferlik) |
+| **text-embedding-3-small** | 1536 | ✅ Yeterli | ⚠️ Orta | ~$0.01 |
+| **Cohere multilingual-v3** | 1024 | ✅ Çok iyi | ✅ İyi | ~$0.10 |
+| **voyage-3** (Anthropic) | 1024 | ⚠️ Orta | ✅ İyi | ~$0.08 |
+| **mxbai-embed-large** (local) | 1024 | ⚠️ Zayıf | ✅ İyi | Ücretsiz |
+
+**Öneri: `text-embedding-3-large`** — En iyi Türkçe tıp performansı, 13k kart için maliyet ihmal edilebilir (~₺2).
+
+### KRİTİK: Ne Vektörlenecek?
+
+Önceki hatan muhtemelen burada. Sadece soruyu değil, **soru + cevabı birlikte** vektörle:
+
+```python
+def build_embed_text(card):
+    # Basic kart
+    if card['type'] == 'basic':
+        return f"SORU: {card['question']} CEVAP: {card['answer']}"
+    
+    # Cloze kart — boşluğu açık bırak
+    if card['type'] == 'cloze':
+        filled = card['text'].replace('{{c1::', '').replace('}}', '')
+        return f"İFADE: {filled}"
+```
+
+Bu basit değişiklik, "Tip I Pnömosit görevi" vs "Tip II Pnömosit görevi" sorununu çözer çünkü cevaplar tamamen farklıdır.
+
+---
+
+## Aşama 2: LLM Semantic Judge
+
+Vector similarity %82+ gelen tüm çiftler için:
+
+```python
+JUDGE_PROMPT = """
+İki Anki kartı sana verilecek. Görevin: Bu iki kart aynı tıbbi bilgiyi mi test ediyor?
+
+Kart A:
+Soru: {soru_a}
+Cevap: {cevap_a}
+
+Kart B:
+Soru: {soru_b}
+Cevap: {cevap_b}
+
+Aşağıdaki kategorilerden birini seç:
+
+DUPLIKAT: İkisi de özünde aynı bilgiyi test ediyor, biri silinebilir
+TAMAMLAYICI: Aynı konuyu farklı açıdan test ediyor, ikisi de değerli
+FARKLI: Farklı bilgileri test ediyor, yanlış eşleşme
+
+Sadece tek kelime cevap ver: DUPLIKAT, TAMAMLAYICI veya FARKLI
+"""
+```
+
+Bu prompt ile "Tip I vs Tip II" örneği kesinlikle **FARKLI** döndürür.
+
+---
+
+## Tam İş Akışı
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  1. VERİ HAZIRLAMA                                      │
+│  • Anki → SQLite export (anki2 formatı)                 │
+│  • guid, soru, cevap, deck, tip alanlarını çek          │
+│  • full_text = "SORU: {q} CEVAP: {a}" oluştur          │
+└─────────────────┬───────────────────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────────────────┐
+│  2. VEKTÖRLEME                                          │
+│  • text-embedding-3-large ile batch API çağrısı         │
+│  • Batch size: 100 kart / istek                         │
+│  • Toplam: ~130 API isteği, ~2 dakika                   │
+│  • Supabase'e embedding + metadata yaz                  │
+└─────────────────┬───────────────────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────────────────┐
+│  3. ADAY TESPİTİ (Aşama 1)                             │
+│  • Her kart için cosine similarity > 0.82 olan komşular │
+│  • HNSW index ile hızlı ANN search                     │
+│  • Aynı deck içi + cross-deck ayrı analiz et           │
+│  • Çıktı: candidate_pairs tablosu                       │
+└─────────────────┬───────────────────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────────────────┐
+│  4. LLM JUDGE (Aşama 2)                                │
+│  • claude-3-haiku-20240307 (hız + maliyet dengesi)      │
+│  • Her çift için: DUPLIKAT / TAMAMLAYICI / FARKLI       │
+│  • Batch: 50 çift / dakika (rate limit margin)          │
+│  • Sonuçları judge_results tablosuna yaz                │
+└─────────────────┬───────────────────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────────────────┐
+│  5. RAPORLAMA VE AKSİYON                               │
+│  • DUPLIKAT listesi → Anki'de tag: "duplicate-review"   │
+│  • TAMAMLAYICI listesi → tag: "complementary"           │
+│  • Silinecek kartları manuel onay sonrası sil           │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Eşik Değerleri
+
+Bu eşikler tıp kartları için optimize edilmiş başlangıç değerleridir. Kendi verinle 50-100 kart üzerinde kalibrasyon yap:
+
+| Cosine Similarity | Yorum | Aksiyon |
+|---|---|---|
+| > 0.95 | Neredeyse identik metin | LLM skip, direkt DUPLIKAT say |
+| 0.85 – 0.95 | Güçlü aday | LLM judge ile kontrol |
+| 0.75 – 0.85 | Zayıf aday | Sadece cross-deck için kontrol et |
+| < 0.75 | Farklı | Görmezden gel |
+
+---
+
+## Maliyet Tahmini (13.000 Kart)
+
+```
+Vektörleme (text-embedding-3-large):
+  13.000 kart × ~50 token ortalama = 650.000 token
+  Maliyet: $0.65 × (130/1.000.000) = ~$0.085 ≈ ₺3
+
+LLM Judge (claude-haiku-20240307):
+  Tahmini aday çift: ~2.000 çift (cosine > 0.82)
+  Her çift: ~200 input token + 5 output token
+  Maliyet: ~$0.05 ≈ ₺2
+
+TOPLAM TEK SEFERLİK MALİYET: ~₺5
+```
+
+---
+
+## Implementasyon: Claude Code ile Hızlı Başlangıç
+
+```bash
+# 1. Proje kur
+mkdir anki-dedup && cd anki-dedup
+pip install openai supabase numpy tqdm
+
+# 2. Anki veritabanını kopyala (koleksiyonu kapalıyken!)
+cp ~/Library/Application\ Support/Anki2/User1/collection.anki2 ./collection.anki2
+
+# 3. Claude Code ile aşağıdaki script'i oluştur
+claude code  # veya claude ile konuş
+```
+
+**Ana script yapısı (Claude Code'a vereceğin görev):**
+
+```
+Görev: anki-dedup pipeline oluştur
+
+1. collection.anki2 SQLite'tan tüm kartları çek
+   - notes tablosundan: guid, flds (soru+cevap), tags, mod
+   - decks tablosundan: kart-deck eşleşmesi
+
+2. OpenAI text-embedding-3-large ile vektörle
+   - full_text = "SORU: {soru} CEVAP: {cevap}"
+   - batch size 100
+
+3. Supabase pgvector'e yükle
+
+4. HNSW ile cosine similarity > 0.82 candidate pairs bul
+
+5. claude-3-haiku ile judge yap:
+   DUPLIKAT / TAMAMLAYICI / FARKLI
+
+6. Anki'ye tag ekle:
+   - DUPLIKAT → "dedup::silinecek" (her çiftten birini)
+   - TAMAMLAYICI → "dedup::tamamlayici"
+
+7. CSV rapor: duplicate_report.csv
+```
+
+---
+
+## Numeral/Sıralama Sorunları İçin Ek Strateji
+
+"Tip I vs Tip II", "Evre 1 vs Evre 2", "Sınıf A vs Sınıf B" gibi karşılaştırmalarda embedding tek başına yetersizdir. Bu tür kartlar için ek kural ekle:
+
+```python
+import re
+
+def numeral_guard(question_a, question_b) -> bool:
+    """
+    İki soruda farklı sayısal/sıra belirteçler varsa FARKLI say,
+    LLM judge'a gönderme bile.
+    """
+    numerals = r'\b(I|II|III|IV|V|1|2|3|4|5|Tip|Evre|Sınıf|Grade|Stage)\b'
+    
+    tokens_a = set(re.findall(numerals, question_a, re.IGNORECASE))
+    tokens_b = set(re.findall(numerals, question_b, re.IGNORECASE))
+    
+    # Farklı numeral token var → FARKLI (LLM'e gönderme)
+    if tokens_a != tokens_b and len(tokens_a) > 0:
+        return False  # Not a duplicate
+    return True  # Proceed to LLM judge
+```
+
+Bu kural, senin örneğindeki "Tip I vs Tip II" çiftini LLM'e göndermeden otomatik olarak eleyecekti.
+
+---
+
+## Özet: Önerilen Stack
+
+| Katman | Araç | Neden |
+|---|---|---|
+| **Veri kaynağı** | SQLite (collection.anki2) | Native Anki formatı |
+| **Embedding** | OpenAI text-embedding-3-large | En iyi Türkçe tıp performansı |
+| **Vektör DB** | Supabase pgvector | Zaten biliyorsun, SQL avantajı |
+| **Candidate filter** | HNSW cosine > 0.82 | Yüksek recall, hızlı |
+| **Numeral guard** | Regex kural | "Tip I vs II" gibi false positifler |
+| **Semantic judge** | Claude Haiku | Maliyet-doğruluk dengesi |
+| **Orchestration** | Claude Code | Zaten iş akışın |
+| **Output** | Anki tag + CSV rapor | Actionable format |

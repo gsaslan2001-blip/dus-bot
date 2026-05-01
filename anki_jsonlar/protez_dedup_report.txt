@@ -1,0 +1,774 @@
+# Benzerlik Raporu — Namespace: protez
+# Eşik: 0.9 | Toplam çift: 70
+================================================================================
+
+[1] SCORE: 0.9448
+  KART A (cloze) | GUID: hash_423104c77ac139dc
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz | Alt 1. premolar dişte bukkal tüberkülün mezial sırtı, distal sırttan daha kısadır
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[2] SCORE: 0.9294
+  KART A (cloze) | GUID: hash_589514803191d25a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Daimi dişler arasında mezial tüberkül sırtı distal tüberkül sırtından daha uzun olan tek premolar diş üst 1. premolar diştir
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[3] SCORE: 0.9201
+  KART A (cloze) | GUID: hash_7d27f001f0285e96
+  Başlık: Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları | Alt 1. molar dişte bukkal ve lingual tüberküller kıyaslandığında, lingual tüberküller daha uzun ve sivridir
+
+  KART B (cloze) | GUID: d1+B93,Phc
+  Başlık: 
+  Metin : Alt çenede 1. molar lingual tüberkül 1 mm daha uzun olmasına rağmen lingual eğiminden dolayı daha kısa durmaktadır.
+
+--------------------------------------------------------------------------------
+
+[4] SCORE: 0.9183
+  KART A (cloze) | GUID: hash_306b7f34defe4e58
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte mezial kenar sırt, distal kenar sırta göre daha servikalde yer alır
+
+  KART B (cloze) | GUID: E(^axk!me{
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda distal marjinal sırt, mezial marjinal sırttan daha yüksektedir
+
+--------------------------------------------------------------------------------
+
+[5] SCORE: 0.9176
+  KART A (cloze) | GUID: hash_7d27f001f0285e96
+  Başlık: Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları | Alt 1. molar dişte bukkal ve lingual tüberküller kıyaslandığında, lingual tüberküller daha uzun ve sivridir
+
+  KART B (cloze) | GUID: x,E5r!,/P)
+  Başlık: 
+  Metin : alt Birinci Molar • En büyük alt diştir. • Meziodistal boyutu en fazla olan diştir.* • Bukkal tüberküller lingual tüberküllere kıyasla daha kısadır.Karakteristk.  • Kökler genellikle birbirinden ayrıl
+
+--------------------------------------------------------------------------------
+
+[6] SCORE: 0.9175
+  KART A (cloze) | GUID: hash_d50a93e21e5a809a
+  Başlık: Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları | Alt 1. molar dişte hacimce en küçük, en kısa ve en sivri tüberkül distal tüberküldür
+
+  KART B (cloze) | GUID: x,E5r!,/P)
+  Başlık: 
+  Metin : alt Birinci Molar • En büyük alt diştir. • Meziodistal boyutu en fazla olan diştir.* • Bukkal tüberküller lingual tüberküllere kıyasla daha kısadır.Karakteristk.  • Kökler genellikle birbirinden ayrıl
+
+--------------------------------------------------------------------------------
+
+[7] SCORE: 0.9159
+  KART A (cloze) | GUID: hash_7d27f001f0285e96
+  Başlık: Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları | Alt 1. molar dişte bukkal ve lingual tüberküller kıyaslandığında, lingual tüberküller daha uzun ve sivridir
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[8] SCORE: 0.9150
+  KART A (cloze) | GUID: hash_826e37daead9decf
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Üst 1. premolar dişte bukkal tüberkül tepesi, orta hatta göre biraz daha distalde konumlanmıştır
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[9] SCORE: 0.9148
+  KART A (cloze) | GUID: hash_d26c2bca5b64cdef
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte lingual tüberkül ile mezial kenar sırtı birbirinden ayıran karakteristik yapı meziolingual gelişim oluğudur
+
+  KART B (cloze) | GUID: GbX*xC?*XK
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların en karakteristik anatomik yapısı lingual yüzeyde bulunan meziolingual gelişimsel oluktur
+
+--------------------------------------------------------------------------------
+
+[10] SCORE: 0.9141
+  KART A (cloze) | GUID: hash_423104c77ac139dc
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz | Alt 1. premolar dişte bukkal tüberkülün mezial sırtı, distal sırttan daha kısadır
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[11] SCORE: 0.9140
+  KART A (cloze) | GUID: hash_d26c2bca5b64cdef
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte lingual tüberkül ile mezial kenar sırtı birbirinden ayıran karakteristik yapı meziolingual gelişim oluğudur
+
+  KART B (cloze) | GUID: x.L{@-wkxt
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolardaki meziolingual gelişimsel oluk, meziobukkal lobu lingual lobdan ayırır
+
+--------------------------------------------------------------------------------
+
+[12] SCORE: 0.9124
+  KART A (cloze) | GUID: hash_589514803191d25a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Daimi dişler arasında mezial tüberkül sırtı distal tüberkül sırtından daha uzun olan tek premolar diş üst 1. premolar diştir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[13] SCORE: 0.9115
+  KART A (cloze) | GUID: hash_7d27f001f0285e96
+  Başlık: Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları | Alt 1. molar dişte bukkal ve lingual tüberküller kıyaslandığında, lingual tüberküller daha uzun ve sivridir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[14] SCORE: 0.9110
+  KART A (cloze) | GUID: hash_423104c77ac139dc
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz | Alt 1. premolar dişte bukkal tüberkülün mezial sırtı, distal sırttan daha kısadır
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[15] SCORE: 0.9107
+  KART A (cloze) | GUID: hash_bb1232e94545f92f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bukkal tüberküller kıyaslandığında, distobukkal tüberkül meziobukkal tüberküle oranla daha sivridir
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[16] SCORE: 0.9107
+  KART A (cloze) | GUID: hash_2b301fded0f79604
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Kron Konturları
+  Metin : Diş Anatomisi - Üst 1. Premolar - Kron Konturları | Üst 1. premolar dişte bukkal yüzün en kabarık yeri kronun servikal üçlüsündeyken, palatinal yüzün en kabarık yeri orta üçlüsündedir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[17] SCORE: 0.9104
+  KART A (cloze) | GUID: hash_306b7f34defe4e58
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte mezial kenar sırt, distal kenar sırta göre daha servikalde yer alır
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[18] SCORE: 0.9102
+  KART A (cloze) | GUID: hash_bb1232e94545f92f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bukkal tüberküller kıyaslandığında, distobukkal tüberkül meziobukkal tüberküle oranla daha sivridir
+
+  KART B (cloze) | GUID: x,E5r!,/P)
+  Başlık: 
+  Metin : alt Birinci Molar • En büyük alt diştir. • Meziodistal boyutu en fazla olan diştir.* • Bukkal tüberküller lingual tüberküllere kıyasla daha kısadır.Karakteristk.  • Kökler genellikle birbirinden ayrıl
+
+--------------------------------------------------------------------------------
+
+[19] SCORE: 0.9101
+  KART A (cloze) | GUID: hash_7f8711b2b77c6610
+  Başlık: Diş Anatomisi - Üst 2. Premolar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Üst 2. Premolar - Tüberkül Boyutları | Premolar dişler içinde bukkal ve lingual tüberkül yükseklikleri birbirine en yakın olan diş üst 2. premolar diştir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[20] SCORE: 0.9091
+  KART A (cloze) | GUID: hash_589514803191d25a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Daimi dişler arasında mezial tüberkül sırtı distal tüberkül sırtından daha uzun olan tek premolar diş üst 1. premolar diştir
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[21] SCORE: 0.9090
+  KART A (cloze) | GUID: hash_75f9f12a60295a9f
+  Başlık: Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz
+  Metin : Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz | Alt kesici dişlerde singulum konumu incelendiğinde; yan kesicide lingual yüzün ortasında yer alırken, orta kesicide distale doğru şekillenmiştir
+
+  KART B (cloze) | GUID: veWg=3{C,_
+  Başlık: 
+  Metin : Alt santral kesici diş singulumu merkezde olmasına karşın alt lateral kesici singulumu hafif distaldedir
+
+--------------------------------------------------------------------------------
+
+[22] SCORE: 0.9088
+  KART A (cloze) | GUID: hash_97c63efb69b63f4f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişin bukkal yüzündeki gelişim olukları kıyaslandığında, distobukkal gelişim oluğu meziobukkal oluğa göre daha kısa ve sığdır
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[23] SCORE: 0.9085
+  KART A (cloze) | GUID: hash_bb662a568ba7d639
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Distal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Distal Yüz | Üst 1. premolar dişte distal kenar sırt meziale göre daha servikaldedir
+
+  KART B (cloze) | GUID: E(^axk!me{
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda distal marjinal sırt, mezial marjinal sırttan daha yüksektedir
+
+--------------------------------------------------------------------------------
+
+[24] SCORE: 0.9085
+  KART A (cloze) | GUID: hash_409d2cd28f4d9cca
+  Başlık: Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz
+  Metin : Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz | Alt kesici dişlerde lingual fossa; orta kesicide daha geniş ve düz yapıda iken, yan kesicide daha küçük ve belirgin şekillenmiştir
+
+  KART B (cloze) | GUID: t$(gejse[*
+  Başlık: 
+  Metin : alt kesici dişlerin insizal kenarı uzun aksın lingual tarafındadır. Ve Labial yüzeyleri linguele eğimlidir.
+
+--------------------------------------------------------------------------------
+
+[25] SCORE: 0.9081
+  KART A (cloze) | GUID: hash_bb1232e94545f92f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bukkal tüberküller kıyaslandığında, distobukkal tüberkül meziobukkal tüberküle oranla daha sivridir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[26] SCORE: 0.9075
+  KART A (cloze) | GUID: hash_97c63efb69b63f4f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişin bukkal yüzündeki gelişim olukları kıyaslandığında, distobukkal gelişim oluğu meziobukkal oluğa göre daha kısa ve sığdır
+
+  KART B (cloze) | GUID: x,E5r!,/P)
+  Başlık: 
+  Metin : alt Birinci Molar • En büyük alt diştir. • Meziodistal boyutu en fazla olan diştir.* • Bukkal tüberküller lingual tüberküllere kıyasla daha kısadır.Karakteristk.  • Kökler genellikle birbirinden ayrıl
+
+--------------------------------------------------------------------------------
+
+[27] SCORE: 0.9074
+  KART A (cloze) | GUID: hash_589514803191d25a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Daimi dişler arasında mezial tüberkül sırtı distal tüberkül sırtından daha uzun olan tek premolar diş üst 1. premolar diştir
+
+  KART B (cloze) | GUID: E(^axk!me{
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda distal marjinal sırt, mezial marjinal sırttan daha yüksektedir
+
+--------------------------------------------------------------------------------
+
+[28] SCORE: 0.9072
+  KART A (cloze) | GUID: hash_14ee20468453cf52
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişte kenar sırt boyları kıyaslandığında, mezial kenar sırt distal kenar sırta göre daha kısadır
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[29] SCORE: 0.9070
+  KART A (cloze) | GUID: hash_c2a6b5c9214f20f8
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişte bukkal ve palatinal üçgensel sırtlar merkezi gelişim oluğunda birleşerek transversal sırtı oluşturur
+
+  KART B (cloze) | GUID: LH7*97rr7^
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda belirgin bir transversal sırt bulunmasına rağmen, oklüzal yüzeyde santral oluk bulunmaz
+
+--------------------------------------------------------------------------------
+
+[30] SCORE: 0.9069
+  KART A (cloze) | GUID: hash_70c602bde1f7a66d
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Kök Morfolojisi
+  Metin : Diş Anatomisi - Üst 1. Premolar - Kök Morfolojisi | Üst 1. premolar dişte kök boyları kıyaslandığında, palatinal kök bukkal köke göre daha kısadır
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[31] SCORE: 0.9068
+  KART A (cloze) | GUID: hash_fd9afcbe90697cc7
+  Başlık: Diş Anatomisi - Alt 1. Molar - Kök Morfolojisi
+  Metin : Diş Anatomisi - Alt 1. Molar - Kök Morfolojisi | Alt 1. molar dişte kök boyları kıyaslandığında, mezial kök distal kökten daha uzundur
+
+  KART B (cloze) | GUID: x,E5r!,/P)
+  Başlık: 
+  Metin : alt Birinci Molar • En büyük alt diştir. • Meziodistal boyutu en fazla olan diştir.* • Bukkal tüberküller lingual tüberküllere kıyasla daha kısadır.Karakteristk.  • Kökler genellikle birbirinden ayrıl
+
+--------------------------------------------------------------------------------
+
+[32] SCORE: 0.9063
+  KART A (cloze) | GUID: hash_70c602bde1f7a66d
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Kök Morfolojisi
+  Metin : Diş Anatomisi - Üst 1. Premolar - Kök Morfolojisi | Üst 1. premolar dişte kök boyları kıyaslandığında, palatinal kök bukkal köke göre daha kısadır
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[33] SCORE: 0.9060
+  KART A (cloze) | GUID: hash_826e37daead9decf
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Üst 1. premolar dişte bukkal tüberkül tepesi, orta hatta göre biraz daha distalde konumlanmıştır
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[34] SCORE: 0.9056
+  KART A (cloze) | GUID: hash_c2a6b5c9214f20f8
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişte bukkal ve palatinal üçgensel sırtlar merkezi gelişim oluğunda birleşerek transversal sırtı oluşturur
+
+  KART B (cloze) | GUID: js<?2Z^LB%
+  Başlık: diş anatomisi
+  Metin : diş anatomisi | Bukkal sırt: Sadece premolar dişlerin kronlarının bukkal yüzeyinde oklüzal yüzeyden dişin servikal üçlüsüne kadar uzanan sırttır
+
+--------------------------------------------------------------------------------
+
+[35] SCORE: 0.9051
+  KART A (cloze) | GUID: hash_d26c2bca5b64cdef
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte lingual tüberkül ile mezial kenar sırtı birbirinden ayıran karakteristik yapı meziolingual gelişim oluğudur
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[36] SCORE: 0.9051
+  KART A (cloze) | GUID: hash_0c476ce90daea27a
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Oklüzal Yüz | Alt 1. premolar dişin oklüzal yüzünde, distal fossa mezial fossaya göre daha büyük ve derindir
+
+  KART B (cloze) | GUID: EM%i8.06Sc
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolardaki meziolingual gelişimsel oluk, oklüzal yüzeyde mezial fossaya kadar uzanır
+
+--------------------------------------------------------------------------------
+
+[37] SCORE: 0.9051
+  KART A (cloze) | GUID: hash_174503c23aa61a8a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz | Üst 1. premolar dişte palatinal tüberkül, bukkal tüberküle göre daha yuvarlak şekillenmiştir
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[38] SCORE: 0.9051
+  KART A (cloze) | GUID: hash_53b7fab05936f985
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişin oklüzal yüzünde mesiobukkal tüberkül sırtı ile mezial kenar sırt arasındaki açı 90 dereceye yaklaşırken, distobukkal tüberkül sırt
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[39] SCORE: 0.9049
+  KART A (cloze) | GUID: hash_423104c77ac139dc
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Bukkal Yüz | Alt 1. premolar dişte bukkal tüberkülün mezial sırtı, distal sırttan daha kısadır
+
+  KART B (cloze) | GUID: E(^axk!me{
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda distal marjinal sırt, mezial marjinal sırttan daha yüksektedir
+
+--------------------------------------------------------------------------------
+
+[40] SCORE: 0.9048
+  KART A (cloze) | GUID: hash_5cac4bbbdafd18a6
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişin bukkal yüzünde meziodistal çap, kron boyundan daha büyüktür
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[41] SCORE: 0.9045
+  KART A (cloze) | GUID: hash_376c193cd0e63745
+  Başlık: Diş Morfolojisi - Üst Sürekli Dişler - Üst Lateral Kesici Diş
+  Metin : Diş Morfolojisi - Üst Sürekli Dişler - Üst Lateral Kesici Diş | Üst lateral kesici dişin palatinal yüzünde bulunan kenar sırtlar kıyaslandığında, mesiopalatinal kenar sırtı distopalatinal kenar sırtın
+
+  KART B (cloze) | GUID: rSJQV!z`J3
+  Başlık: 
+  Metin : Alt Lateral Keser Diş • Alt santral dişe göre daha büyüktür. • Fasiolingual boyutu meziodistal boyutundan büyüktür. • Mezial marjinal sırt distalden daha uzundur. • Kesici kenar, dişin uzun aksının li
+
+--------------------------------------------------------------------------------
+
+[42] SCORE: 0.9040
+  KART A (cloze) | GUID: hash_97c63efb69b63f4f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişin bukkal yüzündeki gelişim olukları kıyaslandığında, distobukkal gelişim oluğu meziobukkal oluğa göre daha kısa ve sığdır
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[43] SCORE: 0.9036
+  KART A (cloze) | GUID: hash_c2a6b5c9214f20f8
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişte bukkal ve palatinal üçgensel sırtlar merkezi gelişim oluğunda birleşerek transversal sırtı oluşturur
+
+  KART B (cloze) | GUID: FZA926Z8W?
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Oklüzal yüzü linguale eğilmiş tek arka grup diş alt birinci premolardır
+
+--------------------------------------------------------------------------------
+
+[44] SCORE: 0.9035
+  KART A (cloze) | GUID: hash_7f8711b2b77c6610
+  Başlık: Diş Anatomisi - Üst 2. Premolar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Üst 2. Premolar - Tüberkül Boyutları | Premolar dişler içinde bukkal ve lingual tüberkül yükseklikleri birbirine en yakın olan diş üst 2. premolar diştir
+
+  KART B (cloze) | GUID: O?]bY-A(@_
+  Başlık: 
+  Metin : Maxiller İkinci Premolar • Diğer premolar dişlere kıyasla daha az belirgin tüberküllere sahiptir. • Kron ve kökün lingual yüzeyleri bukkal yüzeylere göre daha dardır. • Bukkal tüberkülün mezial eğimi 
+
+--------------------------------------------------------------------------------
+
+[45] SCORE: 0.9035
+  KART A (cloze) | GUID: hash_14ee20468453cf52
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişte kenar sırt boyları kıyaslandığında, mezial kenar sırt distal kenar sırta göre daha kısadır
+
+  KART B (cloze) | GUID: E(^axk!me{
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda distal marjinal sırt, mezial marjinal sırttan daha yüksektedir
+
+--------------------------------------------------------------------------------
+
+[46] SCORE: 0.9032
+  KART A (cloze) | GUID: hash_bb1232e94545f92f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bukkal tüberküller kıyaslandığında, distobukkal tüberkül meziobukkal tüberküle oranla daha sivridir
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[47] SCORE: 0.9029
+  KART A (cloze) | GUID: hash_7d27f001f0285e96
+  Başlık: Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Alt 1. Molar - Tüberkül Boyutları | Alt 1. molar dişte bukkal ve lingual tüberküller kıyaslandığında, lingual tüberküller daha uzun ve sivridir
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[48] SCORE: 0.9029
+  KART A (cloze) | GUID: hash_bb662a568ba7d639
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Distal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Distal Yüz | Üst 1. premolar dişte distal kenar sırt meziale göre daha servikaldedir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[49] SCORE: 0.9027
+  KART A (cloze) | GUID: hash_306b7f34defe4e58
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte mezial kenar sırt, distal kenar sırta göre daha servikalde yer alır
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[50] SCORE: 0.9026
+  KART A (cloze) | GUID: hash_97896ca1eb44e80f
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişin oklüzal yüzünde bukkolingual boyut, mesiodistal boyuttan daha büyüktür
+
+  KART B (cloze) | GUID: xm.uZM,;[T
+  Başlık: Diş Morfolojisi - Maksiller Birinci Molar - Boyutlar
+  Metin : Diş Morfolojisi - Maksiller Birinci Molar - Boyutlar | Maksiller birinci molarda bukkolingual boyut, meziodistal boyuttan daha fazladır.
+
+--------------------------------------------------------------------------------
+
+[51] SCORE: 0.9025
+  KART A (cloze) | GUID: hash_174503c23aa61a8a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz | Üst 1. premolar dişte palatinal tüberkül, bukkal tüberküle göre daha yuvarlak şekillenmiştir
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[52] SCORE: 0.9024
+  KART A (cloze) | GUID: hash_f6c326bb1f709458
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bifurkasyon ekseninin mezialinde yer alıp kron orta üçlüsüne kadar uzanan gelişim oluğu meziobukkal gelişim oluğudur
+
+  KART B (cloze) | GUID: x,E5r!,/P)
+  Başlık: 
+  Metin : alt Birinci Molar • En büyük alt diştir. • Meziodistal boyutu en fazla olan diştir.* • Bukkal tüberküller lingual tüberküllere kıyasla daha kısadır.Karakteristk.  • Kökler genellikle birbirinden ayrıl
+
+--------------------------------------------------------------------------------
+
+[53] SCORE: 0.9024
+  KART A (cloze) | GUID: hash_1ddd668d505ce781
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz | Üst 1. premolar dişte mezial kenar sırta göre servikal çizgiden daha uzakta yer alan kenar sırt distal kenar sırttır
+
+  KART B (cloze) | GUID: E(^axk!me{
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda distal marjinal sırt, mezial marjinal sırttan daha yüksektedir
+
+--------------------------------------------------------------------------------
+
+[54] SCORE: 0.9023
+  KART A (cloze) | GUID: hash_826e37daead9decf
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Üst 1. premolar dişte bukkal tüberkül tepesi, orta hatta göre biraz daha distalde konumlanmıştır
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[55] SCORE: 0.9021
+  KART A (cloze) | GUID: hash_75f9f12a60295a9f
+  Başlık: Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz
+  Metin : Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz | Alt kesici dişlerde singulum konumu incelendiğinde; yan kesicide lingual yüzün ortasında yer alırken, orta kesicide distale doğru şekillenmiştir
+
+  KART B (cloze) | GUID: "m#JO)`+].r"
+  Başlık: 
+  Metin : Alt Santral Keser Diş • Ağzın en küçük boyutlu daimi dişidir. • Marjinal sırtlar aynı uzunluktadır. • Kesici kenar, dişin uzun aksının lingual tarafındadır. • Singulum belirgin değildir ve merkezi kon
+
+--------------------------------------------------------------------------------
+
+[56] SCORE: 0.9021
+  KART A (cloze) | GUID: hash_75f9f12a60295a9f
+  Başlık: Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz
+  Metin : Diş Anatomisi - Alt Kesici Dişler - Lingual Yüz | Alt kesici dişlerde singulum konumu incelendiğinde; yan kesicide lingual yüzün ortasında yer alırken, orta kesicide distale doğru şekillenmiştir
+
+  KART B (cloze) | GUID: t$(gejse[*
+  Başlık: 
+  Metin : alt kesici dişlerin insizal kenarı uzun aksın lingual tarafındadır. Ve Labial yüzeyleri linguele eğimlidir.
+
+--------------------------------------------------------------------------------
+
+[57] SCORE: 0.9020
+  KART A (cloze) | GUID: hash_d26c2bca5b64cdef
+  Başlık: Diş Anatomisi - Alt 1. Premolar - Lingual Yüz
+  Metin : Diş Anatomisi - Alt 1. Premolar - Lingual Yüz | Alt 1. premolar dişte lingual tüberkül ile mezial kenar sırtı birbirinden ayıran karakteristik yapı meziolingual gelişim oluğudur
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[58] SCORE: 0.9019
+  KART A (cloze) | GUID: hash_3be4931acc24e626
+  Başlık: Diş Anatomisi - Üst Kanin - Mesial Yüz
+  Metin : Diş Anatomisi - Üst Kanin - Mesial Yüz | Üst kanin dişin bukkolingual yönde kron ve kökünün en geniş yüzü mesial yüzüdür
+
+  KART B (cloze) | GUID: nIs~CeSDs!
+  Başlık: 
+  Metin : Maxiller Kanin • Ağızdaki en uzun diştir.  • Mezial yüzey distal yüzeye göre daha uzundur. • Labial yüzeyinde belirgin bir sırta sahiptir. • Belirgin bir singuluma sahiptir. • Dişin tepe noktası kronu
+
+--------------------------------------------------------------------------------
+
+[59] SCORE: 0.9019
+  KART A (cloze) | GUID: hash_80b380288a1ef89f
+  Başlık: Diş Morfolojisi - Üst Sürekli Dişler - Üst Lateral Kesici Diş
+  Metin : Diş Morfolojisi - Üst Sürekli Dişler - Üst Lateral Kesici Diş | Üst lateral kesici dişte singulum, kenar sırtlar ve palatinal fossa üst santral kesici dişe oranla daha belirgin olarak şekillenmiştir.
+
+  KART B (cloze) | GUID: rSJQV!z`J3
+  Başlık: 
+  Metin : Alt Lateral Keser Diş • Alt santral dişe göre daha büyüktür. • Fasiolingual boyutu meziodistal boyutundan büyüktür. • Mezial marjinal sırt distalden daha uzundur. • Kesici kenar, dişin uzun aksının li
+
+--------------------------------------------------------------------------------
+
+[60] SCORE: 0.9018
+  KART A (cloze) | GUID: hash_7f8711b2b77c6610
+  Başlık: Diş Anatomisi - Üst 2. Premolar - Tüberkül Boyutları
+  Metin : Diş Anatomisi - Üst 2. Premolar - Tüberkül Boyutları | Premolar dişler içinde bukkal ve lingual tüberkül yükseklikleri birbirine en yakın olan diş üst 2. premolar diştir
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[61] SCORE: 0.9016
+  KART A (cloze) | GUID: hash_70c602bde1f7a66d
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Kök Morfolojisi
+  Metin : Diş Anatomisi - Üst 1. Premolar - Kök Morfolojisi | Üst 1. premolar dişte kök boyları kıyaslandığında, palatinal kök bukkal köke göre daha kısadır
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+
+[62] SCORE: 0.9015
+  KART A (cloze) | GUID: hash_f6c326bb1f709458
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bifurkasyon ekseninin mezialinde yer alıp kron orta üçlüsüne kadar uzanan gelişim oluğu meziobukkal gelişim oluğudur
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[63] SCORE: 0.9012
+  KART A (cloze) | GUID: hash_fd9afcbe90697cc7
+  Başlık: Diş Anatomisi - Alt 1. Molar - Kök Morfolojisi
+  Metin : Diş Anatomisi - Alt 1. Molar - Kök Morfolojisi | Alt 1. molar dişte kök boyları kıyaslandığında, mezial kök distal kökten daha uzundur
+
+  KART B (cloze) | GUID: tPbfus([~u
+  Başlık: Diş Morfolojisi - Maksiller Birinci Molar - Kök Anatomisi
+  Metin : Diş Morfolojisi - Maksiller Birinci Molar - Kök Anatomisi | Maksiller birinci molarda bukkolingual olarak en geniş kök meziobukkal köktür.
+
+--------------------------------------------------------------------------------
+
+[64] SCORE: 0.9010
+  KART A (cloze) | GUID: hash_d13cebffa8b988b3
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Üst 1. premolar dişin bukkal yüzeyinde okluzoservikal boyut, mesiodistal boyuttan daha büyüktür
+
+  KART B (cloze) | GUID: "u0L?#$!oW^"
+  Başlık: Diş Anatomisi
+  Metin : Diş Anatomisi | maxiller birinci premolar • Kron ve kökleri üst kaninden kısa, kök boyları molar dişlerin kökü kadardır. • Kron ve kökün lingual yüzeyleri bukkal yüzeylerinden daha dardır. • Bukkal tü
+
+--------------------------------------------------------------------------------
+
+[65] SCORE: 0.9009
+  KART A (cloze) | GUID: hash_174503c23aa61a8a
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Palatinal Yüz | Üst 1. premolar dişte palatinal tüberkül, bukkal tüberküle göre daha yuvarlak şekillenmiştir
+
+  KART B (cloze) | GUID: E).5`ph!M~
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premoların bukkal tüberkülünde, mezial tüberkül sırtı distal tüberkül sırtından daha kısadır
+
+--------------------------------------------------------------------------------
+
+[66] SCORE: 0.9009
+  KART A (cloze) | GUID: hash_53b7fab05936f985
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Oklüzal Yüz | Üst 1. premolar dişin oklüzal yüzünde mesiobukkal tüberkül sırtı ile mezial kenar sırt arasındaki açı 90 dereceye yaklaşırken, distobukkal tüberkül sırt
+
+  KART B (cloze) | GUID: js<?2Z^LB%
+  Başlık: diş anatomisi
+  Metin : diş anatomisi | Bukkal sırt: Sadece premolar dişlerin kronlarının bukkal yüzeyinde oklüzal yüzeyden dişin servikal üçlüsüne kadar uzanan sırttır
+
+--------------------------------------------------------------------------------
+
+[67] SCORE: 0.9004
+  KART A (cloze) | GUID: hash_bb1232e94545f92f
+  Başlık: Diş Anatomisi - Alt 1. Molar - Bukkal Yüz
+  Metin : Diş Anatomisi - Alt 1. Molar - Bukkal Yüz | Alt 1. molar dişte bukkal tüberküller kıyaslandığında, distobukkal tüberkül meziobukkal tüberküle oranla daha sivridir
+
+  KART B (cloze) | GUID: "JO{$iip#{}"
+  Başlık: Diş Morfolojisi - Maksiller Birinci Molar - Tüberküller
+  Metin : Diş Morfolojisi - Maksiller Birinci Molar - Tüberküller | Maksiller birinci molarda meziobukkal tüberkülün mezial eğimi, distal eğimi ile geniş açı yapar.
+
+--------------------------------------------------------------------------------
+
+[68] SCORE: 0.9004
+  KART A (cloze) | GUID: hash_3c74657dda3c5f78
+  Başlık: Diş Anatomisi - Üst Kesici Dişler - Kesici Yüz
+  Metin : Diş Anatomisi - Üst Kesici Dişler - Kesici Yüz | Üst kesici dişlerin kesici yüz morfolojisinde; insizal kenarın mesiodistal eğimi orta kesicide az iken, yan kesicide belirgin dışbükeydir
+
+  KART B (cloze) | GUID: t$(gejse[*
+  Başlık: 
+  Metin : alt kesici dişlerin insizal kenarı uzun aksın lingual tarafındadır. Ve Labial yüzeyleri linguele eğimlidir.
+
+--------------------------------------------------------------------------------
+
+[69] SCORE: 0.9003
+  KART A (cloze) | GUID: hash_2b301fded0f79604
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Kron Konturları
+  Metin : Diş Anatomisi - Üst 1. Premolar - Kron Konturları | Üst 1. premolar dişte bukkal yüzün en kabarık yeri kronun servikal üçlüsündeyken, palatinal yüzün en kabarık yeri orta üçlüsündedir
+
+  KART B (cloze) | GUID: js<?2Z^LB%
+  Başlık: diş anatomisi
+  Metin : diş anatomisi | Bukkal sırt: Sadece premolar dişlerin kronlarının bukkal yüzeyinde oklüzal yüzeyden dişin servikal üçlüsüne kadar uzanan sırttır
+
+--------------------------------------------------------------------------------
+
+[70] SCORE: 0.9001
+  KART A (cloze) | GUID: hash_d13cebffa8b988b3
+  Başlık: Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz
+  Metin : Diş Anatomisi - Üst 1. Premolar - Bukkal Yüz | Üst 1. premolar dişin bukkal yüzeyinde okluzoservikal boyut, mesiodistal boyuttan daha büyüktür
+
+  KART B (cloze) | GUID: fhi%Lm(k9a
+  Başlık: Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar
+  Metin : Diş Morfolojisi - Alt Sürekli Dişler - Alt Birinci Premolar | Alt birinci premolarda boyut olarak bukkal tüberkül, lingual tüberkülden daha büyüktür
+
+--------------------------------------------------------------------------------
+

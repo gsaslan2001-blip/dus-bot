@@ -962,21 +962,21 @@
     "namespace": "telos"
   },
   "chathistory::antigravity_session_1776945387.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T14:56:27",
     "ids": [
       "ch::8cb4be8d::000"
     ],
     "namespace": "chathistory"
   },
   "chathistory::antigravity_session_1776949165.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T15:59:25",
     "ids": [
       "ch::c4bb75a1::000"
     ],
     "namespace": "chathistory"
   },
   "chathistory::brown_tumoru.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T16:43:49",
     "ids": [
       "ch::48fcf6b3::000",
       "ch::48fcf6b3::001"
@@ -984,7 +984,7 @@
     "namespace": "chathistory"
   },
   "chathistory::gomulu_dis_lezyonlari.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T16:53:53",
     "ids": [
       "ch::d1a1f918::000",
       "ch::d1a1f918::001"
@@ -992,15 +992,16 @@
     "namespace": "chathistory"
   },
   "chathistory::santral_dev_hucreli_granulom.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T16:39:02",
     "ids": [
       "ch::b0a2432f::000",
-      "ch::b0a2432f::001"
+      "ch::b0a2432f::001",
+      "ch::b0a2432f::002"
     ],
     "namespace": "chathistory"
   },
   "chathistory::session_log_2026-04-23_1859.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T19:00:05",
     "ids": [
       "ch::259695a2::000",
       "ch::259695a2::001"
@@ -1008,40 +1009,393 @@
     "namespace": "chathistory"
   },
   "chathistory::session_summary_2026-04-23_1739.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T20:39:30",
     "ids": [
       "ch::da4e4731::000",
-      "ch::da4e4731::001"
+      "ch::da4e4731::001",
+      "ch::da4e4731::002"
     ],
     "namespace": "chathistory"
   },
   "chathistory::session_summary_2026-04-23_1903.md": {
-    "mtime": "2026-04-23",
+    "mtime": "2026-04-23T20:40:40",
     "ids": [
-      "ch::06ca5763::000"
+      "ch::06ca5763::000",
+      "ch::06ca5763::001",
+      "ch::06ca5763::002"
     ],
     "namespace": "chathistory"
   },
   "chathistory::dus_2025_standardization_session.md": {
-    "mtime": "2026-04-26",
+    "mtime": "2026-04-26T22:49:12",
     "ids": [
       "ch::074bac36::000",
-      "ch::074bac36::001"
+      "ch::074bac36::001",
+      "ch::074bac36::002"
     ],
     "namespace": "chathistory"
   },
   "chathistory::patoloji_tamamlandi.md": {
-    "mtime": "2026-04-24",
+    "mtime": "2026-04-24T19:12:55",
     "ids": [
       "ch::9d8c793b::000"
     ],
     "namespace": "chathistory"
   },
   "chathistory::dus_full_vectorization_session.md": {
-    "mtime": "2026-04-26",
+    "mtime": "2026-04-26T23:30:55",
     "ids": [
       "ch::daf42a7d::000",
       "ch::daf42a7d::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::2026-04-27_16-35_session_start.md": {
+    "mtime": "2026-04-27T16:35:18",
+    "ids": [
+      "ch::b7aff345::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::2026-04-27_16-38_rag_explanation.md": {
+    "mtime": "2026-04-27T16:37:07",
+    "ids": [
+      "ch::8bc7b8af::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::2026-04-27_16-40_identity_clarification.md": {
+    "mtime": "2026-04-27T16:38:12",
+    "ids": [
+      "ch::3c0646fc::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::2026-04-27_16-41_security_keys.md": {
+    "mtime": "2026-04-27T16:38:50",
+    "ids": [
+      "ch::f6f515f8::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::2026-04-27_16-42_health_check.md": {
+    "mtime": "2026-04-27T16:39:41",
+    "ids": [
+      "ch::3c7938c4::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::session_20260427_mimari_temizlik.md": {
+    "mtime": "2026-04-27T16:52:51",
+    "ids": [
+      "ch::ad62a7d4::000",
+      "ch::ad62a7d4::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::cikmis_radyoloji_unit15.md": {
+    "mtime": "2026-04-27T17:52:13",
+    "ids": [
+      "ch::3a64d37c::000",
+      "ch::3a64d37c::001",
+      "ch::3a64d37c::002"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::radyoloji_kontrast_vektorleme.md": {
+    "mtime": "2026-04-27T18:32:39",
+    "ids": [
+      "ch::a83b9dd8::000",
+      "ch::a83b9dd8::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::session_20260427_xray_fizik.md": {
+    "mtime": "2026-04-27T17:04:18",
+    "ids": [
+      "ch::e56a5492::000",
+      "ch::e56a5492::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::morton_sorgu_analizi.md": {
+    "mtime": "2026-04-27T18:39:01",
+    "ids": [
+      "ch::e3b0c805::000",
+      "ch::e3b0c805::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::transmisyon_sorgu_analizi.md": {
+    "mtime": "2026-04-27T18:43:11",
+    "ids": [
+      "ch::9e5e7630::000",
+      "ch::9e5e7630::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::skill_kurulumu_prompt_master_20260428.md": {
+    "mtime": "2026-04-28T09:24:27",
+    "ids": [
+      "ch::63f18b4f::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::prompt_master_analizi_20260428.md": {
+    "mtime": "2026-04-28T09:28:04",
+    "ids": [
+      "ch::0424df73::000",
+      "ch::0424df73::001",
+      "ch::0424df73::002"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::audit_report_agentic_network_20260428.md": {
+    "mtime": "2026-04-28T09:55:24",
+    "ids": [
+      "ch::4fe49c37::000",
+      "ch::4fe49c37::001",
+      "ch::4fe49c37::002",
+      "ch::4fe49c37::003",
+      "ch::4fe49c37::004",
+      "ch::4fe49c37::005",
+      "ch::4fe49c37::006"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::konu_x_isini_fokal_spot_20260428.md": {
+    "mtime": "2026-04-28T11:29:11",
+    "ids": [
+      "ch::2694258a::000",
+      "ch::2694258a::001",
+      "ch::2694258a::002",
+      "ch::2694258a::003",
+      "ch::2694258a::004",
+      "ch::2694258a::005",
+      "ch::2694258a::006",
+      "ch::2694258a::007"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::radyoloji_kvp_mas_kalite_20260428.md": {
+    "mtime": "2026-04-28T11:38:08",
+    "ids": [
+      "ch::aba86ebe::000",
+      "ch::aba86ebe::001",
+      "ch::aba86ebe::002",
+      "ch::aba86ebe::003",
+      "ch::aba86ebe::004",
+      "ch::aba86ebe::005",
+      "ch::aba86ebe::006",
+      "ch::aba86ebe::007",
+      "ch::aba86ebe::008"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::radyoloji_topuk_etkisi.md": {
+    "mtime": "2026-04-28T11:50:13",
+    "ids": [
+      "ch::f1f9f2f5::000",
+      "ch::f1f9f2f5::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::x_isini_olusumu_mekanizmalari.md": {
+    "mtime": "2026-04-28T11:57:43",
+    "ids": [
+      "ch::e0d714e5::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::x_isini_kontrol_faktörleri.md": {
+    "mtime": "2026-04-28T12:22:54",
+    "ids": [
+      "ch::ab5b3a80::000",
+      "ch::ab5b3a80::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::dis_morfolojisi_kiyaslama_20260429.md": {
+    "mtime": "2026-04-29T15:06:27",
+    "ids": [
+      "ch::5682e723::000",
+      "ch::5682e723::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::anki_dedup_hiz_analizi_20260429.md": {
+    "mtime": "2026-04-29T15:08:18",
+    "ids": [
+      "ch::a557bc22::000",
+      "ch::a557bc22::001",
+      "ch::a557bc22::002",
+      "ch::a557bc22::003",
+      "ch::a557bc22::004",
+      "ch::a557bc22::005",
+      "ch::a557bc22::006",
+      "ch::a557bc22::007",
+      "ch::a557bc22::008"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::anki_karts_eklendi_20260429.md": {
+    "mtime": "2026-04-29T15:17:04",
+    "ids": [
+      "ch::0a503d35::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::workflow_evrimi_20260429.md": {
+    "mtime": "2026-04-29T15:21:40",
+    "ids": [
+      "ch::f586922b::000",
+      "ch::f586922b::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::konu_analizi_20260429_anki_local_dedup.md": {
+    "mtime": "2026-04-29T15:43:05",
+    "ids": [
+      "ch::3b7e629a::000"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::1-fizyobasic_fast_dedup_report.md": {
+    "mtime": "2026-04-29T16:16:56",
+    "ids": [
+      "ch::9e49b45a::000",
+      "ch::9e49b45a::001",
+      "ch::9e49b45a::002",
+      "ch::9e49b45a::003",
+      "ch::9e49b45a::004",
+      "ch::9e49b45a::005",
+      "ch::9e49b45a::006",
+      "ch::9e49b45a::007",
+      "ch::9e49b45a::008",
+      "ch::9e49b45a::009",
+      "ch::9e49b45a::010",
+      "ch::9e49b45a::011",
+      "ch::9e49b45a::012",
+      "ch::9e49b45a::013",
+      "ch::9e49b45a::014",
+      "ch::9e49b45a::015",
+      "ch::9e49b45a::016",
+      "ch::9e49b45a::017",
+      "ch::9e49b45a::018",
+      "ch::9e49b45a::019",
+      "ch::9e49b45a::020",
+      "ch::9e49b45a::021",
+      "ch::9e49b45a::022",
+      "ch::9e49b45a::023",
+      "ch::9e49b45a::024",
+      "ch::9e49b45a::025",
+      "ch::9e49b45a::026",
+      "ch::9e49b45a::027",
+      "ch::9e49b45a::028",
+      "ch::9e49b45a::029",
+      "ch::9e49b45a::030",
+      "ch::9e49b45a::031",
+      "ch::9e49b45a::032",
+      "ch::9e49b45a::033",
+      "ch::9e49b45a::034",
+      "ch::9e49b45a::035",
+      "ch::9e49b45a::036",
+      "ch::9e49b45a::037",
+      "ch::9e49b45a::038",
+      "ch::9e49b45a::039",
+      "ch::9e49b45a::040",
+      "ch::9e49b45a::041",
+      "ch::9e49b45a::042",
+      "ch::9e49b45a::043",
+      "ch::9e49b45a::044",
+      "ch::9e49b45a::045",
+      "ch::9e49b45a::046",
+      "ch::9e49b45a::047",
+      "ch::9e49b45a::048",
+      "ch::9e49b45a::049",
+      "ch::9e49b45a::050",
+      "ch::9e49b45a::051",
+      "ch::9e49b45a::052",
+      "ch::9e49b45a::053",
+      "ch::9e49b45a::054",
+      "ch::9e49b45a::055",
+      "ch::9e49b45a::056",
+      "ch::9e49b45a::057",
+      "ch::9e49b45a::058",
+      "ch::9e49b45a::059",
+      "ch::9e49b45a::060",
+      "ch::9e49b45a::061",
+      "ch::9e49b45a::062",
+      "ch::9e49b45a::063",
+      "ch::9e49b45a::064",
+      "ch::9e49b45a::065",
+      "ch::9e49b45a::066",
+      "ch::9e49b45a::067",
+      "ch::9e49b45a::068",
+      "ch::9e49b45a::069",
+      "ch::9e49b45a::070",
+      "ch::9e49b45a::071"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::dedup_algoritma_analizi_20260429.md": {
+    "mtime": "2026-04-29T16:43:43",
+    "ids": [
+      "ch::7ed1bf70::000",
+      "ch::7ed1bf70::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::smart_dedup_pipeline_development_20260501.md": {
+    "mtime": "2026-05-01T16:14:24",
+    "ids": [
+      "ch::76e81a79::000",
+      "ch::76e81a79::001",
+      "ch::76e81a79::002"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::SESSION_HANDOVER_20260501.md": {
+    "mtime": "2026-05-01T17:05:07",
+    "ids": [
+      "ch::9ceb2091::000",
+      "ch::9ceb2091::001",
+      "ch::9ceb2091::002",
+      "ch::9ceb2091::003"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::embedding_switch_20260501.md": {
+    "mtime": "2026-05-01T17:44:11",
+    "ids": [
+      "ch::2a0d925f::000",
+      "ch::2a0d925f::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::eklenti_raporu_20260501.md": {
+    "mtime": "2026-05-01T17:35:32",
+    "ids": [
+      "ch::7fca6554::000",
+      "ch::7fca6554::001",
+      "ch::7fca6554::002",
+      "ch::7fca6554::003"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::eklenti_analizi_hazirlik_20260501.md": {
+    "mtime": "2026-05-01T17:37:37",
+    "ids": [
+      "ch::6330a1d9::000",
+      "ch::6330a1d9::001"
+    ],
+    "namespace": "chathistory"
+  },
+  "chathistory::bayrak_teslimi_20260501.md": {
+    "mtime": "2026-05-01T17:49:14",
+    "ids": [
+      "ch::71f24d4c::000",
+      "ch::71f24d4c::001"
     ],
     "namespace": "chathistory"
   }

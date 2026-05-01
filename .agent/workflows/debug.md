@@ -8,7 +8,7 @@
 
 ### 1. Hata Bilgisini Al
 - Furkan'dan tam hata mesajını (traceback) iste
-- Hangi script / fonksiyon? (`dus_bot.py`, `upload_*.py`, `main.py` vb.)
+- Hangi script / fonksiyon? (`upload_*.py`, `search_engine.py` vb.)
 - Ne zaman oluştu? (İlk kez mi? Belirli bir işlemden sonra mı?)
 
 ### 2. Kök Neden Analizi (Kod Yazmadan Önce)
@@ -18,7 +18,6 @@
 3. **API bağlantısı** → Pinecone host adresi doğru mu? Token geçerli mi?
 4. **Namespace hatası** → `dusbankasi`'nde `__default__` sorunu mu?
 5. **Model kota aşımı** → 429 hatası mı? Fallback zinciri devreye girdi mi?
-6. **Webhook çakışması** → Telegram 409 Conflict? `remove_webhook()` çalıştır
 
 ### 3. Çözüm Öner
 - En basit çözümü önce dene
@@ -30,7 +29,7 @@
 - Test et ve sonucu paylaş
 
 ### 5. Kaydet
-Kritik hata ve çözümünü `mybrain/dus-data`'ya kaydet:
+Kritik hata ve çözümünü `chathistory` veya `dus-memory`'ye kaydet:
 ```
 id: "debug_log-[özet]-YYYY-MM-DD"
 type: "technical_decision"

@@ -1,0 +1,2686 @@
+[
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.75,
+    "kart_a_guid": "B[7e@e#-2x",
+    "kart_b_guid": "pUoTkt%(/$",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "147. $D_1$ ve $D_5$ dopamin reseptörleri cAMP seviyesini nasıl etkiler (artırır/azaltır)?",
+    "kart_b_metin": "148. $D_2$, $D_3$ ve $D_4$ dopamin reseptörleri cAMP seviyesini nasıl etkiler?",
+    "tokens_a": [
+      "azaltır",
+      "artırır",
+      "seviyesini",
+      "etkiler",
+      "reseptörleri",
+      "dopamin",
+      "camp",
+      "d_"
+    ],
+    "tokens_b": [
+      "seviyesini",
+      "etkiler",
+      "reseptörleri",
+      "dopamin",
+      "camp",
+      "d_"
+    ],
+    "common_tokens": [
+      "seviyesini",
+      "reseptörleri",
+      "etkiler",
+      "dopamin",
+      "camp",
+      "d_"
+    ]
+  },
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.0833,
+    "kart_a_guid": "nM/PO+q:GW",
+    "kart_b_guid": "iZ3?Q(9&W~",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "235. Talamus, uyku-uyanıklık dönemlerindeki hangi beyin elektriksel aktivitesinin (EEG dalgaları) oluşmasında rol oynar?",
+    "kart_b_metin": "266. EEG nedir?",
+    "tokens_a": [
+      "beyin",
+      "uyanıklık",
+      "oluşmasında",
+      "eeg",
+      "uyku",
+      "aktivitesinin",
+      "talamus",
+      "dönemlerindeki",
+      "dalgaları",
+      "elektriksel",
+      "rol",
+      "oynar"
+    ],
+    "tokens_b": [
+      "eeg"
+    ],
+    "common_tokens": [
+      "eeg"
+    ]
+  },
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.1111,
+    "kart_a_guid": "iZ3?Q(9&W~",
+    "kart_b_guid": "Fx.Fz#/ywR",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "266. EEG nedir?",
+    "kart_b_metin": "267. Beyin aktivitesi (uyanıklık) arttıkça, EEG dalgalarının amplitüdü ve frekansı nasıl değişir?",
+    "tokens_a": [
+      "eeg"
+    ],
+    "tokens_b": [
+      "beyin",
+      "frekansı",
+      "aktivitesi",
+      "uyanıklık",
+      "eeg",
+      "amplitüdü",
+      "dalgalarının",
+      "değişir",
+      "arttıkça"
+    ],
+    "common_tokens": [
+      "eeg"
+    ]
+  },
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.0625,
+    "kart_a_guid": "iZ3?Q(9&W~",
+    "kart_b_guid": "RiGyL+W3Cz",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "266. EEG nedir?",
+    "kart_b_metin": "276. Non-REM uykusunda Evre 1'den Evre 4'e gidildikçe uyku derinliği nasıl değişir ve EEG'de hangi dalgalar (teta ve delta) dominant hale gelir?",
+    "tokens_a": [
+      "eeg"
+    ],
+    "tokens_b": [
+      "rem",
+      "den",
+      "hale",
+      "gidildikçe",
+      "dalgalar",
+      "uyku",
+      "eeg",
+      "e",
+      "delta",
+      "derinliği",
+      "uykusunda",
+      "dominant",
+      "teta",
+      "evre",
+      "değişir",
+      "non"
+    ],
+    "common_tokens": [
+      "eeg"
+    ]
+  },
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.1111,
+    "kart_a_guid": "iZ3?Q(9&W~",
+    "kart_b_guid": "Qu$AQPuwuP",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "266. EEG nedir?",
+    "kart_b_metin": "280. REM uykusunda EEG'de hangi ritim  görülür ve bu durum \"\"Paradoks Uyku\"\" olarak neden adlandırılır?",
+    "tokens_a": [
+      "eeg"
+    ],
+    "tokens_b": [
+      "rem",
+      "paradoks",
+      "eeg",
+      "uyku",
+      "ritim",
+      "uykusunda",
+      "durum",
+      "adlandırılır",
+      "olarak"
+    ],
+    "common_tokens": [
+      "eeg"
+    ]
+  },
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.75,
+    "kart_a_guid": "G!Xl!bb`RL",
+    "kart_b_guid": "XY71~-Bj:",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON",
+    "kart_a_metin": "Tip I Pnömositlerin temel görevi nedir?",
+    "kart_b_metin": "Tip II Pnömositlerin (Granüler) 2 temel görevi nedir?",
+    "tokens_a": [
+      "pnömositlerin",
+      "tip",
+      "görevi"
+    ],
+    "tokens_b": [
+      "pnömositlerin",
+      "tip",
+      "granüler",
+      "görevi"
+    ],
+    "common_tokens": [
+      "pnömositlerin",
+      "tip",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 1.0,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "Q?^YYI/I*a",
+    "kart_b_guid": "BUG:tg*I}.",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_a_metin": "Transpulmoner basınç nedir?",
+    "kart_b_metin": "Transpulmoner basınç neyi belirler?",
+    "tokens_a": [
+      "transpulmoner",
+      "basınç"
+    ],
+    "tokens_b": [
+      "transpulmoner",
+      "belirler",
+      "neyi",
+      "basınç"
+    ],
+    "common_tokens": [
+      "transpulmoner",
+      "basınç"
+    ]
+  },
+  {
+    "overlap_score": 0.9091,
+    "jaccard_score": 0.8333,
+    "kart_a_guid": "fC)k!j(lQW",
+    "kart_b_guid": "oAPQsaXd}I",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "236. **Posterior hipotalamus** hangi otonom sistem alanıdır (Sempatik/Parasempatik) ve uyarılması hangi 3 etkiye yol açar?",
+    "kart_b_metin": "237. **Anterior hipotalamus** hangi otonom sistem alanıdır (Parasempatik/Sempatik) ve uyarılması hangi 3 etkiye yol açar?",
+    "tokens_a": [
+      "parasempatik",
+      "alanıdır",
+      "uyarılması",
+      "hipotalamus",
+      "sempatik",
+      "otonom",
+      "posterior",
+      "sistem",
+      "yol",
+      "etkiye",
+      "açar"
+    ],
+    "tokens_b": [
+      "parasempatik",
+      "alanıdır",
+      "uyarılması",
+      "hipotalamus",
+      "anterior",
+      "sempatik",
+      "otonom",
+      "yol",
+      "sistem",
+      "etkiye",
+      "açar"
+    ],
+    "common_tokens": [
+      "parasempatik",
+      "alanıdır",
+      "uyarılması",
+      "hipotalamus",
+      "otonom",
+      "yol",
+      "sistem",
+      "açar",
+      "etkiye",
+      "sempatik"
+    ]
+  },
+  {
+    "overlap_score": 0.8889,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "wGp6~p-zQ+",
+    "kart_b_guid": "is3kBnQzc~",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "98. Kalpte bulunan muskarinik reseptör alt tipi hangisidir ve hangi G-proteini  ile kenetlidir?",
+    "kart_b_metin": "99. Ekzokrin salgı bezleri ve düz kaslarda bulunan muskarinik reseptör alt tipi hangisidir ve hangi G-proteini (Gi/Gq) ile kenetlidir?",
+    "tokens_a": [
+      "g",
+      "kenetlidir",
+      "alt",
+      "proteini",
+      "reseptör",
+      "bulunan",
+      "kalpte",
+      "muskarinik",
+      "tipi"
+    ],
+    "tokens_b": [
+      "düz",
+      "g",
+      "bezleri",
+      "kenetlidir",
+      "alt",
+      "proteini",
+      "ekzokrin",
+      "reseptör",
+      "bulunan",
+      "salgı",
+      "muskarinik",
+      "kaslarda",
+      "gi",
+      "gq",
+      "tipi"
+    ],
+    "common_tokens": [
+      "g",
+      "kenetlidir",
+      "alt",
+      "proteini",
+      "reseptör",
+      "bulunan",
+      "muskarinik",
+      "tipi"
+    ]
+  },
+  {
+    "overlap_score": 0.8889,
+    "jaccard_score": 0.8,
+    "kart_a_guid": "K=rMmWzW+x",
+    "kart_b_guid": "u8IP}xO:a?",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "296. **Miyop** nedir (ne net, ne bozuk?) ve hangi tip mercek (kalın/ince kenarlı) ile düzeltilir?",
+    "kart_b_metin": "297. **Hipermetrop** nedir (ne net, ne bozuk?) ve hangi tip mercek (kalın/ince kenarlı) ile düzeltilir?",
+    "tokens_a": [
+      "bozuk",
+      "ince",
+      "net",
+      "tip",
+      "kenarlı",
+      "mercek",
+      "kalın",
+      "miyop",
+      "düzeltilir"
+    ],
+    "tokens_b": [
+      "bozuk",
+      "ince",
+      "net",
+      "tip",
+      "kenarlı",
+      "mercek",
+      "kalın",
+      "hipermetrop",
+      "düzeltilir"
+    ],
+    "common_tokens": [
+      "bozuk",
+      "ince",
+      "net",
+      "tip",
+      "mercek",
+      "düzeltilir",
+      "kalın",
+      "kenarlı"
+    ]
+  },
+  {
+    "overlap_score": 0.8571,
+    "jaccard_score": 0.6667,
+    "kart_a_guid": "hz+|6ZdNff",
+    "kart_b_guid": "JbvB0`%HuV",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "85. Parasempatik postganglionik nöronlar hedef dokuda hangi nörotransmitteri salgılar?",
+    "kart_b_metin": "86. Sempatik postganglionik nöronlar hedef dokuda (genellikle) hangi nörotransmitteri salgılar?",
+    "tokens_a": [
+      "dokuda",
+      "salgılar",
+      "parasempatik",
+      "nörotransmitteri",
+      "nöronlar",
+      "postganglionik",
+      "hedef"
+    ],
+    "tokens_b": [
+      "dokuda",
+      "genellikle",
+      "salgılar",
+      "nörotransmitteri",
+      "nöronlar",
+      "postganglionik",
+      "hedef",
+      "sempatik"
+    ],
+    "common_tokens": [
+      "dokuda",
+      "salgılar",
+      "nörotransmitteri",
+      "nöronlar",
+      "postganglionik",
+      "hedef"
+    ]
+  },
+  {
+    "overlap_score": 0.8571,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "L5;x0u%PN%",
+    "kart_b_guid": "u:{IMPv?ke",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "216. Çıkıcı duyu yollarından **Dorsal Kolon-Medial Lemniskal (DKML)** yol hangi duyuları taşır?",
+    "kart_b_metin": "217. Çıkıcı duyu yollarından **Anterolateral Yol** hangi duyuları taşır?",
+    "tokens_a": [
+      "kolon",
+      "dorsal",
+      "duyuları",
+      "duyu",
+      "yollarından",
+      "çıkıcı",
+      "taşır",
+      "medial",
+      "lemniskal",
+      "yol",
+      "dkml"
+    ],
+    "tokens_b": [
+      "duyuları",
+      "duyu",
+      "çıkıcı",
+      "yollarından",
+      "taşır",
+      "yol",
+      "anterolateral"
+    ],
+    "common_tokens": [
+      "duyuları",
+      "duyu",
+      "yollarından",
+      "çıkıcı",
+      "taşır",
+      "yol"
+    ]
+  },
+  {
+    "overlap_score": 0.8333,
+    "jaccard_score": 0.7143,
+    "kart_a_guid": "c)bk$yM9ct",
+    "kart_b_guid": "f1wsqGDXp`",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "144. Dopaminerjik nöronların ana çıkış kaynağı (mezensefalonda) neresidir?",
+    "kart_b_metin": "152. Serotonerjik nöronların ana çıkış kaynağı (mezensefalonda) neresidir?",
+    "tokens_a": [
+      "kaynağı",
+      "neresidir",
+      "nöronların",
+      "dopaminerjik",
+      "çıkış",
+      "mezensefalonda"
+    ],
+    "tokens_b": [
+      "kaynağı",
+      "neresidir",
+      "nöronların",
+      "çıkış",
+      "serotonerjik",
+      "mezensefalonda"
+    ],
+    "common_tokens": [
+      "kaynağı",
+      "neresidir",
+      "nöronların",
+      "çıkış",
+      "mezensefalonda"
+    ]
+  },
+  {
+    "overlap_score": 0.8333,
+    "jaccard_score": 0.625,
+    "kart_a_guid": "GX;H:lFe$~",
+    "kart_b_guid": "G`yOwy1H~w",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "180. İyonotropik (ligand kapılı) **anyonik (Cl-)** reseptörler hangileridir?",
+    "kart_b_metin": "181. İyonotropik (ligand kapılı) **katyonik** reseptörler hangileridir?",
+    "tokens_a": [
+      "reseptörler",
+      "anyonik",
+      "cl",
+      "kapılı",
+      "ligand",
+      "yonotropik",
+      "hangileridir"
+    ],
+    "tokens_b": [
+      "reseptörler",
+      "kapılı",
+      "ligand",
+      "yonotropik",
+      "hangileridir",
+      "katyonik"
+    ],
+    "common_tokens": [
+      "reseptörler",
+      "kapılı",
+      "ligand",
+      "yonotropik",
+      "hangileridir"
+    ]
+  },
+  {
+    "overlap_score": 0.8333,
+    "jaccard_score": 0.7143,
+    "kart_a_guid": "qHy7?,GVJ/",
+    "kart_b_guid": "jW9Y9`pib;",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "IP3 üzerinden etki eden hormon ailesi?",
+    "kart_b_metin": "cAMP üzerinden etki eden hormon ailesi?",
+    "tokens_a": [
+      "ailesi",
+      "eden",
+      "üzerinden",
+      "ip",
+      "hormon",
+      "etki"
+    ],
+    "tokens_b": [
+      "ailesi",
+      "eden",
+      "üzerinden",
+      "camp",
+      "hormon",
+      "etki"
+    ],
+    "common_tokens": [
+      "ailesi",
+      "eden",
+      "üzerinden",
+      "hormon",
+      "etki"
+    ]
+  },
+  {
+    "overlap_score": 0.8333,
+    "jaccard_score": 0.7143,
+    "kart_a_guid": "rkhhb;Z4P!",
+    "kart_b_guid": "PCTj&4Om1x",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_a_metin": "Trombosit adezyonunda vWF trombositte nereye bağlanır?",
+    "kart_b_metin": "Trombosit adezyonunda Kollajen trombositte nereye bağlanır?",
+    "tokens_a": [
+      "nereye",
+      "vwf",
+      "bağlanır",
+      "trombosit",
+      "adezyonunda",
+      "trombositte"
+    ],
+    "tokens_b": [
+      "nereye",
+      "bağlanır",
+      "trombosit",
+      "adezyonunda",
+      "trombositte",
+      "kollajen"
+    ],
+    "common_tokens": [
+      "nereye",
+      "trombosit",
+      "bağlanır",
+      "adezyonunda",
+      "trombositte"
+    ]
+  },
+  {
+    "overlap_score": 0.8333,
+    "jaccard_score": 0.5556,
+    "kart_a_guid": "O+CSKS}2mX",
+    "kart_b_guid": "P8CAU^;eQQ",
+    "kart_a_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - KALP DÖNGÜSÜ VE SESLERİ",
+    "kart_b_baslik": "",
+    "kart_a_metin": "S3 sesi (Ventriküler galo) ne zaman duyulur?",
+    "kart_b_metin": "S4 sesi (Atriyal galo) ne zaman duyulur ve neyin işaretidir?",
+    "tokens_a": [
+      "galo",
+      "s",
+      "sesi",
+      "zaman",
+      "duyulur",
+      "ventriküler"
+    ],
+    "tokens_b": [
+      "atriyal",
+      "galo",
+      "s",
+      "sesi",
+      "zaman",
+      "duyulur",
+      "neyin",
+      "işaretidir"
+    ],
+    "common_tokens": [
+      "galo",
+      "s",
+      "sesi",
+      "zaman",
+      "duyulur"
+    ]
+  },
+  {
+    "overlap_score": 0.8333,
+    "jaccard_score": 0.5556,
+    "kart_a_guid": "LFA(|hss1#",
+    "kart_b_guid": "yVNV!>n04a",
+    "kart_a_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - KAN DAMARLARI VE HİSTOLOJİ",
+    "kart_b_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - KAN DAMARLARI VE HİSTOLOJİ",
+    "kart_a_metin": "Büyük (Elastik) arterlerin tunika mediyasında hakim olan yapı nedir?",
+    "kart_b_metin": "Orta çaplı (Musküler) arterlerin tunika mediyasında hakim olan yapı nedir?",
+    "tokens_a": [
+      "hakim",
+      "yapı",
+      "mediyasında",
+      "tunika",
+      "arterlerin",
+      "elastik"
+    ],
+    "tokens_b": [
+      "hakim",
+      "çaplı",
+      "yapı",
+      "orta",
+      "mediyasında",
+      "musküler",
+      "arterlerin",
+      "tunika"
+    ],
+    "common_tokens": [
+      "hakim",
+      "yapı",
+      "mediyasında",
+      "arterlerin",
+      "tunika"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.5714,
+    "kart_a_guid": "jXWgX-+/dc",
+    "kart_b_guid": "gglL|fA*kt",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "90. ACh sentezinde hız kısıtlayıcı basamak nedir?",
+    "kart_b_metin": "109. Katekolamin sentezinde **hız kısıtlayıcı basamak** enzimi nedir?",
+    "tokens_a": [
+      "sentezinde",
+      "hız",
+      "kısıtlayıcı",
+      "basamak",
+      "ach"
+    ],
+    "tokens_b": [
+      "katekolamin",
+      "sentezinde",
+      "enzimi",
+      "hız",
+      "kısıtlayıcı",
+      "basamak"
+    ],
+    "common_tokens": [
+      "basamak",
+      "hız",
+      "sentezinde",
+      "kısıtlayıcı"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "eJ+7|%$J^,",
+    "kart_b_guid": "o7q(gw6]4+",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "106. $\\alpha_2$ adrenerjik reseptörler hangi G-proteini (Gi) ile kenetlidir ve adenilat siklazı nasıl etkiler (cAMP'yi artırır/azaltır)?",
+    "kart_b_metin": "107. Tüm $\\beta$ (beta) adrenerjik reseptörler hangi G-proteini (Gs) ile kenetlidir ve cAMP'yi nasıl etkiler?",
+    "tokens_a": [
+      "reseptörler",
+      "g",
+      "yi",
+      "kenetlidir",
+      "siklazı",
+      "proteini",
+      "azaltır",
+      "artırır",
+      "adrenerjik",
+      "etkiler",
+      "adenilat",
+      "alpha_",
+      "camp",
+      "gi"
+    ],
+    "tokens_b": [
+      "reseptörler",
+      "g",
+      "yi",
+      "kenetlidir",
+      "proteini",
+      "adrenerjik",
+      "etkiler",
+      "camp",
+      "beta",
+      "gs"
+    ],
+    "common_tokens": [
+      "reseptörler",
+      "g",
+      "yi",
+      "kenetlidir",
+      "proteini",
+      "adrenerjik",
+      "etkiler",
+      "camp"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.5714,
+    "kart_a_guid": "cq<9GX;7RG",
+    "kart_b_guid": "Q!(tF0$x`s",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "118. Sempatik uyarının karaciğer  üzerindeki metabolik etkisi nedir?",
+    "kart_b_metin": "119. Sempatik uyarının kalp  üzerindeki 3 temel etkisi nedir?",
+    "tokens_a": [
+      "üzerindeki",
+      "metabolik",
+      "etkisi",
+      "karaciğer",
+      "uyarının",
+      "sempatik"
+    ],
+    "tokens_b": [
+      "kalp",
+      "etkisi",
+      "sempatik",
+      "uyarının",
+      "üzerindeki"
+    ],
+    "common_tokens": [
+      "üzerindeki",
+      "uyarının",
+      "etkisi",
+      "sempatik"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "Q!(tF0$x`s",
+    "kart_b_guid": "k_)SX*JDif",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "119. Sempatik uyarının kalp  üzerindeki 3 temel etkisi nedir?",
+    "kart_b_metin": "120. Sempatik uyarının yağ dokusu ($\\beta_3$) üzerindeki etkisi nedir?",
+    "tokens_a": [
+      "kalp",
+      "etkisi",
+      "sempatik",
+      "uyarının",
+      "üzerindeki"
+    ],
+    "tokens_b": [
+      "yağ",
+      "beta_",
+      "etkisi",
+      "dokusu",
+      "sempatik",
+      "uyarının",
+      "üzerindeki"
+    ],
+    "common_tokens": [
+      "üzerindeki",
+      "uyarının",
+      "etkisi",
+      "sempatik"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.2667,
+    "kart_a_guid": "OIDIbtAYvn",
+    "kart_b_guid": "G66ap5/T|r",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "155. Serotonin iştahı nasıl etkiler (artırır/azaltır)?",
+    "kart_b_metin": "249. **Leptin** iştahı nasıl etkiler (artırır/azaltır) ve hangi güçlü oroksojenik (iştah artırıcı) maddeyi (NPY) baskılayarak bu etkiyi gösterir?",
+    "tokens_a": [
+      "serotonin",
+      "azaltır",
+      "artırır",
+      "etkiler",
+      "iştahı"
+    ],
+    "tokens_b": [
+      "iştah",
+      "etkiyi",
+      "azaltır",
+      "güçlü",
+      "leptin",
+      "artırıcı",
+      "artırır",
+      "etkiler",
+      "npy",
+      "iştahı",
+      "oroksojenik",
+      "baskılayarak",
+      "gösterir",
+      "maddeyi"
+    ],
+    "common_tokens": [
+      "azaltır",
+      "iştahı",
+      "artırır",
+      "etkiler"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.5714,
+    "kart_a_guid": "g;d0H%kXIA",
+    "kart_b_guid": "Mf6mG!hlN8",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "186. Brown-Sequard Sendromu'nda lezyonun **aynı tarafında (ipsilateral)** hangi duyu kayıpları ve motor bulgular görülür?",
+    "kart_b_metin": "187. Brown-Sequard Sendromu'nda lezyonun **karşı tarafında (kontralateral)** hangi duyu kayıpları görülür?",
+    "tokens_a": [
+      "brown",
+      "motor",
+      "sendromu",
+      "nda",
+      "aynı",
+      "duyu",
+      "tarafında",
+      "kayıpları",
+      "bulgular",
+      "sequard",
+      "lezyonun",
+      "ipsilateral"
+    ],
+    "tokens_b": [
+      "karşı",
+      "brown",
+      "sendromu",
+      "nda",
+      "duyu",
+      "tarafında",
+      "kayıpları",
+      "sequard",
+      "lezyonun",
+      "kontralateral"
+    ],
+    "common_tokens": [
+      "brown",
+      "sendromu",
+      "nda",
+      "duyu",
+      "tarafında",
+      "kayıpları",
+      "sequard",
+      "lezyonun"
+    ]
+  },
+  {
+    "overlap_score": 0.8,
+    "jaccard_score": 0.6667,
+    "kart_a_guid": "PA#+aj>wXw",
+    "kart_b_guid": "s2K&WSWx/1",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "239. **Paraventriküler çekirdek** hangi hormonun salgılanmasından sorumludur?",
+    "kart_b_metin": "240. **Supraoptik çekirdek** hangi hormonun salgılanmasından sorumludur?",
+    "tokens_a": [
+      "çekirdek",
+      "salgılanmasından",
+      "sorumludur",
+      "paraventriküler",
+      "hormonun"
+    ],
+    "tokens_b": [
+      "çekirdek",
+      "salgılanmasından",
+      "sorumludur",
+      "hormonun",
+      "supraoptik"
+    ],
+    "common_tokens": [
+      "çekirdek",
+      "hormonun",
+      "salgılanmasından",
+      "sorumludur"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "M2p%9.6kR5",
+    "kart_b_guid": "g21_hHJ:.4",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "37. Bir duysal reseptöre etki eden **uyaran şiddetinin artması**, ilgili afferent sinirdeki aksiyon potansiyelinin **frekansını** mı yoksa **amplitüdünü (şiddetini)** mi artırır?",
+    "kart_b_metin": "38. Uyaran şiddetinin artması, reseptör potansiyelinin şiddetini (amplitüdünü) etkiler mi?",
+    "tokens_a": [
+      "duysal",
+      "sinirdeki",
+      "eden",
+      "uyaran",
+      "aksiyon",
+      "amplitüdünü",
+      "reseptöre",
+      "potansiyelinin",
+      "artırır",
+      "şiddetinin",
+      "artması",
+      "frekansını",
+      "şiddetini",
+      "afferent",
+      "yoksa",
+      "etki"
+    ],
+    "tokens_b": [
+      "uyaran",
+      "amplitüdünü",
+      "potansiyelinin",
+      "artması",
+      "reseptör",
+      "şiddetinin",
+      "etkiler",
+      "şiddetini"
+    ],
+    "common_tokens": [
+      "uyaran",
+      "amplitüdünü",
+      "potansiyelinin",
+      "artması",
+      "şiddetinin",
+      "şiddetini"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.375,
+    "kart_a_guid": "xMXe)JHIbR",
+    "kart_b_guid": "pl1=n(y_aK",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi-Görme",
+    "kart_a_metin": "310. Bu dönüşüm sonucu oluşan Metarodopsin II, hangi G-proteinini (Transdusin) aktive eder?",
+    "kart_b_metin": "311. Transdusin, hangi enzimi  aktive eder?",
+    "tokens_a": [
+      "eder",
+      "g",
+      "proteinini",
+      "aktive",
+      "metarodopsin",
+      "transdusin",
+      "dönüşüm"
+    ],
+    "tokens_b": [
+      "eder",
+      "enzimi",
+      "aktive",
+      "transdusin"
+    ],
+    "common_tokens": [
+      "eder",
+      "aktive",
+      "transdusin"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.4286,
+    "kart_a_guid": "MX3dGQ3h9.",
+    "kart_b_guid": "x]kbK.*}3+",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "Nişasta sindirimi nerede ve hangi enzimle başlar? Devamında hangi 3 ürün olur?",
+    "kart_b_metin": "Protein sindirimi nerede ve hangi enzimle başlar?",
+    "tokens_a": [
+      "ürün",
+      "devamında",
+      "enzimle",
+      "başlar",
+      "nişasta",
+      "sindirimi"
+    ],
+    "tokens_b": [
+      "protein",
+      "enzimle",
+      "başlar",
+      "sindirimi"
+    ],
+    "common_tokens": [
+      "enzimle",
+      "başlar",
+      "sindirimi"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "nAdz>kRT8V",
+    "kart_b_guid": "JL5&wJR-YI",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_a_metin": "Hipoventilasyonda arteryel PCO2 yaklaşık kaça çıkar?",
+    "kart_b_metin": "Hiperventilasyonda arteryel PCO2 yaklaşık kaça düşer?",
+    "tokens_a": [
+      "pco",
+      "kaça",
+      "arteryel",
+      "hipoventilasyonda"
+    ],
+    "tokens_b": [
+      "kaça",
+      "pco",
+      "düşer",
+      "hiperventilasyonda",
+      "arteryel"
+    ],
+    "common_tokens": [
+      "pco",
+      "kaça",
+      "arteryel"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "d*%@`D;QOh",
+    "kart_b_guid": "CJWMHGKbBP",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ",
+    "kart_a_metin": "Arteryel PO2 normal ama Hb miktarının az olduğu hipoksi tipi?",
+    "kart_b_metin": "PO2 ve Hb normal ama doku kan akımının yetersiz olduğu hipoksi tipi?",
+    "tokens_a": [
+      "olduğu",
+      "po",
+      "miktarının",
+      "normal",
+      "hipoksi",
+      "arteryel",
+      "tipi",
+      "hb"
+    ],
+    "tokens_b": [
+      "olduğu",
+      "po",
+      "doku",
+      "yetersiz",
+      "normal",
+      "hipoksi",
+      "kan",
+      "tipi",
+      "hb",
+      "akımının"
+    ],
+    "common_tokens": [
+      "olduğu",
+      "po",
+      "normal",
+      "hipoksi",
+      "tipi",
+      "hb"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.6,
+    "kart_a_guid": "t|X`_~mY(y",
+    "kart_b_guid": "h>ja~0,IIo",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_a_metin": "Va/Q oranı sonsuz ise (Kan akımı yoksa) bu duruma ne denir?",
+    "kart_b_metin": "Va/Q oranı sıfır ise (Hava akımı yoksa) bu duruma ne denir?",
+    "tokens_a": [
+      "q",
+      "denir",
+      "va",
+      "duruma",
+      "sonsuz",
+      "kan",
+      "yoksa",
+      "akımı"
+    ],
+    "tokens_b": [
+      "q",
+      "denir",
+      "va",
+      "duruma",
+      "sıfır",
+      "yoksa",
+      "hava",
+      "akımı"
+    ],
+    "common_tokens": [
+      "q",
+      "denir",
+      "va",
+      "duruma",
+      "yoksa",
+      "akımı"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "f=]{DUgF$]",
+    "kart_b_guid": "k=FwlOyoRM",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "Oksijen kanda en çok hangi formda taşınır?",
+    "kart_b_metin": "Karbondioksit kanda en fazla hangi formda taşınır?",
+    "tokens_a": [
+      "kanda",
+      "formda",
+      "taşınır",
+      "oksijen"
+    ],
+    "tokens_b": [
+      "kanda",
+      "formda",
+      "karbondioksit",
+      "taşınır",
+      "fazla"
+    ],
+    "common_tokens": [
+      "kanda",
+      "formda",
+      "taşınır"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.3,
+    "kart_a_guid": "KN+:gelbP?",
+    "kart_b_guid": "b8R7pgb>{C",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_a_metin": "Eritropoezde mitozun durduğu ve çekirdek kalıntısının (Howell-Jolly) izlendiği evre hangisidir?",
+    "kart_b_metin": "Granülopoezde mitozun durduğu evre hangisidir?",
+    "tokens_a": [
+      "çekirdek",
+      "howell",
+      "durduğu",
+      "eritropoezde",
+      "jolly",
+      "mitozun",
+      "evre",
+      "izlendiği",
+      "kalıntısının"
+    ],
+    "tokens_b": [
+      "granülopoezde",
+      "mitozun",
+      "durduğu",
+      "evre"
+    ],
+    "common_tokens": [
+      "mitozun",
+      "durduğu",
+      "evre"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.5455,
+    "kart_a_guid": "c[{4;NJLkU",
+    "kart_b_guid": "C;HIlf^v-;",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_a_metin": "Helper T (Th) lenfositlerin yüzey proteini ve bağlandığı MHC tipi nedir?",
+    "kart_b_metin": "Sitotoksik T lenfositlerin yüzey proteini, bağlandığı MHC ve silahı nedir?",
+    "tokens_a": [
+      "lenfositlerin",
+      "t",
+      "mhc",
+      "proteini",
+      "helper",
+      "yüzey",
+      "bağlandığı",
+      "th",
+      "tipi"
+    ],
+    "tokens_b": [
+      "lenfositlerin",
+      "sitotoksik",
+      "t",
+      "mhc",
+      "proteini",
+      "yüzey",
+      "silahı",
+      "bağlandığı"
+    ],
+    "common_tokens": [
+      "lenfositlerin",
+      "t",
+      "mhc",
+      "proteini",
+      "yüzey",
+      "bağlandığı"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.4286,
+    "kart_a_guid": "j%L2;D86]!",
+    "kart_b_guid": "vTGZyz(HNV",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_a_metin": "Ekstrensek yolun değerlendirildiği test hangisidir?",
+    "kart_b_metin": "İntrensek yolun değerlendirildiği test hangisidir ve normali ne kadardır?",
+    "tokens_a": [
+      "test",
+      "değerlendirildiği",
+      "ekstrensek",
+      "yolun"
+    ],
+    "tokens_b": [
+      "değerlendirildiği",
+      "ntrensek",
+      "normali",
+      "yolun",
+      "kadardır",
+      "test"
+    ],
+    "common_tokens": [
+      "test",
+      "değerlendirildiği",
+      "yolun"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.5455,
+    "kart_a_guid": "jgrijXh8$z",
+    "kart_b_guid": "Kj4QU{sfws",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_a_metin": "Trombosit adezyonunda rol oynayan GpIb/IX reseptör eksikliği hangi hastalıktır?",
+    "kart_b_metin": "Trombosit agregasyonunda rol oynayan GpIIb/IIIa reseptör eksikliği hangi hastalıktır?",
+    "tokens_a": [
+      "gpib",
+      "eksikliği",
+      "reseptör",
+      "trombosit",
+      "oynayan",
+      "adezyonunda",
+      "hastalıktır",
+      "rol"
+    ],
+    "tokens_b": [
+      "agregasyonunda",
+      "iiia",
+      "eksikliği",
+      "reseptör",
+      "trombosit",
+      "oynayan",
+      "gpiib",
+      "hastalıktır",
+      "rol"
+    ],
+    "common_tokens": [
+      "eksikliği",
+      "reseptör",
+      "trombosit",
+      "oynayan",
+      "hastalıktır",
+      "rol"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.4286,
+    "kart_a_guid": "ujZKjEV_ys",
+    "kart_b_guid": "xdf@)?@*%3",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_a_metin": "HbA (Erişkin Hemoglobin) hangi zincirlerden oluşur?",
+    "kart_b_metin": "Erişkin hemoglobinlerinin minör formu olan HbA2 hangi zincirlerden oluşur?",
+    "tokens_a": [
+      "zincirlerden",
+      "hba",
+      "erişkin",
+      "hemoglobin"
+    ],
+    "tokens_b": [
+      "hba",
+      "zincirlerden",
+      "formu",
+      "erişkin",
+      "hemoglobinlerinin",
+      "minör"
+    ],
+    "common_tokens": [
+      "hba",
+      "erişkin",
+      "zincirlerden"
+    ]
+  },
+  {
+    "overlap_score": 0.75,
+    "jaccard_score": 0.5455,
+    "kart_a_guid": "bx(zsL5p|&",
+    "kart_b_guid": "irgQEPqf>g",
+    "kart_a_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - İLETİ SİSTEMİ VE OTONOM KONTROL",
+    "kart_b_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - İLETİ SİSTEMİ VE OTONOM KONTROL",
+    "kart_a_metin": "Sempatik sistem kalbi hangi reseptör üzerinden etkiler ve hücre içi mekanizması nasıldır?",
+    "kart_b_metin": "Parasempatik sistem (Vagus) kalbi hangi reseptör üzerinden etkiler ve mekanizması nedir?",
+    "tokens_a": [
+      "hücre",
+      "içi",
+      "kalbi",
+      "reseptör",
+      "üzerinden",
+      "etkiler",
+      "mekanizması",
+      "sistem",
+      "sempatik"
+    ],
+    "tokens_b": [
+      "parasempatik",
+      "kalbi",
+      "reseptör",
+      "vagus",
+      "üzerinden",
+      "etkiler",
+      "mekanizması",
+      "sistem"
+    ],
+    "common_tokens": [
+      "kalbi",
+      "reseptör",
+      "etkiler",
+      "üzerinden",
+      "mekanizması",
+      "sistem"
+    ]
+  },
+  {
+    "overlap_score": 0.7143,
+    "jaccard_score": 0.5556,
+    "kart_a_guid": "hb%]t_x>Xs",
+    "kart_b_guid": "OCm7N<x>}C",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "43. Periferik sinir sisteminde (PSS) miyelini hangi hücre yapar?",
+    "kart_b_metin": "44. Merkezi sinir sisteminde (MSS) miyelini hangi hücre yapar?",
+    "tokens_a": [
+      "hücre",
+      "periferik",
+      "sinir",
+      "yapar",
+      "miyelini",
+      "sisteminde",
+      "pss"
+    ],
+    "tokens_b": [
+      "hücre",
+      "sinir",
+      "yapar",
+      "miyelini",
+      "sisteminde",
+      "mss",
+      "merkezi"
+    ],
+    "common_tokens": [
+      "hücre",
+      "sinir",
+      "yapar",
+      "miyelini",
+      "sisteminde"
+    ]
+  },
+  {
+    "overlap_score": 0.7143,
+    "jaccard_score": 0.5556,
+    "kart_a_guid": "H!q+Ar4T*S",
+    "kart_b_guid": "Lt49[q!^q]",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "211. Hızlı adapte olan (Fazik) mekanoreseptörlere iki örnek verin.",
+    "kart_b_metin": "212. Yavaş adapte olan (Tonik) mekanoreseptörlere iki örnek verin.",
+    "tokens_a": [
+      "mekanoreseptörlere",
+      "hızlı",
+      "adapte",
+      "örnek",
+      "verin",
+      "fazik",
+      "iki"
+    ],
+    "tokens_b": [
+      "tonik",
+      "mekanoreseptörlere",
+      "adapte",
+      "örnek",
+      "verin",
+      "yavaş",
+      "iki"
+    ],
+    "common_tokens": [
+      "mekanoreseptörlere",
+      "adapte",
+      "örnek",
+      "verin",
+      "iki"
+    ]
+  },
+  {
+    "overlap_score": 0.7143,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "Qp*r`P_O%Q",
+    "kart_b_guid": "d*%@`D;QOh",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ",
+    "kart_a_metin": "Arteryel PO2 düzeyinin düşük olduğu hipoksi tipi ve nedeni?",
+    "kart_b_metin": "Arteryel PO2 normal ama Hb miktarının az olduğu hipoksi tipi?",
+    "tokens_a": [
+      "olduğu",
+      "po",
+      "düzeyinin",
+      "nedeni",
+      "hipoksi",
+      "arteryel",
+      "tipi"
+    ],
+    "tokens_b": [
+      "olduğu",
+      "po",
+      "miktarının",
+      "normal",
+      "hipoksi",
+      "arteryel",
+      "tipi",
+      "hb"
+    ],
+    "common_tokens": [
+      "olduğu",
+      "po",
+      "hipoksi",
+      "arteryel",
+      "tipi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2,
+    "kart_a_guid": "ub?[WBZNc?",
+    "kart_b_guid": "G_.J!c?Ep#",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "3.  İstirahat membran potansiyelinin (İMP) oluşmasını sağlayan temel iyon kanalı tipi nedir?",
+    "kart_b_metin": "8.  İMP oluşumunda **en önemli** iyon hangisidir?",
+    "tokens_a": [
+      "potansiyelinin",
+      "stirahat",
+      "mp",
+      "sağlayan",
+      "oluşmasını",
+      "kanalı",
+      "membran",
+      "iyon",
+      "tipi"
+    ],
+    "tokens_b": [
+      "iyon",
+      "oluşumunda",
+      "mp"
+    ],
+    "common_tokens": [
+      "iyon",
+      "mp"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "eOnOPS_i_r",
+    "kart_b_guid": "G_.J!c?Ep#",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "7.  İMP'nin oluşmasındaki üç temel etkeni (iyon, protein, pompa) sıralayın.",
+    "kart_b_metin": "8.  İMP oluşumunda **en önemli** iyon hangisidir?",
+    "tokens_a": [
+      "nin",
+      "oluşmasındaki",
+      "üç",
+      "mp",
+      "pompa",
+      "protein",
+      "iyon"
+    ],
+    "tokens_b": [
+      "iyon",
+      "oluşumunda",
+      "mp"
+    ],
+    "common_tokens": [
+      "iyon",
+      "mp"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "JrCksnYo7?",
+    "kart_b_guid": "LG2J(ppx$^",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "15. Bir nöronun üç ana bölümünü sayın.",
+    "kart_b_metin": "219. Serebellumun üç fonksiyonel bölümünü (Vestibulo-, Spino-, Serebro-) sayın.",
+    "tokens_a": [
+      "bölümünü",
+      "nöronun",
+      "üç"
+    ],
+    "tokens_b": [
+      "spino",
+      "vestibulo",
+      "üç",
+      "serebro",
+      "fonksiyonel",
+      "bölümünü",
+      "serebellumun"
+    ],
+    "common_tokens": [
+      "bölümünü",
+      "üç"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "vJW(ca:9jI",
+    "kart_b_guid": "BL[ZptUK^W",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "17. Aksiyon potansiyelinin başladığı (tetiklendiği) nöron bölgesi neresidir?",
+    "kart_b_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "tokens_a": [
+      "neresidir",
+      "nöron",
+      "aksiyon",
+      "bölgesi",
+      "potansiyelinin",
+      "tetiklendiği",
+      "başladığı"
+    ],
+    "tokens_b": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2,
+    "kart_a_guid": "KLV18w))i}",
+    "kart_b_guid": "BL[ZptUK^W",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "21. Sinir hücresinde bir aksiyon potansiyelinin toplam süresi (depolarizasyon ve repolarizasyon) yaklaşık ne kadardır?",
+    "kart_b_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "tokens_a": [
+      "aksiyon",
+      "kadardır",
+      "potansiyelinin",
+      "sinir",
+      "depolarizasyon",
+      "repolarizasyon",
+      "toplam",
+      "süresi",
+      "hücresinde"
+    ],
+    "tokens_b": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4,
+    "kart_a_guid": "BL[ZptUK^W",
+    "kart_b_guid": "LesvS`)s&K",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "kart_b_metin": "36. Aksiyon potansiyelinin \"\"Hep ya da Hiç\"\" ilkesini açıklayın.",
+    "tokens_a": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "tokens_b": [
+      "potansiyelinin",
+      "hep",
+      "ilkesini",
+      "aksiyon"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.1176,
+    "kart_a_guid": "BL[ZptUK^W",
+    "kart_b_guid": "M2p%9.6kR5",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "kart_b_metin": "37. Bir duysal reseptöre etki eden **uyaran şiddetinin artması**, ilgili afferent sinirdeki aksiyon potansiyelinin **frekansını** mı yoksa **amplitüdünü (şiddetini)** mi artırır?",
+    "tokens_a": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "tokens_b": [
+      "duysal",
+      "sinirdeki",
+      "eden",
+      "uyaran",
+      "aksiyon",
+      "amplitüdünü",
+      "reseptöre",
+      "potansiyelinin",
+      "artırır",
+      "şiddetinin",
+      "artması",
+      "frekansını",
+      "şiddetini",
+      "afferent",
+      "yoksa",
+      "etki"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2,
+    "kart_a_guid": "BL[ZptUK^W",
+    "kart_b_guid": "m;s}]@B{,e",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "kart_b_metin": "39. Aksiyon potansiyelinin sinir liflerindeki ileti hızını etkileyen iki temel faktör nedir?",
+    "tokens_a": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "tokens_b": [
+      "liflerindeki",
+      "faktör",
+      "aksiyon",
+      "potansiyelinin",
+      "sinir",
+      "hızını",
+      "ileti",
+      "etkileyen",
+      "iki"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.1667,
+    "kart_a_guid": "BL[ZptUK^W",
+    "kart_b_guid": "u.u]ni-/X{",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - KALP KASI VE ELEKTROFİZYOLOJİ",
+    "kart_a_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "kart_b_metin": "Miyokard hücresi aksiyon potansiyelinin plato fazından (Faz 2) sorumlu olan temel iyon kanalı ve hareketi nedir?",
+    "tokens_a": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "tokens_b": [
+      "hücresi",
+      "aksiyon",
+      "plato",
+      "faz",
+      "potansiyelinin",
+      "fazından",
+      "sorumlu",
+      "hareketi",
+      "kanalı",
+      "iyon",
+      "miyokard"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.1333,
+    "kart_a_guid": "BL[ZptUK^W",
+    "kart_b_guid": "D3}e~5VQ!h",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - KALP KASI VE ELEKTROFİZYOLOJİ",
+    "kart_a_metin": "23. Aksiyon potansiyelinin 4 evresini sayın.",
+    "kart_b_metin": "SA nod (Pacemaker) aksiyon potansiyelinin Faz 4 (pacemaker potansiyeli) depolarizasyonundan sorumlu \"\"funny\"\" akımı sağlayan kanal ve iyon nedir?",
+    "tokens_a": [
+      "evresini",
+      "potansiyelinin",
+      "aksiyon"
+    ],
+    "tokens_b": [
+      "pacemaker",
+      "kanal",
+      "aksiyon",
+      "faz",
+      "potansiyelinin",
+      "sa",
+      "depolarizasyonundan",
+      "potansiyeli",
+      "sorumlu",
+      "sağlayan",
+      "funny",
+      "iyon",
+      "akımı",
+      "nod"
+    ],
+    "common_tokens": [
+      "potansiyelinin",
+      "aksiyon"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3077,
+    "kart_a_guid": "omKi<fReRg",
+    "kart_b_guid": "fC)k!j(lQW",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "80. Sempatik sistem hangi hipotalamus çekirdeği tarafından, parasempatik sistem ise hangi hipotalamus çekirdeği tarafından kontrol edilir?",
+    "kart_b_metin": "236. **Posterior hipotalamus** hangi otonom sistem alanıdır (Sempatik/Parasempatik) ve uyarılması hangi 3 etkiye yol açar?",
+    "tokens_a": [
+      "parasempatik",
+      "hipotalamus",
+      "çekirdeği",
+      "kontrol",
+      "sistem",
+      "sempatik"
+    ],
+    "tokens_b": [
+      "parasempatik",
+      "alanıdır",
+      "uyarılması",
+      "hipotalamus",
+      "sempatik",
+      "otonom",
+      "posterior",
+      "sistem",
+      "yol",
+      "etkiye",
+      "açar"
+    ],
+    "common_tokens": [
+      "hipotalamus",
+      "sempatik",
+      "parasempatik",
+      "sistem"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3077,
+    "kart_a_guid": "omKi<fReRg",
+    "kart_b_guid": "oAPQsaXd}I",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "80. Sempatik sistem hangi hipotalamus çekirdeği tarafından, parasempatik sistem ise hangi hipotalamus çekirdeği tarafından kontrol edilir?",
+    "kart_b_metin": "237. **Anterior hipotalamus** hangi otonom sistem alanıdır (Parasempatik/Sempatik) ve uyarılması hangi 3 etkiye yol açar?",
+    "tokens_a": [
+      "parasempatik",
+      "hipotalamus",
+      "çekirdeği",
+      "kontrol",
+      "sistem",
+      "sempatik"
+    ],
+    "tokens_b": [
+      "parasempatik",
+      "alanıdır",
+      "uyarılması",
+      "hipotalamus",
+      "anterior",
+      "sempatik",
+      "otonom",
+      "yol",
+      "sistem",
+      "etkiye",
+      "açar"
+    ],
+    "common_tokens": [
+      "hipotalamus",
+      "sempatik",
+      "parasempatik",
+      "sistem"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "sRlr-P75E#",
+    "kart_b_guid": "Bsz5CRG>nd",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "110. Dopamin'i Norepinefrin'e dönüştüren enzim (Dopamin-$\\beta$-hidroksilaz) nerede (vezikül/sitoplazma) bulunur?",
+    "kart_b_metin": "111. Norepinefrin'i Epinefrin'e dönüştüren enzim (PNMT) nedir?",
+    "tokens_a": [
+      "vezikül",
+      "hidroksilaz",
+      "e",
+      "dopamin",
+      "norepinefrin",
+      "dönüştüren",
+      "enzim",
+      "beta",
+      "bulunur",
+      "sitoplazma"
+    ],
+    "tokens_b": [
+      "epinefrin",
+      "pnmt",
+      "e",
+      "norepinefrin",
+      "dönüştüren",
+      "enzim"
+    ],
+    "common_tokens": [
+      "e",
+      "dönüştüren",
+      "enzim",
+      "norepinefrin"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4444,
+    "kart_a_guid": "cq<9GX;7RG",
+    "kart_b_guid": "k_)SX*JDif",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "118. Sempatik uyarının karaciğer  üzerindeki metabolik etkisi nedir?",
+    "kart_b_metin": "120. Sempatik uyarının yağ dokusu ($\\beta_3$) üzerindeki etkisi nedir?",
+    "tokens_a": [
+      "üzerindeki",
+      "metabolik",
+      "etkisi",
+      "karaciğer",
+      "uyarının",
+      "sempatik"
+    ],
+    "tokens_b": [
+      "yağ",
+      "beta_",
+      "etkisi",
+      "dokusu",
+      "sempatik",
+      "uyarının",
+      "üzerindeki"
+    ],
+    "common_tokens": [
+      "sempatik",
+      "uyarının",
+      "etkisi",
+      "üzerindeki"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "FIT%*v[F{I",
+    "kart_b_guid": "iM-m_`2~oB",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "200. **Broca afazisi (Motor afazi)** nedir? (Anlama nasıl, konuşma nasıl?)",
+    "kart_b_metin": "201. **Wernicke afazisi (Duyusal afazi)** nedir? (Anlama nasıl, konuşma nasıl?)",
+    "tokens_a": [
+      "motor",
+      "anlama",
+      "broca",
+      "afazisi",
+      "afazi",
+      "konuşma"
+    ],
+    "tokens_b": [
+      "wernicke",
+      "anlama",
+      "konuşma",
+      "afazisi",
+      "afazi",
+      "duyusal"
+    ],
+    "common_tokens": [
+      "afazi",
+      "anlama",
+      "konuşma",
+      "afazisi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "F`OhYzbt*=",
+    "kart_b_guid": "GDEbx8&2KE",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "227. Granül hücrelerinin aksonları moleküler tabakada hangi lifleri oluşturur?",
+    "kart_b_metin": "228. Granül hücrelerinin nörotransmitteri nedir?",
+    "tokens_a": [
+      "oluşturur",
+      "granül",
+      "hücrelerinin",
+      "moleküler",
+      "aksonları",
+      "tabakada",
+      "lifleri"
+    ],
+    "tokens_b": [
+      "granül",
+      "nörotransmitteri",
+      "hücrelerinin"
+    ],
+    "common_tokens": [
+      "granül",
+      "hücrelerinin"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "GDEbx8&2KE",
+    "kart_b_guid": "p]ZR_0]75F",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "228. Granül hücrelerinin nörotransmitteri nedir?",
+    "kart_b_metin": "230. Purkinje hücrelerinin nörotransmitteri nedir?",
+    "tokens_a": [
+      "granül",
+      "nörotransmitteri",
+      "hücrelerinin"
+    ],
+    "tokens_b": [
+      "nörotransmitteri",
+      "hücrelerinin",
+      "purkinje"
+    ],
+    "common_tokens": [
+      "nörotransmitteri",
+      "hücrelerinin"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "GDEbx8&2KE",
+    "kart_b_guid": "iJX0w5|!}A",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "228. Granül hücrelerinin nörotransmitteri nedir?",
+    "kart_b_metin": "231. Golgi, Sepet ve Yıldız hücrelerinin ortak nörotransmitteri nedir?",
+    "tokens_a": [
+      "granül",
+      "nörotransmitteri",
+      "hücrelerinin"
+    ],
+    "tokens_b": [
+      "golgi",
+      "nörotransmitteri",
+      "hücrelerinin",
+      "yıldız",
+      "ortak",
+      "sepet"
+    ],
+    "common_tokens": [
+      "nörotransmitteri",
+      "hücrelerinin"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "p]ZR_0]75F",
+    "kart_b_guid": "iJX0w5|!}A",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_a_metin": "230. Purkinje hücrelerinin nörotransmitteri nedir?",
+    "kart_b_metin": "231. Golgi, Sepet ve Yıldız hücrelerinin ortak nörotransmitteri nedir?",
+    "tokens_a": [
+      "nörotransmitteri",
+      "hücrelerinin",
+      "purkinje"
+    ],
+    "tokens_b": [
+      "golgi",
+      "nörotransmitteri",
+      "hücrelerinin",
+      "yıldız",
+      "ortak",
+      "sepet"
+    ],
+    "common_tokens": [
+      "nörotransmitteri",
+      "hücrelerinin"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "tizE>#cK/=",
+    "kart_b_guid": "sT,nPK@Z23",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "302. Retinadaki pigment hücrelerinin iki temel görevi nedir?",
+    "kart_b_metin": "Goblet hücrelerinin görevi nedir?",
+    "tokens_a": [
+      "pigment",
+      "hücrelerinin",
+      "retinadaki",
+      "iki",
+      "görevi"
+    ],
+    "tokens_b": [
+      "goblet",
+      "hücrelerinin",
+      "görevi"
+    ],
+    "common_tokens": [
+      "hücrelerinin",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "tizE>#cK/=",
+    "kart_b_guid": "fk^<<>x$w.",
+    "kart_a_baslik": "Sinir Sistemi Fizyolojisi",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON",
+    "kart_a_metin": "302. Retinadaki pigment hücrelerinin iki temel görevi nedir?",
+    "kart_b_metin": "Clara hücrelerinin 3 temel görevi nedir?",
+    "tokens_a": [
+      "pigment",
+      "hücrelerinin",
+      "retinadaki",
+      "iki",
+      "görevi"
+    ],
+    "tokens_b": [
+      "hücrelerinin",
+      "clara",
+      "görevi"
+    ],
+    "common_tokens": [
+      "hücrelerinin",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2222,
+    "kart_a_guid": "G5Q-;uSen",
+    "kart_b_guid": "QIa|CqXK)=",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "Peristaltik aktivite nasıl başlar?",
+    "kart_b_metin": "Peristaltik aktivite nasıl güçlenir ve bu güçlendirme mekanizmasını kontrol eden nörotransmitterler?",
+    "tokens_a": [
+      "peristaltik",
+      "aktivite",
+      "başlar"
+    ],
+    "tokens_b": [
+      "peristaltik",
+      "güçlendirme",
+      "eden",
+      "mekanizmasını",
+      "nörotransmitterler",
+      "güçlenir",
+      "kontrol",
+      "aktivite"
+    ],
+    "common_tokens": [
+      "peristaltik",
+      "aktivite"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "s9+pD>b7h6",
+    "kart_b_guid": "g(B,;|ZyCy",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "IF (İntrinsik Faktör) nereden salgılanır ve önemi nedir?",
+    "kart_b_metin": "IF faktör görevi nedir?",
+    "tokens_a": [
+      "ntrinsik",
+      "faktör",
+      "nereden",
+      "salgılanır",
+      "önemi",
+      "if"
+    ],
+    "tokens_b": [
+      "faktör",
+      "if",
+      "görevi"
+    ],
+    "common_tokens": [
+      "faktör",
+      "if"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "M5Xi=D.ZhR",
+    "kart_b_guid": "sT,nPK@Z23",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "ECL hücrelerinin salgısı nedir, hangi ilaçla inhibe edilir, görevi ve yolağı?",
+    "kart_b_metin": "Goblet hücrelerinin görevi nedir?",
+    "tokens_a": [
+      "ecl",
+      "hücrelerinin",
+      "yolağı",
+      "ilaçla",
+      "inhibe",
+      "salgısı",
+      "görevi"
+    ],
+    "tokens_b": [
+      "goblet",
+      "hücrelerinin",
+      "görevi"
+    ],
+    "common_tokens": [
+      "hücrelerinin",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "M5Xi=D.ZhR",
+    "kart_b_guid": "fk^<<>x$w.",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON",
+    "kart_a_metin": "ECL hücrelerinin salgısı nedir, hangi ilaçla inhibe edilir, görevi ve yolağı?",
+    "kart_b_metin": "Clara hücrelerinin 3 temel görevi nedir?",
+    "tokens_a": [
+      "ecl",
+      "hücrelerinin",
+      "yolağı",
+      "ilaçla",
+      "inhibe",
+      "salgısı",
+      "görevi"
+    ],
+    "tokens_b": [
+      "hücrelerinin",
+      "clara",
+      "görevi"
+    ],
+    "common_tokens": [
+      "hücrelerinin",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "sT,nPK@Z23",
+    "kart_b_guid": "fk^<<>x$w.",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON",
+    "kart_a_metin": "Goblet hücrelerinin görevi nedir?",
+    "kart_b_metin": "Clara hücrelerinin 3 temel görevi nedir?",
+    "tokens_a": [
+      "goblet",
+      "hücrelerinin",
+      "görevi"
+    ],
+    "tokens_b": [
+      "hücrelerinin",
+      "clara",
+      "görevi"
+    ],
+    "common_tokens": [
+      "hücrelerinin",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.25,
+    "kart_a_guid": "DQk=ll,[fD",
+    "kart_b_guid": "m!y5gwk|%X",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "Pankreastan salgılanan proteazlar nelerdir bunlardan hangisi sadece pankreasta üretilir?",
+    "kart_b_metin": "Pankreastan salgılanan lipazları açıklayın.",
+    "tokens_a": [
+      "üretilir",
+      "proteazlar",
+      "salgılanan",
+      "pankreastan",
+      "nelerdir",
+      "bunlardan",
+      "pankreasta"
+    ],
+    "tokens_b": [
+      "pankreastan",
+      "lipazları",
+      "salgılanan"
+    ],
+    "common_tokens": [
+      "pankreastan",
+      "salgılanan"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4,
+    "kart_a_guid": "g(B,;|ZyCy",
+    "kart_b_guid": "mlGiMT#9.{",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_a_metin": "IF faktör görevi nedir?",
+    "kart_b_metin": "Faktör XIII'ün görevi nedir?",
+    "tokens_a": [
+      "faktör",
+      "if",
+      "görevi"
+    ],
+    "tokens_b": [
+      "faktör",
+      "ün",
+      "xiii",
+      "görevi"
+    ],
+    "common_tokens": [
+      "faktör",
+      "görevi"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "BPJrl9+A|=",
+    "kart_b_guid": "r,a#-Y7s2U",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi VİTAMİN ve MİNERALLERİN EMİLİMİ",
+    "kart_b_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_a_metin": "B12 kanda nasıl taşınır?",
+    "kart_b_metin": "Demir kanda nasıl taşınır?",
+    "tokens_a": [
+      "kanda",
+      "taşınır",
+      "b"
+    ],
+    "tokens_b": [
+      "demir",
+      "kanda",
+      "taşınır"
+    ],
+    "common_tokens": [
+      "kanda",
+      "taşınır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4,
+    "kart_a_guid": "BPJrl9+A|=",
+    "kart_b_guid": "f=]{DUgF$]",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi VİTAMİN ve MİNERALLERİN EMİLİMİ",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "B12 kanda nasıl taşınır?",
+    "kart_b_metin": "Oksijen kanda en çok hangi formda taşınır?",
+    "tokens_a": [
+      "kanda",
+      "taşınır",
+      "b"
+    ],
+    "tokens_b": [
+      "kanda",
+      "formda",
+      "taşınır",
+      "oksijen"
+    ],
+    "common_tokens": [
+      "kanda",
+      "taşınır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "BPJrl9+A|=",
+    "kart_b_guid": "k=FwlOyoRM",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi VİTAMİN ve MİNERALLERİN EMİLİMİ",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "B12 kanda nasıl taşınır?",
+    "kart_b_metin": "Karbondioksit kanda en fazla hangi formda taşınır?",
+    "tokens_a": [
+      "kanda",
+      "taşınır",
+      "b"
+    ],
+    "tokens_b": [
+      "kanda",
+      "formda",
+      "karbondioksit",
+      "taşınır",
+      "fazla"
+    ],
+    "common_tokens": [
+      "kanda",
+      "taşınır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4,
+    "kart_a_guid": "r,a#-Y7s2U",
+    "kart_b_guid": "f=]{DUgF$]",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "Demir kanda nasıl taşınır?",
+    "kart_b_metin": "Oksijen kanda en çok hangi formda taşınır?",
+    "tokens_a": [
+      "demir",
+      "kanda",
+      "taşınır"
+    ],
+    "tokens_b": [
+      "kanda",
+      "formda",
+      "taşınır",
+      "oksijen"
+    ],
+    "common_tokens": [
+      "kanda",
+      "taşınır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "r,a#-Y7s2U",
+    "kart_b_guid": "k=FwlOyoRM",
+    "kart_a_baslik": "Sindirim Sistemi Fizyolojisi",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "Demir kanda nasıl taşınır?",
+    "kart_b_metin": "Karbondioksit kanda en fazla hangi formda taşınır?",
+    "tokens_a": [
+      "demir",
+      "kanda",
+      "taşınır"
+    ],
+    "tokens_b": [
+      "kanda",
+      "formda",
+      "karbondioksit",
+      "taşınır",
+      "fazla"
+    ],
+    "common_tokens": [
+      "kanda",
+      "taşınır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2222,
+    "kart_a_guid": "OA7@QA*,h0",
+    "kart_b_guid": "d+X5mA-36y",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_b_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - EKG",
+    "kart_a_metin": "Fizyolojik olarak \"\"ventilasyon\"\" nedir?",
+    "kart_b_metin": "PR aralığı fizyolojik olarak neyi gösterir ve normal süresi nedir?",
+    "tokens_a": [
+      "fizyolojik",
+      "ventilasyon",
+      "olarak"
+    ],
+    "tokens_b": [
+      "neyi",
+      "fizyolojik",
+      "pr",
+      "olarak",
+      "süresi",
+      "normal",
+      "aralığı",
+      "gösterir"
+    ],
+    "common_tokens": [
+      "fizyolojik",
+      "olarak"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.3333,
+    "kart_a_guid": "s/w`ESqp(V",
+    "kart_b_guid": "oHAbuYN3;n",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "Normal ventilasyonda arteryel PCO2 değeri kaçtır?",
+    "kart_b_metin": "P50 nedir ve normal değeri kaçtır?",
+    "tokens_a": [
+      "kaçtır",
+      "pco",
+      "normal",
+      "arteryel",
+      "ventilasyonda"
+    ],
+    "tokens_b": [
+      "p",
+      "normal",
+      "kaçtır"
+    ],
+    "common_tokens": [
+      "normal",
+      "kaçtır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "vo_i#%16|!",
+    "kart_b_guid": "m{X#OIo^#y",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_a_metin": "Akciğer kompliyansı ne demektir?",
+    "kart_b_metin": "Eklem iltihabında (artrit) akciğer kompliyansı nasıl değişir?",
+    "tokens_a": [
+      "kompliyansı",
+      "akciğer",
+      "demektir"
+    ],
+    "tokens_b": [
+      "akciğer",
+      "artrit",
+      "kompliyansı",
+      "eklem",
+      "değişir",
+      "iltihabında"
+    ],
+    "common_tokens": [
+      "akciğer",
+      "kompliyansı"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4444,
+    "kart_a_guid": "J7sYO4&#B8",
+    "kart_b_guid": "G=0/F%shwr",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON",
+    "kart_a_metin": "Sürfaktan proteinlerinden SP-A'nın görevi nedir?",
+    "kart_b_metin": "Sürfaktan proteinlerinden SP-B ve SP-C'nin görevi nedir?",
+    "tokens_a": [
+      "a",
+      "sürfaktan",
+      "sp",
+      "nın",
+      "proteinlerinden",
+      "görevi"
+    ],
+    "tokens_b": [
+      "nin",
+      "c",
+      "sürfaktan",
+      "sp",
+      "proteinlerinden",
+      "b",
+      "görevi"
+    ],
+    "common_tokens": [
+      "sp",
+      "proteinlerinden",
+      "görevi",
+      "sürfaktan"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4,
+    "kart_a_guid": "os;t>xy|%`",
+    "kart_b_guid": "I!EEqOy|tk",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_a_metin": "Rezidüel Hacim (RH) nedir?",
+    "kart_b_metin": "Rezidüel hacim hangi yöntemle ölçülür?",
+    "tokens_a": [
+      "rezidüel",
+      "hacim",
+      "rh"
+    ],
+    "tokens_b": [
+      "rezidüel",
+      "hacim",
+      "ölçülür",
+      "yöntemle"
+    ],
+    "common_tokens": [
+      "rezidüel",
+      "hacim"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "j2_XGi~1D?",
+    "kart_b_guid": "p=;jsY4bpP",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_a_metin": "Obstrüktif ve resktriktif  bozuklukta  FEV1/FVC oranı nasıl değişir?",
+    "kart_b_metin": "Restriktif bozuklukta (Fibrozis) FEV1/FVC oranı nasıl değişir?",
+    "tokens_a": [
+      "fev",
+      "bozuklukta",
+      "resktriktif",
+      "değişir",
+      "obstrüktif",
+      "fvc"
+    ],
+    "tokens_b": [
+      "fibrozis",
+      "fev",
+      "bozuklukta",
+      "restriktif",
+      "değişir",
+      "fvc"
+    ],
+    "common_tokens": [
+      "değişir",
+      "fev",
+      "bozuklukta",
+      "fvc"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "uMATdTyco=",
+    "kart_b_guid": "oHAbuYN3;n",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER",
+    "kart_b_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_a_metin": "Normal Ventilasyon/Perfüzyon (Va/Q) oranı kaçtır?",
+    "kart_b_metin": "P50 nedir ve normal değeri kaçtır?",
+    "tokens_a": [
+      "q",
+      "ventilasyon",
+      "kaçtır",
+      "va",
+      "normal",
+      "perfüzyon"
+    ],
+    "tokens_b": [
+      "p",
+      "normal",
+      "kaçtır"
+    ],
+    "common_tokens": [
+      "normal",
+      "kaçtır"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "oHAbuYN3;n",
+    "kart_b_guid": "h^XL+<>3]l",
+    "kart_a_baslik": "SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI",
+    "kart_b_baslik": "KALP VE DOLAŞIM FİZYOLOJİSİ - EKG",
+    "kart_a_metin": "P50 nedir ve normal değeri kaçtır?",
+    "kart_b_metin": "Normal bir P dalgasının süre ve amplitüd sınırları nedir?",
+    "tokens_a": [
+      "p",
+      "normal",
+      "kaçtır"
+    ],
+    "tokens_b": [
+      "amplitüd",
+      "dalgasının",
+      "p",
+      "normal",
+      "sınırları",
+      "süre"
+    ],
+    "common_tokens": [
+      "normal",
+      "p"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.5,
+    "kart_a_guid": "I:2HG>h^Yn",
+    "kart_b_guid": "b./v<rlM+}",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_a_metin": "Granüler lökositler hangileridir?",
+    "kart_b_metin": "Agranüler lökositler hangileridir?",
+    "tokens_a": [
+      "hangileridir",
+      "lökositler",
+      "granüler"
+    ],
+    "tokens_b": [
+      "hangileridir",
+      "lökositler",
+      "agranüler"
+    ],
+    "common_tokens": [
+      "hangileridir",
+      "lökositler"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.2857,
+    "kart_a_guid": "g.f=IZx%%u",
+    "kart_b_guid": "=HoSY[1+x",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ",
+    "kart_a_metin": "Kanda en fazla bulunan ve plasentadan geçebilen antikor hangisidir?",
+    "kart_b_metin": "Salgılarda bulunan antikor hangisidir?",
+    "tokens_a": [
+      "kanda",
+      "plasentadan",
+      "bulunan",
+      "antikor",
+      "fazla",
+      "geçebilen"
+    ],
+    "tokens_b": [
+      "salgılarda",
+      "bulunan",
+      "antikor"
+    ],
+    "common_tokens": [
+      "bulunan",
+      "antikor"
+    ]
+  },
+  {
+    "overlap_score": 0.6667,
+    "jaccard_score": 0.4,
+    "kart_a_guid": "mlGiMT#9.{",
+    "kart_b_guid": "ER[{L#b1YS",
+    "kart_a_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_b_baslik": "HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ",
+    "kart_a_metin": "Faktör XIII'ün görevi nedir?",
+    "kart_b_metin": "Antitrombin III'ün görevi nedir?",
+    "tokens_a": [
+      "faktör",
+      "ün",
+      "xiii",
+      "görevi"
+    ],
+    "tokens_b": [
+      "antitrombin",
+      "ün",
+      "görevi"
+    ],
+    "common_tokens": [
+      "ün",
+      "görevi"
+    ]
+  }
+]

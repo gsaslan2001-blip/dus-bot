@@ -1,0 +1,176 @@
+# Dahili Akıllı Benzerlik Raporu (Aşama 2 + LLM)
+# Threshold: 0.94
+# Toplam Şüpheli Çift: 19
+================================================================================
+
+[1] VECTOR SCORE: 0.9665 | LLM DECISION: N/A
+  KART A | GUID: w90,F,@~re (Reps: N/A)
+  Soru: Lazerin hedef dokudaki etkisini belirleyen faktörler arasında {{c1::lazerin dalga boyu}}, {{c1::dokunun absorbsiyon karakteri}}, kullanılan güç miktarı ve ışının keskinliği/uzaklığı yer alır.
+  Cevap: Endodonti - Lazer
+  KART B | GUID: rYUzx2Aq7E (Reps: N/A)
+  Soru: Lazerin hedef dokudaki etkisini belirleyen faktörler arasında lazerin dalga boyu, dokunun absorbsiyon karakteri, {{c1::kullanılan güç miktarı}} ve {{c1::ışının odaklandığı alandaki keskinliği ve lazer ucunun objeye uzaklığı}} yer alır.
+  Cevap: Endodonti - Lazer
+--------------------------------------------------------------------------------
+
+[2] VECTOR SCORE: 0.9623 | LLM DECISION: N/A
+  KART A | GUID: t1KcN<5]2z (Reps: N/A)
+  Soru: Pulpada sayıca en fazla bulunan ve en çok hücreden zengin tabakada yer alan hücre türü hangisidir
+  Cevap: FibroblastlarbrbrFusiform ve yıldızsı şekildedirler. Pulpa matriksini oluşturup devamlılığını sağlayan temel hücrelerdir. Protein sentezi ve sekresyonu konusunda oldukça aktiftirler. (Referans Endodonti - GİRİŞ - Fibroblastlar)
+  KART B | GUID: FX3In.54om (Reps: N/A)
+  Soru: Pulpada sayıca en fazla bulunan ve morfolojik olarak fusiform veya yıldızsı şekle sahip olan hücre hangisidir
+  Cevap: FibroblastlarbrbrEn fazla hücreden zengin tabakada bulunurlar ve pulpa matriksinin devamlılığını sağlarlar. Kollajen sentezi ve yıkımı arasındaki dengeyi yönetirler. Genç pulpada sitoplazmaları daha geniştir. (Referans Endodonti - GİRİŞ - Fibroblastlar)
+--------------------------------------------------------------------------------
+
+[3] VECTOR SCORE: 0.9623 | LLM DECISION: N/A
+  KART A | GUID: fE%`RyC;?x (Reps: N/A)
+  Soru: Operasyon mikroskobu ile kullanılmak üzere geliştirilen özel ekstraktör sistemlerinden biri hangisidir
+  Cevap: Cancelier ekstraktörleribrbrMounce ekstraktörleri ile birlikte mikroskop altında hassas çalışma sağlar. (Referans Endodonti - ENDODONTİDE KARŞILAŞILAN HATALAR - Kırık Alet Çıkarma)
+  KART B | GUID: JTppf!CtsO (Reps: N/A)
+  Soru: Operasyon mikroskobu ile kullanılmak üzere geliştirilen Mounce dışındaki diğer özel ekstraktör sistemi hangisidir
+  Cevap: Cancelier ekstraktörleribrbrBu sistemler mikroskop yardımıyla kırık parçanın yakalanmasını sağlar. (Referans Endodonti - ENDODONTİDE KARŞILAŞILAN HATALAR - Kırık Alet Çıkarma)
+--------------------------------------------------------------------------------
+
+[4] VECTOR SCORE: 0.9578 | LLM DECISION: N/A
+  KART A | GUID: HgEYMkGNL4 (Reps: N/A)
+  Soru: Peritübüler dentin matriksini doğrudan çevreleyen, odontoblast uzantısı ile arasında sıvı dolu dar bir boşluk olan doku zarına ne ad verilir
+  Cevap: Lamina limitansbrbrOdontoblast uzantısı, diş pulpasından gelen dentin sıvısı içinde bu boşlukta yüzer. Plazma membranı ile bu zar arasındaki mesafe madde alışverişi için önemlidir. Dentin tübülünün iç yüzeyini döşeyen organik bir kılıftır. (Referans Endodonti - GİRİŞ - Odontoblast Uzantısı)
+  KART B | GUID: O]nEuTfY/e (Reps: N/A)
+  Soru: Peritübüler dentin matriksini çevreleyen ve odontoblast uzantısı ile arasında dar bir boşluk bırakan doku ne olarak adlandırılır
+  Cevap: Lamina limitansbrbrOdontoblast uzantısı bu yapı ile plazma membranı arasındaki dentin sıvısı içinde yüzer. Tübülün iç duvarını döşeyen glikozaminoglikandan zengin bir tabakadır. Madde değişimini sınırlayan bir bariyer görevi görür. (Referans Endodonti - GİRİŞ - Odontoblast Uzantısı)
+--------------------------------------------------------------------------------
+
+[5] VECTOR SCORE: 0.9572 | LLM DECISION: N/A
+  KART A | GUID: oodjDDcjNo (Reps: N/A)
+  Soru: Rubber-Dam uygulamasında klemp lastikle birlikte dişe yerleştirilip ardından çerçevenin konulduğu yöntem hangisidir
+  Cevap: III. yöntembrbrI. yöntem tek parça halinde - IV. yöntem önce lastik çerçeveye ardından klemp uygulanır (Referans Endodonti - İzolasyon - RD Uygulanışı)
+  KART B | GUID: zf#IndZE]@ (Reps: N/A)
+  Soru: Rubber-Dam uygulamasında lastik örtünün önce çerçeveye takılıp ardından klemp uygulanarak dişe yerleştirildiği yöntem hangisidir
+  Cevap: IV. yöntembrbrIII. yöntemle karıştırılır III. yöntemde klemp lastikle birlikte dişe önce gider - IV. yöntemde lastik önce çerçeveye takılır (Referans Endodonti - İzolasyon - RD Uygulanışı)
+--------------------------------------------------------------------------------
+
+[6] VECTOR SCORE: 0.9559 | LLM DECISION: N/A
+  KART A | GUID: qlk:9QC+d{ (Reps: N/A)
+  Soru: Mine, dentin ve sementi içine alan ancak pulpanın açılmadığı kırıklar {{c1::komplike olmayan kron-kök kırığı}} olarak adlandırılır
+  Cevap: Endodonti - Travma - Yaralanma Sınıflaması
+  KART B | GUID: P^VXz:)a!s (Reps: N/A)
+  Soru: Mine, dentin ve sementi içine alan ve pulpanın da açıldığı kırıklar {{c1::komplike kron-kök kırığı}} olarak adlandırılır
+  Cevap: Endodonti - Travma - Yaralanma Sınıflaması
+--------------------------------------------------------------------------------
+
+[7] VECTOR SCORE: 0.9533 | LLM DECISION: N/A
+  KART A | GUID: y,;Zza9{,q (Reps: N/A)
+  Soru: Reitana göre aktif kök rezorbsiyonu apareylerin çıkarılmasından sonra ne kadar sürede durur?
+  Cevap: Yaklaşık 1 hafta içinde durur
+  KART B | GUID: N]C.F(/zI9 (Reps: N/A)
+  Soru: Reitana göre aktif kök rezorbsiyonu apareylerin çıkarılmasından sonra yaklaşık {{c1::1 hafta}} içinde durur.
+  Cevap: 
+--------------------------------------------------------------------------------
+
+[8] VECTOR SCORE: 0.9486 | LLM DECISION: N/A
+  KART A | GUID: I_D5#a|RO# (Reps: N/A)
+  Soru: Fiberle güçlendirilmiş postların temel amacı nedir?
+  Cevap: Dentine yakın elastisite modülü ve adeziv bağlanma sayesinde kuvveti kök boyunca dengeli dağıtarak kök kırıklarının önüne geçmek
+  KART B | GUID: fZhPDZq>,] (Reps: N/A)
+  Soru: Fiberle güçlendirilmiş postların amacı, {{c1::dentine yakın elastisite modülü}} ve adeziv bağlanma sayesinde kuvveti kök boyunca dengeli dağıtarak kök kırıklarını önlemektir.
+  Cevap: 
+--------------------------------------------------------------------------------
+
+[9] VECTOR SCORE: 0.9475 | LLM DECISION: N/A
+  KART A | GUID: o;-$!Tdvup (Reps: N/A)
+  Soru: Primer periodontal sekonder endodontik lezyonun primer endodontik sekonder periodontal lezyondan tek farkı nedir?
+  Cevap: Hastalık aşamalarının ilerleme şeklidir
+  KART B | GUID: i?jE.Q0K)V (Reps: N/A)
+  Soru: Primer periodontal sekonder endodontik lezyonunun primer endodontik sekonder periodontal lezyondan tek farkı {{c1::hastalık aşamalarının ilerleme şeklidir}}
+  Cevap: 
+--------------------------------------------------------------------------------
+
+[10] VECTOR SCORE: 0.9473 | LLM DECISION: N/A
+  KART A | GUID: rO2rc0*igk (Reps: N/A)
+  Soru: Odontoblastlar arasında sinyal moleküllerinin geçişini ve sekresyon aktivitesinin senkronizasyonunu sağlayan yapı ne olarak adlandırılır
+  Cevap: Gap junction (Aralıklı bağlantı)brbrHücreler arası elektriksel ve kimyasal iletişimi hızlandırarak fonksiyonel bir birim oluşturur. Dentin yapımı sırasında hücrelerin uyumlu çalışmasını sağlar. Küçük moleküllerin ve iyonların geçişine izin verir. (Referans Endodonti - GİRİŞ - Odontoblast İletişimi)
+  KART B | GUID: O+Ky,`mC)0 (Reps: N/A)
+  Soru: Odontoblastların sekresyon aktivitesini senkronize eden hücreler arası bağlantı tipi hangisidir
+  Cevap: Gap junction (Aralıklı bağlantı)brbrHücreler arası sinyal moleküllerinin geçişini ve fonksiyonel senkronizasyonu sağlar. Dentinogenezis sırasında tüm odontoblastların uyumlu bir tabaka halinde çalışmasını mümkün kılar. İyonik iletişimi de yönetir. (Referans Endodonti - GİRİŞ - Odontoblast İletişimi)
+--------------------------------------------------------------------------------
+
+[11] VECTOR SCORE: 0.9473 | LLM DECISION: N/A
+  KART A | GUID: FyKh#_;w_S (Reps: N/A)
+  Soru: Apikal periodontitis yokken retreatment başarı oranı nedir?
+  Cevap: %92-98  Apikal periodontitis varlığında başarı %74-86'ya düşer. Lezyon varlığı retreatment prognosticunun en önemli belirleyicisidir.
+  KART B | GUID: k^:u.*SeVk (Reps: N/A)
+  Soru: Apikal periodontitis varken retreatment başarı oranı nedir?
+  Cevap: %74-86  Periodontitis yokken başarı %92-98'dir. Lezyon boyutu arttıkça prognoz kötüleşir. En önemli prognostik faktör apikale ulaşım ve dezenfeksiyondur.
+--------------------------------------------------------------------------------
+
+[12] VECTOR SCORE: 0.9459 | LLM DECISION: N/A
+  KART A | GUID: t;j.(35fGU (Reps: N/A)
+  Soru: Endodontik tedaviyi takiben gelisen agri ve/veya sislik tablosuna ne ad verilir?
+  Cevap: Flare-up olarak adlandirilir. --- Flare-up seanslar arasi ya da tedavi sonrasi gorulen akut alevlenmedir. insidansi yaklasik %8.4'tur. Hem hasta kaynakli (hastalik) hem de islem kaynakli (taskin preparasyon, irrigan tasmasi vb.) olabilir. Antibiyotik rutin olarak onerilmez.
+  KART B | GUID: wQJHBIS@q$ (Reps: N/A)
+  Soru: Endodontik tedaviyi takiben agri ve/veya sislik gelismesiyle seyreden akut alevlenme durumu ne olarak adlandirilir?
+  Cevap: Flare-up olarak adlandirilir. --- Tedavi sirasinda veya seanslar arasinda gelisir. insidansi %8.4'tur. Antibiyotik onerilmez, NSAiD tercih edilir. Nekroze disler, genis lezyonlu mandibuler 6'lar ve yenileme vakalarinda daha sik gorulur.
+--------------------------------------------------------------------------------
+
+[13] VECTOR SCORE: 0.9459 | LLM DECISION: N/A
+  KART A | GUID: DPzVY?UGCk (Reps: N/A)
+  Soru: Döküm metal postların temel dezavantajı nedir?
+  Cevap: Elastisite modüllerinin dentin dokusu ile uyumlu olmaması ve vertikal kök kırıklarına sebep olabilmeleridir
+  KART B | GUID: l><VGPf!Eb (Reps: N/A)
+  Soru: Döküm metal postların temel dezavantajı, elastisite modüllerinin {{c1::dentin dokusu ile uyumlu olmaması}} ve {{c1::vertikal kök kırıklarına}} sebep olabilmeleridir.
+  Cevap: 
+--------------------------------------------------------------------------------
+
+[14] VECTOR SCORE: 0.9452 | LLM DECISION: N/A
+  KART A | GUID: tdMbG]?@1= (Reps: N/A)
+  Soru: MTA'nın polimerizasyon esnasında pH değeri hangi aralıkta yükselir
+  Cevap: 10,2'den 12,5'ebrbrYüksek pH değeri materyalin antibakteriyel özelliğine katkıda bulunur. (Referans Endodonti - ENDODONTİDE KARŞILAŞILAN HATALAR - MTA)
+  KART B | GUID: be+oE#}s{T (Reps: N/A)
+  Soru: MTA'nın polimerizasyonu sırasında pH değişimi nasıldır
+  Cevap: 10,2'den 12,5'e yükselirbrbrYüksek pH antibakteriyel aktiviteye katkıda bulunur. Polimerizasyon için neme ihtiyaç duyar. (Referans Endodonti - MTA - Fizikokimyasal Özellikler)
+--------------------------------------------------------------------------------
+
+[15] VECTOR SCORE: 0.9442 | LLM DECISION: N/A
+  KART A | GUID: ztVE[CS{Kc (Reps: N/A)
+  Soru: Plastik olarak deforme olmuş bir aletin kırılma noktasına ne ad verilir
+  Cevap: Plastik limitbrbrAletin fiziksel dayanıklılığının son bulduğu noktadır. (Referans Endodonti - ENDODONTİDE KARŞILAŞILAN HATALAR - Fiziksel Özellikler)
+  KART B | GUID: i/;%*q<l]. (Reps: N/A)
+  Soru: Plastik olarak deforme olmuş aletin kırılma noktası nasıl adlandırılır
+  Cevap: Plastik limitbrbrStres birikim noktası → elastik limit → plastik limit sıralamasıyla ilerler. Plastik deformasyon gözle görülür ve kalıcıdır. (Referans Endodonti - Endodontik Hatalar - Alet Fiziği)
+--------------------------------------------------------------------------------
+
+[16] VECTOR SCORE: 0.9438 | LLM DECISION: N/A
+  KART A | GUID: Fc6<N1*m[k (Reps: N/A)
+  Soru: Kök kırığında servikal kırık hariç standart splintleme süresi {{c1::4 hafta}}'dır
+  Cevap: Endodonti - Travma - Tedavi - Kök Kırığı
+  KART B | GUID: ?+wWaYtE= (Reps: N/A)
+  Soru: Kök kırığında servikal kırık için gerekli splintleme süresi {{c1::4 aya kadar}}'dır
+  Cevap: Endodonti - Travma - Tedavi - Kök Kırığı
+--------------------------------------------------------------------------------
+
+[17] VECTOR SCORE: 0.9437 | LLM DECISION: N/A
+  KART A | GUID: gSf`APk}@1 (Reps: N/A)
+  Soru: İndirekt pulpa kuafajı iki aşamalı uygulamada bekleme süresi ne kadardır?
+  Cevap: 6 hafta ile 12 ay arasında değişmektedir
+  KART B | GUID: Cvy!XIJ9%} (Reps: N/A)
+  Soru: İndirekt pulpa kuafajında iki aşamalı uygulamadaki bekleme süresi {{c1::6 hafta ile 12 ay}} arasında değişmektedir
+  Cevap: 
+--------------------------------------------------------------------------------
+
+[18] VECTOR SCORE: 0.9416 | LLM DECISION: N/A
+  KART A | GUID: OIph6B0_>K (Reps: N/A)
+  Soru: Periodontal hastalığın pulpayı etkileyebildiği anatomik yollar hangileridir?
+  Cevap: Lateral kanallar, apikal foramen ve dentin tübülleri
+  KART B | GUID: Hu^;9f}9Zx (Reps: N/A)
+  Soru: Periodontal hastalığın pulpayı etkileyebildiği anatomik yollar {{c1::lateral kanallar}}, {{c1::apikal foramen}} ve {{c1::dentin tübülleridir}}
+  Cevap: 
+--------------------------------------------------------------------------------
+
+[19] VECTOR SCORE: 0.9405 | LLM DECISION: N/A
+  KART A | GUID: peYq;rVJCD (Reps: N/A)
+  Soru: Perküsyon hassasiyeti olmayan vital dişlerde acil yaklaşım sırasında oklüzal redüksiyon gerekli midir
+  Cevap: Hayır, gereksizdirbrbrApikal dokularda enflamasyon (periodontitis) yoksa oklüzyonu düşürmenin ağrı üzerinde ek bir faydası yoktur. Ancak geçici dolgu yapılırken yükseklik kalmamasına dikkat edilmelidir. Erken temaslar sonradan hassasiyet yaratabilir. (Referans Endodonti - ENDODONTİK ACİL DURUMLAR - Güncel Yaklaşımlar)
+  KART B | GUID: x+sZ7RC/J7 (Reps: N/A)
+  Soru: Perküsyon hassasiyeti olmayan vital bir dişin acil tedavisinde okluzal redüksiyon gerekli midir
+  Cevap: GereksizdirbrbrGeçici dolgu yerleştirilirken yükseklik kontrol edilmelidir. Erken temas hassasiyete veya diş kırığına neden olabilir. Periapikal doku hasarı varsa okluzal redüksiyon ağrıyı engeller. (Referans Endodonti - Endodontik Aciller - Güncel Yaklaşımlar)
+--------------------------------------------------------------------------------
+

@@ -1,116 +1,151 @@
 import os
 import sys
-import torch
+import time
 import functools
-from pinecone import Pinecone
-from sentence_transformers import SentenceTransformer
+import google.generativeai as genai
+from openai import OpenAI
 
-# Force offline settings for local model
-os.environ.setdefault("HF_HUB_OFFLINE", "1")
-os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+# ─── OPENAI EMBEDDER ───
 
-# Snapshot path for Local E5
-_E5_SNAPSHOT = (
-    r"C:\Users\FURKAN\.cache\huggingface\hub"
-    r"\models--intfloat--multilingual-e5-large"
-    r"\snapshots\3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3"
-)
-
-# Import config
-sys.path.insert(0, os.path.dirname(__file__))
-try:
-    from config import PINECONE_API_KEY
-except ImportError:
-    PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
-
-# ─── LLAMA EMBEDDER (CLOUDBASED - WITH AUTOMATIC LOCAL FALLBACK) ───
-
-class PineconeLlamaEmbedder:
-    _instance = None
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance.pc = Pinecone(api_key=PINECONE_API_KEY)
-            sys.stderr.write("[embedder] Pinecone Llama-v2 (Integrated Inference) aktif.\n")
-        return cls._instance
+class OpenAIEmbedder:
+    def __init__(self, model_name="text-embedding-3-large", dimensionality=3072):
+        self.model_name = model_name
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            sys.stderr.write("[openai] UYARI: OPENAI_API_KEY bulunamadı.\n")
+        self.client = OpenAI(api_key=api_key)
+        self.dimensionality = dimensionality
+        sys.stderr.write(f"[openai] OpenAI Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
-        try:
-            input_type = "query" if is_query else "passage"
-            res = self.pc.inference.embed(
-                model="llama-text-embed-v2",
-                inputs=[text],
-                parameters={"input_type": input_type}
-            )
-            return res[0].values
-        except Exception as e:
-            sys.stderr.write(f"[embedder] Llama hatasi, Yerel E5'e geciliyor: {e}\n")
-            return get_local_embedder().embed_text(text, is_query=is_query)
+        response = self.client.embeddings.create(
+            model=self.model_name,
+            input=[text],
+            dimensions=self.dimensionality
+        )
+        return response.data[0].embedding
 
     def embed_batch(self, texts: list[str], is_query: bool = False) -> list[list[float]]:
         if not texts: return []
-        try:
-            input_type = "query" if is_query else "passage"
-            res = self.pc.inference.embed(
-                model="llama-text-embed-v2",
-                inputs=texts,
-                parameters={"input_type": input_type}
+        
+        all_embeddings = []
+        batch_size = 500 # OpenAI için güvenli bir batch boyutu
+        
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i+batch_size]
+            sys.stderr.write(f"[openai] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
+            
+            response = self.client.embeddings.create(
+                model=self.model_name,
+                input=batch,
+                dimensions=self.dimensionality
             )
-            return [record.values for record in res]
-        except Exception as e:
-            sys.stderr.write(f"[embedder] Llama batch hatasi, Yerel E5'e geciliyor: {e}\n")
-            return get_local_embedder().embed_batch(texts, is_query=is_query)
+            all_embeddings.extend([item.embedding for item in response.data])
+            
+        return all_embeddings
 
-# ─── LOCAL E5 EMBEDDER (CPU/GPU BASED - SENTENCE TRANSFORMERS) ───
+# ─── LOCAL E5 EMBEDDER ───
 
 class LocalE5Embedder:
-    _instance = None
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance._load()
-        return cls._instance
-
-    def _load(self):
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        sys.stderr.write(f"[embedder] Local Multilingual-E5-Large yukleniyor ({device})...\n")
-        self.model = SentenceTransformer(_E5_SNAPSHOT, device=device, local_files_only=True)
-        sys.stderr.write("[embedder] Yerel model hazir.\n")
+    def __init__(self, model_name="intfloat/multilingual-e5-large"):
+        from sentence_transformers import SentenceTransformer
+        self.model_name = model_name
+        self.dimensionality = 1024
+        # Modeli CPU'da başlatıyoruz (DUS Mentörü standart)
+        sys.stderr.write(f"[local] {self.model_name} yükleniyor...\n")
+        self.model = SentenceTransformer(self.model_name, device="cpu")
+        sys.stderr.write(f"[local] Local E5 Embedder hazır (dim: {self.dimensionality}).\n")
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
         prefix = "query: " if is_query else "passage: "
-        text = f"{prefix}{text}" if not text.startswith(prefix) else text
-        return self.model.encode([text], normalize_embeddings=True)[0].tolist()
+        vec = self.model.encode([prefix + text], normalize_embeddings=True)
+        return vec[0].tolist()
 
     def embed_batch(self, texts: list[str], is_query: bool = False) -> list[list[float]]:
         if not texts: return []
         prefix = "query: " if is_query else "passage: "
-        prefixed = [t if t.startswith(prefix) else f"{prefix}{t}" for t in texts]
-        return self.model.encode(prefixed, normalize_embeddings=True).tolist()
+        prefixed_texts = [prefix + t for t in texts]
+        vecs = self.model.encode(prefixed_texts, normalize_embeddings=True, show_progress_bar=False)
+        return vecs.tolist()
 
-@functools.lru_cache(maxsize=1)
-def get_embedder():
-    """Lazy getter for PineconeLlamaEmbedder"""
-    return PineconeLlamaEmbedder()
+# ─── GEMINI EMBEDDER ───
 
-@functools.lru_cache(maxsize=1)
-def get_local_embedder():
-    """Lazy getter for LocalE5Embedder"""
-    return LocalE5Embedder()
+class GeminiEmbedder:
+    def __init__(self, model_name="models/gemini-embedding-2"):
+        api_key = os.environ.get("GEMINI_API_KEY")
+        genai.configure(api_key=api_key)
+        self.model_name = model_name
+        self.dimensionality = 1024
+        sys.stderr.write(f"[gemini] Gemini Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
 
-# --- Module-level Singletons (Backwards Compatibility) ---
-embedder = get_embedder()
-local_embedder = get_local_embedder()
+    def embed_text(self, text: str, is_query: bool = False) -> list[float]:
+        task_type = "RETRIEVAL_QUERY" if is_query else "RETRIEVAL_DOCUMENT"
+        result = genai.embed_content(
+            model=self.model_name,
+            content=text,
+            task_type=task_type,
+            output_dimensionality=self.dimensionality
+        )
+        return result['embedding']
+
+    def embed_batch(self, texts: list[str], is_query: bool = False) -> list[list[float]]:
+        if not texts: return []
+        task_type = "RETRIEVAL_QUERY" if is_query else "RETRIEVAL_DOCUMENT"
+        
+        all_embeddings = []
+        batch_size = 90 # Free Tier koruması
+        
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i+batch_size]
+            sys.stderr.write(f"[gemini] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
+            
+            try:
+                result = genai.embed_content(
+                    model=self.model_name,
+                    content=batch,
+                    task_type=task_type,
+                    output_dimensionality=self.dimensionality
+                )
+                all_embeddings.extend(result['embedding'])
+            except Exception as e:
+                if "429" in str(e):
+                    sys.stderr.write("[gemini] 429 Quota Exceeded! 65s bekleniyor...\n")
+                    time.sleep(65)
+                    result = genai.embed_content(
+                        model=self.model_name,
+                        content=batch,
+                        task_type=task_type,
+                        output_dimensionality=self.dimensionality
+                    )
+                    all_embeddings.extend(result['embedding'])
+                else: raise e
+            
+            if i + batch_size < len(texts):
+                time.sleep(65)
+                
+        return all_embeddings
+
+@functools.lru_cache(maxsize=4)
+def get_local_embedder(provider="openai", dimension=None):
+    """
+    Kullanıcı tercihine göre embedder döner. 
+    Varsayılan: openai (text-embedding-3-large)
+    """
+    if provider == "local":
+        return LocalE5Embedder()
+    elif provider == "openai":
+        # Eğer boyut belirtilmemişse 3072, belirtilmişse (örn 1024) onu kullan
+        dim = dimension if dimension else 3072
+        return OpenAIEmbedder(dimensionality=dim)
+    else:
+        return GeminiEmbedder()
+
+# Geriye dönük uyumluluk
+get_embedder = get_local_embedder
 
 if __name__ == "__main__":
-    # Test Llama
-    print("Testing Llama (Lazy Loading)...")
-    v1 = get_embedder().embed_text("Test bulut")
-    print(f"Llama OK. Dim: {len(v1)}")
-    
-    # Test Local E5
-    print("\nTesting Local E5 (Lazy Loading)...")
-    v2 = get_local_embedder().embed_text("Test yerel")
-    print(f"Local E5 OK. Dim: {len(v2)}")
+    from dotenv import load_dotenv
+    load_dotenv()
+    print("Testing OpenAI...")
+    v = get_local_embedder("openai").embed_text("Test")
+    print(f"OpenAI Dim: {len(v)}")

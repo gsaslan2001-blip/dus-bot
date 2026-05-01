@@ -1,0 +1,204 @@
+# PROJE KİMLİĞİ VE TEMEL MİMARİ
+- Projenin Amacı: Furkan için DUS 2026 hazırlığında çalışan, diş hekimliği ve temel tıp içeriklerini mekanizma odaklı anlatan, Pinecone tabanlı RAG kullanan, local-first çalışan bir öğrenme ve hafıza asistanı kurmak.
+- Temel Yetenekler:
+- `myppdfs` üzerindeki branş notlarını çoklu namespace ve reranker ile taramak.
+- `mybrain` üzerindeki strateji, ilerleme, referans, telos ve sohbet geçmişi katmanlarını senkronize etmek.
+- `dus_jsonlari/` altındaki çıkmış soruları standardize etmek, denetlemek ve semantik aramaya hazırlamak.
+- `vektörlenecek/` klasörünü staging alanı olarak kullanıp yeni bilgi ve oturum özetlerini kalıcı belleğe aktarmak.
+- Yerel `multilingual-e5-large` ile embedding üretip bulut kotasına bağımlılığı azaltmak.
+- Supabase üzerindeki soru bankasını OpenAI embedding destekli RPC ile sorgulamak.
+- Teknoloji Yığını ve Kullanılan Araçlar:
+- Python 3.12 tabanlı script yapısı.
+- Pinecone Serverless indeksleri: `mybrain`, `myppdfs`, `dusbankasi`.
+- Yerel embedding: Hugging Face `intfloat/multilingual-e5-large`, `sentence-transformers`, `torch`.
+- Reranker: Pinecone `bge-reranker-v2-m3`.
+- Soru bankası: Supabase `questions` tablosu ve `match_questions_semantic` RPC.
+- Harici embedding entegrasyonu: OpenAI `text-embedding-3-small` sadece soru bankası araması için.
+- PDF işleme: `fitz` (PyMuPDF) ve miras katmanda `pypdf`.
+- Zamanlanmış otomasyon: Windows Task Scheduler ve `scripts/daily_sync.bat`.
+- Dokümantasyon ve ajan orkestrasyonu: `Gemini.MD`, `.agent/rules/`, `.agent/workflows/`, `.agent/skills/`.
+- Legacy ve halen repoda izi bulunan araçlar: FastAPI, Uvicorn, httpx, Docker, Telegram bot, Google GenAI.
+- Araç Tercih Nedenleri:
+- Pinecone seçimi, farklı bilgi katmanlarını namespace izolasyonuyla ayrı tutup hızlı semantik erişim sağlamak için yapılmış.
+- Yerel E5 seçimi, embedding maliyetini ve dış kota bağımlılığını azaltmak için yapılmış.
+- Pinecone reranker seçimi, dense retrieval sonucundaki gürültüyü düşürüp tıbbi bağlam hassasiyetini artırmak için yapılmış.
+- Supabase seçimi, 16K+ soruluk yapılandırılmış soru bankasını RPC tabanlı semantik arama ile sunmak için yapılmış.
+- `vektörlenecek/` staging yaklaşımı, anlık üretimleri doğrudan indeks yerine önce diskte toplamak ve gecikmeli senkronizasyon yapmak için seçilmiş.
+- FastAPI, Uvicorn, Docker ve Telegram bot tercihinin güncel aktif gerekçesi repo içinde operasyonel olarak doğrulanmıyor; bu katman tarihsel olarak Cloud Run ve webhook tabanlı eski mimariye ait.
+
+# DOSYA SİSTEMİ VE HİYERARŞİK YAPI
+## Klasör Ağacı
+- `Pinecone/`
+- `Pinecone/.agent/`
+- `Pinecone/.agent/rules/`
+- `Pinecone/.agent/rules/backend_rules.md`
+- `Pinecone/.agent/rules/pinecone_rules.md`
+- `Pinecone/.agent/rules/security_rules.md`
+- `Pinecone/.agent/skills/`
+- `Pinecone/.agent/skills/dus-mentor/SKILL.md`
+- `Pinecone/.agent/workflows/`
+- `Pinecone/.agent/workflows/cikmis_ekle.md`
+- `Pinecone/.agent/workflows/debug.md`
+- `Pinecone/.agent/workflows/ders_calis.md`
+- `Pinecone/.agent/workflows/hafiza_kaydet.md`
+- `Pinecone/.agent/workflows/karsilastir.md`
+- `Pinecone/.agent/workflows/soru_uret.md`
+- `Pinecone/.agent/workflows/test_olustur.md`
+- `Pinecone/archive/`
+- `Pinecone/archive/dus_bot_v6.py`
+- `Pinecone/directives/`
+- `Pinecone/directives/pinecone_upload.md`
+- `Pinecone/directives/supabase_soru_ekle.md`
+- `Pinecone/directives/yeni_brans_ekle.md`
+- `Pinecone/dus_jsonlari/`
+- `Pinecone/dus_jsonlari/2015-dus.json`
+- `Pinecone/dus_jsonlari/2016-dus.json`
+- `Pinecone/dus_jsonlari/2017-dus.json`
+- `Pinecone/dus_jsonlari/2018-dus.json`
+- `Pinecone/dus_jsonlari/2019-dus.json`
+- `Pinecone/dus_jsonlari/2020-dus.json`
+- `Pinecone/dus_jsonlari/2021-dus.json`
+- `Pinecone/dus_jsonlari/2022-dus.json`
+- `Pinecone/dus_jsonlari/2023-1-dus.json`
+- `Pinecone/dus_jsonlari/2023-2-dus.json`
+- `Pinecone/dus_jsonlari/2024-1-dus.json`
+- `Pinecone/dus_jsonlari/2025-1-dus.json`
+- `Pinecone/dus_jsonlari/2025-2-dus.json`
+- `Pinecone/dus_jsonlari/2026-1-dus.json`
+- `Pinecone/RAPORLAR/`
+- `Pinecone/scratch/`
+- `Pinecone/scripts/`
+- `Pinecone/scripts/auto_sync_dus.py`
+- `Pinecone/scripts/cikmis_ekle.py`
+- `Pinecone/scripts/daily_sync.bat`
+- `Pinecone/scripts/download_model.py`
+- `Pinecone/scripts/dus_manifest.json`
+- `Pinecone/scripts/dus_uploader.py`
+- `Pinecone/scripts/embedding_utils.py`
+- `Pinecone/scripts/reset_brain.py`
+- `Pinecone/scripts/search_engine.py`
+- `Pinecone/tmp/`
+- `Pinecone/tmp/README.md`
+- `Pinecone/tmp/app.py`
+- `Pinecone/tmp/config.py`
+- `Pinecone/tmp/main.py`
+- `Pinecone/tmp/scripts/`
+- `Pinecone/vektörlenecek/`
+- `Pinecone/CIKMIS_SORULAR.MD`
+- `Pinecone/Dockerfile`
+- `Pinecone/DUSBANKASI.MD`
+- `Pinecone/EMBEDDING.MD`
+- `Pinecone/Gemini.MD`
+- `Pinecone/MYBRAIN.MD`
+- `Pinecone/MYPPDFS.MD`
+- `Pinecone/requirements.txt`
+- `Pinecone/upload_cikmis_log.txt`
+- `Pinecone/upload_history_log.txt`
+- `Pinecone/upload_log.txt`
+## Modül ve Dosya Analizi
+- `.agent/rules/`: Ajanın güvenlik, backend ve Pinecone kullanım kurallarını tanımlar; operasyonel politika katmanıdır.
+- `.agent/workflows/`: `/ders-calis`, `/cikmis-ekle`, `/hafiza-kaydet`, `/debug`, `/karsilastir`, `/soru-uret`, `/test-olustur` gibi iş akışlarını tanımlar; davranış sözleşmesi rolündedir.
+- `.agent/skills/dus-mentor/SKILL.md`: Hangi kullanıcı talebinde hangi workflow ve hangi veri kaynağının kullanılacağını tarif eder; ajan yönlendiricisidir.
+- `Gemini.MD`: Projenin anayasa dosyasıdır; kimlik, kurallar, indeks envanteri, görev kuyruğu ve günlük çalışma protokolünü tutar.
+- `EMBEDDING.MD`: Yerel E5, remote search ve reranker odaklı retrieval mimarisini açıklar; teknik mimari rehberidir.
+- `MYBRAIN.MD`: `mybrain` namespace düzenini, bellek kaydetme politikasını ve senkronizasyon mantığını dokümante eder.
+- `MYPPDFS.MD`: Branş bazlı PDF/note indeksini, arama protokollerini ve namespace yönlendirmesini açıklar.
+- `DUSBANKASI.MD`: `dusbankasi` indeksini ve Supabase tabanlı soru bankası entegrasyonunu açıklar.
+- `CIKMIS_SORULAR.MD`: `dus_jsonlari/` datasetinin kapsamını, JSON şemasını ve kalite ölçütlerini tanımlar.
+- `scripts/auto_sync_dus.py`: Günlük senkronizasyon orkestratörüdür; `dus_uploader.py` çağrılarını DUS, TELOS ve `chathistory` için sıralı çalıştırır.
+- `scripts/daily_sync.bat`: Windows Task Scheduler tarafından çağrılmak üzere hazırlanmış wrapper betiktir; log yönlendirmesi yapar.
+- `scripts/dus_uploader.py`: Repo dışındaki `.claude/DUS`, `TELOS` ve repo içindeki `vektörlenecek/` klasörlerini okuyup manifest tabanlı delta sync ile `mybrain` namespace’lerine upsert eder.
+- `scripts/dus_manifest.json`: Son senkronize edilen dosyaların `mtime`, `id` ve namespace bilgisini tutar; state store görevi görür.
+- `scripts/embedding_utils.py`: Pinecone Llama embedder ve local E5 embedder sınıflarını içerir; mevcut belgelerle kısmen çelişen miras bir hibrit katmandır.
+- `scripts/search_engine.py`: Tek namespace arama, çoklu namespace arama, async arama ve Supabase soru araması fonksiyonlarını içerir.
+- `scripts/cikmis_ekle.py`: DUS PDF’lerini parse eder, JSON üretir, audit yapar ve Markdown patch uygular; çıkmış soru standardizasyon motorudur.
+- `scripts/download_model.py`: Local E5 snapshot’ını indirir, bozuk `.incomplete` blob dosyalarını temizler ve model boyutunu doğrular.
+- `scripts/reset_brain.py`: `mybrain` içinde eski namespace’leri toplu silmek için yazılmış legacy bakım betiğidir; yıkıcıdır.
+- `scripts/__init__.py`: Paket işareti niteliğinde minimal başlangıç dosyasıdır.
+- `dus_jsonlari/`: 2015-2026 arası standardize edilmiş DUS soru setlerini taşır; semantik indeksleme kaynağıdır.
+- `vektörlenecek/`: Oturum notları, içerik özetleri ve staging belgelerinin tutulduğu klasördür; `chathistory` besleme noktasıdır.
+- `RAPORLAR/`: Üretilmiş karşılaştırma, test ve cevap anahtarı belgelerini tutar; çıktı örnekleri sağlar.
+- `scratch/`: İstatistik ve Pinecone doğrulama amaçlı geçici denetim scriptlerini tutar.
+- `directives/`: Pinecone yükleme, Supabase’e soru ekleme ve yeni branş ekleme için operasyon reçeteleri içerir.
+- `archive/dus_bot_v6.py`: Erken Telegram bot sürümüdür; eski bot mimarisinin tarihsel referansıdır ve güvenlik borcu taşır.
+- `tmp/`: Taşınmış legacy çalışma alanıdır; eski `config.py`, `main.py`, `app.py`, `universal_uploader.py`, `sync_*` ve branş upload betiklerinin arşividir.
+- `Dockerfile`: Cloud Run/FastAPI dönemine ait container tarifidir; güncel aktif dosya düzeniyle uyumsuz kalmıştır.
+- `requirements.txt`: Hem aktif local-first script ihtiyaçlarını hem de legacy web/bot bağımlılıklarını birlikte taşır.
+- `upload_log.txt`: `vektörlenecek/` kaynaklarının `chathistory` namespace’ine aktarıldığını gösteren çalışma logudur.
+- `upload_history_log.txt`: `vektörlenecek/` içeriğinin `chathistory` senkronizasyonuna ait ek logdur.
+- `upload_cikmis_log.txt`: Tüm `dus_jsonlari/` datasetinin `myppdfs/cikmis` namespace’ine 1560 soru olarak vektörlendiğini gösteren logdur.
+
+# GELİŞTİRME DURUMU VE GEÇMİŞ LOGLAR
+- Bugüne Kadar Tamamlanan Dönüm Noktaları:
+- Git geçmişindeki tek commit `a5b8833` ile “Stabil DUS Mentörü mimarisi ve izolasyon” başlangıç noktası oluşturulmuş.
+- Telegram bot, webhook ve Cloud Run odaklı eski mimari `tmp/` ve `archive/` altına itilmiş; proje anlatımı yerel ajan ve local-first eksene çevrilmiş.
+- `Gemini.MD` 2026-04-27 tarihli v8.0 içeriğiyle tekil ajan ve yerel vektörleme katmanını ana mimari olarak ilan etmiş.
+- 2025-1 ve 2025-2 DUS sınavlarının standardizasyonu tamamlanmış; `cikmis_ekle.py` ile merkezi parse/audit/patch hattı kurulmuş.
+- `upload_cikmis_log.txt` verisine göre 2015-2025 dataseti `myppdfs/cikmis` namespace’ine toplam 1560 soru olarak vektörlenmiş.
+- `auto_sync_dus.py` ve `daily_sync.bat` ile günlük senkronizasyon akışı kurulmuş.
+- `dus_uploader.py` ile manifest tabanlı delta sync katmanı kurulmuş.
+- Branş notları, `mybrain` namespace ayrımı ve `chathistory` staging yaklaşımı dokümante edilmiş.
+- Aktif Durum:
+- Proje 2026-04-27 itibarıyla yerel ajan mimarisine geçiş sonrası temizlik ve konsolidasyon aşamasında.
+- Çalışma ağacında commitlenmemiş büyük bir refactor bulunuyor; 44 dosyada yaklaşık 4099 satırlık silme ve belge güncellemeleri var.
+- Aktif `scripts/` klasörü küçültülmüş durumda; eski birçok upload, bot ve bakım betiği `tmp/` altında tutuluyor veya git açısından silinmiş görünüyor.
+- Re-index ve günlük sync anlatısı belgelerde aktif; ancak bazı uygulama bileşenleri belge-kod uyumsuzluğu nedeniyle doğrulama gerektiriyor.
+
+# OPERASYONEL İŞ AKIŞLARI (WORKFLOWS)
+- `/ders-calis`: Tetikleyici bir konu adı, kavram veya DUS sorusudur; yerel E5 ile vektörleme yapılır, ilgili `myppdfs` namespace’leri paralel taranır, `bge-reranker-v2-m3` ile sonuçlar daraltılır, Faz 1’de öğretici içerik üretilir, Faz 2’de `myppdfs/cikmis` üzerinden çıkmış soru eşleştirmesi ve yeni soru üretimi yapılır.
+- `/cikmis-ekle`: Tetikleyici yeni bir DUS PDF’i veya var olan JSON’un kalite denetimidir; PDF parse edilir, metadata şeması uygulanır, audit yapılır, gerekirse Markdown patch ile eksik seçenekler tamamlanır.
+- `/hafiza-kaydet`: Tetikleyici oturum sonu, kritik karar veya “konuştuklarımızı kaydet” komutudur; içerik `.md` olarak hazırlanır, `vektörlenecek/` staging’e yazılır ve `chathistory` veya ilgili `mybrain` namespace’ine aktarılması hedeflenir.
+- `/debug`: Tetikleyici hata, traceback veya beklenmeyen davranıştır; çevre değişkeni, import, Pinecone host, namespace, oran limiti ve model fallback katmanları sistematik kontrol edilir, ardından çözüm kaydedilir.
+- `/karsilastir`: Tetikleyici iki kavram veya hastalık karşılaştırmasıdır; her iki kavram için paralel arama yapılır, bağımsız high-yield özetler çıkarılır, diferansiyel matris ve olası DUS tuzak senaryosu oluşturulur.
+- `/soru-uret`: Tetikleyici bir branş, konu ve istenen soru sayısıdır; ilgili namespace taranır, bağlam çıkarılır ve çoktan seçmeli DUS tarzı soru seti üretilir.
+- `/test-olustur`: Tetikleyici ders ve konu bazlı test hazırlama talebidir; kavram madenciliği, soru bankası taraması ve cevap anahtarlı rapor üretimi tasarlanmıştır.
+- Günlük sync: Tetikleyici Windows Task Scheduler’dır; `scripts/daily_sync.bat` sabah 06:00 çalışacak biçimde ayarlanmış, `auto_sync_dus.py` üzerinden DUS, TELOS ve `chathistory` senkronu zincirlenir.
+- Full dataset vectorization: Tetikleyici standardize edilmiş JSON datasetin toplu yükleme ihtiyacıdır; loglara göre bu akış geçmişte `cikmis_uploader.py` ile çalıştırılmış ve `myppdfs/cikmis` namespace’i doldurulmuştur.
+
+# PYTHON KOD MİMARİSİ
+- Temel Betikler (Scripts):
+- `auto_sync_dus.py`: Girdi olarak opsiyonel uploader argümanlarını alır; çıktı olarak `logs/auto_sync.log` içine yazan ve üç ayrı sync aşaması yürüten bir orkestrasyon döndürür.
+- `dus_uploader.py`: Girdi olarak `--dry-run`, `--force`, `--namespace`, `--file`, `--chathistory`, `--telos` alır; çıktı olarak chunk upsert eder ve `dus_manifest.json` state’ini günceller.
+- `search_engine.py`: Girdi olarak metin sorgusu, indeks adı, namespace listesi ve limitler alır; çıktı olarak rerank edilmiş metin blokları veya Supabase’den soru kayıtları döndürür.
+- `embedding_utils.py`: Girdi olarak tekil veya toplu metin alır; çıktı olarak 1024 boyutlu yerel E5 vektörü veya başarısız durumda fallback vektörü döndürür.
+- `cikmis_ekle.py`: Girdi olarak `--pdf`, `--yil`, `--donem`, `--audit`, `--patch-md`, `--json` parametrelerini alır; çıktı olarak standardize JSON, audit raporu veya patch uygulanmış JSON üretir.
+- `download_model.py`: Girdi olarak `--skip-clean` ve `--clean-only` gibi bayraklar alır; çıktı olarak model snapshot’ını indirir ve doğrulama mesajları üretir.
+- `reset_brain.py`: Girdi almaz; çıktı olarak belirtilen namespace’lerde toplu silme işlemi yapmayı amaçlayan bakım komutları üretir.
+- `daily_sync.bat`: Girdi almaz; çıktı olarak scheduler loguna başlangıç ve bitiş satırları yazar ve Python betiğini çağırır.
+- Entegrasyonlar:
+- Pinecone Python SDK, host bazlı `Index` nesneleri ve `inference.rerank`.
+- Supabase Python client ve `match_questions_semantic` RPC çağrısı.
+- OpenAI Python client ile `text-embedding-3-small` üretimi.
+- Hugging Face `snapshot_download`, `sentence-transformers`, `torch`.
+- PyMuPDF `fitz` ile DUS PDF parse işlemi.
+- Repo dışı veri kaynakları: `C:\Users\FURKAN\.claude\DUS`, `C:\Users\FURKAN\.claude\PAI\USER\TELOS`, `C:\Users\FURKAN\Desktop\DUS\Çıkmış\dus çıkmış\dus eski`.
+
+# SİSTEM ANALİZİ VE SWOT
+## En Güçlü Yönler (Best Practices)
+- Dokümantasyon yoğunluğu yüksek; `Gemini.MD`, indeks rehberleri, workflow dosyaları ve skill tanımları yeni bir LLM’in bağlama hızlı girmesini kolaylaştırıyor.
+- `dus_uploader.py` içindeki manifest tabanlı delta sync yaklaşımı, tekrar yüklemeleri azaltan pratik bir stateful senkronizasyon mekanizması sunuyor.
+- `search_engine.py` ve dokümanlardaki çoklu namespace + reranker yaklaşımı, tıbbi içeriklerde precision odaklı retrieval tasarımını gösteriyor.
+- `dus_jsonlari/` datasetinin standart JSON şeması ve `cikmis_ekle.py` ile audit/patch hattı, veri kalitesi açısından en olgun alt sistemlerden biri.
+- `vektörlenecek/` staging mantığı, üretim ve indeksleme arasında kontrollü bir ara katman sunuyor.
+- `mybrain` namespace ayrımı, strateji, ilerleme, referans ve sohbet geçmişini kavramsal olarak ayrıştırıyor.
+## Geliştirilmeye Açık Yönler (Zayıflıklar/Darboğazlar)
+- Güncel aktif `scripts/` klasöründe `config.py` yok; buna rağmen `search_engine.py` ve `reset_brain.py` doğrudan `config` import ediyor. Bu, runtime kırılması riski taşıyor.
+- `Dockerfile` repo kökünde `main.py` bekliyor; güncel kökte böyle bir dosya yok. Container/deploy katmanı fiilen stale durumda.
+- `requirements.txt` içindeki FastAPI, Uvicorn, httpx ve kısmen `google-genai` bağımlılıkları aktif local-first script yüzeyiyle tam hizalı değil; bağımlılık seti temizlenmemiş.
+- `embedding_utils.py` hâlâ Pinecone Llama embedder ve modül düzeyi singleton yüklüyor; bu durum `Gemini.MD` ve `EMBEDDING.MD` içinde ilan edilen “Pinecone Inference API kullanma, sadece yerel E5” kuralıyla çelişiyor.
+- `search_engine.py` soru bankası aramasında OpenAI embedding kullanıyor; tam local-first hedefi henüz tamamlanmış değil.
+- `cikmis_ekle.py` workflow belgelerinde anlatılan `--upload` adımını uygulamıyor; belge ve kod arasında işlev farkı var.
+- `cikmis_ekle.py` içinde `cmd_parse` yol çözümünde tanımsız `PROJECT_DIR` referansı bulunuyor; belirli `--out` varyantlarında hata üretme potansiyeli var.
+- `dus_uploader.py` chunk stratejisi `1600/200`, belge ve kural dosyalarının bir kısmı ise `1000/200` standardını söylüyor; chunk politikası tekilleştirilmemiş.
+- Repo dışındaki mutlak Windows yollarına yüksek bağımlılık var; proje taşınabilirliği ve yeniden üretilebilirliği düşük.
+- `archive/dus_bot_v6.py`, `tmp/app.py` ve git diff geçmişinde görülen bazı legacy scriptlerde hardcoded gizli anahtar kalıntıları mevcut; bu ciddi bir güvenlik borcu.
+- `reset_brain.py` eski namespace adları `claude_memory` ve `dus-data` üzerinde yıkıcı silme yapıyor; güncel namespace şemasıyla uyumsuz ve yanlış çalıştırma riski taşıyor.
+- Git geçmişi yalnızca tek commit içeriyor; mimari evrimin nedenleri commit zincirinden takip edilemiyor, bilgi büyük ölçüde markdown belgelerine ve staging notlarına dağılmış.
+- Çalışma ağacındaki büyük ama commitlenmemiş temizlik, “aktif kaynak” ile “arşiv kaynak” sınırını belirsizleştiriyor; yeni bir LLM’in hangi dosyaya güveneceği açık kuralla belirlenmeli.
+
+# YENİ LLM İÇİN HEDEF VE BEKLENTİLER (SİSTEM KOMUTU)
+- Bu verileri analiz et, mevcut repo durumunu aktif yüzey ve arşiv yüzeyi olarak ayır, belge-kod tutarsızlıklarını önceliklendir ve özellikle `scripts/` altındaki gerçekten çalışır çekirdeği doğrula.
+- Önce operasyonel riskleri sınıflandır: `config.py` eksikliği, stale Docker/deploy katmanı, legacy secret sızıntıları, OpenAI bağımlılığı ve chunk standardı çakışmaları.
+- Ardından kod seviyesinde veya mimari düzeyde uygulanabilir optimizasyon önerileri üret: `search_engine.py` ve Supabase hattını tam local-first hale getirme, `dus_uploader.py` ile workflow belgelerini tek chunk standardında birleştirme, staging ve `chathistory` kaydını otomatikleştirme, arşiv dosyalarını güvenli biçimde izole etme.
+- Çalışırken `Gemini.MD` içindeki kuralları referans al ama onu tek doğruluk kaynağı kabul etme; her iddiayı mevcut dosya sistemi, script içerikleri ve loglarla çapraz doğrula.
+- Öneri üretirken üç eksene odaklan: çalışabilirlik, güvenlik ve bakım kolaylığı.

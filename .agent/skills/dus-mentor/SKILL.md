@@ -3,16 +3,16 @@ name: dus-mentor
 description: |
   DUS Mentörü — Furkan'ın DUS 2026 sınavı için Pinecone vektör veritabanı, Supabase soru bankası
   ve Gemini LLM entegrasyonlu akıllı tıp eğitimi asistanı.
+  ⚠️ KRİTİK: Pinecone bulut embedding kotası DOLMUŞTUR. Tüm aramalar YEREL E5 + ham vektör ile yapılır.
+  MCP `search-records` ve `cascading-search` araçları KESİNLİKLE KULLANILMAZ.
 
   Bu skill şu durumlarda tetiklenir:
   - Kullanıcı bir DUS sorusu, konu başlığı veya kavram ismi gönderdiğinde
   - Pinecone indexleri (mybrain, myppdfs, dusbankasi) üzerinde arama/yazma gerektiğinde
-  - Bot scripti (dus_bot.py / main.py) düzenlenecek veya deploy edilecekse
   - Yeni branş PDF'leri Pinecone'a yüklenecekse (upload_*.py akışı)
-  - Hafıza kaydı (mybrain/dus-data) veya oturum logu yazılacaksa
-  - Cloud Run deployment veya Telegram bot yapılandırması yapılacaksa
+  - Hafıza kaydı (mybrain/chathistory) veya oturum logu yazılacaksa
 
-  Pinecone index'leri: mybrain (dus-data, claude_memory) | myppdfs (patoloji, endodonti,
+  Pinecone index'leri: mybrain (chathistory, dus-memory, vb) | myppdfs (patoloji, endodonti,
   radyoloji, protez, histoloji, fizyoloji, periodontoloji) | dusbankasi (OpenAI embed, 16072 vektör)
   Reranker: bge-reranker-v2-m3 (TÜM aramalarda zorunlu)
   Arama Modları: S2 (kısaca → multi-query) | S5 (kapsamlı → full pipeline)
@@ -35,6 +35,13 @@ allowed_tools:
   - multi_replace_file_content
   - grep_search
   - list_dir
+
+parallel_skills:
+  - vibe-code-auditor
+  - architect-review
+  - code-reviewer
+  - systematic-debugging
+  - python-pro
 ---
 
 # DUS Mentörü — Skill Orkestrasyon Kılavuzu
@@ -45,7 +52,6 @@ allowed_tools:
 |------|-------|
 | Proje Klasörü | `C:\Users\FURKAN\Desktop\Projeler\Pinecone` |
 | Supabase | `vblndoyjmkgaeuihydyd.supabase.co` (DUSBANK) |
-| Cloud Run | `https://dus-mentor-489596239454.europe-west1.run.app` |
 | LLM | Gemini — fallback: 2.5-flash → 2.0-flash → 2.0-flash-lite → 3.1-flash-lite-preview → 3.1-pro-preview |
 
 **Dosya Haritası (hızlı referans):**
@@ -54,8 +60,6 @@ allowed_tools:
 - `MYBRAIN.MD` → mybrain index kılavuzu + hafıza politikası
 - `DUSBANKASI.MD` → dusbankasi + Supabase RPC entegrasyon notları
 - `scripts/config.py` → merkezi konfigürasyon (API anahtarları os.environ)
-- `scripts/dus_bot.py` → Telegram polling botu
-- `scripts/main.py` → FastAPI webhook (Cloud Run)
 - `scripts/upload_*.py` → branş yükleme scriptleri
 
 ---
@@ -91,17 +95,24 @@ Kullanıcı girdisi
 
 ## 3. Pinecone Index Operasyonları
 
-### 3.1 Bağlantı Standardı
+### 3.1 Bağlantı ve Arama Standardı
+
+> **🔴 KRİTİK UYARI:** Pinecone bulut embedding kotası DOLDU. `search-records` ve `cascading-search`
+> MCP araçları bulut embedding tetiklediği için **KESİNLİKLE YASAKLANMIŞTIR.**
+> Tüm aramalar aşağıdaki YEREL vektörleme yolu ile yapılır:
 
 **Daima host kullan** (`pc.Index(host=HOST)`) — index ismiyle bağlanma, kota limitini zorlar.
 
 ```python
-# mybrain / myppdfs (Integrated Inference):
-index.search(namespace="<ns>", query={"inputs": {"text": "<sorgu>"}, "top_k": 20})
+# ZORUNLU ARAMA YOLU — mybrain / myppdfs:
+from embedding_utils import get_local_embedder
+
+vec = get_local_embedder().embed_text("sorgu", is_query=True)  # YEREL CPU/GPU
+results = index.query(namespace="<ns>", vector=vec, top_k=15, include_metadata=True)
 
 # dusbankasi (Manuel embed — OpenAI text-embedding-3-small):
 embedding = openai_client.embeddings.create(input=sorgu, model="text-embedding-3-small").data[0].embedding
-index.query(vector=embedding, top_k=10, include_metadata=True)
+results = index.query(vector=embedding, top_k=10, include_metadata=True)
 ```
 
 ### 3.2 Rerank — Her Aramada Zorunlu
@@ -126,7 +137,6 @@ pc.inference.rerank(
 | `mybrain` | `dus-reference` | ~26 | E5-Large | Referans veriler |
 | `mybrain` | `telos` | ~46 | E5-Large | Kişisel hedefler |
 | `mybrain` | `chathistory` | ~10 | E5-Large | Sohbet logları |
-| `mybrain` | `claude_memory` | 297 | E5-Large | AI Sistem belleği |
 | `myppdfs` | `patoloji` | 680 | E5-Large | Oral Patoloji |
 | `myppdfs` | `...` | ~8k | E5-Large | Diğer Branşlar |
 | `dusbankasi` | "" (default) | 16072 | OpenAI ada-3 | 16K+ DUS Sorusu |
@@ -186,7 +196,7 @@ record = {
     "type": "session_full_log",
     "date": "YYYY-MM-DD"
 }
-# → mybrain / dus-data namespace'ine upsert
+# → mybrain / chathistory namespace'ine upsert
 ```
 
 **Otomatik kayıt tetikleyiciler:** mimari karar | teknik sorun çözümü | yeni branş yükleme | oturum sonu özeti
@@ -194,21 +204,6 @@ record = {
 **Kayıt tipleri:** `session_log` | `session_full_log` | `architecture_decision` | `technical_decision` | `technical_pattern`
 
 ---
-
-## 6. Bot Deployment Akışı
-
-### Yerel Polling (dus_bot.py):
-```bash
-# Webhook çakışmasını kaldır:
-python -c "import telebot, os; bot=telebot.TeleBot(os.environ['TELEGRAM_TOKEN']); bot.remove_webhook()"
-python scripts/dus_bot.py
-```
-
-### Cloud Run Webhook (main.py):
-```bash
-gcloud builds submit --tag gcr.io/<PROJECT_ID>/dus-mentor
-gcloud run deploy dus-mentor --image gcr.io/<PROJECT_ID>/dus-mentor --region europe-west1
-```
 
 **Model fallback zinciri** (`config.py`'da tanımlı):
 `gemini-2.5-flash-preview` → `gemini-2.0-flash` → `gemini-2.0-flash-lite` → `gemini-3.1-flash-lite-preview` → `gemini-3.1-pro-preview`
@@ -247,12 +242,11 @@ gcloud run deploy dus-mentor --image gcr.io/<PROJECT_ID>/dus-mentor --region eur
 - [ ] Retry mekanizması aktif
 - [ ] Yükleme sonrası index stats doğrulandı
 - [ ] MYPPDFS.MD güncellendi
-- [ ] Mimari karar mybrain/dus-data'ya kaydedildi
+- [ ] Mimari karar vektörlenecek/ klasörüne kaydedildi ve senkronize edildi
 
 ### Bot Değişikliği:
 - [ ] API anahtarı .env üzerinden okunuyor
 - [ ] Fallback zinciri config.py'da tanımlı
-- [ ] Webhook / polling çakışması kontrol edildi
 - [ ] requirements.txt güncel
 
 ---
@@ -261,9 +255,9 @@ gcloud run deploy dus-mentor --image gcr.io/<PROJECT_ID>/dus-mentor --region eur
 
 | Hata | Aksiyon |
 |------|---------|
-| 429 Rate Limit (Pinecone) | Exponential backoff, batch küçült |
+| 429 Rate Limit (Pinecone query) | Exponential backoff, batch küçült |
+| 429 RESOURCE_EXHAUSTED (Pinecone Embedding) | **BULUT EMBEDDING KULLANMA** → Yerel E5 + query(vector) kullan |
 | 429 RESOURCE_EXHAUSTED (Gemini) | Fallback zinciri — bir sonraki modele geç |
-| Webhook Çakışması | `bot.remove_webhook()` → polling moduna al |
 | dusbankasi search_records hatası | `query()` + manuel OpenAI embedding akışına geç |
 | Boş/belirsiz DUS girdisi | "Geçerli bir DUS sorusu veya konu başlığı gönderilmedi." |
 | Kapsam dışı talep | Hangi alana ait olduğunu belirt, DUS bağlantısı varsa işle |
@@ -276,9 +270,24 @@ gcloud run deploy dus-mentor --image gcr.io/<PROJECT_ID>/dus-mentor --region eur
 |---------|-------|-------|
 | 🔴 Yüksek | Tam Yerel (E5) Mimariye Geçiş | ✅ BİTTİ |
 | 🔴 Yüksek | mybrain Namespace Reorganizasyonu | ✅ BİTTİ |
+| 🔴 Yüksek | 5'li Ajan Denetim Ağı (Audit & Refactor) Entegrasyonu | 🔄 Devam Ediyor |
 | 🟡 Orta | `dusbankasi` için doğrudan Pinecone query() metodu yaz | 🔄 Devam Ediyor |
 | 🟢 Düşük | Ebbinghaus tekrar sistemi → mybrain entegrasyonu | 📅 Planlandı |
 | 🟢 Düşük | Branş PDF'lerinin E5 ile re-indexi | 🔄 Devam Ediyor |
+
+---
+
+## 11. Paralel Denetim Ağı (Agentic Network)
+
+Projenin kod kalitesini, yapısal sağlamlığını ve hata çözme süreçlerini otomatize etmek için aşağıdaki 5 yetenek (skill) paralel ve eşzamanlı olarak devreye alınır:
+
+1. **vibe-code-auditor:** Hızlı yazılmış veya yapay zeka tarafından üretilmiş kodlardaki yapısal riskleri, kırılganlıkları ve üretim (production) risklerini saptar.
+2. **architect-review:** Sistem mimarisinin "Anayasa" dosyaları (`Gemini.md`, vb.) ile senkronize kalmasını sağlar, mimari sapmaları engeller.
+3. **code-reviewer:** Python kod standartları, PEP 8, tip ipuçları (type hints) ve modern üretim kalitesi açısından kodları detaylı inceler.
+4. **systematic-debugging:** S5 Pipeline gibi kompleks iş akışlarında oluşabilecek darboğazları ve gizli hataları (bug) sistematik şekilde analiz eder.
+5. **python-pro:** Modern Python 3.12+ (örneğin `uv`, `asyncio` optimizasyonları, `FastAPI`/`Pydantic` mimarileri) prensiplerini sisteme uygulayarak işlevselliği güçlendirir ve hızlandırır.
+
+Bu yetenekler, `scripts/` klasöründeki kritik dosyalar (`dus_uploader.py`, `search_engine.py` vb.) üzerinde belirli aralıklarla veya ihtiyaç halinde toplu olarak tetiklenerek refactoring ve optimizasyon sağlar.
 
 ---
 

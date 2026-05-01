@@ -1,0 +1,1111 @@
+# Dahili Hızlı Benzerlik Raporu (Token Bazlı)
+# Dosya: 1-fizyobasic.txt
+# Overlap Eşik: 0.65 | Jaccard Eşik: 0.5
+# Toplam Benzer Çift: 85
+================================================================================
+
+[1] OVERLAP: 1.0000 | JACCARD: 0.7500
+  KART A | GUID: B[7e@e#-2x
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 147. $D_1$ ve $D_5$ dopamin reseptörleri cAMP seviyesini nasıl etkiler (artırır/azaltır)?
+  Anahtar Kelimeler A: ['azaltır', 'artırır', 'seviyesini', 'etkiler', 'reseptörleri', 'dopamin', 'camp', 'd_']
+
+  KART B | GUID: pUoTkt%(/$
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 148. $D_2$, $D_3$ ve $D_4$ dopamin reseptörleri cAMP seviyesini nasıl etkiler?
+  Anahtar Kelimeler B: ['seviyesini', 'etkiler', 'reseptörleri', 'dopamin', 'camp', 'd_']
+  Ortak Kelimeler: ['seviyesini', 'reseptörleri', 'etkiler', 'dopamin', 'camp', 'd_']
+--------------------------------------------------------------------------------
+
+[2] OVERLAP: 1.0000 | JACCARD: 0.0833
+  KART A | GUID: nM/PO+q:GW
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 235. Talamus, uyku-uyanıklık dönemlerindeki hangi beyin elektriksel aktivitesinin (EEG dalgaları) oluşmasında rol oynar?
+  Anahtar Kelimeler A: ['beyin', 'uyanıklık', 'oluşmasında', 'eeg', 'uyku', 'aktivitesinin', 'talamus', 'dönemlerindeki', 'dalgaları', 'elektriksel', 'rol', 'oynar']
+
+  KART B | GUID: iZ3?Q(9&W~
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 266. EEG nedir?
+  Anahtar Kelimeler B: ['eeg']
+  Ortak Kelimeler: ['eeg']
+--------------------------------------------------------------------------------
+
+[3] OVERLAP: 1.0000 | JACCARD: 0.1111
+  KART A | GUID: iZ3?Q(9&W~
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 266. EEG nedir?
+  Anahtar Kelimeler A: ['eeg']
+
+  KART B | GUID: Fx.Fz#/ywR
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 267. Beyin aktivitesi (uyanıklık) arttıkça, EEG dalgalarının amplitüdü ve frekansı nasıl değişir?
+  Anahtar Kelimeler B: ['beyin', 'frekansı', 'aktivitesi', 'uyanıklık', 'eeg', 'amplitüdü', 'dalgalarının', 'değişir', 'arttıkça']
+  Ortak Kelimeler: ['eeg']
+--------------------------------------------------------------------------------
+
+[4] OVERLAP: 1.0000 | JACCARD: 0.0625
+  KART A | GUID: iZ3?Q(9&W~
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 266. EEG nedir?
+  Anahtar Kelimeler A: ['eeg']
+
+  KART B | GUID: RiGyL+W3Cz
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 276. Non-REM uykusunda Evre 1'den Evre 4'e gidildikçe uyku derinliği nasıl değişir ve EEG'de hangi dalgalar (teta ve delta) dominant hale gelir?
+  Anahtar Kelimeler B: ['rem', 'den', 'hale', 'gidildikçe', 'dalgalar', 'uyku', 'eeg', 'e', 'delta', 'derinliği', 'uykusunda', 'dominant', 'teta', 'evre', 'değişir', 'non']
+  Ortak Kelimeler: ['eeg']
+--------------------------------------------------------------------------------
+
+[5] OVERLAP: 1.0000 | JACCARD: 0.1111
+  KART A | GUID: iZ3?Q(9&W~
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 266. EEG nedir?
+  Anahtar Kelimeler A: ['eeg']
+
+  KART B | GUID: Qu$AQPuwuP
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 280. REM uykusunda EEG'de hangi ritim  görülür ve bu durum ""Paradoks Uyku"" olarak neden adlandırılır?
+  Anahtar Kelimeler B: ['rem', 'paradoks', 'eeg', 'uyku', 'ritim', 'uykusunda', 'durum', 'adlandırılır', 'olarak']
+  Ortak Kelimeler: ['eeg']
+--------------------------------------------------------------------------------
+
+[6] OVERLAP: 1.0000 | JACCARD: 0.7500
+  KART A | GUID: G!Xl!bb`RL
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON
+  Metin : Tip I Pnömositlerin temel görevi nedir?
+  Anahtar Kelimeler A: ['pnömositlerin', 'tip', 'görevi']
+
+  KART B | GUID: XY71~-Bj:
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON
+  Metin : Tip II Pnömositlerin (Granüler) 2 temel görevi nedir?
+  Anahtar Kelimeler B: ['pnömositlerin', 'tip', 'granüler', 'görevi']
+  Ortak Kelimeler: ['pnömositlerin', 'tip', 'görevi']
+--------------------------------------------------------------------------------
+
+[7] OVERLAP: 1.0000 | JACCARD: 0.5000
+  KART A | GUID: Q?^YYI/I*a
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Transpulmoner basınç nedir?
+  Anahtar Kelimeler A: ['transpulmoner', 'basınç']
+
+  KART B | GUID: BUG:tg*I}.
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Transpulmoner basınç neyi belirler?
+  Anahtar Kelimeler B: ['transpulmoner', 'belirler', 'neyi', 'basınç']
+  Ortak Kelimeler: ['transpulmoner', 'basınç']
+--------------------------------------------------------------------------------
+
+[8] OVERLAP: 0.9091 | JACCARD: 0.8333
+  KART A | GUID: fC)k!j(lQW
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 236. **Posterior hipotalamus** hangi otonom sistem alanıdır (Sempatik/Parasempatik) ve uyarılması hangi 3 etkiye yol açar?
+  Anahtar Kelimeler A: ['parasempatik', 'alanıdır', 'uyarılması', 'hipotalamus', 'sempatik', 'otonom', 'posterior', 'sistem', 'yol', 'etkiye', 'açar']
+
+  KART B | GUID: oAPQsaXd}I
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 237. **Anterior hipotalamus** hangi otonom sistem alanıdır (Parasempatik/Sempatik) ve uyarılması hangi 3 etkiye yol açar?
+  Anahtar Kelimeler B: ['parasempatik', 'alanıdır', 'uyarılması', 'hipotalamus', 'anterior', 'sempatik', 'otonom', 'yol', 'sistem', 'etkiye', 'açar']
+  Ortak Kelimeler: ['parasempatik', 'alanıdır', 'uyarılması', 'hipotalamus', 'otonom', 'yol', 'sistem', 'açar', 'etkiye', 'sempatik']
+--------------------------------------------------------------------------------
+
+[9] OVERLAP: 0.8889 | JACCARD: 0.5000
+  KART A | GUID: wGp6~p-zQ+
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 98. Kalpte bulunan muskarinik reseptör alt tipi hangisidir ve hangi G-proteini  ile kenetlidir?
+  Anahtar Kelimeler A: ['g', 'kenetlidir', 'alt', 'proteini', 'reseptör', 'bulunan', 'kalpte', 'muskarinik', 'tipi']
+
+  KART B | GUID: is3kBnQzc~
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 99. Ekzokrin salgı bezleri ve düz kaslarda bulunan muskarinik reseptör alt tipi hangisidir ve hangi G-proteini (Gi/Gq) ile kenetlidir?
+  Anahtar Kelimeler B: ['düz', 'g', 'bezleri', 'kenetlidir', 'alt', 'proteini', 'ekzokrin', 'reseptör', 'bulunan', 'salgı', 'muskarinik', 'kaslarda', 'gi', 'gq', 'tipi']
+  Ortak Kelimeler: ['g', 'kenetlidir', 'alt', 'proteini', 'reseptör', 'bulunan', 'muskarinik', 'tipi']
+--------------------------------------------------------------------------------
+
+[10] OVERLAP: 0.8889 | JACCARD: 0.8000
+  KART A | GUID: K=rMmWzW+x
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 296. **Miyop** nedir (ne net, ne bozuk?) ve hangi tip mercek (kalın/ince kenarlı) ile düzeltilir?
+  Anahtar Kelimeler A: ['bozuk', 'ince', 'net', 'tip', 'kenarlı', 'mercek', 'kalın', 'miyop', 'düzeltilir']
+
+  KART B | GUID: u8IP}xO:a?
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 297. **Hipermetrop** nedir (ne net, ne bozuk?) ve hangi tip mercek (kalın/ince kenarlı) ile düzeltilir?
+  Anahtar Kelimeler B: ['bozuk', 'ince', 'net', 'tip', 'kenarlı', 'mercek', 'kalın', 'hipermetrop', 'düzeltilir']
+  Ortak Kelimeler: ['bozuk', 'ince', 'net', 'tip', 'mercek', 'düzeltilir', 'kalın', 'kenarlı']
+--------------------------------------------------------------------------------
+
+[11] OVERLAP: 0.8571 | JACCARD: 0.6667
+  KART A | GUID: hz+|6ZdNff
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 85. Parasempatik postganglionik nöronlar hedef dokuda hangi nörotransmitteri salgılar?
+  Anahtar Kelimeler A: ['dokuda', 'salgılar', 'parasempatik', 'nörotransmitteri', 'nöronlar', 'postganglionik', 'hedef']
+
+  KART B | GUID: JbvB0`%HuV
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 86. Sempatik postganglionik nöronlar hedef dokuda (genellikle) hangi nörotransmitteri salgılar?
+  Anahtar Kelimeler B: ['dokuda', 'genellikle', 'salgılar', 'nörotransmitteri', 'nöronlar', 'postganglionik', 'hedef', 'sempatik']
+  Ortak Kelimeler: ['dokuda', 'salgılar', 'nörotransmitteri', 'nöronlar', 'postganglionik', 'hedef']
+--------------------------------------------------------------------------------
+
+[12] OVERLAP: 0.8571 | JACCARD: 0.5000
+  KART A | GUID: L5;x0u%PN%
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 216. Çıkıcı duyu yollarından **Dorsal Kolon-Medial Lemniskal (DKML)** yol hangi duyuları taşır?
+  Anahtar Kelimeler A: ['kolon', 'dorsal', 'duyuları', 'duyu', 'yollarından', 'çıkıcı', 'taşır', 'medial', 'lemniskal', 'yol', 'dkml']
+
+  KART B | GUID: u:{IMPv?ke
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 217. Çıkıcı duyu yollarından **Anterolateral Yol** hangi duyuları taşır?
+  Anahtar Kelimeler B: ['duyuları', 'duyu', 'çıkıcı', 'yollarından', 'taşır', 'yol', 'anterolateral']
+  Ortak Kelimeler: ['duyuları', 'duyu', 'yollarından', 'çıkıcı', 'taşır', 'yol']
+--------------------------------------------------------------------------------
+
+[13] OVERLAP: 0.8333 | JACCARD: 0.7143
+  KART A | GUID: c)bk$yM9ct
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 144. Dopaminerjik nöronların ana çıkış kaynağı (mezensefalonda) neresidir?
+  Anahtar Kelimeler A: ['kaynağı', 'neresidir', 'nöronların', 'dopaminerjik', 'çıkış', 'mezensefalonda']
+
+  KART B | GUID: f1wsqGDXp`
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 152. Serotonerjik nöronların ana çıkış kaynağı (mezensefalonda) neresidir?
+  Anahtar Kelimeler B: ['kaynağı', 'neresidir', 'nöronların', 'çıkış', 'serotonerjik', 'mezensefalonda']
+  Ortak Kelimeler: ['kaynağı', 'neresidir', 'nöronların', 'çıkış', 'mezensefalonda']
+--------------------------------------------------------------------------------
+
+[14] OVERLAP: 0.8333 | JACCARD: 0.6250
+  KART A | GUID: GX;H:lFe$~
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 180. İyonotropik (ligand kapılı) **anyonik (Cl-)** reseptörler hangileridir?
+  Anahtar Kelimeler A: ['reseptörler', 'anyonik', 'cl', 'kapılı', 'ligand', 'yonotropik', 'hangileridir']
+
+  KART B | GUID: G`yOwy1H~w
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 181. İyonotropik (ligand kapılı) **katyonik** reseptörler hangileridir?
+  Anahtar Kelimeler B: ['reseptörler', 'kapılı', 'ligand', 'yonotropik', 'hangileridir', 'katyonik']
+  Ortak Kelimeler: ['reseptörler', 'kapılı', 'ligand', 'yonotropik', 'hangileridir']
+--------------------------------------------------------------------------------
+
+[15] OVERLAP: 0.8333 | JACCARD: 0.7143
+  KART A | GUID: qHy7?,GVJ/
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : IP3 üzerinden etki eden hormon ailesi?
+  Anahtar Kelimeler A: ['ailesi', 'eden', 'üzerinden', 'ip', 'hormon', 'etki']
+
+  KART B | GUID: jW9Y9`pib;
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : cAMP üzerinden etki eden hormon ailesi?
+  Anahtar Kelimeler B: ['ailesi', 'eden', 'üzerinden', 'camp', 'hormon', 'etki']
+  Ortak Kelimeler: ['ailesi', 'eden', 'üzerinden', 'hormon', 'etki']
+--------------------------------------------------------------------------------
+
+[16] OVERLAP: 0.8333 | JACCARD: 0.7143
+  KART A | GUID: rkhhb;Z4P!
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Trombosit adezyonunda vWF trombositte nereye bağlanır?
+  Anahtar Kelimeler A: ['nereye', 'vwf', 'bağlanır', 'trombosit', 'adezyonunda', 'trombositte']
+
+  KART B | GUID: PCTj&4Om1x
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Trombosit adezyonunda Kollajen trombositte nereye bağlanır?
+  Anahtar Kelimeler B: ['nereye', 'bağlanır', 'trombosit', 'adezyonunda', 'trombositte', 'kollajen']
+  Ortak Kelimeler: ['nereye', 'trombosit', 'bağlanır', 'adezyonunda', 'trombositte']
+--------------------------------------------------------------------------------
+
+[17] OVERLAP: 0.8333 | JACCARD: 0.5556
+  KART A | GUID: O+CSKS}2mX
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - KALP DÖNGÜSÜ VE SESLERİ
+  Metin : S3 sesi (Ventriküler galo) ne zaman duyulur?
+  Anahtar Kelimeler A: ['galo', 's', 'sesi', 'zaman', 'duyulur', 'ventriküler']
+
+  KART B | GUID: P8CAU^;eQQ
+  Başlık: 
+  Metin : S4 sesi (Atriyal galo) ne zaman duyulur ve neyin işaretidir?
+  Anahtar Kelimeler B: ['atriyal', 'galo', 's', 'sesi', 'zaman', 'duyulur', 'neyin', 'işaretidir']
+  Ortak Kelimeler: ['galo', 's', 'sesi', 'zaman', 'duyulur']
+--------------------------------------------------------------------------------
+
+[18] OVERLAP: 0.8333 | JACCARD: 0.5556
+  KART A | GUID: LFA(|hss1#
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - KAN DAMARLARI VE HİSTOLOJİ
+  Metin : Büyük (Elastik) arterlerin tunika mediyasında hakim olan yapı nedir?
+  Anahtar Kelimeler A: ['hakim', 'yapı', 'mediyasında', 'tunika', 'arterlerin', 'elastik']
+
+  KART B | GUID: yVNV!>n04a
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - KAN DAMARLARI VE HİSTOLOJİ
+  Metin : Orta çaplı (Musküler) arterlerin tunika mediyasında hakim olan yapı nedir?
+  Anahtar Kelimeler B: ['hakim', 'çaplı', 'yapı', 'orta', 'mediyasında', 'musküler', 'arterlerin', 'tunika']
+  Ortak Kelimeler: ['hakim', 'yapı', 'mediyasında', 'arterlerin', 'tunika']
+--------------------------------------------------------------------------------
+
+[19] OVERLAP: 0.8000 | JACCARD: 0.5714
+  KART A | GUID: jXWgX-+/dc
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 90. ACh sentezinde hız kısıtlayıcı basamak nedir?
+  Anahtar Kelimeler A: ['sentezinde', 'hız', 'kısıtlayıcı', 'basamak', 'ach']
+
+  KART B | GUID: gglL|fA*kt
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 109. Katekolamin sentezinde **hız kısıtlayıcı basamak** enzimi nedir?
+  Anahtar Kelimeler B: ['katekolamin', 'sentezinde', 'enzimi', 'hız', 'kısıtlayıcı', 'basamak']
+  Ortak Kelimeler: ['basamak', 'hız', 'sentezinde', 'kısıtlayıcı']
+--------------------------------------------------------------------------------
+
+[20] OVERLAP: 0.8000 | JACCARD: 0.5000
+  KART A | GUID: eJ+7|%$J^,
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 106. $\alpha_2$ adrenerjik reseptörler hangi G-proteini (Gi) ile kenetlidir ve adenilat siklazı nasıl etkiler (cAMP'yi artırır/azaltır)?
+  Anahtar Kelimeler A: ['reseptörler', 'g', 'yi', 'kenetlidir', 'siklazı', 'proteini', 'azaltır', 'artırır', 'adrenerjik', 'etkiler', 'adenilat', 'alpha_', 'camp', 'gi']
+
+  KART B | GUID: o7q(gw6]4+
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 107. Tüm $\beta$ (beta) adrenerjik reseptörler hangi G-proteini (Gs) ile kenetlidir ve cAMP'yi nasıl etkiler?
+  Anahtar Kelimeler B: ['reseptörler', 'g', 'yi', 'kenetlidir', 'proteini', 'adrenerjik', 'etkiler', 'camp', 'beta', 'gs']
+  Ortak Kelimeler: ['reseptörler', 'g', 'yi', 'kenetlidir', 'proteini', 'adrenerjik', 'etkiler', 'camp']
+--------------------------------------------------------------------------------
+
+[21] OVERLAP: 0.8000 | JACCARD: 0.5714
+  KART A | GUID: cq<9GX;7RG
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 118. Sempatik uyarının karaciğer  üzerindeki metabolik etkisi nedir?
+  Anahtar Kelimeler A: ['üzerindeki', 'metabolik', 'etkisi', 'karaciğer', 'uyarının', 'sempatik']
+
+  KART B | GUID: Q!(tF0$x`s
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 119. Sempatik uyarının kalp  üzerindeki 3 temel etkisi nedir?
+  Anahtar Kelimeler B: ['kalp', 'etkisi', 'sempatik', 'uyarının', 'üzerindeki']
+  Ortak Kelimeler: ['üzerindeki', 'uyarının', 'etkisi', 'sempatik']
+--------------------------------------------------------------------------------
+
+[22] OVERLAP: 0.8000 | JACCARD: 0.5000
+  KART A | GUID: Q!(tF0$x`s
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 119. Sempatik uyarının kalp  üzerindeki 3 temel etkisi nedir?
+  Anahtar Kelimeler A: ['kalp', 'etkisi', 'sempatik', 'uyarının', 'üzerindeki']
+
+  KART B | GUID: k_)SX*JDif
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 120. Sempatik uyarının yağ dokusu ($\beta_3$) üzerindeki etkisi nedir?
+  Anahtar Kelimeler B: ['yağ', 'beta_', 'etkisi', 'dokusu', 'sempatik', 'uyarının', 'üzerindeki']
+  Ortak Kelimeler: ['üzerindeki', 'uyarının', 'etkisi', 'sempatik']
+--------------------------------------------------------------------------------
+
+[23] OVERLAP: 0.8000 | JACCARD: 0.2667
+  KART A | GUID: OIDIbtAYvn
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 155. Serotonin iştahı nasıl etkiler (artırır/azaltır)?
+  Anahtar Kelimeler A: ['serotonin', 'azaltır', 'artırır', 'etkiler', 'iştahı']
+
+  KART B | GUID: G66ap5/T|r
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 249. **Leptin** iştahı nasıl etkiler (artırır/azaltır) ve hangi güçlü oroksojenik (iştah artırıcı) maddeyi (NPY) baskılayarak bu etkiyi gösterir?
+  Anahtar Kelimeler B: ['iştah', 'etkiyi', 'azaltır', 'güçlü', 'leptin', 'artırıcı', 'artırır', 'etkiler', 'npy', 'iştahı', 'oroksojenik', 'baskılayarak', 'gösterir', 'maddeyi']
+  Ortak Kelimeler: ['azaltır', 'iştahı', 'artırır', 'etkiler']
+--------------------------------------------------------------------------------
+
+[24] OVERLAP: 0.8000 | JACCARD: 0.5714
+  KART A | GUID: g;d0H%kXIA
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 186. Brown-Sequard Sendromu'nda lezyonun **aynı tarafında (ipsilateral)** hangi duyu kayıpları ve motor bulgular görülür?
+  Anahtar Kelimeler A: ['brown', 'motor', 'sendromu', 'nda', 'aynı', 'duyu', 'tarafında', 'kayıpları', 'bulgular', 'sequard', 'lezyonun', 'ipsilateral']
+
+  KART B | GUID: Mf6mG!hlN8
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 187. Brown-Sequard Sendromu'nda lezyonun **karşı tarafında (kontralateral)** hangi duyu kayıpları görülür?
+  Anahtar Kelimeler B: ['karşı', 'brown', 'sendromu', 'nda', 'duyu', 'tarafında', 'kayıpları', 'sequard', 'lezyonun', 'kontralateral']
+  Ortak Kelimeler: ['brown', 'sendromu', 'nda', 'duyu', 'tarafında', 'kayıpları', 'sequard', 'lezyonun']
+--------------------------------------------------------------------------------
+
+[25] OVERLAP: 0.8000 | JACCARD: 0.6667
+  KART A | GUID: PA#+aj>wXw
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 239. **Paraventriküler çekirdek** hangi hormonun salgılanmasından sorumludur?
+  Anahtar Kelimeler A: ['çekirdek', 'salgılanmasından', 'sorumludur', 'paraventriküler', 'hormonun']
+
+  KART B | GUID: s2K&WSWx/1
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 240. **Supraoptik çekirdek** hangi hormonun salgılanmasından sorumludur?
+  Anahtar Kelimeler B: ['çekirdek', 'salgılanmasından', 'sorumludur', 'hormonun', 'supraoptik']
+  Ortak Kelimeler: ['çekirdek', 'hormonun', 'salgılanmasından', 'sorumludur']
+--------------------------------------------------------------------------------
+
+[26] OVERLAP: 0.7500 | JACCARD: 0.3333
+  KART A | GUID: M2p%9.6kR5
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 37. Bir duysal reseptöre etki eden **uyaran şiddetinin artması**, ilgili afferent sinirdeki aksiyon potansiyelinin **frekansını** mı yoksa **amplitüdünü (şiddetini)** mi artırır?
+  Anahtar Kelimeler A: ['duysal', 'sinirdeki', 'eden', 'uyaran', 'aksiyon', 'amplitüdünü', 'reseptöre', 'potansiyelinin', 'artırır', 'şiddetinin', 'artması', 'frekansını', 'şiddetini', 'afferent', 'yoksa', 'etki']
+
+  KART B | GUID: g21_hHJ:.4
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 38. Uyaran şiddetinin artması, reseptör potansiyelinin şiddetini (amplitüdünü) etkiler mi?
+  Anahtar Kelimeler B: ['uyaran', 'amplitüdünü', 'potansiyelinin', 'artması', 'reseptör', 'şiddetinin', 'etkiler', 'şiddetini']
+  Ortak Kelimeler: ['uyaran', 'amplitüdünü', 'potansiyelinin', 'artması', 'şiddetinin', 'şiddetini']
+--------------------------------------------------------------------------------
+
+[27] OVERLAP: 0.7500 | JACCARD: 0.3750
+  KART A | GUID: xMXe)JHIbR
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 310. Bu dönüşüm sonucu oluşan Metarodopsin II, hangi G-proteinini (Transdusin) aktive eder?
+  Anahtar Kelimeler A: ['eder', 'g', 'proteinini', 'aktive', 'metarodopsin', 'transdusin', 'dönüşüm']
+
+  KART B | GUID: pl1=n(y_aK
+  Başlık: Sinir Sistemi Fizyolojisi-Görme
+  Metin : 311. Transdusin, hangi enzimi  aktive eder?
+  Anahtar Kelimeler B: ['eder', 'enzimi', 'aktive', 'transdusin']
+  Ortak Kelimeler: ['eder', 'aktive', 'transdusin']
+--------------------------------------------------------------------------------
+
+[28] OVERLAP: 0.7500 | JACCARD: 0.4286
+  KART A | GUID: MX3dGQ3h9.
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Nişasta sindirimi nerede ve hangi enzimle başlar? Devamında hangi 3 ürün olur?
+  Anahtar Kelimeler A: ['ürün', 'devamında', 'enzimle', 'başlar', 'nişasta', 'sindirimi']
+
+  KART B | GUID: x]kbK.*}3+
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Protein sindirimi nerede ve hangi enzimle başlar?
+  Anahtar Kelimeler B: ['protein', 'enzimle', 'başlar', 'sindirimi']
+  Ortak Kelimeler: ['enzimle', 'başlar', 'sindirimi']
+--------------------------------------------------------------------------------
+
+[29] OVERLAP: 0.7500 | JACCARD: 0.5000
+  KART A | GUID: nAdz>kRT8V
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Hipoventilasyonda arteryel PCO2 yaklaşık kaça çıkar?
+  Anahtar Kelimeler A: ['pco', 'kaça', 'arteryel', 'hipoventilasyonda']
+
+  KART B | GUID: JL5&wJR-YI
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Hiperventilasyonda arteryel PCO2 yaklaşık kaça düşer?
+  Anahtar Kelimeler B: ['kaça', 'pco', 'düşer', 'hiperventilasyonda', 'arteryel']
+  Ortak Kelimeler: ['pco', 'kaça', 'arteryel']
+--------------------------------------------------------------------------------
+
+[30] OVERLAP: 0.7500 | JACCARD: 0.5000
+  KART A | GUID: d*%@`D;QOh
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ
+  Metin : Arteryel PO2 normal ama Hb miktarının az olduğu hipoksi tipi?
+  Anahtar Kelimeler A: ['olduğu', 'po', 'miktarının', 'normal', 'hipoksi', 'arteryel', 'tipi', 'hb']
+
+  KART B | GUID: CJWMHGKbBP
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ
+  Metin : PO2 ve Hb normal ama doku kan akımının yetersiz olduğu hipoksi tipi?
+  Anahtar Kelimeler B: ['olduğu', 'po', 'doku', 'yetersiz', 'normal', 'hipoksi', 'kan', 'tipi', 'hb', 'akımının']
+  Ortak Kelimeler: ['olduğu', 'po', 'normal', 'hipoksi', 'tipi', 'hb']
+--------------------------------------------------------------------------------
+
+[31] OVERLAP: 0.7500 | JACCARD: 0.6000
+  KART A | GUID: t|X`_~mY(y
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Va/Q oranı sonsuz ise (Kan akımı yoksa) bu duruma ne denir?
+  Anahtar Kelimeler A: ['q', 'denir', 'va', 'duruma', 'sonsuz', 'kan', 'yoksa', 'akımı']
+
+  KART B | GUID: h>ja~0,IIo
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Va/Q oranı sıfır ise (Hava akımı yoksa) bu duruma ne denir?
+  Anahtar Kelimeler B: ['q', 'denir', 'va', 'duruma', 'sıfır', 'yoksa', 'hava', 'akımı']
+  Ortak Kelimeler: ['q', 'denir', 'va', 'duruma', 'yoksa', 'akımı']
+--------------------------------------------------------------------------------
+
+[32] OVERLAP: 0.7500 | JACCARD: 0.5000
+  KART A | GUID: f=]{DUgF$]
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : Oksijen kanda en çok hangi formda taşınır?
+  Anahtar Kelimeler A: ['kanda', 'formda', 'taşınır', 'oksijen']
+
+  KART B | GUID: k=FwlOyoRM
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : Karbondioksit kanda en fazla hangi formda taşınır?
+  Anahtar Kelimeler B: ['kanda', 'formda', 'karbondioksit', 'taşınır', 'fazla']
+  Ortak Kelimeler: ['kanda', 'formda', 'taşınır']
+--------------------------------------------------------------------------------
+
+[33] OVERLAP: 0.7500 | JACCARD: 0.3000
+  KART A | GUID: KN+:gelbP?
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Eritropoezde mitozun durduğu ve çekirdek kalıntısının (Howell-Jolly) izlendiği evre hangisidir?
+  Anahtar Kelimeler A: ['çekirdek', 'howell', 'durduğu', 'eritropoezde', 'jolly', 'mitozun', 'evre', 'izlendiği', 'kalıntısının']
+
+  KART B | GUID: b8R7pgb>{C
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Granülopoezde mitozun durduğu evre hangisidir?
+  Anahtar Kelimeler B: ['granülopoezde', 'mitozun', 'durduğu', 'evre']
+  Ortak Kelimeler: ['mitozun', 'durduğu', 'evre']
+--------------------------------------------------------------------------------
+
+[34] OVERLAP: 0.7500 | JACCARD: 0.5455
+  KART A | GUID: c[{4;NJLkU
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Helper T (Th) lenfositlerin yüzey proteini ve bağlandığı MHC tipi nedir?
+  Anahtar Kelimeler A: ['lenfositlerin', 't', 'mhc', 'proteini', 'helper', 'yüzey', 'bağlandığı', 'th', 'tipi']
+
+  KART B | GUID: C;HIlf^v-;
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Sitotoksik T lenfositlerin yüzey proteini, bağlandığı MHC ve silahı nedir?
+  Anahtar Kelimeler B: ['lenfositlerin', 'sitotoksik', 't', 'mhc', 'proteini', 'yüzey', 'silahı', 'bağlandığı']
+  Ortak Kelimeler: ['lenfositlerin', 't', 'mhc', 'proteini', 'yüzey', 'bağlandığı']
+--------------------------------------------------------------------------------
+
+[35] OVERLAP: 0.7500 | JACCARD: 0.4286
+  KART A | GUID: j%L2;D86]!
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Ekstrensek yolun değerlendirildiği test hangisidir?
+  Anahtar Kelimeler A: ['test', 'değerlendirildiği', 'ekstrensek', 'yolun']
+
+  KART B | GUID: vTGZyz(HNV
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : İntrensek yolun değerlendirildiği test hangisidir ve normali ne kadardır?
+  Anahtar Kelimeler B: ['değerlendirildiği', 'ntrensek', 'normali', 'yolun', 'kadardır', 'test']
+  Ortak Kelimeler: ['test', 'değerlendirildiği', 'yolun']
+--------------------------------------------------------------------------------
+
+[36] OVERLAP: 0.7500 | JACCARD: 0.5455
+  KART A | GUID: jgrijXh8$z
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Trombosit adezyonunda rol oynayan GpIb/IX reseptör eksikliği hangi hastalıktır?
+  Anahtar Kelimeler A: ['gpib', 'eksikliği', 'reseptör', 'trombosit', 'oynayan', 'adezyonunda', 'hastalıktır', 'rol']
+
+  KART B | GUID: Kj4QU{sfws
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Trombosit agregasyonunda rol oynayan GpIIb/IIIa reseptör eksikliği hangi hastalıktır?
+  Anahtar Kelimeler B: ['agregasyonunda', 'iiia', 'eksikliği', 'reseptör', 'trombosit', 'oynayan', 'gpiib', 'hastalıktır', 'rol']
+  Ortak Kelimeler: ['eksikliği', 'reseptör', 'trombosit', 'oynayan', 'hastalıktır', 'rol']
+--------------------------------------------------------------------------------
+
+[37] OVERLAP: 0.7500 | JACCARD: 0.4286
+  KART A | GUID: ujZKjEV_ys
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : HbA (Erişkin Hemoglobin) hangi zincirlerden oluşur?
+  Anahtar Kelimeler A: ['zincirlerden', 'hba', 'erişkin', 'hemoglobin']
+
+  KART B | GUID: xdf@)?@*%3
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Erişkin hemoglobinlerinin minör formu olan HbA2 hangi zincirlerden oluşur?
+  Anahtar Kelimeler B: ['hba', 'zincirlerden', 'formu', 'erişkin', 'hemoglobinlerinin', 'minör']
+  Ortak Kelimeler: ['hba', 'erişkin', 'zincirlerden']
+--------------------------------------------------------------------------------
+
+[38] OVERLAP: 0.7500 | JACCARD: 0.5455
+  KART A | GUID: bx(zsL5p|&
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - İLETİ SİSTEMİ VE OTONOM KONTROL
+  Metin : Sempatik sistem kalbi hangi reseptör üzerinden etkiler ve hücre içi mekanizması nasıldır?
+  Anahtar Kelimeler A: ['hücre', 'içi', 'kalbi', 'reseptör', 'üzerinden', 'etkiler', 'mekanizması', 'sistem', 'sempatik']
+
+  KART B | GUID: irgQEPqf>g
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - İLETİ SİSTEMİ VE OTONOM KONTROL
+  Metin : Parasempatik sistem (Vagus) kalbi hangi reseptör üzerinden etkiler ve mekanizması nedir?
+  Anahtar Kelimeler B: ['parasempatik', 'kalbi', 'reseptör', 'vagus', 'üzerinden', 'etkiler', 'mekanizması', 'sistem']
+  Ortak Kelimeler: ['kalbi', 'reseptör', 'etkiler', 'üzerinden', 'mekanizması', 'sistem']
+--------------------------------------------------------------------------------
+
+[39] OVERLAP: 0.7143 | JACCARD: 0.5556
+  KART A | GUID: hb%]t_x>Xs
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 43. Periferik sinir sisteminde (PSS) miyelini hangi hücre yapar?
+  Anahtar Kelimeler A: ['hücre', 'periferik', 'sinir', 'yapar', 'miyelini', 'sisteminde', 'pss']
+
+  KART B | GUID: OCm7N<x>}C
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 44. Merkezi sinir sisteminde (MSS) miyelini hangi hücre yapar?
+  Anahtar Kelimeler B: ['hücre', 'sinir', 'yapar', 'miyelini', 'sisteminde', 'mss', 'merkezi']
+  Ortak Kelimeler: ['hücre', 'sinir', 'yapar', 'miyelini', 'sisteminde']
+--------------------------------------------------------------------------------
+
+[40] OVERLAP: 0.7143 | JACCARD: 0.5556
+  KART A | GUID: H!q+Ar4T*S
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 211. Hızlı adapte olan (Fazik) mekanoreseptörlere iki örnek verin.
+  Anahtar Kelimeler A: ['mekanoreseptörlere', 'hızlı', 'adapte', 'örnek', 'verin', 'fazik', 'iki']
+
+  KART B | GUID: Lt49[q!^q]
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 212. Yavaş adapte olan (Tonik) mekanoreseptörlere iki örnek verin.
+  Anahtar Kelimeler B: ['tonik', 'mekanoreseptörlere', 'adapte', 'örnek', 'verin', 'yavaş', 'iki']
+  Ortak Kelimeler: ['mekanoreseptörlere', 'adapte', 'örnek', 'verin', 'iki']
+--------------------------------------------------------------------------------
+
+[41] OVERLAP: 0.7143 | JACCARD: 0.5000
+  KART A | GUID: Qp*r`P_O%Q
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ
+  Metin : Arteryel PO2 düzeyinin düşük olduğu hipoksi tipi ve nedeni?
+  Anahtar Kelimeler A: ['olduğu', 'po', 'düzeyinin', 'nedeni', 'hipoksi', 'arteryel', 'tipi']
+
+  KART B | GUID: d*%@`D;QOh
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - SOLUNUMUN KONTROLÜ VE HİPOKSİ
+  Metin : Arteryel PO2 normal ama Hb miktarının az olduğu hipoksi tipi?
+  Anahtar Kelimeler B: ['olduğu', 'po', 'miktarının', 'normal', 'hipoksi', 'arteryel', 'tipi', 'hb']
+  Ortak Kelimeler: ['olduğu', 'po', 'hipoksi', 'arteryel', 'tipi']
+--------------------------------------------------------------------------------
+
+[42] OVERLAP: 0.6667 | JACCARD: 0.2000
+  KART A | GUID: ub?[WBZNc?
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 3.  İstirahat membran potansiyelinin (İMP) oluşmasını sağlayan temel iyon kanalı tipi nedir?
+  Anahtar Kelimeler A: ['potansiyelinin', 'stirahat', 'mp', 'sağlayan', 'oluşmasını', 'kanalı', 'membran', 'iyon', 'tipi']
+
+  KART B | GUID: G_.J!c?Ep#
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 8.  İMP oluşumunda **en önemli** iyon hangisidir?
+  Anahtar Kelimeler B: ['iyon', 'oluşumunda', 'mp']
+  Ortak Kelimeler: ['iyon', 'mp']
+--------------------------------------------------------------------------------
+
+[43] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: eOnOPS_i_r
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 7.  İMP'nin oluşmasındaki üç temel etkeni (iyon, protein, pompa) sıralayın.
+  Anahtar Kelimeler A: ['nin', 'oluşmasındaki', 'üç', 'mp', 'pompa', 'protein', 'iyon']
+
+  KART B | GUID: G_.J!c?Ep#
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 8.  İMP oluşumunda **en önemli** iyon hangisidir?
+  Anahtar Kelimeler B: ['iyon', 'oluşumunda', 'mp']
+  Ortak Kelimeler: ['iyon', 'mp']
+--------------------------------------------------------------------------------
+
+[44] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: JrCksnYo7?
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 15. Bir nöronun üç ana bölümünü sayın.
+  Anahtar Kelimeler A: ['bölümünü', 'nöronun', 'üç']
+
+  KART B | GUID: LG2J(ppx$^
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 219. Serebellumun üç fonksiyonel bölümünü (Vestibulo-, Spino-, Serebro-) sayın.
+  Anahtar Kelimeler B: ['spino', 'vestibulo', 'üç', 'serebro', 'fonksiyonel', 'bölümünü', 'serebellumun']
+  Ortak Kelimeler: ['bölümünü', 'üç']
+--------------------------------------------------------------------------------
+
+[45] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: vJW(ca:9jI
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 17. Aksiyon potansiyelinin başladığı (tetiklendiği) nöron bölgesi neresidir?
+  Anahtar Kelimeler A: ['neresidir', 'nöron', 'aksiyon', 'bölgesi', 'potansiyelinin', 'tetiklendiği', 'başladığı']
+
+  KART B | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler B: ['evresini', 'potansiyelinin', 'aksiyon']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[46] OVERLAP: 0.6667 | JACCARD: 0.2000
+  KART A | GUID: KLV18w))i}
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 21. Sinir hücresinde bir aksiyon potansiyelinin toplam süresi (depolarizasyon ve repolarizasyon) yaklaşık ne kadardır?
+  Anahtar Kelimeler A: ['aksiyon', 'kadardır', 'potansiyelinin', 'sinir', 'depolarizasyon', 'repolarizasyon', 'toplam', 'süresi', 'hücresinde']
+
+  KART B | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler B: ['evresini', 'potansiyelinin', 'aksiyon']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[47] OVERLAP: 0.6667 | JACCARD: 0.4000
+  KART A | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler A: ['evresini', 'potansiyelinin', 'aksiyon']
+
+  KART B | GUID: LesvS`)s&K
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 36. Aksiyon potansiyelinin ""Hep ya da Hiç"" ilkesini açıklayın.
+  Anahtar Kelimeler B: ['potansiyelinin', 'hep', 'ilkesini', 'aksiyon']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[48] OVERLAP: 0.6667 | JACCARD: 0.1176
+  KART A | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler A: ['evresini', 'potansiyelinin', 'aksiyon']
+
+  KART B | GUID: M2p%9.6kR5
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 37. Bir duysal reseptöre etki eden **uyaran şiddetinin artması**, ilgili afferent sinirdeki aksiyon potansiyelinin **frekansını** mı yoksa **amplitüdünü (şiddetini)** mi artırır?
+  Anahtar Kelimeler B: ['duysal', 'sinirdeki', 'eden', 'uyaran', 'aksiyon', 'amplitüdünü', 'reseptöre', 'potansiyelinin', 'artırır', 'şiddetinin', 'artması', 'frekansını', 'şiddetini', 'afferent', 'yoksa', 'etki']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[49] OVERLAP: 0.6667 | JACCARD: 0.2000
+  KART A | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler A: ['evresini', 'potansiyelinin', 'aksiyon']
+
+  KART B | GUID: m;s}]@B{,e
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 39. Aksiyon potansiyelinin sinir liflerindeki ileti hızını etkileyen iki temel faktör nedir?
+  Anahtar Kelimeler B: ['liflerindeki', 'faktör', 'aksiyon', 'potansiyelinin', 'sinir', 'hızını', 'ileti', 'etkileyen', 'iki']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[50] OVERLAP: 0.6667 | JACCARD: 0.1667
+  KART A | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler A: ['evresini', 'potansiyelinin', 'aksiyon']
+
+  KART B | GUID: u.u]ni-/X{
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - KALP KASI VE ELEKTROFİZYOLOJİ
+  Metin : Miyokard hücresi aksiyon potansiyelinin plato fazından (Faz 2) sorumlu olan temel iyon kanalı ve hareketi nedir?
+  Anahtar Kelimeler B: ['hücresi', 'aksiyon', 'plato', 'faz', 'potansiyelinin', 'fazından', 'sorumlu', 'hareketi', 'kanalı', 'iyon', 'miyokard']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[51] OVERLAP: 0.6667 | JACCARD: 0.1333
+  KART A | GUID: BL[ZptUK^W
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 23. Aksiyon potansiyelinin 4 evresini sayın.
+  Anahtar Kelimeler A: ['evresini', 'potansiyelinin', 'aksiyon']
+
+  KART B | GUID: D3}e~5VQ!h
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - KALP KASI VE ELEKTROFİZYOLOJİ
+  Metin : SA nod (Pacemaker) aksiyon potansiyelinin Faz 4 (pacemaker potansiyeli) depolarizasyonundan sorumlu ""funny"" akımı sağlayan kanal ve iyon nedir?
+  Anahtar Kelimeler B: ['pacemaker', 'kanal', 'aksiyon', 'faz', 'potansiyelinin', 'sa', 'depolarizasyonundan', 'potansiyeli', 'sorumlu', 'sağlayan', 'funny', 'iyon', 'akımı', 'nod']
+  Ortak Kelimeler: ['potansiyelinin', 'aksiyon']
+--------------------------------------------------------------------------------
+
+[52] OVERLAP: 0.6667 | JACCARD: 0.3077
+  KART A | GUID: omKi<fReRg
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 80. Sempatik sistem hangi hipotalamus çekirdeği tarafından, parasempatik sistem ise hangi hipotalamus çekirdeği tarafından kontrol edilir?
+  Anahtar Kelimeler A: ['parasempatik', 'hipotalamus', 'çekirdeği', 'kontrol', 'sistem', 'sempatik']
+
+  KART B | GUID: fC)k!j(lQW
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 236. **Posterior hipotalamus** hangi otonom sistem alanıdır (Sempatik/Parasempatik) ve uyarılması hangi 3 etkiye yol açar?
+  Anahtar Kelimeler B: ['parasempatik', 'alanıdır', 'uyarılması', 'hipotalamus', 'sempatik', 'otonom', 'posterior', 'sistem', 'yol', 'etkiye', 'açar']
+  Ortak Kelimeler: ['hipotalamus', 'sempatik', 'parasempatik', 'sistem']
+--------------------------------------------------------------------------------
+
+[53] OVERLAP: 0.6667 | JACCARD: 0.3077
+  KART A | GUID: omKi<fReRg
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 80. Sempatik sistem hangi hipotalamus çekirdeği tarafından, parasempatik sistem ise hangi hipotalamus çekirdeği tarafından kontrol edilir?
+  Anahtar Kelimeler A: ['parasempatik', 'hipotalamus', 'çekirdeği', 'kontrol', 'sistem', 'sempatik']
+
+  KART B | GUID: oAPQsaXd}I
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 237. **Anterior hipotalamus** hangi otonom sistem alanıdır (Parasempatik/Sempatik) ve uyarılması hangi 3 etkiye yol açar?
+  Anahtar Kelimeler B: ['parasempatik', 'alanıdır', 'uyarılması', 'hipotalamus', 'anterior', 'sempatik', 'otonom', 'yol', 'sistem', 'etkiye', 'açar']
+  Ortak Kelimeler: ['hipotalamus', 'sempatik', 'parasempatik', 'sistem']
+--------------------------------------------------------------------------------
+
+[54] OVERLAP: 0.6667 | JACCARD: 0.3333
+  KART A | GUID: sRlr-P75E#
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 110. Dopamin'i Norepinefrin'e dönüştüren enzim (Dopamin-$\beta$-hidroksilaz) nerede (vezikül/sitoplazma) bulunur?
+  Anahtar Kelimeler A: ['vezikül', 'hidroksilaz', 'e', 'dopamin', 'norepinefrin', 'dönüştüren', 'enzim', 'beta', 'bulunur', 'sitoplazma']
+
+  KART B | GUID: Bsz5CRG>nd
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 111. Norepinefrin'i Epinefrin'e dönüştüren enzim (PNMT) nedir?
+  Anahtar Kelimeler B: ['epinefrin', 'pnmt', 'e', 'norepinefrin', 'dönüştüren', 'enzim']
+  Ortak Kelimeler: ['e', 'dönüştüren', 'enzim', 'norepinefrin']
+--------------------------------------------------------------------------------
+
+[55] OVERLAP: 0.6667 | JACCARD: 0.4444
+  KART A | GUID: cq<9GX;7RG
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 118. Sempatik uyarının karaciğer  üzerindeki metabolik etkisi nedir?
+  Anahtar Kelimeler A: ['üzerindeki', 'metabolik', 'etkisi', 'karaciğer', 'uyarının', 'sempatik']
+
+  KART B | GUID: k_)SX*JDif
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 120. Sempatik uyarının yağ dokusu ($\beta_3$) üzerindeki etkisi nedir?
+  Anahtar Kelimeler B: ['yağ', 'beta_', 'etkisi', 'dokusu', 'sempatik', 'uyarının', 'üzerindeki']
+  Ortak Kelimeler: ['sempatik', 'uyarının', 'etkisi', 'üzerindeki']
+--------------------------------------------------------------------------------
+
+[56] OVERLAP: 0.6667 | JACCARD: 0.5000
+  KART A | GUID: FIT%*v[F{I
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 200. **Broca afazisi (Motor afazi)** nedir? (Anlama nasıl, konuşma nasıl?)
+  Anahtar Kelimeler A: ['motor', 'anlama', 'broca', 'afazisi', 'afazi', 'konuşma']
+
+  KART B | GUID: iM-m_`2~oB
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 201. **Wernicke afazisi (Duyusal afazi)** nedir? (Anlama nasıl, konuşma nasıl?)
+  Anahtar Kelimeler B: ['wernicke', 'anlama', 'konuşma', 'afazisi', 'afazi', 'duyusal']
+  Ortak Kelimeler: ['afazi', 'anlama', 'konuşma', 'afazisi']
+--------------------------------------------------------------------------------
+
+[57] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: F`OhYzbt*=
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 227. Granül hücrelerinin aksonları moleküler tabakada hangi lifleri oluşturur?
+  Anahtar Kelimeler A: ['oluşturur', 'granül', 'hücrelerinin', 'moleküler', 'aksonları', 'tabakada', 'lifleri']
+
+  KART B | GUID: GDEbx8&2KE
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 228. Granül hücrelerinin nörotransmitteri nedir?
+  Anahtar Kelimeler B: ['granül', 'nörotransmitteri', 'hücrelerinin']
+  Ortak Kelimeler: ['granül', 'hücrelerinin']
+--------------------------------------------------------------------------------
+
+[58] OVERLAP: 0.6667 | JACCARD: 0.5000
+  KART A | GUID: GDEbx8&2KE
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 228. Granül hücrelerinin nörotransmitteri nedir?
+  Anahtar Kelimeler A: ['granül', 'nörotransmitteri', 'hücrelerinin']
+
+  KART B | GUID: p]ZR_0]75F
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 230. Purkinje hücrelerinin nörotransmitteri nedir?
+  Anahtar Kelimeler B: ['nörotransmitteri', 'hücrelerinin', 'purkinje']
+  Ortak Kelimeler: ['nörotransmitteri', 'hücrelerinin']
+--------------------------------------------------------------------------------
+
+[59] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: GDEbx8&2KE
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 228. Granül hücrelerinin nörotransmitteri nedir?
+  Anahtar Kelimeler A: ['granül', 'nörotransmitteri', 'hücrelerinin']
+
+  KART B | GUID: iJX0w5|!}A
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 231. Golgi, Sepet ve Yıldız hücrelerinin ortak nörotransmitteri nedir?
+  Anahtar Kelimeler B: ['golgi', 'nörotransmitteri', 'hücrelerinin', 'yıldız', 'ortak', 'sepet']
+  Ortak Kelimeler: ['nörotransmitteri', 'hücrelerinin']
+--------------------------------------------------------------------------------
+
+[60] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: p]ZR_0]75F
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 230. Purkinje hücrelerinin nörotransmitteri nedir?
+  Anahtar Kelimeler A: ['nörotransmitteri', 'hücrelerinin', 'purkinje']
+
+  KART B | GUID: iJX0w5|!}A
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 231. Golgi, Sepet ve Yıldız hücrelerinin ortak nörotransmitteri nedir?
+  Anahtar Kelimeler B: ['golgi', 'nörotransmitteri', 'hücrelerinin', 'yıldız', 'ortak', 'sepet']
+  Ortak Kelimeler: ['nörotransmitteri', 'hücrelerinin']
+--------------------------------------------------------------------------------
+
+[61] OVERLAP: 0.6667 | JACCARD: 0.3333
+  KART A | GUID: tizE>#cK/=
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 302. Retinadaki pigment hücrelerinin iki temel görevi nedir?
+  Anahtar Kelimeler A: ['pigment', 'hücrelerinin', 'retinadaki', 'iki', 'görevi']
+
+  KART B | GUID: sT,nPK@Z23
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Goblet hücrelerinin görevi nedir?
+  Anahtar Kelimeler B: ['goblet', 'hücrelerinin', 'görevi']
+  Ortak Kelimeler: ['hücrelerinin', 'görevi']
+--------------------------------------------------------------------------------
+
+[62] OVERLAP: 0.6667 | JACCARD: 0.3333
+  KART A | GUID: tizE>#cK/=
+  Başlık: Sinir Sistemi Fizyolojisi
+  Metin : 302. Retinadaki pigment hücrelerinin iki temel görevi nedir?
+  Anahtar Kelimeler A: ['pigment', 'hücrelerinin', 'retinadaki', 'iki', 'görevi']
+
+  KART B | GUID: fk^<<>x$w.
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON
+  Metin : Clara hücrelerinin 3 temel görevi nedir?
+  Anahtar Kelimeler B: ['hücrelerinin', 'clara', 'görevi']
+  Ortak Kelimeler: ['hücrelerinin', 'görevi']
+--------------------------------------------------------------------------------
+
+[63] OVERLAP: 0.6667 | JACCARD: 0.2222
+  KART A | GUID: G5Q-;uSen
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Peristaltik aktivite nasıl başlar?
+  Anahtar Kelimeler A: ['peristaltik', 'aktivite', 'başlar']
+
+  KART B | GUID: QIa|CqXK)=
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Peristaltik aktivite nasıl güçlenir ve bu güçlendirme mekanizmasını kontrol eden nörotransmitterler?
+  Anahtar Kelimeler B: ['peristaltik', 'güçlendirme', 'eden', 'mekanizmasını', 'nörotransmitterler', 'güçlenir', 'kontrol', 'aktivite']
+  Ortak Kelimeler: ['peristaltik', 'aktivite']
+--------------------------------------------------------------------------------
+
+[64] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: s9+pD>b7h6
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : IF (İntrinsik Faktör) nereden salgılanır ve önemi nedir?
+  Anahtar Kelimeler A: ['ntrinsik', 'faktör', 'nereden', 'salgılanır', 'önemi', 'if']
+
+  KART B | GUID: g(B,;|ZyCy
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : IF faktör görevi nedir?
+  Anahtar Kelimeler B: ['faktör', 'if', 'görevi']
+  Ortak Kelimeler: ['faktör', 'if']
+--------------------------------------------------------------------------------
+
+[65] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: M5Xi=D.ZhR
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : ECL hücrelerinin salgısı nedir, hangi ilaçla inhibe edilir, görevi ve yolağı?
+  Anahtar Kelimeler A: ['ecl', 'hücrelerinin', 'yolağı', 'ilaçla', 'inhibe', 'salgısı', 'görevi']
+
+  KART B | GUID: sT,nPK@Z23
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Goblet hücrelerinin görevi nedir?
+  Anahtar Kelimeler B: ['goblet', 'hücrelerinin', 'görevi']
+  Ortak Kelimeler: ['hücrelerinin', 'görevi']
+--------------------------------------------------------------------------------
+
+[66] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: M5Xi=D.ZhR
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : ECL hücrelerinin salgısı nedir, hangi ilaçla inhibe edilir, görevi ve yolağı?
+  Anahtar Kelimeler A: ['ecl', 'hücrelerinin', 'yolağı', 'ilaçla', 'inhibe', 'salgısı', 'görevi']
+
+  KART B | GUID: fk^<<>x$w.
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON
+  Metin : Clara hücrelerinin 3 temel görevi nedir?
+  Anahtar Kelimeler B: ['hücrelerinin', 'clara', 'görevi']
+  Ortak Kelimeler: ['hücrelerinin', 'görevi']
+--------------------------------------------------------------------------------
+
+[67] OVERLAP: 0.6667 | JACCARD: 0.5000
+  KART A | GUID: sT,nPK@Z23
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Goblet hücrelerinin görevi nedir?
+  Anahtar Kelimeler A: ['goblet', 'hücrelerinin', 'görevi']
+
+  KART B | GUID: fk^<<>x$w.
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - FONKSİYONEL ORGANİZASYON
+  Metin : Clara hücrelerinin 3 temel görevi nedir?
+  Anahtar Kelimeler B: ['hücrelerinin', 'clara', 'görevi']
+  Ortak Kelimeler: ['hücrelerinin', 'görevi']
+--------------------------------------------------------------------------------
+
+[68] OVERLAP: 0.6667 | JACCARD: 0.2500
+  KART A | GUID: DQk=ll,[fD
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Pankreastan salgılanan proteazlar nelerdir bunlardan hangisi sadece pankreasta üretilir?
+  Anahtar Kelimeler A: ['üretilir', 'proteazlar', 'salgılanan', 'pankreastan', 'nelerdir', 'bunlardan', 'pankreasta']
+
+  KART B | GUID: m!y5gwk|%X
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Pankreastan salgılanan lipazları açıklayın.
+  Anahtar Kelimeler B: ['pankreastan', 'lipazları', 'salgılanan']
+  Ortak Kelimeler: ['pankreastan', 'salgılanan']
+--------------------------------------------------------------------------------
+
+[69] OVERLAP: 0.6667 | JACCARD: 0.4000
+  KART A | GUID: g(B,;|ZyCy
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : IF faktör görevi nedir?
+  Anahtar Kelimeler A: ['faktör', 'if', 'görevi']
+
+  KART B | GUID: mlGiMT#9.{
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Faktör XIII'ün görevi nedir?
+  Anahtar Kelimeler B: ['faktör', 'ün', 'xiii', 'görevi']
+  Ortak Kelimeler: ['faktör', 'görevi']
+--------------------------------------------------------------------------------
+
+[70] OVERLAP: 0.6667 | JACCARD: 0.5000
+  KART A | GUID: BPJrl9+A|=
+  Başlık: Sindirim Sistemi Fizyolojisi VİTAMİN ve MİNERALLERİN EMİLİMİ
+  Metin : B12 kanda nasıl taşınır?
+  Anahtar Kelimeler A: ['kanda', 'taşınır', 'b']
+
+  KART B | GUID: r,a#-Y7s2U
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Demir kanda nasıl taşınır?
+  Anahtar Kelimeler B: ['demir', 'kanda', 'taşınır']
+  Ortak Kelimeler: ['kanda', 'taşınır']
+--------------------------------------------------------------------------------
+
+[71] OVERLAP: 0.6667 | JACCARD: 0.4000
+  KART A | GUID: BPJrl9+A|=
+  Başlık: Sindirim Sistemi Fizyolojisi VİTAMİN ve MİNERALLERİN EMİLİMİ
+  Metin : B12 kanda nasıl taşınır?
+  Anahtar Kelimeler A: ['kanda', 'taşınır', 'b']
+
+  KART B | GUID: f=]{DUgF$]
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : Oksijen kanda en çok hangi formda taşınır?
+  Anahtar Kelimeler B: ['kanda', 'formda', 'taşınır', 'oksijen']
+  Ortak Kelimeler: ['kanda', 'taşınır']
+--------------------------------------------------------------------------------
+
+[72] OVERLAP: 0.6667 | JACCARD: 0.3333
+  KART A | GUID: BPJrl9+A|=
+  Başlık: Sindirim Sistemi Fizyolojisi VİTAMİN ve MİNERALLERİN EMİLİMİ
+  Metin : B12 kanda nasıl taşınır?
+  Anahtar Kelimeler A: ['kanda', 'taşınır', 'b']
+
+  KART B | GUID: k=FwlOyoRM
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : Karbondioksit kanda en fazla hangi formda taşınır?
+  Anahtar Kelimeler B: ['kanda', 'formda', 'karbondioksit', 'taşınır', 'fazla']
+  Ortak Kelimeler: ['kanda', 'taşınır']
+--------------------------------------------------------------------------------
+
+[73] OVERLAP: 0.6667 | JACCARD: 0.4000
+  KART A | GUID: r,a#-Y7s2U
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Demir kanda nasıl taşınır?
+  Anahtar Kelimeler A: ['demir', 'kanda', 'taşınır']
+
+  KART B | GUID: f=]{DUgF$]
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : Oksijen kanda en çok hangi formda taşınır?
+  Anahtar Kelimeler B: ['kanda', 'formda', 'taşınır', 'oksijen']
+  Ortak Kelimeler: ['kanda', 'taşınır']
+--------------------------------------------------------------------------------
+
+[74] OVERLAP: 0.6667 | JACCARD: 0.3333
+  KART A | GUID: r,a#-Y7s2U
+  Başlık: Sindirim Sistemi Fizyolojisi
+  Metin : Demir kanda nasıl taşınır?
+  Anahtar Kelimeler A: ['demir', 'kanda', 'taşınır']
+
+  KART B | GUID: k=FwlOyoRM
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : Karbondioksit kanda en fazla hangi formda taşınır?
+  Anahtar Kelimeler B: ['kanda', 'formda', 'karbondioksit', 'taşınır', 'fazla']
+  Ortak Kelimeler: ['kanda', 'taşınır']
+--------------------------------------------------------------------------------
+
+[75] OVERLAP: 0.6667 | JACCARD: 0.2222
+  KART A | GUID: OA7@QA*,h0
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Fizyolojik olarak ""ventilasyon"" nedir?
+  Anahtar Kelimeler A: ['fizyolojik', 'ventilasyon', 'olarak']
+
+  KART B | GUID: d+X5mA-36y
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - EKG
+  Metin : PR aralığı fizyolojik olarak neyi gösterir ve normal süresi nedir?
+  Anahtar Kelimeler B: ['neyi', 'fizyolojik', 'pr', 'olarak', 'süresi', 'normal', 'aralığı', 'gösterir']
+  Ortak Kelimeler: ['fizyolojik', 'olarak']
+--------------------------------------------------------------------------------
+
+[76] OVERLAP: 0.6667 | JACCARD: 0.3333
+  KART A | GUID: s/w`ESqp(V
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Normal ventilasyonda arteryel PCO2 değeri kaçtır?
+  Anahtar Kelimeler A: ['kaçtır', 'pco', 'normal', 'arteryel', 'ventilasyonda']
+
+  KART B | GUID: oHAbuYN3;n
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : P50 nedir ve normal değeri kaçtır?
+  Anahtar Kelimeler B: ['p', 'normal', 'kaçtır']
+  Ortak Kelimeler: ['normal', 'kaçtır']
+--------------------------------------------------------------------------------
+
+[77] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: vo_i#%16|!
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Akciğer kompliyansı ne demektir?
+  Anahtar Kelimeler A: ['kompliyansı', 'akciğer', 'demektir']
+
+  KART B | GUID: m{X#OIo^#y
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Eklem iltihabında (artrit) akciğer kompliyansı nasıl değişir?
+  Anahtar Kelimeler B: ['akciğer', 'artrit', 'kompliyansı', 'eklem', 'değişir', 'iltihabında']
+  Ortak Kelimeler: ['akciğer', 'kompliyansı']
+--------------------------------------------------------------------------------
+
+[78] OVERLAP: 0.6667 | JACCARD: 0.4444
+  KART A | GUID: J7sYO4&#B8
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Sürfaktan proteinlerinden SP-A'nın görevi nedir?
+  Anahtar Kelimeler A: ['a', 'sürfaktan', 'sp', 'nın', 'proteinlerinden', 'görevi']
+
+  KART B | GUID: G=0/F%shwr
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - VENTİLASYON
+  Metin : Sürfaktan proteinlerinden SP-B ve SP-C'nin görevi nedir?
+  Anahtar Kelimeler B: ['nin', 'c', 'sürfaktan', 'sp', 'proteinlerinden', 'b', 'görevi']
+  Ortak Kelimeler: ['sp', 'proteinlerinden', 'görevi', 'sürfaktan']
+--------------------------------------------------------------------------------
+
+[79] OVERLAP: 0.6667 | JACCARD: 0.4000
+  KART A | GUID: os;t>xy|%`
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Rezidüel Hacim (RH) nedir?
+  Anahtar Kelimeler A: ['rezidüel', 'hacim', 'rh']
+
+  KART B | GUID: I!EEqOy|tk
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Rezidüel hacim hangi yöntemle ölçülür?
+  Anahtar Kelimeler B: ['rezidüel', 'hacim', 'ölçülür', 'yöntemle']
+  Ortak Kelimeler: ['rezidüel', 'hacim']
+--------------------------------------------------------------------------------
+
+[80] OVERLAP: 0.6667 | JACCARD: 0.5000
+  KART A | GUID: j2_XGi~1D?
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Obstrüktif ve resktriktif  bozuklukta  FEV1/FVC oranı nasıl değişir?
+  Anahtar Kelimeler A: ['fev', 'bozuklukta', 'resktriktif', 'değişir', 'obstrüktif', 'fvc']
+
+  KART B | GUID: p=;jsY4bpP
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Restriktif bozuklukta (Fibrozis) FEV1/FVC oranı nasıl değişir?
+  Anahtar Kelimeler B: ['fibrozis', 'fev', 'bozuklukta', 'restriktif', 'değişir', 'fvc']
+  Ortak Kelimeler: ['değişir', 'fev', 'bozuklukta', 'fvc']
+--------------------------------------------------------------------------------
+
+[81] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: uMATdTyco=
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - AKCİĞER HACİM VE KAPASİTELER
+  Metin : Normal Ventilasyon/Perfüzyon (Va/Q) oranı kaçtır?
+  Anahtar Kelimeler A: ['q', 'ventilasyon', 'kaçtır', 'va', 'normal', 'perfüzyon']
+
+  KART B | GUID: oHAbuYN3;n
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : P50 nedir ve normal değeri kaçtır?
+  Anahtar Kelimeler B: ['p', 'normal', 'kaçtır']
+  Ortak Kelimeler: ['normal', 'kaçtır']
+--------------------------------------------------------------------------------
+
+[82] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: oHAbuYN3;n
+  Başlık: SOLUNUM SİSTEMİ FİZYOLOJİSİ - O2 VE CO2 TAŞINMASI
+  Metin : P50 nedir ve normal değeri kaçtır?
+  Anahtar Kelimeler A: ['p', 'normal', 'kaçtır']
+
+  KART B | GUID: h^XL+<>3]l
+  Başlık: KALP VE DOLAŞIM FİZYOLOJİSİ - EKG
+  Metin : Normal bir P dalgasının süre ve amplitüd sınırları nedir?
+  Anahtar Kelimeler B: ['amplitüd', 'dalgasının', 'p', 'normal', 'sınırları', 'süre']
+  Ortak Kelimeler: ['normal', 'p']
+--------------------------------------------------------------------------------
+
+[83] OVERLAP: 0.6667 | JACCARD: 0.5000
+  KART A | GUID: I:2HG>h^Yn
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Granüler lökositler hangileridir?
+  Anahtar Kelimeler A: ['hangileridir', 'lökositler', 'granüler']
+
+  KART B | GUID: b./v<rlM+}
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Agranüler lökositler hangileridir?
+  Anahtar Kelimeler B: ['hangileridir', 'lökositler', 'agranüler']
+  Ortak Kelimeler: ['hangileridir', 'lökositler']
+--------------------------------------------------------------------------------
+
+[84] OVERLAP: 0.6667 | JACCARD: 0.2857
+  KART A | GUID: g.f=IZx%%u
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Kanda en fazla bulunan ve plasentadan geçebilen antikor hangisidir?
+  Anahtar Kelimeler A: ['kanda', 'plasentadan', 'bulunan', 'antikor', 'fazla', 'geçebilen']
+
+  KART B | GUID: =HoSY[1+x
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - KAN HÜCRELERİ
+  Metin : Salgılarda bulunan antikor hangisidir?
+  Anahtar Kelimeler B: ['salgılarda', 'bulunan', 'antikor']
+  Ortak Kelimeler: ['bulunan', 'antikor']
+--------------------------------------------------------------------------------
+
+[85] OVERLAP: 0.6667 | JACCARD: 0.4000
+  KART A | GUID: mlGiMT#9.{
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Faktör XIII'ün görevi nedir?
+  Anahtar Kelimeler A: ['faktör', 'ün', 'xiii', 'görevi']
+
+  KART B | GUID: ER[{L#b1YS
+  Başlık: HEMATOPOETİK SİSTEM FİZYOLOJİSİ - HEMOSTAZ
+  Metin : Antitrombin III'ün görevi nedir?
+  Anahtar Kelimeler B: ['antitrombin', 'ün', 'görevi']
+  Ortak Kelimeler: ['ün', 'görevi']
+--------------------------------------------------------------------------------
+
