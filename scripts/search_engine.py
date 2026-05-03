@@ -8,7 +8,7 @@ from pinecone import Pinecone
 from supabase import create_client, Client
 from openai import OpenAI
 
-from embedding_utils import get_local_embedder
+from embedding_utils import get_embedder
 from dotenv import load_dotenv
 
 # --- Configuration & Logging ---
@@ -96,20 +96,14 @@ def pinecone_search(query: str, index_name: str, namespace: str, top_k: int = 15
         return []
 
     except Exception as e:
-        logger.warning(f"[search] Integrated Inference/Search hatası, yerel fallback'e geçiliyor: {e}")
-        # Fallback: Boyuta göre yerel E5 veya OpenAI vektörleme
+        logger.warning(f"[search] Integrated Inference/Search hatası, fallback'e geçiliyor: {e}")
+        # Fallback: Pinecone Inference API veya OpenAI vektörleme (YEREL MODEL YOK)
         if index_name in ["mybrain", "myppdfs"]:
-            try:
-                current_embedder = get_local_embedder(provider="local")
-            except Exception:
-                logger.warning("[search] Local E5 yüklenemedi (sentence-transformers yok), OpenAI 1024-dim fallback")
-                current_embedder = get_local_embedder(provider="openai", dimension=1024)
+            current_embedder = get_embedder(provider="pinecone")
         elif index_name == "anki":
-            # 3072-dim anki indeksi OpenAI Large kullanır.
-            current_embedder = get_local_embedder(provider="openai", dimension=3072)
+            current_embedder = get_embedder(provider="openai", dimension=3072)
         else:
-            # Sadece dusbankasi gibi 1536-dim indeksler OpenAI kullanabilir.
-            current_embedder = get_local_embedder(provider="openai", dimension=1536)
+            current_embedder = get_embedder(provider="openai", dimension=1536)
             
         vector = current_embedder.embed_text(query, is_query=True)
         res = index.query(

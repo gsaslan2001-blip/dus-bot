@@ -1,9 +1,6 @@
 httpx==0.27.2
-google-genai
 pinecone[grpc]
 openai
 supabase
 python-dotenv
-pypdf
-torch
-sentence-transformers
+PyMuPDF

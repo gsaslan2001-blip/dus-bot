@@ -2,8 +2,8 @@ import os
 import sys
 import time
 import functools
-import google.generativeai as genai
 from openai import OpenAI
+from pinecone import Pinecone
 
 # ─── OPENAI EMBEDDER ───
 
@@ -27,60 +27,93 @@ class OpenAIEmbedder:
 
     def embed_batch(self, texts: list[str], is_query: bool = False) -> list[list[float]]:
         if not texts: return []
-        
+
         all_embeddings = []
         batch_size = 500 # OpenAI için güvenli bir batch boyutu
-        
+
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
             sys.stderr.write(f"[openai] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
-            
+
             response = self.client.embeddings.create(
                 model=self.model_name,
                 input=batch,
                 dimensions=self.dimensionality
             )
             all_embeddings.extend([item.embedding for item in response.data])
-            
+
         return all_embeddings
 
-# ─── LOCAL E5 EMBEDDER ───
+# ─── PINECONE INFERENCE EMBEDDER (E5 1024-dim, server-side) ───
 
-class LocalE5Embedder:
-    def __init__(self, model_name="intfloat/multilingual-e5-large"):
-        from sentence_transformers import SentenceTransformer
+class PineconeEmbedder:
+    """Pinecone Inference API üzerinden embedding üretir. Yerel model gerektirmez."""
+    def __init__(self, model_name="multilingual-e5-large"):
         self.model_name = model_name
         self.dimensionality = 1024
-        # Modeli CPU'da başlatıyoruz (DUS Mentörü standart)
-        sys.stderr.write(f"[local] {self.model_name} yükleniyor...\n")
-        self.model = SentenceTransformer(self.model_name, device="cpu")
-        sys.stderr.write(f"[local] Local E5 Embedder hazır (dim: {self.dimensionality}).\n")
+        self._pc = None  # Lazy init
+        self._init_error = None
+        api_key = os.environ.get("PINECONE_API_KEY")
+        if api_key:
+            try:
+                self._pc = Pinecone(api_key=api_key)
+                sys.stderr.write(f"[pinecone-embed] Pinecone Inference Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
+            except Exception as e:
+                self._init_error = str(e)
+                sys.stderr.write(f"[pinecone-embed] UYARI: Pinecone client baslatilamadi: {e}\n")
+        else:
+            self._init_error = "PINECONE_API_KEY bulunamadı"
+            sys.stderr.write("[pinecone-embed] UYARI: PINECONE_API_KEY bulunamadı.\n")
+
+    def _ensure_client(self):
+        if self._pc is None:
+            raise RuntimeError(f"Pinecone embedder kullanılamıyor: {self._init_error}")
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
-        prefix = "query: " if is_query else "passage: "
-        vec = self.model.encode([prefix + text], normalize_embeddings=True)
-        return vec[0].tolist()
+        self._ensure_client()
+        input_type = "query" if is_query else "passage"
+        result = self._pc.inference.embed(
+            model=self.model_name,
+            inputs=[{"text": text}],
+            parameters={"input_type": input_type}
+        )
+        return result.data[0].values
 
     def embed_batch(self, texts: list[str], is_query: bool = False) -> list[list[float]]:
         if not texts: return []
-        prefix = "query: " if is_query else "passage: "
-        prefixed_texts = [prefix + t for t in texts]
-        vecs = self.model.encode(prefixed_texts, normalize_embeddings=True, show_progress_bar=False)
-        return vecs.tolist()
+        self._ensure_client()
+        input_type = "query" if is_query else "passage"
+        all_embeddings = []
+        batch_size = 100  # Pinecone inference batch limit
+
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i+batch_size]
+            sys.stderr.write(f"[pinecone-embed] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
+            inputs = [{"text": t} for t in batch]
+            result = self._pc.inference.embed(
+                model=self.model_name,
+                inputs=inputs,
+                parameters={"input_type": input_type}
+            )
+            all_embeddings.extend([d.values for d in result.data])
+
+        return all_embeddings
 
 # ─── GEMINI EMBEDDER ───
 
 class GeminiEmbedder:
     def __init__(self, model_name="models/gemini-embedding-2"):
+        import google.generativeai as genai
         api_key = os.environ.get("GEMINI_API_KEY")
         genai.configure(api_key=api_key)
+        self._genai = genai
         self.model_name = model_name
         self.dimensionality = 1024
         sys.stderr.write(f"[gemini] Gemini Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
         task_type = "RETRIEVAL_QUERY" if is_query else "RETRIEVAL_DOCUMENT"
-        result = genai.embed_content(
+        result = self._genai.embed_content(
             model=self.model_name,
             content=text,
             task_type=task_type,
@@ -100,7 +133,7 @@ class GeminiEmbedder:
             sys.stderr.write(f"[gemini] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
             
             try:
-                result = genai.embed_content(
+                result = self._genai.embed_content(
                     model=self.model_name,
                     content=batch,
                     task_type=task_type,
@@ -111,7 +144,7 @@ class GeminiEmbedder:
                 if "429" in str(e):
                     sys.stderr.write("[gemini] 429 Quota Exceeded! 65s bekleniyor...\n")
                     time.sleep(65)
-                    result = genai.embed_content(
+                    result = self._genai.embed_content(
                         model=self.model_name,
                         content=batch,
                         task_type=task_type,
@@ -126,22 +159,29 @@ class GeminiEmbedder:
         return all_embeddings
 
 @functools.lru_cache(maxsize=4)
-def get_local_embedder(provider="openai", dimension=None):
+def get_embedder(provider="pinecone", dimension=None):
     """
-    Kullanıcı tercihine göre embedder döner. 
-    Varsayılan: openai (text-embedding-3-large)
+    Provider'a göre embedder döner.
+    Varsayılan: pinecone (Pinecone Inference API, multilingual-e5-large, 1024-dim)
+
+    Seçenekler:
+      - "pinecone" → Pinecone Inference API (1024-dim), myppdfs/mybrain yükleme ve arama
+      - "openai"   → OpenAI (varsayılan 3072-dim), anki indeksi için zorunlu
+      - "local"    → Pinecone Inference'a yönlendirir (geriye dönük uyumluluk)
     """
-    if provider == "local":
-        return LocalE5Embedder()
+    if provider in ("pinecone", "local"):
+        return PineconeEmbedder()
     elif provider == "openai":
-        # Eğer boyut belirtilmemişse 3072, belirtilmişse (örn 1024) onu kullan
         dim = dimension if dimension else 3072
         return OpenAIEmbedder(dimensionality=dim)
     else:
         return GeminiEmbedder()
 
-# Geriye dönük uyumluluk
-get_embedder = get_local_embedder
+# Geriye dönük uyumluluk — yeni kodda get_embedder() kullanın
+def get_local_embedder(provider="pinecone", dimension=None):
+    import warnings
+    warnings.warn("get_local_embedder() deprecated, get_embedder() kullanın", DeprecationWarning, stacklevel=2)
+    return get_embedder(provider=provider, dimension=dimension)
 
 if __name__ == "__main__":
     from dotenv import load_dotenv

@@ -17,6 +17,12 @@ async def cmd_start(chat_id: int, send) -> None:
         "\\- Soru cozumu: _\"Periodontoloji sorularina bakalim\"_\n"
         "\\- Ilerleme: _\"En son ne calismistim?\"_\n"
         "\\- Cikmis analiz: _\"Patolojide en cok cikan konular\"_\n\n"
+        "**Mesaj basinda prefix'ler:**\n"
+        "/mypdf \\- Dogrudan ders notlarinda ara\n"
+        "/brain \\- Dogrudan hafizada ara\n"
+        "/soru \\- Dogrudan soru coz\n"
+        "/anki \\- Dogrudan Anki kartlarinda ara\n"
+        "/cikmis \\- Dogrudan cikmis analizi yap\n\n"
         "/stats \\- Sistem durumu\n"
         "/dersler \\- Brans listesi\n"
         "/sifirla \\- Sohbeti temizle",

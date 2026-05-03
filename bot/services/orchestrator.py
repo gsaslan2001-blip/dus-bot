@@ -60,17 +60,27 @@ def _detect_ders(query: str) -> Optional[str]:
     return None
 
 
-async def orchestrate_search(query: str, intent: str) -> dict:
-    """Run parallel searches across all relevant indexes based on intent."""
+async def orchestrate_search(query: str, intent: str, forced_index: str | None = None) -> dict:
+    """Run parallel searches across all relevant indexes based on intent.
+
+    Args:
+        query: Search query string
+        intent: Classified intent (ders_calis, soru_sor, cikmis_analiz, hafiza, genel)
+        forced_index: Override index from prefix routing (myppdfs, mybrain, anki, or None)
+    """
     tasks: dict[str, asyncio.Task] = {}
     ders = _detect_ders(query)
 
-    # --- myppdfs: Always search for study-related intents ---
-    if intent in ("ders_calis", "soru_sor"):
+    # --- myppdfs: Always search when ders detected, or for study intents ---
+    pdfs_should_search = (
+        forced_index == "myppdfs" or
+        intent in ("ders_calis", "soru_sor", "cikmis_analiz") or
+        (intent == "genel" and ders is not None)  # Fix: ders tespit edilince ara
+    )
+    if pdfs_should_search:
         namespaces = [ders] if ders and ders in PDFS_NAMESPACES else PDFS_NAMESPACES[:6]
         cross = CROSS_NS_MAP.get(ders, []) if ders else []
         all_ns = list(dict.fromkeys(namespaces + cross))  # dedupe preserving order
-        # Use multi-ns if >1 namespace, else single
         if len(all_ns) > 1:
             tasks["pdfs"] = asyncio.ensure_future(
                 search_multi_ns(query, "myppdfs", all_ns, 15, 5)
@@ -80,8 +90,12 @@ async def orchestrate_search(query: str, intent: str) -> dict:
                 pinecone_search, query, "myppdfs", all_ns[0], 15, 5
             )
 
-    # --- mybrain: Search for memory/progress intents ---
-    if intent in ("hafiza", "genel"):
+    # --- mybrain: Search for memory/progress intents, or forced ---
+    brain_should_search = (
+        forced_index == "mybrain" or
+        intent in ("hafiza", "genel")
+    )
+    if brain_should_search:
         tasks["brain"] = asyncio.ensure_future(
             search_multi_ns(query, "mybrain", BRAIN_NAMESPACES, 10, 5)
         )
@@ -92,10 +106,15 @@ async def orchestrate_search(query: str, intent: str) -> dict:
             search_questions, query, ders, 5
         )
 
-    # --- anki: Only when relevant ---
-    if ders in ("protez", "radyoloji"):
+    # --- anki: When relevant ders or forced ---
+    anki_should_search = (
+        forced_index == "anki" or
+        ders in ("protez", "radyoloji")
+    )
+    if anki_should_search:
+        ns = ders if ders in ("protez", "radyoloji") else "protez"
         tasks["anki"] = asyncio.to_thread(
-            pinecone_search, query, "anki", ders, 10, 3
+            pinecone_search, query, "anki", ns, 10, 3
         )
 
     # Run all in parallel, collect results

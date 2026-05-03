@@ -1,55 +1,51 @@
-# 🚀 OpenAI Vektör ve Analiz Altyapısı (DUS Mentörü)
+# 🚀 Pinecone-First Embedding Mimarisi (DUS Mentörü)
 
-Bu belge, DUS Mentörü projesinde kullanılan yüksek performanslı OpenAI tabanlı embedding ve analiz altyapısını açıklar.
+Bu belge, DUS Mentörü projesinde embedding stratejisini kesin olarak belirler.
+**Yerel model (sentence-transformers) tamamen kaldırılmıştır.** Tüm embedding işlemleri Pinecone Inference API veya OpenAI üzerinden yapılır.
 
-## 1. Temel Bileşenler
+## 1. Kesin Kullanım Sınırları
 
-| Görev | Model | Detay |
-|-------|-------|-------|
-| **Embedding** | `text-embedding-3-large` | 3072 Boyut, Maksimum Keskinlik |
-| **LLM Judge** | `gpt-4o-mini` | Akıllı Tekilleştirme ve Pedagojik Karar Mekanizması |
-| **Orchestrator** | `scripts/embedding_utils.py` | Sağlayıcı bağımsız (OpenAI/Gemini/E5) soyutlama katmanı |
+| Alan | İşlem | Yöntem / Model | Gerekçe |
+|------|-------|----------------|---------|
+| **Ders Çalışma (PDF/Notlar)** | Arama (Query) | **Pinecone Integrated Inference (E5)** | Hız ve 500ms altı yanıt süresi. |
+| **Hafıza / Kayıt (Upload)** | Vektörleme (Upsert) | **Pinecone Inference API (E5 1024-dim)** | Yerel model gerektirmez, sunucu tarafında embedding. |
+| **Arama Fallback** | Vektörleme | **Pinecone Inference API (E5 1024-dim)** | Integrated Inference başarısız olursa Pinecone embed + query. |
+| **Anki Ekosistemi** | **Vektörleme & Dedup** | **OpenAI Large (3072-dim)** | Eklenti (smart_dedup_addon) ile tam uyum ve yüksek hassasiyet. |
+| **Soru Bankası (Supabase)** | Arama (Query) | **OpenAI (3-small, 1536-dim)** | `text-embedding-3-small` ile embedding üretilir. |
+| **Anki (Dedup & Upload)** | Vektörleme & Arama | **OpenAI (3-large, 3072-dim)** | `text-embedding-3-large`, eklenti ve `anki_uploader.py` uyumu için zorunlu. |
 
-## 2. Neden OpenAI `text-embedding-3-large`?
+## 2. Neden OpenAI Anki'de Zorunlu?
 
-Eski sistemdeki Gemini ve Yerel E5 modellerinden bu modele geçiş yapılmasının temel nedenleri:
-1. **Yüksek Boyut (3072):** 1024 boyutlu modellere göre tıbbi terimler arasındaki anlamsal farkları (örn: *Tip 1 vs Tip 2 Diyabet*) çok daha keskin ayırır.
-2. **Hız ve Kota:** OpenAI'ın yüksek rate-limitleri sayesinde 13.000 kartlık setler dakikalar içinde vektörlenebilir.
-3. **Tutarlılık:** "Basic" ve "Cloze" kartları arasındaki benzerlikleri yakalamada %98+ başarı oranı.
+1. **Mirror Mode:** Yerel Anki eklentisi (`smart_dedup_addon`) OpenAI Large (3072) kullanır. Pinecone'daki `anki` indeksiyle birebir kıyaslama yapabilmek için aynı model zorunludur.
+2. **Hassasiyet:** Tıbbi terminolojideki ince farkları (Tip 1 vs Tip 2) yakalamak için yüksek boyutlu (3072) vektörler gereklidir.
 
-## 3. Akıllı Tekilleştirme İş Akışı (Smart Dedup)
+## 3. Akıllı Tekilleştirme (Smart Dedup) Standartları
 
-Sistem 3 aşamalı bir huni (funnel) mantığıyla çalışır:
+Anki kartları işlenirken şu protokol uygulanır:
 
-1. **Vektör Taraması (OpenAI Embedder):** 
-   - Tüm kartlar 3072 boyutlu uzaya aktarılır.
-   - Kosinüs benzerliği hesaplanır (Eşik: **0.94**).
-2. **Lexical Guard (Kural Tabanlı):**
-   - Vektör olarak benzeyen ancak zıt anlamlı (Anterior/Posterior, Tip 1/2 vb.) kartlar elenir.
-3. **LLM Judge (gpt-4o-mini):**
-   - Kalan şüpheli çiftler LLM'e gönderilir.
-   - LLM, kartların pedagojik olarak aynı bilgiyi mi test ettiğine karar verir.
+1. **Vektörleme:** Kart içeriği OpenAI `text-embedding-3-large` ile 3072 boyuta çevrilir.
+2. **Kıyaslama (Pinecone):** `anki` indeksindeki mevcut kartlarla benzerlik sorgusu yapılır.
+3. **Eşik (Threshold):** **0.84** ve üzeri benzerlik "aday kopya" olarak işaretlenir.
+4. **Lexical Guard:** Eğer benzerlik yüksekse ancak "Tip, Evre, Sınıf, Grade, Stage, Faz" gibi kritik sayısal belirteçler farklıysa, kart **mükerrer sayılmaz**.
 
-## 4. Kullanım (Geliştiriciler İçin)
+## 4. Geliştirici Kılavuzu
 
-### Vektörleme Başlatma
-```python
-from scripts.embedding_utils import get_local_embedder
-
-# OpenAI embedder'ı çağır
-embedder = get_local_embedder("openai")
-vectors = embedder.embed_batch(["Tıp terimi 1", "Tıp terimi 2"])
-```
-
-### Akıllı Tekilleştirme Scripti
+### Arama (Ders Çalış)
 ```bash
-python scripts/anki_dedup_smart.py
+python scripts/search_engine.py --index myppdfs --ns radyoloji "Sorgu metni"
 ```
+*(Arka planda Integrated Inference veya Pinecone Inference API fallback tetiklenir.)*
 
-## 5. Önemli Notlar
-- `.env` dosyasında `OPENAI_API_KEY` tanımlı olmalıdır.
-- Büyük dosyalarda (2000+ kart) `embed_batch` metodu 500'lük paketler halinde otomatik çalışır.
-- Raporlar `anki_jsonlar/` klasörüne dinamik isimlerle kaydedilir.
+### Embedding Üretme
+```python
+from embedding_utils import get_embedder
+
+# Pinecone Inference API (myppdfs/mybrain, 1024-dim)
+vec = get_embedder("pinecone").embed_text("içerik", is_query=False)
+
+# OpenAI (anki/dusbankasi)
+vec = get_embedder("openai", dimension=3072).embed_text("içerik")
+```
 
 ---
-*DUS Mentörü - 2026-05-01*
+*DUS Mentörü Pinecone-First Mimari Belgesi - 2026-05-03 | v5.0 — Yerel Embedding KALDIRILDI*
