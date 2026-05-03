@@ -2,11 +2,18 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Bağımlılıkları önce kopyala (Docker cache optimizasyonu)
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# System dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Uygulama dosyaları
-COPY . .
+# Python dependencies
+COPY requirements.txt requirements-bot.txt ./
+RUN pip install --no-cache-dir -r requirements.txt -r requirements-bot.txt
 
-CMD ["python"]
+# Application code
+COPY scripts/ ./scripts/
+COPY bot/ ./bot/
+
+# Run
+CMD ["python", "-m", "bot.main"]
