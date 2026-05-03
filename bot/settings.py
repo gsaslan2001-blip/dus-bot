@@ -13,6 +13,12 @@ ALLOWED_CHAT_IDS = set(
 DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 DEEPSEEK_MODEL = "deepseek-chat"  # V4 Pro flagship
+DEEPSEEK_REASONER = "deepseek-reasoner"  # Deep reasoning model
+
+AVAILABLE_MODELS = {
+    "deepseek-chat": "DeepSeek V4 Pro (Hızlı)",
+    "deepseek-reasoner": "DeepSeek Reasoner (Derin)",
+}
 
 # --- Pinecone ---
 PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
@@ -29,7 +35,44 @@ SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
 # --- Reranker ---
 RERANKER_MODEL = "bge-reranker-v2-m3"
+AVAILABLE_RERANKERS = {
+    "bge-reranker-v2-m3": "BGE Reranker V2 M3 (Hızlı)",
+    "cohere-rerank-3.5": "Cohere Rerank 3.5 (Güçlü)",
+}
 
 # --- Agent ---
 MAX_AGENT_ITERATIONS = 5
 CONVERSATION_TTL_SECONDS = 3600  # 1 hour
+
+# --- User Settings Defaults ---
+USER_SETTINGS_DEFAULTS = {
+    "model": "deepseek-chat",
+    "speed_mode": "balanced",      # fast | balanced | comprehensive
+    "search_depth": 5,             # rerank top_n: 3-10
+    "rerank_enabled": True,
+    "agent_iterations": 3,         # max iterations for agent loop
+}
+
+SPEED_MODE_CONFIG = {
+    "fast": {
+        "label": "Hızlı Mod",
+        "desc": "Anında yanıt, minimum arama",
+        "agent_iterations": 1,
+        "search_depth": 3,
+        "rerank_enabled": True,
+    },
+    "balanced": {
+        "label": "Dengeli",
+        "desc": "Optimal hız ve derinlik",
+        "agent_iterations": 3,
+        "search_depth": 5,
+        "rerank_enabled": True,
+    },
+    "comprehensive": {
+        "label": "Kapsamlı",
+        "desc": "En derin arama, tam analiz",
+        "agent_iterations": 5,
+        "search_depth": 10,
+        "rerank_enabled": True,
+    },
+}

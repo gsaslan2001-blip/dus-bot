@@ -17,7 +17,9 @@ load_dotenv() # .env dosyasından değişkenleri yükle
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-DEFAULT_RERANKER_MODEL = "bge-reranker-v2-m3"
+DEFAULT_RERANKER_MODEL = os.environ.get("RERANKER_MODEL", "bge-reranker-v2-m3")
+# Fallback: Cohere Rerank 3.5 daha güçlü ama harici API, BGE V2 M3 hızlı ve Pinecone'da ücretsiz
+BACKUP_RERANKER_MODEL = "bge-reranker-v2-m3"  # Her zaman kullanılabilir
 
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "")

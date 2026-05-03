@@ -1,7 +1,8 @@
 """
-Atlas Telegram Bot — DUS Mentörü
+Atlas Telegram Bot — DUS Mentoru
 FastAPI + Webhook mimarisi, DeepSeek V4 Pro, Pinecone RAG.
-Railway'de 7/24 çalışır, bilgisayar kapalıyken bile aktif.
+Railway'de 7/24 calisir, bilgisayar kapaliyken bile aktif.
+v9.2: Ayarlar menusu, hiz optimizasyonlari, cache, rerank iyilestirmeleri
 """
 
 import sys
@@ -14,12 +15,18 @@ from fastapi import FastAPI, Request, Response
 # Ensure project root is importable
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from bot.settings import TELEGRAM_TOKEN, ALLOWED_CHAT_IDS, CONVERSATION_TTL_SECONDS, DEEPSEEK_MODEL
-from bot.handlers.commands import cmd_start, cmd_help, cmd_stats, cmd_dersler, cmd_sifirla
+from bot.settings import (
+    TELEGRAM_TOKEN, ALLOWED_CHAT_IDS, CONVERSATION_TTL_SECONDS,
+    DEEPSEEK_MODEL, USER_SETTINGS_DEFAULTS,
+)
+from bot.handlers.commands import (
+    cmd_start, cmd_help, cmd_stats, cmd_dersler, cmd_sifirla,
+    cmd_settings, handle_settings_callback,
+)
 from bot.handlers.messages import handle_message
 from bot.handlers.errors import handle_error
 
-# ─── Logging ──────────────────────────────────────────────────────────────────
+# --- Logging ---
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -27,14 +34,20 @@ logging.basicConfig(
 )
 log = logging.getLogger("atlas_bot")
 
-# ─── FastAPI ──────────────────────────────────────────────────────────────────
-app = FastAPI(title="Atlas DUS Mentoru", version="9.0")
+# --- FastAPI ---
+app = FastAPI(title="Atlas DUS Mentoru", version="9.2")
 
-# ─── Telegram API ─────────────────────────────────────────────────────────────
+# --- Telegram API ---
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 
-# ─── Conversation Context (in-memory TTL cache) ───────────────────────────────
+# --- Conversation Context (in-memory TTL cache) ---
 conv_context = cachetools.TTLCache(maxsize=100, ttl=CONVERSATION_TTL_SECONDS)
+
+# --- User Settings (in-memory TTL cache) ---
+user_settings = cachetools.TTLCache(maxsize=100, ttl=CONVERSATION_TTL_SECONDS * 24)
+
+# --- Search Result Cache (5 min TTL for speed) ---
+search_cache = cachetools.TTLCache(maxsize=200, ttl=300)
 
 
 def get_context(chat_id: int) -> dict:
@@ -47,8 +60,22 @@ def clear_context(chat_id: int) -> None:
     conv_context.pop(chat_id, None)
 
 
-# ─── Telegram Helpers ─────────────────────────────────────────────────────────
-async def send(chat_id: int, text: str, parse_mode: str = "Markdown") -> None:
+def get_settings(chat_id: int) -> dict:
+    if chat_id not in user_settings:
+        user_settings[chat_id] = USER_SETTINGS_DEFAULTS.copy()
+    return user_settings[chat_id]
+
+
+def update_settings(chat_id: int, new_settings: dict) -> None:
+    user_settings[chat_id] = new_settings
+
+
+def get_search_cache_key(query: str, intent: str, forced_index: str | None) -> str:
+    return f"{query[:100]}|{intent}|{forced_index or ''}"
+
+
+# --- Telegram Helpers ---
+async def send(chat_id: int, text: str, parse_mode: str = "Markdown", reply_markup: str = None) -> None:
     """Send message with auto-chunking for Telegram's 4096 char limit."""
     MAX_LEN = 4000
     parts = [text[i:i + MAX_LEN] for i in range(0, len(text), MAX_LEN)]
@@ -57,12 +84,16 @@ async def send(chat_id: int, text: str, parse_mode: str = "Markdown") -> None:
             payload = {"chat_id": chat_id, "text": part}
             if parse_mode:
                 payload["parse_mode"] = parse_mode
+            # Only attach reply_markup to first chunk
+            if reply_markup and i == 0:
+                payload["reply_markup"] = reply_markup
             resp = await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
             if resp.status_code != 200:
                 log.error(f"Telegram send hatasi: {resp.status_code} {resp.text[:200]}")
                 # Retry without parse_mode if it failed
                 if parse_mode:
                     payload.pop("parse_mode", None)
+                    payload.pop("reply_markup", None)
                     await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
 
 
@@ -74,29 +105,61 @@ async def send_action(chat_id: int, action: str = "typing") -> None:
         )
 
 
+async def answer_callback(callback_id: str, text: str, show_alert: bool = False) -> None:
+    """Answer a callback query with a toast or alert."""
+    async with httpx.AsyncClient(timeout=10) as client:
+        await client.post(
+            f"{TELEGRAM_API}/answerCallbackQuery",
+            json={
+                "callback_query_id": callback_id,
+                "text": text,
+                "show_alert": show_alert,
+            },
+        )
+
+
 async def notify_admin(text: str) -> None:
     """Send alert to Furkan. Uses first allowed chat_id."""
     if ALLOWED_CHAT_IDS:
         admin_id = next(iter(ALLOWED_CHAT_IDS))
         try:
-            await send(admin_id, f"🔧 Admin: {text}", parse_mode="")
+            await send(admin_id, f"Admin: {text}", parse_mode="")
         except Exception:
             pass
 
 
-# ─── Auth Guard ───────────────────────────────────────────────────────────────
+# --- Auth Guard ---
 def is_allowed(chat_id: int) -> bool:
     if not ALLOWED_CHAT_IDS:
-        return True  # No whitelist configured — allow all
+        return True
     return chat_id in ALLOWED_CHAT_IDS
 
 
-# ─── Webhook Endpoint ─────────────────────────────────────────────────────────
+# --- Webhook Endpoint ---
 @app.post("/webhook")
 async def webhook(request: Request):
     chat_id = None
     try:
         data = await request.json()
+
+        # --- Callback Query (inline keyboard) ---
+        if "callback_query" in data:
+            cq = data["callback_query"]
+            cb_id = cq.get("id", "")
+            cb_data = cq.get("data", "")
+            cb_chat = cq.get("message", {}).get("chat", {})
+            cb_chat_id = cb_chat.get("id")
+            cb_user = cq.get("from", {})
+            cb_user_id = cb_user.get("id", 0)
+
+            if cb_chat_id and cb_data:
+                log.info(f"[CALLBACK] chat={cb_chat_id} data={cb_data}")
+                await handle_settings_callback(
+                    cb_chat_id, cb_data, cb_user_id,
+                    send, answer_callback, get_settings, update_settings
+                )
+            return Response(status_code=200)
+
         message = data.get("message") or data.get("edited_message", {})
         if not message:
             return Response(status_code=200)
@@ -118,7 +181,7 @@ async def webhook(request: Request):
         # Get or create context
         ctx = get_context(chat_id)
 
-        # ─── Commands ───────────────────────────────────────────────────
+        # --- Commands ---
         if text.startswith("/start"):
             await cmd_start(chat_id, send)
             return Response(status_code=200)
@@ -140,8 +203,15 @@ async def webhook(request: Request):
             await cmd_sifirla(chat_id, send, clear_context)
             return Response(status_code=200)
 
-        # ─── Normal Message ──────────────────────────────────────────────
-        await handle_message(chat_id, text, send, send_action, ctx)
+        if text.startswith("/ayarlar") or text.startswith("/settings"):
+            await cmd_settings(chat_id, send, get_settings, update_settings)
+            return Response(status_code=200)
+
+        # --- Normal Message ---
+        await handle_message(
+            chat_id, text, send, send_action, ctx,
+            get_settings, search_cache, get_search_cache_key,
+        )
 
     except Exception as e:
         log.error(f"Webhook hatasi: {e}", exc_info=True)
@@ -154,13 +224,13 @@ async def webhook(request: Request):
     return Response(status_code=200)
 
 
-# ─── Health Check ─────────────────────────────────────────────────────────────
+# --- Health Check ---
 @app.get("/")
 async def health():
     return {
         "status": "ok",
-        "bot": "Atlas DUS Mentörü",
-        "version": "9.0",
+        "bot": "Atlas DUS Mentoru",
+        "version": "9.2",
         "model": DEEPSEEK_MODEL,
     }
 
@@ -187,10 +257,10 @@ async def health_detailed():
     }
 
 
-# ─── Startup ──────────────────────────────────────────────────────────────────
+# --- Startup ---
 @app.on_event("startup")
 async def startup():
-    log.info(f"Atlas Bot v9.0 baslatiliyor... Model: {DEEPSEEK_MODEL}")
+    log.info(f"Atlas Bot v9.2 baslatiliyor... Model: {DEEPSEEK_MODEL}")
     if ALLOWED_CHAT_IDS:
         log.info(f"Whitelist: {ALLOWED_CHAT_IDS}")
 
@@ -201,7 +271,7 @@ async def startup():
         async with httpx.AsyncClient(timeout=15) as client:
             resp = await client.post(
                 f"{TELEGRAM_API}/setWebhook",
-                json={"url": webhook_url, "allowed_updates": ["message", "edited_message"]},
+                json={"url": webhook_url, "allowed_updates": ["message", "edited_message", "callback_query"]},
             )
             result = resp.json()
             if result.get("ok"):
@@ -221,7 +291,7 @@ async def shutdown():
     log.info("Webhook silindi.")
 
 
-# ─── Run ──────────────────────────────────────────────────────────────────────
+# --- Run ---
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8080))

@@ -2,7 +2,7 @@ import json
 import logging
 from bot.services.deepseek_client import chat
 from bot.tools.search_tools import execute_tool, TOOL_DEFINITIONS
-from bot.prompts.system_prompt import SYSTEM_PROMPT
+from bot.prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_FAST
 from bot.settings import MAX_AGENT_ITERATIONS
 
 log = logging.getLogger(__name__)
@@ -39,18 +39,33 @@ def _format_context(search_results: dict) -> str:
     return "\n\n".join(parts)
 
 
-async def run_agent(user_message: str, search_results: dict) -> str:
-    """DeepSeek function-calling agent loop."""
+async def run_agent(user_message: str, search_results: dict, settings: dict | None = None) -> str:
+    """DeepSeek function-calling agent loop. Optimized for speed in fast mode."""
+    if settings is None:
+        settings = {}
+
+    speed_mode = settings.get("speed_mode", "balanced")
+    model = settings.get("model", "deepseek-chat")
+    agent_iterations = settings.get("agent_iterations", 3)
+
     context = _format_context(search_results)
 
+    # Fast mode: Use simplified prompt, skip agent loop entirely
+    if speed_mode == "fast":
+        prompt = SYSTEM_PROMPT_FAST
+        max_iter = 1
+    else:
+        prompt = SYSTEM_PROMPT
+        max_iter = min(agent_iterations, MAX_AGENT_ITERATIONS)
+
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": prompt},
         {"role": "user", "content": f"KULLANICI MESAJI: {user_message}\n\nONCEDEN GETIRILEN BILGILER:\n{context}"}
     ]
 
-    for iteration in range(MAX_AGENT_ITERATIONS):
-        log.info(f"[agent] iterasyon {iteration + 1}/{MAX_AGENT_ITERATIONS}")
-        resp = await chat(messages, tools=TOOL_DEFINITIONS)
+    for iteration in range(max_iter):
+        log.info(f"[agent] iterasyon {iteration + 1}/{max_iter} model={model}")
+        resp = await chat(messages, tools=TOOL_DEFINITIONS, model=model)
 
         if resp["tool_calls"]:
             # Add assistant message with tool calls
@@ -73,7 +88,7 @@ async def run_agent(user_message: str, search_results: dict) -> str:
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tc["id"],
-                    "content": result[:8000]  # Truncate very long results
+                    "content": result[:8000]
                 })
         else:
             return resp["content"] or "Anladim, yanitinizi hazirliyorum."

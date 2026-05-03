@@ -9,10 +9,18 @@ MAX_RETRIES = 2
 RETRY_DELAY = 1.5  # seconds
 
 
-async def chat(messages: list[dict], tools: list[dict] | None = None, max_tokens: int = 4096) -> dict:
-    """DeepSeek V4 Pro API cagrisi — OpenAI-compatible format with retry."""
+async def chat(messages: list[dict], tools: list[dict] | None = None,
+               max_tokens: int = 4096, model: str = None) -> dict:
+    """DeepSeek API cagrisi — OpenAI-compatible format with retry.
+
+    Args:
+        messages: Chat messages
+        tools: Tool definitions for function calling
+        max_tokens: Max response tokens
+        model: Model override (defaults to DEEPSEEK_MODEL from settings)
+    """
     kwargs = dict(
-        model=DEEPSEEK_MODEL,
+        model=model or DEEPSEEK_MODEL,
         messages=messages,
         temperature=0.7,
         max_tokens=max_tokens,
@@ -29,7 +37,7 @@ async def chat(messages: list[dict], tools: list[dict] | None = None, max_tokens
 
             usage = resp.usage
             if usage:
-                log.info(f"[deepseek] tokens: in={usage.prompt_tokens} out={usage.completion_tokens} total={usage.total_tokens}")
+                log.info(f"[deepseek] model={kwargs['model']} tokens: in={usage.prompt_tokens} out={usage.completion_tokens} total={usage.total_tokens}")
 
             return {
                 "content": msg.content,

@@ -1,13 +1,13 @@
 import logging
 from bot.deps import mybrain_idx, myppdfs_idx, anki_idx, supabase
-from bot.settings import DEEPSEEK_MODEL
+from bot.settings import DEEPSEEK_MODEL, AVAILABLE_MODELS, SPEED_MODE_CONFIG
 
 log = logging.getLogger(__name__)
 
 
 async def cmd_start(chat_id: int, send) -> None:
     await send(chat_id,
-        "Selam Furkan! Ben *Atlas*, DUS Mentörün.\n\n"
+        "Selam Furkan! Ben *Atlas*, DUS Mentorun.\n\n"
         "\\✅ Tum ders notlarina erisebilirim\n"
         "\\✅ Hafizani sorgulayabilirim\n"
         "\\✅ 16.000\\+ DUS sorusu bankasinda arama yapabilirim\n"
@@ -23,6 +23,7 @@ async def cmd_start(chat_id: int, send) -> None:
         "/soru \\- Dogrudan soru coz\n"
         "/anki \\- Dogrudan Anki kartlarinda ara\n"
         "/cikmis \\- Dogrudan cikmis analizi yap\n\n"
+        "/ayarlar \\- Bot ayarlari\n"
         "/stats \\- Sistem durumu\n"
         "/dersler \\- Brans listesi\n"
         "/sifirla \\- Sohbeti temizle",
@@ -93,3 +94,114 @@ async def cmd_dersler(chat_id: int, send) -> None:
 async def cmd_sifirla(chat_id: int, send, clear_context) -> None:
     clear_context(chat_id)
     await send(chat_id, "Sohbet temizlendi, hafiza sifirlandi.")
+
+
+async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> None:
+    """Show settings menu with inline keyboard."""
+    settings = get_settings(chat_id)
+    speed_mode = settings.get("speed_mode", "balanced")
+    model = settings.get("model", "deepseek-chat")
+    depth = settings.get("search_depth", 5)
+
+    spd_label = SPEED_MODE_CONFIG.get(speed_mode, {}).get("label", speed_mode)
+    model_label = AVAILABLE_MODELS.get(model, model)
+    rerank_status = "✅" if settings.get("rerank_enabled", True) else "❌"
+
+    text = (
+        "⚙️ *Atlas Bot Ayarlari*\n\n"
+        f"🚀 *Hiz Modu:* {spd_label}\n"
+        f"🤖 *Model:* {model_label}\n"
+        f"🔍 *Arama Derinligi:* {depth} sonuc\n"
+        f"📊 *Reranking:* {rerank_status}\n\n"
+        "Asagidaki dugmelerden ayarlari degistirebilirsin:"
+    )
+
+    keyboard = {
+        "inline_keyboard": [
+            [
+                {"text": "🚀 Hızlı Mod", "callback_data": "settings:speed:fast"},
+                {"text": "⚖️ Dengeli", "callback_data": "settings:speed:balanced"},
+                {"text": "🔬 Kapsamlı", "callback_data": "settings:speed:comprehensive"},
+            ],
+            [
+                {"text": "🤖 DeepSeek V4 Pro", "callback_data": "settings:model:deepseek-chat"},
+                {"text": "🧠 Reasoner", "callback_data": "settings:model:deepseek-reasoner"},
+            ],
+            [
+                {"text": "🔍 -1 Derinlik", "callback_data": "settings:depth:down"},
+                {"text": "🔍 +1 Derinlik", "callback_data": "settings:depth:up"},
+            ],
+            [
+                {"text": "📊 Rerank: Aç/Kapat", "callback_data": "settings:toggle:rerank"},
+                {"text": "🔄 Sıfırla", "callback_data": "settings:reset"},
+            ],
+            [
+                {"text": "❌ Kapat", "callback_data": "settings:close"},
+            ],
+        ]
+    }
+
+    import json
+    await send(chat_id, text, parse_mode="Markdown", reply_markup=json.dumps(keyboard))
+
+
+async def handle_settings_callback(chat_id: int, callback_data: str, user_id: int,
+                                   send, answer_callback, get_settings, update_settings) -> None:
+    """Handle settings inline keyboard callbacks."""
+    parts = callback_data.split(":")
+    action = parts[1] if len(parts) > 1 else ""
+
+    if action == "close":
+        await answer_callback(callback_data.split(":")[0] if ":" in callback_data else "", "Menu kapatildi")
+        # Delete settings message or just ignore
+        return
+
+    if action == "reset":
+        from bot.settings import USER_SETTINGS_DEFAULTS
+        update_settings(chat_id, USER_SETTINGS_DEFAULTS.copy())
+        await answer_callback("", "Ayarlar sifirlandi!")
+        await cmd_settings(chat_id, send, get_settings, update_settings)
+        return
+
+    settings = get_settings(chat_id)
+
+    if action == "speed":
+        mode = parts[2]
+        from bot.settings import SPEED_MODE_CONFIG
+        if mode in SPEED_MODE_CONFIG:
+            cfg = SPEED_MODE_CONFIG[mode]
+            settings["speed_mode"] = mode
+            settings["agent_iterations"] = cfg["agent_iterations"]
+            settings["search_depth"] = cfg["search_depth"]
+            settings["rerank_enabled"] = cfg["rerank_enabled"]
+            update_settings(chat_id, settings)
+            await answer_callback("", f"Hiz modu: {cfg['label']}")
+            await cmd_settings(chat_id, send, get_settings, update_settings)
+
+    elif action == "model":
+        model = parts[2]
+        if model in AVAILABLE_MODELS:
+            settings["model"] = model
+            update_settings(chat_id, settings)
+            await answer_callback("", f"Model: {AVAILABLE_MODELS[model]}")
+            await cmd_settings(chat_id, send, get_settings, update_settings)
+
+    elif action == "depth":
+        direction = parts[2]
+        current = settings.get("search_depth", 5)
+        if direction == "up":
+            settings["search_depth"] = min(10, current + 1)
+        elif direction == "down":
+            settings["search_depth"] = max(2, current - 1)
+        update_settings(chat_id, settings)
+        await answer_callback("", f"Arama derinligi: {settings['search_depth']}")
+        await cmd_settings(chat_id, send, get_settings, update_settings)
+
+    elif action == "toggle":
+        target = parts[2]
+        if target == "rerank":
+            settings["rerank_enabled"] = not settings.get("rerank_enabled", True)
+            update_settings(chat_id, settings)
+            status = "✅" if settings["rerank_enabled"] else "❌"
+            await answer_callback("", f"Reranking: {status}")
+            await cmd_settings(chat_id, send, get_settings, update_settings)
