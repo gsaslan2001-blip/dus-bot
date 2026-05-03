@@ -21,7 +21,7 @@ Cevap:"""
 
 
 def _parse_intent(text: str) -> str:
-    """Robust JSON parsing — handles markdown code blocks and extra text."""
+    """Robust JSON parsing — handles markdown code blocks, bare strings, extra text."""
     text = text.strip()
     # Strip markdown code fences
     if text.startswith("```"):
@@ -31,17 +31,22 @@ def _parse_intent(text: str) -> str:
             text = text[:-3]
     text = text.strip()
     try:
-        return json.loads(text).get("intent", "genel")
+        parsed = json.loads(text)
+        if isinstance(parsed, dict):
+            return parsed.get("intent", "genel")
+        elif isinstance(parsed, str):
+            return parsed if parsed in ("ders_calis", "soru_sor", "cikmis_analiz", "hafiza", "genel") else "genel"
     except json.JSONDecodeError:
-        # Try to find a JSON object in the text
-        import re
-        match = re.search(r'\{[^}]+\}', text)
-        if match:
-            try:
-                return json.loads(match.group()).get("intent", "genel")
-            except json.JSONDecodeError:
-                pass
-        return "genel"
+        pass
+    # Try to find a JSON object in the text
+    import re
+    match = re.search(r'\{[^}]+\}', text)
+    if match:
+        try:
+            return json.loads(match.group()).get("intent", "genel")
+        except (json.JSONDecodeError, AttributeError):
+            pass
+    return "genel"
 
 
 async def classify_intent(message: str) -> str:

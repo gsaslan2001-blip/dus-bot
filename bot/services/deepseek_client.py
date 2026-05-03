@@ -30,5 +30,5 @@ async def chat(messages: list[dict], tools: list[dict] | None = None, max_tokens
             {"id": tc.id, "name": tc.function.name, "arguments": tc.function.arguments}
             for tc in (msg.tool_calls or [])
         ],
-        "finish_reason": msg.finish_reason or resp.choices[0].finish_reason,
+        "finish_reason": resp.choices[0].finish_reason,
     }

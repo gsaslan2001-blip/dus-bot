@@ -22,6 +22,7 @@ DEFAULT_RERANKER_MODEL = "bge-reranker-v2-m3"
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "")
 MYPPDFS_HOST = os.environ.get("MYPPDFS_HOST", "")
+ANKI_HOST = os.environ.get("ANKI_HOST", "")
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
@@ -40,15 +41,20 @@ def _get_pinecone_index(index_name: str):
     if not pc:
         raise ValueError("Pinecone istemcisi başlatılamadı.")
     
-    # Güvenli fallback (Kullanıcı eski davranışı istiyor olabilir, hardcode'u izole ettik)
-    host = MYBRAIN_HOST or "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io"
-    if index_name != "mybrain":
+    # Güvenli host eşleştirme
+    if index_name == "mybrain":
+        host = MYBRAIN_HOST or "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io"
+    elif index_name == "anki":
+        host = ANKI_HOST or "anki-0crkhvy.svc.aped-4627-b74a.pinecone.io"
+    else:
         host = MYPPDFS_HOST or "myppdfs-0crkhvy.svc.aped-4627-b74a.pinecone.io"
         
     return pc.Index(host=host)
 
 def _get_question_embedding(query: str) -> List[float]:
-    """Supabase soru araması için sorguyu vektörler."""
+    """Supabase soru araması için sorguyu vektörler (DUS Soru Bankası - OpenAI-Ada tabanlı)."""
+    # NOT: Soru bankası (Supabase) geçmişten gelen bir karar ile 1536-dim OpenAI-Ada 
+    # mimarisindedir. Bu bir istisnadır. Diğer tüm süreçler E5'e çekilmiştir.
     if not oa_client:
         raise ValueError("OpenAI istemcisi başlatılamadı.")
     response = oa_client.embeddings.create(
@@ -67,37 +73,67 @@ def pinecone_search(query: str, index_name: str, namespace: str, top_k: int = 15
         logger.error(f"[search] {e} Arama yapılamıyor.")
         return []
 
-    if index_name in ["mybrain", "myppdfs"]:
-        current_embedder = get_local_embedder(provider="local")
-    else:
-        current_embedder = get_local_embedder(provider="openai")
-        
-    vector = current_embedder.embed_text(query, is_query=True)
-    
     effective_namespace = namespace if namespace else "__default__"
-    
-    res = index.query(
-        namespace=effective_namespace,
-        vector=vector,
-        top_k=top_k,
-        include_metadata=True
-    )
-    
-    if not res.get("matches"):
-        return []
-    
+
+    # Integrated Inference & Reranking (HIZLI & KOTAYI AZ HARCAR)
     try:
-        rank_res = pc.inference.rerank(
-            model=DEFAULT_RERANKER_MODEL,
-            query=query,
-            documents=[m.get("metadata", {}).get("text", "") for m in res["matches"] if m.get("metadata", {}).get("text")],
-            top_n=rerank_top_n,
-            return_documents=True
+        res = index.search(
+            namespace=effective_namespace,
+            query={
+                "inputs": {"text": query},
+                "top_k": top_k
+            },
+            rerank={
+                "model": DEFAULT_RERANKER_MODEL,
+                "top_n": rerank_top_n,
+                "rank_fields": ["text"]
+            },
+            fields=["text"]
         )
-        return [d.document.text for d in rank_res.data]
+        
+        if res and res.get("result", {}).get("hits"):
+            return [{"text": hit["fields"]["text"], "score": hit["_score"]} for hit in res["result"]["hits"]]
+        return []
+
     except Exception as e:
-        logger.warning(f"[search] Rerank hatası (fallback'e geçiliyor): {e}")
-        return [m.get("metadata", {}).get("text", "") for m in res["matches"][:rerank_top_n]]
+        logger.warning(f"[search] Integrated Inference/Search hatası, yerel fallback'e geçiliyor: {e}")
+        # Fallback: Boyuta göre yerel E5 veya OpenAI vektörleme
+        if index_name in ["mybrain", "myppdfs"]:
+            try:
+                current_embedder = get_local_embedder(provider="local")
+            except Exception:
+                logger.warning("[search] Local E5 yüklenemedi (sentence-transformers yok), OpenAI 1024-dim fallback")
+                current_embedder = get_local_embedder(provider="openai", dimension=1024)
+        elif index_name == "anki":
+            # 3072-dim anki indeksi OpenAI Large kullanır.
+            current_embedder = get_local_embedder(provider="openai", dimension=3072)
+        else:
+            # Sadece dusbankasi gibi 1536-dim indeksler OpenAI kullanabilir.
+            current_embedder = get_local_embedder(provider="openai", dimension=1536)
+            
+        vector = current_embedder.embed_text(query, is_query=True)
+        res = index.query(
+            namespace=effective_namespace,
+            vector=vector,
+            top_k=top_k,
+            include_metadata=True
+        )
+        matches = res.get("matches", [])
+        if not matches:
+            return []
+            
+        try:
+            rank_res = pc.inference.rerank(
+                model=DEFAULT_RERANKER_MODEL,
+                query=query,
+                documents=[m.get("metadata", {}).get("text", "") for m in matches if m.get("metadata", {}).get("text")],
+                top_n=rerank_top_n,
+                return_documents=True
+            )
+            return [{"text": d.document.text, "score": d.score} for d in rank_res.data]
+        except Exception as re:
+            logger.warning(f"[search] Standart Rerank hatası: {re}")
+            return [m.get("metadata", {}).get("text", "") for m in matches[:rerank_top_n]]
 
 async def async_pinecone_search_ns(index, query_vec: List[float], namespace: str, top_k: int = 15):
     """Single namespace search for asyncio.gather."""
@@ -111,80 +147,84 @@ async def async_pinecone_search_ns(index, query_vec: List[float], namespace: str
     )
 
 async def search_multi_ns(query: str, index_name: str, namespaces: List[str], top_k: int = 15, rerank_top_n: int = 5) -> List[str]:
-    """Parallel multi-namespace search followed by global reranking."""
+    """Parallel multi-namespace search followed by global reranking using Integrated Inference."""
     try:
         index = _get_pinecone_index(index_name)
     except ValueError as e:
         logger.error(f"[search] {e} Multi-ns arama yapılamıyor.")
         return []
 
-    if index_name in ["mybrain", "myppdfs"]:
-        current_embedder = get_local_embedder(provider="local")
-    else:
-        current_embedder = get_local_embedder(provider="openai")
-        
-    vector = current_embedder.embed_text(query, is_query=True)
-    
-    tasks = [async_pinecone_search_ns(index, vector, ns, top_k) for ns in namespaces]
+    async def _single_ns_search(ns):
+        try:
+            # Her namespace için bağımsız Integrated Search (Hızlı ve Ucuz)
+            res = await asyncio.to_thread(
+                index.search,
+                namespace=ns,
+                query={"inputs": {"text": query}, "top_k": top_k},
+                fields=["text"]
+            )
+            return res.get("result", {}).get("hits", [])
+        except Exception as e:
+            logger.warning(f"[search] NS {ns} için integrated search hatası: {e}")
+            return []
+
+    tasks = [_single_ns_search(ns) for ns in namespaces]
     results = await asyncio.gather(*tasks)
     
-    all_matches = []
-    for res in results:
-        all_matches.extend(res.get("matches", []))
+    all_hits = []
+    for hits in results:
+        all_hits.extend(hits)
     
-    if not all_matches:
+    if not all_hits:
         return []
 
-    all_matches.sort(key=lambda x: x["score"], reverse=True)
-    top_candidates = all_matches[:top_k * 2]
-    
-    try:
-        rank_res = pc.inference.rerank(
-            model=DEFAULT_RERANKER_MODEL,
-            query=query,
-            documents=[m["metadata"]["text"] for m in top_candidates if "text" in m.get("metadata", {})],
-            top_n=rerank_top_n,
-            return_documents=True
-        )
-        return [d.document.text for d in rank_res.data]
-    except Exception as e:
-        logger.warning(f"[search] Multi-ns Rerank hatası: {e}")
-        return [m.get("metadata", {}).get("text", "") for m in top_candidates[:rerank_top_n]]
-
-async def async_pinecone_search(query: str, index_name: str, namespace: str, top_k: int = 15, rerank_top_n: int = 5) -> List[str]:
-    """Asynchronous version of pinecone_search for parallel independent queries."""
-    try:
-        index = _get_pinecone_index(index_name)
-    except ValueError as e:
-        logger.error(f"[search] {e} Async arama yapılamıyor.")
-        return []
-    
-    if index_name in ["mybrain", "myppdfs"]:
-        current_embedder = get_local_embedder(provider="local")
-    else:
-        current_embedder = get_local_embedder(provider="openai")
-    
-    vector = await asyncio.to_thread(current_embedder.embed_text, query, is_query=True)
-    
-    res = await async_pinecone_search_ns(index, vector, namespace, top_k)
-    matches = res.get("matches", [])
-    
-    if not matches:
-        return []
+    # Skorlara göre sırala ve global rerank yap
+    all_hits.sort(key=lambda x: x["_score"], reverse=True)
+    top_candidates = all_hits[:top_k * 2]
     
     try:
         rank_res = await asyncio.to_thread(
             pc.inference.rerank,
             model=DEFAULT_RERANKER_MODEL,
             query=query,
-            documents=[m["metadata"]["text"] for m in matches if "text" in m.get("metadata", {})],
+            documents=[h["fields"]["text"] for h in top_candidates if "text" in h.get("fields", {})],
             top_n=rerank_top_n,
             return_documents=True
         )
-        return [d.document.text for d in rank_res.data]
+        return [{"text": d.document.text, "score": d.score} for d in rank_res.data]
     except Exception as e:
-        logger.warning(f"[search] Async Rerank hatası: {e}")
-        return [m.get("metadata", {}).get("text", "") for m in matches[:rerank_top_n]]
+        logger.warning(f"[search] Multi-ns Global Rerank hatası: {e}")
+        return [h.get("fields", {}).get("text", "") for h in top_candidates[:rerank_top_n]]
+
+async def async_pinecone_search(query: str, index_name: str, namespace: str, top_k: int = 15, rerank_top_n: int = 5) -> List[str]:
+    """Asynchronous version of pinecone_search using Integrated Inference."""
+    try:
+        index = _get_pinecone_index(index_name)
+    except ValueError as e:
+        logger.error(f"[search] {e} Async arama yapılamıyor.")
+        return []
+    
+    effective_namespace = namespace if namespace else "__default__"
+    
+    try:
+        res = await asyncio.to_thread(
+            index.search,
+            namespace=effective_namespace,
+            query={"inputs": {"text": query}, "top_k": top_k},
+            rerank={
+                "model": DEFAULT_RERANKER_MODEL,
+                "top_n": rerank_top_n,
+                "rank_fields": ["text"]
+            },
+            fields=["text"]
+        )
+        if res and res.get("result", {}).get("hits"):
+            return [{"text": hit["fields"]["text"], "score": hit["_score"]} for hit in res["result"]["hits"]]
+        return []
+    except Exception as e:
+        logger.warning(f"[search] Async Integrated Search hatası, fallback'e geçiliyor: {e}")
+        # Fallback to sync search logic (which has its own fallback)
+        return await asyncio.to_thread(pinecone_search, query, index_name, namespace, top_k, rerank_top_n)
 
 
 # --- Supabase Search Functions ---
