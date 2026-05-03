@@ -32,10 +32,30 @@ PREFIX_ROUTES: list[tuple[list[str], str, str | None]] = [
 
 # Keyword-based intent detection — fast path, no API call needed
 DERS_CALIS_KEYWORDS = [
-    "anlat", "açıkla", "detaylı", "konu", "nedir", "nasıl", "patogenez",
-    "etyoloji", "sınıflama", "tedavi", "tanı", "teşhis", "bulgu", "klinik",
-    "histopatoloji", "radyolojik", "prognoz", "ayırıcı tanı", "mekanizma",
-    "fizyopatoloji", "embriyoloji", "histoloji", "anatomi", "fonksiyon",
+    # Komut fiilleri
+    "anlat", "açıkla", "acikla", "detaylı", "detayli", "konu", "nedir", "nasıl", "nasil",
+    # Patoloji terimleri
+    "patogenez", "etyoloji", "sınıflama", "sinifla", "sınıflandır", "siniflandir",
+    "tedavi", "tanı", "tani", "teşhis", "teshis", "bulgu", "klinik",
+    "histopatoloji", "radyolojik", "prognoz", "mekanizma", "fizyopatoloji",
+    "embriyoloji", "histoloji", "anatomi", "fonksiyon", "ayırıcı tanı", "ayirici",
+    # Hastalık/durum terimleri
+    "immun", "immün", "yetmezlik", "sendrom", "hastalık", "hastalik",
+    "enfeksiyon", "inflamasyon", "tümör", "tumor", "kist", "apse",
+    "kanser", "karsinom", "lösemi", "losemi", "lenfoma", "fibrozis",
+    "nekroz", "atrofi", "hipertrofi", "displazi", "metaplazi",
+    "ülser", "ulser", "abse", "granülom", "granulom",
+    # Sınıflama terimleri (tip 1, tip 2...)
+    "tip 1", "tip 2", "tip 3", "tip 4", "tip i", "tip ii", "tip iii",
+    "evre", "derece", "grade", "stage", "sınıf", "sinif", "alt tip", "varyant",
+    # Branş isimleri → ders_calis
+    "patoloji", "radyoloji", "endodonti", "protez", "histoloji",
+    "fizyoloji", "periodontoloji", "cerrahi", "farmakoloji",
+    "pedodonti", "restoratif", "biyokimya", "mikrobiyoloji", "ortodonti",
+    # DUS'a özel klinik terimler
+    "ameloblastom", "keratokist", "granülom", "periapkal", "pulpit",
+    "gingivit", "periodontit", "osteomiyelit", "osteosarkom",
+    "amelogenez", "dentinogenez", "ossifikasyon",
 ]
 
 SORU_KEYWORDS = [
@@ -80,6 +100,11 @@ def _keyword_intent(message: str) -> str | None:
 
     # Check ders_calis keywords
     if any(kw in msg_lower for kw in DERS_CALIS_KEYWORDS):
+        return "ders_calis"
+
+    # Uzun tıbbi içerikli sorgu → keyword olmasa da ders_calis say
+    # (DeepSeek'e gitmek yerine güvenli taraf)
+    if len(msg_lower) > 20:
         return "ders_calis"
 
     return None  # Uncertain, needs LLM

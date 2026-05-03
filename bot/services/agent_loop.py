@@ -39,7 +39,7 @@ def _format_context(search_results: dict) -> str:
     return "\n\n".join(parts)
 
 
-async def run_agent(user_message: str, search_results: dict, settings: dict | None = None) -> str:
+async def run_agent(user_message: str, search_results: dict, settings: dict | None = None, history: list | None = None) -> str:
     """DeepSeek function-calling agent loop. Optimized for speed in fast mode."""
     if settings is None:
         settings = {}
@@ -60,8 +60,16 @@ async def run_agent(user_message: str, search_results: dict, settings: dict | No
 
     messages = [
         {"role": "system", "content": prompt},
-        {"role": "user", "content": f"KULLANICI MESAJI: {user_message}\n\nONCEDEN GETIRILEN BILGILER:\n{context}"}
     ]
+
+    # Son 3 konuşma turunu (6 mesaj) inject et
+    if history:
+        for turn in history[-6:]:
+            messages.append({"role": turn["role"], "content": str(turn["content"])[:2000]})
+
+    messages.append(
+        {"role": "user", "content": f"KULLANICI MESAJI: {user_message}\n\nONCEDEN GETIRILEN BILGILER:\n{context}"}
+    )
 
     for iteration in range(max_iter):
         log.info(f"[agent] iterasyon {iteration + 1}/{max_iter} model={model}")

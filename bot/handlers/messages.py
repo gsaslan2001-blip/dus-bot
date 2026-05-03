@@ -41,7 +41,8 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
         search_cache[cache_key] = search_results
 
     # Step 4: Run agent loop with search context
-    response = await run_agent(cleaned_text, search_results, settings=settings)
+    prior_history = context.get("history", [])
+    response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history)
 
     # Step 5: Update conversation history
     history = context.get("history", [])

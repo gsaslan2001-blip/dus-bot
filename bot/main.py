@@ -35,7 +35,7 @@ logging.basicConfig(
 log = logging.getLogger("atlas_bot")
 
 # --- FastAPI ---
-app = FastAPI(title="Atlas DUS Mentoru", version="9.2")
+app = FastAPI(title="Atlas DUS Mentoru", version="9.3")
 
 # --- Telegram API ---
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
@@ -230,7 +230,7 @@ async def health():
     return {
         "status": "ok",
         "bot": "Atlas DUS Mentoru",
-        "version": "9.2",
+        "version": "9.3",
         "model": DEEPSEEK_MODEL,
     }
 
@@ -260,7 +260,7 @@ async def health_detailed():
 # --- Startup ---
 @app.on_event("startup")
 async def startup():
-    log.info(f"Atlas Bot v9.2 baslatiliyor... Model: {DEEPSEEK_MODEL}")
+    log.info(f"Atlas Bot v9.3 baslatiliyor... Model: {DEEPSEEK_MODEL}")
     if ALLOWED_CHAT_IDS:
         log.info(f"Whitelist: {ALLOWED_CHAT_IDS}")
 
