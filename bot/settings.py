@@ -12,7 +12,7 @@ ALLOWED_CHAT_IDS = set(
 # --- DeepSeek ---
 DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-DEEPSEEK_MODEL = "deepseek-reasoner"  # Reasoner: adım adım düşünen, tıbbi içerikte daha doğru
+DEEPSEEK_MODEL = "deepseek-chat"      # V4 Pro: en güçlü model, varsayılan
 DEEPSEEK_CHAT = "deepseek-chat"       # V4 Pro: en güçlü chat modeli, hızlı
 
 AVAILABLE_MODELS = {
@@ -46,7 +46,7 @@ CONVERSATION_TTL_SECONDS = 3600  # 1 hour
 
 # --- User Settings Defaults ---
 USER_SETTINGS_DEFAULTS = {
-    "model": "deepseek-reasoner",
+    "model": "deepseek-chat",
     "speed_mode": "balanced",      # fast | balanced | comprehensive
     "search_depth": 5,             # rerank top_n: 3-10
     "rerank_enabled": True,

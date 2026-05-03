@@ -57,7 +57,7 @@ async def run_agent(user_message: str, search_results: dict, settings: dict | No
         settings = {}
 
     speed_mode = settings.get("speed_mode", "balanced")
-    model = settings.get("model", "deepseek-reasoner")
+    model = settings.get("model", "deepseek-chat")
     agent_iterations = settings.get("agent_iterations", 3)
 
     context = _format_context(search_results)

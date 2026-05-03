@@ -100,7 +100,7 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
     """Show settings menu with inline keyboard."""
     settings = get_settings(chat_id)
     speed_mode = settings.get("speed_mode", "balanced")
-    model = settings.get("model", "deepseek-reasoner")
+    model = settings.get("model", "deepseek-chat")
     depth = settings.get("search_depth", 5)
 
     spd_label = SPEED_MODE_CONFIG.get(speed_mode, {}).get("label", speed_mode)
