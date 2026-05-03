@@ -26,6 +26,11 @@ DUS TUZAKLARI: [2-3 sik karistirilan nokta]
 - DUS sorusu istendiginde search_soru_bankasi da kullan
 - Hafiza/ilerleme soruldugunda search_hafiza kullan
 
+## TUTARLILIK KURALI (KESIN)
+Uretilen sorulardaki sik secenekleri yanıtin diger bolumlerinde verilen bilgilerle CCELISMEMELI.
+Ornek: TUZAKLAR bolumunde "tetrasiklin de warfarini arttirir" yazdiysan, soruda "tetrasiklin kullan" secenegini DOGRU CEVAP yapma.
+Yanit uretmeden once mental kontrol yap: "Urettigim soru secenekleri, bir paragraf once yazdigim icerikle celisuyor mu?"
+
 ## Araclar
 search_ders_notlari | search_hafiza | search_soru_bankasi | search_anki
 """

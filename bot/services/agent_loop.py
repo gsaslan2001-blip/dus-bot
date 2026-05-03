@@ -57,7 +57,7 @@ async def run_agent(user_message: str, search_results: dict, settings: dict | No
         settings = {}
 
     speed_mode = settings.get("speed_mode", "balanced")
-    model = settings.get("model", "deepseek-chat")
+    model = settings.get("model", "deepseek-reasoner")
     agent_iterations = settings.get("agent_iterations", 3)
 
     context = _format_context(search_results)
@@ -86,10 +86,15 @@ async def run_agent(user_message: str, search_results: dict, settings: dict | No
         {"role": "user", "content": f"KULLANICI MESAJI: {user_message}\n\nONCEDEN GETIRILEN BILGILER:\n{context}"}
     )
 
-    # --- Direct Synthesis (tool loop yok) — streaming ile üret ---
+    # --- Direct Synthesis (tool loop yok) ---
+    # Reasoner modeli streaming'i desteklemeyebilir, sync chat kullan
     if not use_tools:
-        result = await chat_stream(messages, model=model)
-        return result or "Yanit hazirlanamadi, lutfen tekrar dene."
+        if model == "deepseek-reasoner":
+            resp = await chat(messages, tools=None, model=model)
+            return resp["content"] or "Yanit hazirlanamadi, lutfen tekrar dene."
+        else:
+            result = await chat_stream(messages, model=model)
+            return result or "Yanit hazirlanamadi, lutfen tekrar dene."
 
     # --- Tool Loop (context zayıf olduğunda) ---
     max_iter = min(agent_iterations, MAX_AGENT_ITERATIONS)

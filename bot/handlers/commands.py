@@ -100,7 +100,7 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
     """Show settings menu with inline keyboard."""
     settings = get_settings(chat_id)
     speed_mode = settings.get("speed_mode", "balanced")
-    model = settings.get("model", "deepseek-chat")
+    model = settings.get("model", "deepseek-reasoner")
     depth = settings.get("search_depth", 5)
 
     spd_label = SPEED_MODE_CONFIG.get(speed_mode, {}).get("label", speed_mode)
@@ -124,8 +124,8 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
                 {"text": "🔬 Kapsamlı", "callback_data": "settings:speed:comprehensive"},
             ],
             [
-                {"text": "🤖 DeepSeek V4 Pro", "callback_data": "settings:model:deepseek-chat"},
-                {"text": "🧠 Reasoner", "callback_data": "settings:model:deepseek-reasoner"},
+                {"text": "🧠 R1 Reasoner", "callback_data": "settings:model:deepseek-reasoner"},
+                {"text": "⚡ V3 Hızlı", "callback_data": "settings:model:deepseek-chat"},
             ],
             [
                 {"text": "🔍 -1 Derinlik", "callback_data": "settings:depth:down"},

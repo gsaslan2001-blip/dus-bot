@@ -12,12 +12,12 @@ ALLOWED_CHAT_IDS = set(
 # --- DeepSeek ---
 DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-DEEPSEEK_MODEL = "deepseek-chat"  # V4 Pro flagship
-DEEPSEEK_REASONER = "deepseek-reasoner"  # Deep reasoning model
+DEEPSEEK_MODEL = "deepseek-reasoner"  # R1: adım adım düşünen, tıbbi içerikte daha doğru
+DEEPSEEK_CHAT = "deepseek-chat"       # V3: hızlı, basit sorgular için
 
 AVAILABLE_MODELS = {
-    "deepseek-chat": "DeepSeek V4 Pro (Hızlı)",
-    "deepseek-reasoner": "DeepSeek Reasoner (Derin)",
+    "deepseek-reasoner": "DeepSeek R1 (Akıl Yürüten)",
+    "deepseek-chat": "DeepSeek V3 (Hızlı)",
 }
 
 # --- Pinecone ---
@@ -46,7 +46,7 @@ CONVERSATION_TTL_SECONDS = 3600  # 1 hour
 
 # --- User Settings Defaults ---
 USER_SETTINGS_DEFAULTS = {
-    "model": "deepseek-chat",
+    "model": "deepseek-reasoner",
     "speed_mode": "balanced",      # fast | balanced | comprehensive
     "search_depth": 5,             # rerank top_n: 3-10
     "rerank_enabled": True,

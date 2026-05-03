@@ -10,7 +10,7 @@ RETRY_DELAY = 1.5  # seconds
 
 
 async def chat(messages: list[dict], tools: list[dict] | None = None,
-               max_tokens: int = 900, model: str = None) -> dict:
+               max_tokens: int = 1400, model: str = None) -> dict:
     """DeepSeek API cagrisi — OpenAI-compatible format with retry.
 
     Args:
@@ -59,7 +59,7 @@ async def chat(messages: list[dict], tools: list[dict] | None = None,
     raise last_error
 
 
-async def chat_stream(messages: list[dict], model: str = None, max_tokens: int = 900) -> str:
+async def chat_stream(messages: list[dict], model: str = None, max_tokens: int = 1400) -> str:
     """DeepSeek streaming API — parça parça üretir, tamamında döndürür.
     Caller her chunk'ı async generator üzerinden okuyabilir."""
     kwargs = dict(
