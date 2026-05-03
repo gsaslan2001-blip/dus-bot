@@ -93,7 +93,7 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
         # Fast mode: skip cross-namespace search, only search detected ders
         if is_fast and ders:
             all_ns = [ders]
-        top_k = 10 if is_fast else 15
+        top_k = 6 if is_fast else 8
         if len(all_ns) > 1:
             coros["pdfs"] = search_multi_ns(query, "myppdfs", all_ns, top_k, search_depth)
         else:
@@ -108,7 +108,7 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
     )
     # Fast mode: skip brain search unless explicitly memory intent
     if brain_should_search and not (is_fast and intent == "genel" and ders is not None):
-        brain_top_k = 5 if is_fast else 10
+        brain_top_k = 4 if is_fast else 6
         coros["brain"] = search_multi_ns(query, "mybrain", BRAIN_NAMESPACES, brain_top_k, search_depth)
 
     # --- Supabase questions: For study and exam analysis ---
@@ -124,7 +124,7 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
     if anki_should_search:
         ns = ders if ders in ("protez", "radyoloji") else "protez"
         coros["anki"] = asyncio.to_thread(
-            pinecone_search, query, "anki", ns, 10, min(search_depth, 3)
+            pinecone_search, query, "anki", ns, 8, min(search_depth, 3)
         )
 
     # Tüm aramaları gerçekten paralel başlat (create_task olmadan to_thread sıralı çalışır)

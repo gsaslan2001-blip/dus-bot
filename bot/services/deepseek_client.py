@@ -10,7 +10,7 @@ RETRY_DELAY = 1.5  # seconds
 
 
 async def chat(messages: list[dict], tools: list[dict] | None = None,
-               max_tokens: int = 4096, model: str = None) -> dict:
+               max_tokens: int = 900, model: str = None) -> dict:
     """DeepSeek API cagrisi — OpenAI-compatible format with retry.
 
     Args:
@@ -22,7 +22,7 @@ async def chat(messages: list[dict], tools: list[dict] | None = None,
     kwargs = dict(
         model=model or DEEPSEEK_MODEL,
         messages=messages,
-        temperature=0.7,
+        temperature=0.2,
         max_tokens=max_tokens,
     )
     if tools:
@@ -57,3 +57,28 @@ async def chat(messages: list[dict], tools: list[dict] | None = None,
                 log.error(f"[deepseek] all {MAX_RETRIES + 1} attempts failed: {e}")
 
     raise last_error
+
+
+async def chat_stream(messages: list[dict], model: str = None, max_tokens: int = 900) -> str:
+    """DeepSeek streaming API — parça parça üretir, tamamında döndürür.
+    Caller her chunk'ı async generator üzerinden okuyabilir."""
+    kwargs = dict(
+        model=model or DEEPSEEK_MODEL,
+        messages=messages,
+        temperature=0.2,
+        max_tokens=max_tokens,
+        stream=True,
+    )
+    full_text = []
+    try:
+        async with await deepseek.chat.completions.create(**kwargs) as stream:
+            async for chunk in stream:
+                delta = chunk.choices[0].delta.content if chunk.choices else None
+                if delta:
+                    full_text.append(delta)
+        return "".join(full_text)
+    except Exception as e:
+        log.warning(f"[deepseek] stream hatasi, fallback sync: {e}")
+        # Streaming başarısız olursa normal çağrıya dön
+        resp = await chat(messages, tools=None, model=model, max_tokens=max_tokens)
+        return resp["content"] or ""

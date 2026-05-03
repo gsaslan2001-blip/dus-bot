@@ -49,6 +49,16 @@ user_settings = cachetools.TTLCache(maxsize=100, ttl=CONVERSATION_TTL_SECONDS * 
 # --- Search Result Cache (5 min TTL for speed) ---
 search_cache = cachetools.TTLCache(maxsize=200, ttl=300)
 
+# --- Persistent httpx client (connection pooling — TCP/TLS her istekte yeniden kurulmasın) ---
+_http_client: httpx.AsyncClient | None = None
+
+
+def get_http_client() -> httpx.AsyncClient:
+    global _http_client
+    if _http_client is None or _http_client.is_closed:
+        _http_client = httpx.AsyncClient(timeout=30, http2=True)
+    return _http_client
+
 
 def get_context(chat_id: int) -> dict:
     if chat_id not in conv_context:
@@ -79,43 +89,58 @@ async def send(chat_id: int, text: str, parse_mode: str = "Markdown", reply_mark
     """Send message with auto-chunking for Telegram's 4096 char limit."""
     MAX_LEN = 4000
     parts = [text[i:i + MAX_LEN] for i in range(0, len(text), MAX_LEN)]
-    async with httpx.AsyncClient(timeout=30) as client:
-        for i, part in enumerate(parts):
-            payload = {"chat_id": chat_id, "text": part}
+    client = get_http_client()
+    for i, part in enumerate(parts):
+        payload = {"chat_id": chat_id, "text": part}
+        if parse_mode:
+            payload["parse_mode"] = parse_mode
+        if reply_markup and i == 0:
+            payload["reply_markup"] = reply_markup
+        resp = await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
+        if resp.status_code != 200:
+            log.error(f"Telegram send hatasi: {resp.status_code} {resp.text[:200]}")
             if parse_mode:
-                payload["parse_mode"] = parse_mode
-            # Only attach reply_markup to first chunk
-            if reply_markup and i == 0:
-                payload["reply_markup"] = reply_markup
-            resp = await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
-            if resp.status_code != 200:
-                log.error(f"Telegram send hatasi: {resp.status_code} {resp.text[:200]}")
-                # Retry without parse_mode if it failed
-                if parse_mode:
-                    payload.pop("parse_mode", None)
-                    payload.pop("reply_markup", None)
-                    await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
+                payload.pop("parse_mode", None)
+                payload.pop("reply_markup", None)
+                await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
 
 
 async def send_action(chat_id: int, action: str = "typing") -> None:
-    async with httpx.AsyncClient(timeout=10) as client:
-        await client.post(
-            f"{TELEGRAM_API}/sendChatAction",
-            json={"chat_id": chat_id, "action": action},
-        )
+    client = get_http_client()
+    await client.post(
+        f"{TELEGRAM_API}/sendChatAction",
+        json={"chat_id": chat_id, "action": action},
+    )
 
 
 async def answer_callback(callback_id: str, text: str, show_alert: bool = False) -> None:
-    """Answer a callback query with a toast or alert."""
-    async with httpx.AsyncClient(timeout=10) as client:
-        await client.post(
-            f"{TELEGRAM_API}/answerCallbackQuery",
-            json={
-                "callback_query_id": callback_id,
-                "text": text,
-                "show_alert": show_alert,
-            },
-        )
+    client = get_http_client()
+    await client.post(
+        f"{TELEGRAM_API}/answerCallbackQuery",
+        json={"callback_query_id": callback_id, "text": text, "show_alert": show_alert},
+    )
+
+
+async def edit_message(chat_id: int, message_id: int, text: str, parse_mode: str = "") -> bool:
+    """Mevcut bir Telegram mesajını düzenle. Başarılıysa True döner."""
+    client = get_http_client()
+    payload = {"chat_id": chat_id, "message_id": message_id, "text": text[:4000]}
+    if parse_mode:
+        payload["parse_mode"] = parse_mode
+    resp = await client.post(f"{TELEGRAM_API}/editMessageText", json=payload)
+    return resp.status_code == 200
+
+
+async def send_placeholder(chat_id: int) -> int | None:
+    """'Düşünüyorum...' placeholder mesajı gönder, message_id döner."""
+    client = get_http_client()
+    resp = await client.post(
+        f"{TELEGRAM_API}/sendMessage",
+        json={"chat_id": chat_id, "text": "..."},
+    )
+    if resp.status_code == 200:
+        return resp.json().get("result", {}).get("message_id")
+    return None
 
 
 async def notify_admin(text: str) -> None:
@@ -211,6 +236,7 @@ async def webhook(request: Request):
         await handle_message(
             chat_id, text, send, send_action, ctx,
             get_settings, search_cache, get_search_cache_key,
+            send_placeholder=send_placeholder, edit_message=edit_message,
         )
 
     except Exception as e:
@@ -264,29 +290,35 @@ async def startup():
     if ALLOWED_CHAT_IDS:
         log.info(f"Whitelist: {ALLOWED_CHAT_IDS}")
 
+    # Persistent HTTP client başlat
+    get_http_client()
+    log.info("HTTP client baslатildi (connection pool aktif)")
+
     # Set webhook on startup
     base_url = os.environ.get("BASE_URL", "").rstrip("/")
     if base_url:
         webhook_url = f"{base_url}/webhook"
-        async with httpx.AsyncClient(timeout=15) as client:
-            resp = await client.post(
-                f"{TELEGRAM_API}/setWebhook",
-                json={"url": webhook_url, "allowed_updates": ["message", "edited_message", "callback_query"]},
-            )
-            result = resp.json()
-            if result.get("ok"):
-                log.info(f"Webhook basariyla kuruldu: {webhook_url}")
-            else:
-                log.error(f"Webhook kurulum hatasi: {result}")
+        client = get_http_client()
+        resp = await client.post(
+            f"{TELEGRAM_API}/setWebhook",
+            json={"url": webhook_url, "allowed_updates": ["message", "edited_message", "callback_query"]},
+        )
+        result = resp.json()
+        if result.get("ok"):
+            log.info(f"Webhook basariyla kuruldu: {webhook_url}")
+        else:
+            log.error(f"Webhook kurulum hatasi: {result}")
     else:
-        log.warning("BASE_URL ayarlanmamis, webhook kurulamadi. Railway'de otomatik ayarlanir.")
+        log.warning("BASE_URL ayarlanmamis, webhook kurulamadi.")
 
 
 @app.on_event("shutdown")
 async def shutdown():
     log.info("Atlas Bot kapatiliyor...")
-    # Webhook silinmiyor — yeni instance startup'ta zaten üzerine yazar.
-    # Silme, Railway deploy sırasında mesaj kaybına yol açıyordu.
+    global _http_client
+    if _http_client and not _http_client.is_closed:
+        await _http_client.aclose()
+    # Webhook silinmiyor — yeni instance startup'ta üzerine yazar.
 
 
 # --- Run ---
