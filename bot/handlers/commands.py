@@ -124,8 +124,8 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
                 {"text": "🔬 Kapsamlı", "callback_data": "settings:speed:comprehensive"},
             ],
             [
-                {"text": "🧠 R1 Reasoner", "callback_data": "settings:model:deepseek-reasoner"},
-                {"text": "⚡ V3 Hızlı", "callback_data": "settings:model:deepseek-chat"},
+                {"text": "🧠 Reasoner (Doğru)", "callback_data": "settings:model:deepseek-reasoner"},
+                {"text": "⚡ V4 Pro (Hızlı)", "callback_data": "settings:model:deepseek-chat"},
             ],
             [
                 {"text": "🔍 -1 Derinlik", "callback_data": "settings:depth:down"},

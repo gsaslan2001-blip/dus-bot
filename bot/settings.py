@@ -12,12 +12,12 @@ ALLOWED_CHAT_IDS = set(
 # --- DeepSeek ---
 DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-DEEPSEEK_MODEL = "deepseek-reasoner"  # R1: adım adım düşünen, tıbbi içerikte daha doğru
-DEEPSEEK_CHAT = "deepseek-chat"       # V3: hızlı, basit sorgular için
+DEEPSEEK_MODEL = "deepseek-reasoner"  # Reasoner: adım adım düşünen, tıbbi içerikte daha doğru
+DEEPSEEK_CHAT = "deepseek-chat"       # V4 Pro: en güçlü chat modeli, hızlı
 
 AVAILABLE_MODELS = {
-    "deepseek-reasoner": "DeepSeek R1 (Akıl Yürüten)",
-    "deepseek-chat": "DeepSeek V3 (Hızlı)",
+    "deepseek-reasoner": "DeepSeek Reasoner (Doğru)",
+    "deepseek-chat": "DeepSeek V4 Pro (Hızlı)",
 }
 
 # --- Pinecone ---
