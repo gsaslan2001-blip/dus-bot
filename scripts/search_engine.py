@@ -8,7 +8,10 @@ from pinecone import Pinecone
 from supabase import create_client, Client
 from openai import OpenAI
 
-from embedding_utils import get_embedder
+try:
+    from scripts.embedding_utils import get_embedder  # Railway: WORKDIR=/app
+except ImportError:
+    from embedding_utils import get_embedder  # Direkt scripts/ içinden çalıştırma
 from dotenv import load_dotenv
 
 # --- Configuration & Logging ---

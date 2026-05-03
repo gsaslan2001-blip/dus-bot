@@ -145,21 +145,20 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
     await send(chat_id, text, parse_mode="Markdown", reply_markup=json.dumps(keyboard))
 
 
-async def handle_settings_callback(chat_id: int, callback_data: str, user_id: int,
+async def handle_settings_callback(chat_id: int, callback_data: str, user_id: int, callback_id: str,
                                    send, answer_callback, get_settings, update_settings) -> None:
     """Handle settings inline keyboard callbacks."""
     parts = callback_data.split(":")
     action = parts[1] if len(parts) > 1 else ""
 
     if action == "close":
-        await answer_callback(callback_data.split(":")[0] if ":" in callback_data else "", "Menu kapatildi")
-        # Delete settings message or just ignore
+        await answer_callback(callback_id, "Menu kapatildi")
         return
 
     if action == "reset":
         from bot.settings import USER_SETTINGS_DEFAULTS
         update_settings(chat_id, USER_SETTINGS_DEFAULTS.copy())
-        await answer_callback("", "Ayarlar sifirlandi!")
+        await answer_callback(callback_id, "Ayarlar sifirlandi!")
         await cmd_settings(chat_id, send, get_settings, update_settings)
         return
 
@@ -175,7 +174,7 @@ async def handle_settings_callback(chat_id: int, callback_data: str, user_id: in
             settings["search_depth"] = cfg["search_depth"]
             settings["rerank_enabled"] = cfg["rerank_enabled"]
             update_settings(chat_id, settings)
-            await answer_callback("", f"Hiz modu: {cfg['label']}")
+            await answer_callback(callback_id, f"Hiz modu: {cfg['label']}")
             await cmd_settings(chat_id, send, get_settings, update_settings)
 
     elif action == "model":
@@ -183,7 +182,7 @@ async def handle_settings_callback(chat_id: int, callback_data: str, user_id: in
         if model in AVAILABLE_MODELS:
             settings["model"] = model
             update_settings(chat_id, settings)
-            await answer_callback("", f"Model: {AVAILABLE_MODELS[model]}")
+            await answer_callback(callback_id, f"Model: {AVAILABLE_MODELS[model]}")
             await cmd_settings(chat_id, send, get_settings, update_settings)
 
     elif action == "depth":
@@ -194,7 +193,7 @@ async def handle_settings_callback(chat_id: int, callback_data: str, user_id: in
         elif direction == "down":
             settings["search_depth"] = max(2, current - 1)
         update_settings(chat_id, settings)
-        await answer_callback("", f"Arama derinligi: {settings['search_depth']}")
+        await answer_callback(callback_id, f"Arama derinligi: {settings['search_depth']}")
         await cmd_settings(chat_id, send, get_settings, update_settings)
 
     elif action == "toggle":
@@ -203,5 +202,5 @@ async def handle_settings_callback(chat_id: int, callback_data: str, user_id: in
             settings["rerank_enabled"] = not settings.get("rerank_enabled", True)
             update_settings(chat_id, settings)
             status = "✅" if settings["rerank_enabled"] else "❌"
-            await answer_callback("", f"Reranking: {status}")
+            await answer_callback(callback_id, f"Reranking: {status}")
             await cmd_settings(chat_id, send, get_settings, update_settings)

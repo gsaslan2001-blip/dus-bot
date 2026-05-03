@@ -43,5 +43,12 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
     # Step 4: Run agent loop with search context
     response = await run_agent(cleaned_text, search_results, settings=settings)
 
-    # Step 5: Send response
+    # Step 5: Update conversation history
+    history = context.get("history", [])
+    history.append({"role": "user", "content": cleaned_text})
+    history.append({"role": "assistant", "content": response})
+    # Son 20 mesajı tut (10 konuşma turu)
+    context["history"] = history[-20:]
+
+    # Step 6: Send response
     await send(chat_id, response)

@@ -153,9 +153,9 @@ async def webhook(request: Request):
             cb_user_id = cb_user.get("id", 0)
 
             if cb_chat_id and cb_data:
-                log.info(f"[CALLBACK] chat={cb_chat_id} data={cb_data}")
+                log.info(f"[CALLBACK] chat={cb_chat_id} data={cb_data} id={cb_id}")
                 await handle_settings_callback(
-                    cb_chat_id, cb_data, cb_user_id,
+                    cb_chat_id, cb_data, cb_user_id, cb_id,
                     send, answer_callback, get_settings, update_settings
                 )
             return Response(status_code=200)
@@ -285,10 +285,8 @@ async def startup():
 @app.on_event("shutdown")
 async def shutdown():
     log.info("Atlas Bot kapatiliyor...")
-    # Delete webhook on shutdown
-    async with httpx.AsyncClient(timeout=10) as client:
-        await client.post(f"{TELEGRAM_API}/deleteWebhook")
-    log.info("Webhook silindi.")
+    # Webhook silinmiyor — yeni instance startup'ta zaten üzerine yazar.
+    # Silme, Railway deploy sırasında mesaj kaybına yol açıyordu.
 
 
 # --- Run ---

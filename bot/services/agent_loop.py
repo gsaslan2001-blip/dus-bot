@@ -93,4 +93,11 @@ async def run_agent(user_message: str, search_results: dict, settings: dict | No
         else:
             return resp["content"] or "Anladim, yanitinizi hazirliyorum."
 
-    return "Bu sorgu icin arama limitine ulasildi. Lutfen daha spesifik sorar misin?"
+    # Loop bitti ama hala tool call'lar vardı — toplanan bilgilerden final sentez yap
+    log.info(f"[agent] iterasyon limiti doldu, final sentez cagirisi yapiliyor")
+    try:
+        final_resp = await chat(messages, tools=None, model=model)
+        return final_resp["content"] or "Arama tamamlandi, bilgiler yuklendi."
+    except Exception as e:
+        log.error(f"[agent] final sentez hatasi: {e}")
+        return "Gerekli bilgilere ulastim ancak yanit hazirlanirken hata olustu. Lutfen tekrar dene."

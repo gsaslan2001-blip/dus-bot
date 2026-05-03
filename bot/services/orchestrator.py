@@ -77,7 +77,7 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
     speed_mode = settings.get("speed_mode", "balanced")
     is_fast = speed_mode == "fast"
 
-    tasks: dict[str, asyncio.Task] = {}
+    coros: dict[str, object] = {}
     ders = _detect_ders(query)
 
     # --- myppdfs: Always search when ders detected, or for study intents ---
@@ -95,11 +95,9 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
             all_ns = [ders]
         top_k = 10 if is_fast else 15
         if len(all_ns) > 1:
-            tasks["pdfs"] = asyncio.ensure_future(
-                search_multi_ns(query, "myppdfs", all_ns, top_k, search_depth)
-            )
+            coros["pdfs"] = search_multi_ns(query, "myppdfs", all_ns, top_k, search_depth)
         else:
-            tasks["pdfs"] = asyncio.to_thread(
+            coros["pdfs"] = asyncio.to_thread(
                 pinecone_search, query, "myppdfs", all_ns[0], top_k, search_depth
             )
 
@@ -111,16 +109,12 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
     # Fast mode: skip brain search unless explicitly memory intent
     if brain_should_search and not (is_fast and intent == "genel" and ders is not None):
         brain_top_k = 5 if is_fast else 10
-        tasks["brain"] = asyncio.ensure_future(
-            search_multi_ns(query, "mybrain", BRAIN_NAMESPACES, brain_top_k, search_depth)
-        )
+        coros["brain"] = search_multi_ns(query, "mybrain", BRAIN_NAMESPACES, brain_top_k, search_depth)
 
     # --- Supabase questions: For study and exam analysis ---
     if intent in ("ders_calis", "soru_sor", "cikmis_analiz"):
         q_limit = min(search_depth, 5)
-        tasks["questions"] = asyncio.to_thread(
-            search_questions, query, ders, q_limit
-        )
+        coros["questions"] = asyncio.to_thread(search_questions, query, ders, q_limit)
 
     # --- anki: When relevant ders or forced ---
     anki_should_search = (
@@ -129,15 +123,18 @@ async def orchestrate_search(query: str, intent: str, forced_index: str | None =
     )
     if anki_should_search:
         ns = ders if ders in ("protez", "radyoloji") else "protez"
-        tasks["anki"] = asyncio.to_thread(
+        coros["anki"] = asyncio.to_thread(
             pinecone_search, query, "anki", ns, 10, min(search_depth, 3)
         )
 
+    # Tüm aramaları gerçekten paralel başlat (create_task olmadan to_thread sıralı çalışır)
+    tasks = {key: asyncio.create_task(coro) for key, coro in coros.items()}
+
     # Run all in parallel, collect results
     results = {}
-    for key, coro in tasks.items():
+    for key, task in tasks.items():
         try:
-            results[key] = await coro
+            results[key] = await task
         except Exception as e:
             log.warning(f"[orchestrator] {key} arama hatasi: {e}")
             results[key] = []
