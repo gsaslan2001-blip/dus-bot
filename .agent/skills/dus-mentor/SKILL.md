@@ -3,8 +3,7 @@ name: dus-mentor
 description: |
   DUS Mentörü — Furkan'ın DUS 2026 sınavı için Pinecone vektör veritabanı, Supabase soru bankası
   ve Gemini LLM entegrasyonlu akıllı tıp eğitimi asistanı.
-  ⚠️ KRİTİK: Pinecone bulut embedding kotası DOLMUŞTUR. Tüm aramalar YEREL E5 + ham vektör ile yapılır.
-  MCP `search-records` ve `cascading-search` araçları KESİNLİKLE KULLANILMAZ.
+  Hibrit mimari: myppdfs/mybrain arama Integrated Inference, yükleme Yerel E5; dusbankasi OpenAI 3-small; anki OpenAI 3-large.
 
   Bu skill şu durumlarda tetiklenir:
   - Kullanıcı bir DUS sorusu, konu başlığı veya kavram ismi gönderdiğinde
@@ -59,8 +58,9 @@ parallel_skills:
 - `MYPPDFS.MD` → myppdfs index kılavuzu + S2/S5 arama protokolü
 - `MYBRAIN.MD` → mybrain index kılavuzu + hafıza politikası
 - `DUSBANKASI.MD` → dusbankasi + Supabase RPC entegrasyon notları
-- `scripts/config.py` → merkezi konfigürasyon (API anahtarları os.environ)
-- `scripts/upload_*.py` → branş yükleme scriptleri
+- `EMBEDDING.MD` → Hibrit embedding ve analiz altyapısı rehberi
+- `scripts/embedding_utils.py` → Embedding sağlayıcıları (get_embedder)
+- `scripts/dus_uploader.py` → Manifest tabanlı delta sync motoru
 
 ---
 
@@ -81,6 +81,12 @@ Kullanıcı girdisi
 ├─ "konuştuklarımızı kaydet" / hafıza kaydı
 │   └─ workflows/hafiza_kaydet.md
 │
+├─ "kalite kontrol" / "denetim" / "kalite denetimi"
+│   └─ workflows/kalite_kontrol.md
+│
+├─ "denetle [dosya]" / "kart denetle" (TXT → Ölüm Maçı → Kalite Kontrol)
+│   └─ workflows/olum_maci.md → workflows/kalite_kontrol.md
+│
 ├─ Hata / bug / script sorunu
 │   └─ workflows/debug.md
 │
@@ -97,22 +103,24 @@ Kullanıcı girdisi
 
 ### 3.1 Bağlantı ve Arama Standardı
 
-> **🔴 KRİTİK UYARI:** Pinecone bulut embedding kotası DOLDU. `search-records` ve `cascading-search`
-> MCP araçları bulut embedding tetiklediği için **KESİNLİKLE YASAKLANMIŞTIR.**
-> Tüm aramalar aşağıdaki YEREL vektörleme yolu ile yapılır:
-
 **Daima host kullan** (`pc.Index(host=HOST)`) — index ismiyle bağlanma, kota limitini zorlar.
 
+**myppdfs / mybrain — Integrated Inference (BİRİNCİL):**
 ```python
-# ZORUNLU ARAMA YOLU — mybrain / myppdfs:
-from embedding_utils import get_local_embedder
+# MCP: search-records ile index, namespace, query.inputs.text belirtilir
+# Python SDK: index.search(namespace="<ns>", query={"inputs": {"text": "sorgu"}}, top_k=15)
+```
 
-vec = get_local_embedder().embed_text("sorgu", is_query=True)  # YEREL CPU/GPU
-results = index.query(namespace="<ns>", vector=vec, top_k=15, include_metadata=True)
-
-# dusbankasi (Manuel embed — OpenAI text-embedding-3-small):
+**dusbankasi — OpenAI 3-small (1536-dim):**
+```python
 embedding = openai_client.embeddings.create(input=sorgu, model="text-embedding-3-small").data[0].embedding
 results = index.query(vector=embedding, top_k=10, include_metadata=True)
+```
+
+**Yükleme — Yerel E5 (myppdfs/mybrain):**
+```python
+from embedding_utils import get_embedder
+vec = get_embedder("local").embed_text("içerik", is_query=False)
 ```
 
 ### 3.2 Rerank — Her Aramada Zorunlu
@@ -139,7 +147,7 @@ pc.inference.rerank(
 | `mybrain` | `chathistory` | ~10 | E5-Large | Sohbet logları |
 | `myppdfs` | `patoloji` | 680 | E5-Large | Oral Patoloji |
 | `myppdfs` | `...` | ~8k | E5-Large | Diğer Branşlar |
-| `dusbankasi` | "" (default) | 16072 | OpenAI ada-3 | 16K+ DUS Sorusu |
+| `dusbankasi` | "" (default) | 16072 | OpenAI 3-small | 16K+ DUS Sorusu |
 
 ### 3.4 Yeni Branş Yükleme Akışı
 
@@ -205,7 +213,7 @@ record = {
 
 ---
 
-**Model fallback zinciri** (`config.py`'da tanımlı):
+**Model fallback zinciri:**
 `gemini-2.5-flash-preview` → `gemini-2.0-flash` → `gemini-2.0-flash-lite` → `gemini-3.1-flash-lite-preview` → `gemini-3.1-pro-preview`
 
 ---
@@ -268,12 +276,12 @@ record = {
 
 | Öncelik | Görev | Durum |
 |---------|-------|-------|
-| 🔴 Yüksek | Tam Yerel (E5) Mimariye Geçiş | ✅ BİTTİ |
-| 🔴 Yüksek | mybrain Namespace Reorganizasyonu | ✅ BİTTİ |
-| 🔴 Yüksek | 5'li Ajan Denetim Ağı (Audit & Refactor) Entegrasyonu | 🔄 Devam Ediyor |
-| 🟡 Orta | `dusbankasi` için doğrudan Pinecone query() metodu yaz | 🔄 Devam Ediyor |
+| 🟡 Orta | `dusbankasi` için doğrudan Pinecone query() metodu optimize et | 🔄 Devam Ediyor |
 | 🟢 Düşük | Ebbinghaus tekrar sistemi → mybrain entegrasyonu | 📅 Planlandı |
 | 🟢 Düşük | Branş PDF'lerinin E5 ile re-indexi | 🔄 Devam Ediyor |
+| ✅ Tamam | Tam Yerel (E5) Mimariye Geçiş | ✅ v8.9 |
+| ✅ Tamam | mybrain Namespace Reorganizasyonu | ✅ BİTTİ |
+| ✅ Tamam | Embedding Mimarisi Standardizasyonu (2026-05-03) | ✅ BİTTİ |
 
 ---
 

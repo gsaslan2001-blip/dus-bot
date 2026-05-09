@@ -12,15 +12,14 @@ Yeni bir DUS branşının PDF veya Markdown kaynaklarını `myppdfs` Pinecone in
 
 1. **Kaynak dizini doğrula** — Dosyalar mevcut mu? Kaç dosya var?
 2. **Namespace boş mu kontrol et** — `describe-index-stats` ile `myppdfs`'de bu namespace var mı bak
-3. **Upload scripti oluştur** — `scripts/upload_[branş]_to_pinecone.py` dosyasını yaz
-   - `config.py`'den API key ve host'u al
-   - Dosyaları chunk'la: `max_chars=1000`, `overlap=200`
-   - Retry + exponential backoff ekle
-   - Her chunk'u `myppdfs` → yeni namespace'e yükle
-4. **Script'i çalıştır** — Furkan onaylarsa `python scripts/upload_[branş]_to_pinecone.py`
+3. **Upload scripti ile yükle** — `scripts/dus_uploader.py` manifest tabanlı delta-sync motorunu kullan
+   - Kaynak dosyaları `vektörlenecek/` staging alanına yerleştir
+   - Embedding: **Yerel E5** (`get_embedder("local")`, 1024-dim) — 0 token maliyeti
+   - Chunk parametreleri: `max_chars=1000`, `overlap=200`
+   - `python scripts/dus_uploader.py` ile yükle
+4. **Script'i çalıştır** — Furkan onaylarsa yükleme başlatılır
 5. **Doğrula** — `describe-index-stats` ile namespace'deki kayıt sayısını kontrol et
-6. **Bot tool'u ekle** — `scripts/dus_bot.py` ve `scripts/main.py`'ye yeni `search_[branş]()` fonksiyonu ekle
-7. **Gemini.MD güncelle** — Namespace haritasını ve toplam kayıt sayısını güncelle
+6. **MYPPDFS.MD güncelle** — Namespace haritasını ve toplam kayıt sayısını güncelle
 
 ## Tamamlanma Kriteri
 - Upload başarılı (hata yok)

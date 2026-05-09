@@ -28,6 +28,7 @@ PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "")
 MYPPDFS_HOST = os.environ.get("MYPPDFS_HOST", "")
 ANKI_HOST = os.environ.get("ANKI_HOST", "")
+DUSBANKASI_HOST = os.environ.get("DUSBANKASI_HOST", "dusbankasi-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
@@ -51,6 +52,8 @@ def _get_pinecone_index(index_name: str):
         host = MYBRAIN_HOST or "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io"
     elif index_name == "anki":
         host = ANKI_HOST or "anki-0crkhvy.svc.aped-4627-b74a.pinecone.io"
+    elif index_name == "dusbankasi":
+        host = DUSBANKASI_HOST
     else:
         host = MYPPDFS_HOST or "myppdfs-0crkhvy.svc.aped-4627-b74a.pinecone.io"
         
@@ -132,7 +135,7 @@ def pinecone_search(query: str, index_name: str, namespace: str, top_k: int = 15
             return [{"text": d.document.text, "score": d.score} for d in rank_res.data]
         except Exception as re:
             logger.warning(f"[search] Standart Rerank hatası: {re}")
-            return [m.get("metadata", {}).get("text", "") for m in matches[:rerank_top_n]]
+            return [{"text": m.get("metadata", {}).get("text", ""), "score": None} for m in matches[:rerank_top_n]]
 
 async def async_pinecone_search_ns(index, query_vec: List[float], namespace: str, top_k: int = 15):
     """Single namespace search for asyncio.gather."""
@@ -228,28 +231,54 @@ async def async_pinecone_search(query: str, index_name: str, namespace: str, top
 
 # --- Supabase Search Functions ---
 def search_questions(query: str, lesson: str = None, limit: int = 5) -> List[Dict[str, Any]]:
-    """Supabase (DUSBANK) üzerinden semantik soru araması yapar."""
-    if not supabase:
-        logger.error("[search] Supabase istemcisi eksik. Arama yapılamıyor.")
+    """Pinecone (dusbankasi) üzerinden doğrudan semantik soru araması yapar."""
+    if not pc:
+        logger.error("[search] Pinecone istemcisi eksik. Arama yapılamıyor.")
         return []
 
     try:
+        # Step 1: Embed query using OpenAI (1536-dim)
         vec = _get_question_embedding(query)
-        params = {
-            "query_embedding": vec, 
-            "match_threshold": 0.5, 
-            "match_count": limit,
-            "p_lesson": lesson if lesson else "" # Boş string veya None gönder
-        }
-            
-        res = supabase.rpc("match_questions_semantic", params).execute()
-        return res.data
+        
+        # Step 2: Query Pinecone directly
+        index = pc.Index(host=DUSBANKASI_HOST)
+        
+        # Filter by lesson if provided using metadata filter
+        filter_dict = {"lesson": lesson} if lesson else None
+        
+        res = index.query(
+            vector=vec, 
+            top_k=limit, 
+            filter=filter_dict,
+            include_metadata=True
+        )
+        
+        results = []
+        for match in res.get("matches", []):
+            meta = match.get("metadata", {})
+            # Map metadata fields to expected dictionary structure
+            results.append({
+                "id": match.get("id"),
+                "question": meta.get("question", meta.get("text", "")),
+                "option_a": meta.get("option_a", ""),
+                "option_b": meta.get("option_b", ""),
+                "option_c": meta.get("option_c", ""),
+                "option_d": meta.get("option_d", ""),
+                "option_e": meta.get("option_e", ""),
+                "correct_answer": meta.get("correct_answer", ""),
+                "explanation": meta.get("explanation", ""),
+                "lesson": meta.get("lesson", ""),
+                "score": match.get("score")
+            })
+        return results
     except Exception as e:
-        logger.error(f"[search] Soru bankası hatası: {e}")
+        logger.error(f"[search] Pinecone soru bankası hatası: {e}")
         return []
 
 async def async_search_questions(query: str, lesson: str = None, limit: int = 5) -> List[Dict[str, Any]]:
-    """Supabase (DUSBANK) üzerinden semantik soru araması yapar (Asenkron)."""
+    """Supabase RPC üzerinden semantik soru araması yapar (Asenkron).
+    NOT: Sync versiyonu (search_questions) Pinecone'u direkt kullanır.
+    Bu async versiyon Supabase RPC path'ini kullanır — bakım durumunu kontrol et."""
     if not supabase:
         logger.error("[search] Supabase istemcisi eksik. Arama yapılamıyor.")
         return []
@@ -292,16 +321,21 @@ def main():
     parser.add_argument("--top_n", type=int, default=5, help="Rerank sonrası dönecek sonuç sayısı")
     parser.add_argument("--json", action="store_true", help="Çıktıyı JSON formatında ver")
     parser.add_argument("--questions", action="store_true", help="Supabase soru bankasında ara")
+    parser.add_argument("--lesson", help="Ders filtresi (Sadece --questions ile)")
 
     args = parser.parse_args()
 
     if args.questions:
-        results = search_questions(args.query, limit=args.top_n)
+        results = search_questions(args.query, lesson=args.lesson, limit=args.top_n)
         if args.json:
             print(json.dumps(results, ensure_ascii=False))
         else:
             for i, r in enumerate(results):
-                print(f"\n--- SORU {i+1} ---\n{r.get('question_text', '')}\n")
+                q_text = r.get('question', '')
+                options = f"A) {r.get('option_a', '')}\nB) {r.get('option_b', '')}\nC) {r.get('option_c', '')}\nD) {r.get('option_d', '')}\nE) {r.get('option_e', '')}"
+                correct = r.get('correct_answer', '')
+                expl = r.get('explanation', '')
+                print(f"\n--- SORU {i+1} ---\n{q_text}\n{options}\n\nCEVAP: {correct}\nAÇIKLAMA: {expl}\n")
     else:
         if args.ns and len(args.ns) > 1:
             results = asyncio.run(search_multi_ns(args.query, args.index, args.ns, args.top_k, args.top_n))

@@ -1,6 +1,6 @@
 """
 auto_sync_dus.py — Günlük otomatik sync (Windows Task Scheduler tarafından çağrılır)
-Sadece son 25 saatte değişen dosyaları yükler (mtime kontrolü manifest'te).
+Manifest tabanlı delta sync: mtime değişen dosyaları yükler (DUS + TELOS + chathistory).
 """
 import subprocess, sys, logging, codecs
 from pathlib import Path

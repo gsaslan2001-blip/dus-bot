@@ -40,11 +40,10 @@ Her soru üretmeden önce kontrol et:
 - [ ] DUS soru formatına uyuyor mu?
 
 ### 5. Kaydet (Opsiyonel)
-Furkan "kaydet" derse soruları `mybrain/dus-data`'ya upsert et:
-```
-id: "question_batch-[konu]-YYYY-MM-DD"
-type: "generated_questions"
-```
+Furkan "kaydet" derse:
+1. Soruları `vektörlenecek/soru_uret_[konu]_[GGAAYYYY].md` olarak kaydet.
+2. `python scripts/dus_uploader.py --chathistory` ile `mybrain/chathistory` namespace'ine yükle.
+   - ID formatı (metadata): `"question_batch-[konu]-YYYY-MM-DD"`, type: `"generated_questions"`
 
 ---
 

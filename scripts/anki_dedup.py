@@ -1,7 +1,7 @@
 """
 anki_dedup.py — Pinecone `anki` indeksinde benzerlik analizi
 Namespace içindeki kartları iterate eder, her kart için top-10 komşu sorgular.
-Benzerlik >= 0.90 olan çiftleri JSON raporu olarak yazar.
+Benzerlik >= 0.84 olan çiftleri JSON raporu olarak yazar.
 Çapraz format karşılaştırması: Cloze ↔ Basic kartlar da kıyaslanır.
 
 Kullanım:
@@ -32,7 +32,7 @@ PROJECT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 try:
-    from embedding_utils import get_local_embedder
+    from embedding_utils import get_embedder
 except ImportError:
     logger.error("embedding_utils bulunamadı.")
     sys.exit(1)
@@ -43,9 +43,9 @@ from pinecone import Pinecone
 ANKI_HOST = os.environ.get("ANKI_HOST", "anki-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 ANKI_JSONLAR = PROJECT_DIR / "anki_jsonlar"
-DEFAULT_THRESHOLD = 0.90
+DEFAULT_THRESHOLD = 0.84
 DEFAULT_TOP_K = 10
-QUERY_DELAY = 0.05  # saniye — rate limit koruması
+QUERY_DELAY = 0.02  # saniye — rate limit koruması
 
 if not PINECONE_API_KEY:
     logger.error("PINECONE_API_KEY .env'de tanımlı değil.")
@@ -107,6 +107,28 @@ def query_similar(vec: List[float], namespace: str, top_k: int, exclude_id: str)
     return matches
 
 
+def _lexical_guard(text_a: str, text_b: str) -> bool:
+    """
+    Farklı tip/evre/sınıf numaralarına sahip kartların kopya olarak işaretlenmesini engeller.
+    Eğer numaralar farklıysa True döner (yani dedup engellenmelidir).
+    """
+    import re
+    text_a = text_a.lower()
+    text_b = text_b.lower()
+
+    stage_patterns = [
+        r"\btip\s*(\d+|[ivx]+)\b", r"\bevre\s*(\d+|[ivx]+)\b",
+        r"\bsınıf\s*(\d+|[ivx]+)\b", r"\bfaz\s*(\d+|[ivx]+)\b",
+        r"\bgrade\s*(\d+|[ivx]+)\b", r"\bstage\s*(\d+|[ivx]+)\b",
+    ]
+    for p in stage_patterns:
+        m_a = re.search(p, text_a)
+        m_b = re.search(p, text_b)
+        if m_a and m_b and m_a.group(1) != m_b.group(1):
+            return True
+    return False
+
+
 def find_duplicates(
     cards: List[dict],
     namespace: str,
@@ -117,7 +139,7 @@ def find_duplicates(
     Tüm kartları iterate eder, benzerlik >= threshold olan çiftleri bulur.
     Her çift yalnızca bir kez raporlanır (A-B = B-A tekrarı engellenir).
     """
-    embedder = get_local_embedder()
+    embedder = get_embedder("openai")
     seen_pairs: Set[Tuple[str, str]] = set()
     duplicate_pairs = []
 
@@ -136,7 +158,7 @@ def find_duplicates(
         if idx % 20 == 0 or idx == 1 or idx == total:
             logger.info(f"  [{idx}/{total}] {guid[:12]}...")
 
-        # Yerel E5 ile embed et (query mode) — embed_text prefix'i kendi ekler
+        # OpenAI text-embedding-3-large ile embed et (query mode)
         vec = embedder.embed_text(vmetin, is_query=True)
 
         # Pinecone'a sor
@@ -146,6 +168,13 @@ def find_duplicates(
         for match in similar:
             score = match["score"]
             if score < threshold:
+                continue
+
+            match_text = match["metadata"].get("text", "")
+            
+            # Lexical Guard Check
+            if _lexical_guard(vmetin, match_text):
+                logger.info(f"  [Lexical Guard] Engellendi: {guid[:8]} vs {match['id'][:8]}")
                 continue
 
             match_guid = match["id"]
@@ -164,7 +193,7 @@ def find_duplicates(
                 "kart_a_baslik": card.get("baslik", ""),
                 "kart_b_baslik": meta_b.get("baslik", ""),
                 "kart_a_metin": vmetin,
-                "kart_b_metin": meta_b.get("text", ""),
+                "kart_b_metin": match_text,
             })
 
     # Score'a göre sırala (en yüksek önce)

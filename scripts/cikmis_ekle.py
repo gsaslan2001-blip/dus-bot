@@ -350,7 +350,7 @@ UPLOAD_BATCH = 96  # Pinecone upsert batch boyutu
 def cmd_upload(args):
     """JSON dosyasını myppdfs/cikmis namespace'ine yükle."""
     from pinecone import Pinecone
-    from embedding_utils import get_local_embedder
+    from embedding_utils import get_embedder
 
     json_path = args.upload
     if not os.path.isabs(json_path):
@@ -370,7 +370,7 @@ def cmd_upload(args):
     print(f"Upload: {json_path}")
     print(f"  Aktif kayıt: {len(active)}/{len(records)}")
 
-    embedder = get_local_embedder()
+    embedder = get_embedder("local")
     pc       = Pinecone(api_key=api_key)
     index    = pc.Index(host=MYPPDFS_HOST)
 

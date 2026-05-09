@@ -15,6 +15,9 @@ import codecs
 import logging
 import time
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Windows UTF-8 fix
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
@@ -29,7 +32,7 @@ PROJECT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 try:
-    from embedding_utils import get_local_embedder
+    from embedding_utils import get_embedder
 except ImportError:
     print("embedding_utils bulunamadı.")
     sys.exit(1)
@@ -43,7 +46,7 @@ def main():
     parser = argparse.ArgumentParser(description="Yerel Anki JSON Dosyası İçi Benzerlik Analizi")
     parser.add_argument("--ders", type=str, required=True, help="Ders adı (örn: fizyo)")
     parser.add_argument("--unite", type=str, required=True, help="Ünite adı (örn: basic)")
-    parser.add_argument("--threshold", type=float, default=0.90, help="Eşitlik eşiği (varsayılan: 0.90)")
+    parser.add_argument("--threshold", type=float, default=0.84, help="Eşitlik eşiği (varsayılan: 0.84)")
     parser.add_argument("--threads", type=int, default=4, help="PyTorch CPU thread sayısı")
     parser.add_argument("--batch-size", type=int, default=16, help="Encoding batch size")
     args = parser.parse_args()
@@ -63,22 +66,17 @@ def main():
         cards = json.load(f)
 
     logger.info(f"{len(cards)} kart yüklendi. Vektörleme başlıyor...")
-    embedder = get_local_embedder()
+    embedder = get_embedder("openai")
 
     texts = [c.get("vektorlenecek_metin", "") for c in cards]
     prefixed = [f"passage: {t}" if not t.startswith("passage: ") else t for t in texts]
 
     # embed_batch yerine doğrudan optimize encode çağrısı
-    logger.info(f"Encoding {len(texts)} texts with batch_size={args.batch_size}...")
+    logger.info(f"Encoding {len(texts)} texts...")
     start_time = time.time()
     
     # Model encode çağrısı
-    vectors = embedder.model.encode(
-        prefixed, 
-        batch_size=args.batch_size, 
-        normalize_embeddings=True, 
-        show_progress_bar=True
-    )
+    vectors = embedder.embed_batch(prefixed)
     
     elapsed = time.time() - start_time
     logger.info(f"Vektörleme tamamlandı ({elapsed:.2f} saniye). Benzerlikler hesaplanıyor...")
@@ -144,3 +142,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -1,5 +1,5 @@
 """
-dus_uploader.py — .claude/DUS -> mybrain Pinecone (Yerel E5)
+dus_uploader.py — .claude/DUS -> mybrain Pinecone (Pinecone Inference E5, 1024-dim)
 Manifest tabanlı overwrite: dosya değiştiğinde eski chunk'lar silinir, yenisi yazılır.
 """
 
@@ -30,7 +30,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 
 # Local modules
 try:
-    from embedding_utils import get_local_embedder
+    from embedding_utils import get_embedder
 except ImportError:
     logger.error("embedding_utils module not found. Make sure it is in SCRIPT_DIR.")
     sys.exit(1)
@@ -47,7 +47,7 @@ MANIFEST_PATH = SCRIPT_DIR / "dus_manifest.json"
 MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 
-BATCH_SIZE = 50
+BATCH_SIZE = 96
 MAX_CHARS = 1000
 OVERLAP_CHARS = 200
 
@@ -131,11 +131,28 @@ def retry_operation(retries: int = 3, delay: float = 1.0):
     return decorator
 
 
-def embed_batch_local(texts: List[str], is_query: bool = False) -> List[List[float]]:
+def embed_batch_pinecone_e5(texts: List[str], is_query: bool = False) -> List[List[float]]:
     if not texts:
         return []
-    # DUS Mentörü Kararı: Hafıza ve Sohbet vektörleme için yerel E5 (1024-dim) kullanıyoruz.
-    return get_local_embedder(provider="local").embed_batch(texts, is_query=is_query)
+    
+    # Pinecone Inference API (multilingual-e5-large) batch limit is 96.
+    # Process in batches of 90 to be safe.
+    batch_size = 90
+    all_embeddings = []
+    embedder = get_embedder(provider="pinecone")
+    
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i:i + batch_size]
+        logger.info(f"[pinecone-embed] Processing embedding batch: {i}-{i + len(batch)} / {len(texts)}")
+        embeddings = embedder.embed_batch(batch, is_query=is_query)
+        all_embeddings.extend(embeddings)
+        
+    return all_embeddings
+
+
+def embed_batch_local(texts: List[str], is_query: bool = False) -> List[List[float]]:
+    """Backward-compatible alias. The active provider is Pinecone Inference E5, not a local model."""
+    return embed_batch_pinecone_e5(texts, is_query=is_query)
 
 
 def smart_chunk(text: str, source_file: str) -> List[str]:
@@ -219,6 +236,14 @@ def save_manifest(manifest: Dict[str, Any]):
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
 
+def file_sha256(filepath: Path) -> str:
+    h = hashlib.sha256()
+    with open(filepath, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 # --- Pinecone Operations ---
 @retry_operation(retries=3, delay=1.0)
 def upsert_batch(batch: List[Dict[str, Any]], namespace: str):
@@ -272,26 +297,30 @@ def process_file(filepath: Path, root: Path, manifest: Dict[str, Any],
 
     manifest_key = f"{namespace}::{rel_path}"
 
-    if not force and manifest_key in manifest:
-        if manifest[manifest_key].get("mtime", "") == mtime:
-            return 0  # Değişmemiş, atla
 
     text = filepath.read_text(encoding="utf-8", errors="replace").strip()
     if not text:
         return 0
 
+    sha256 = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    manifest_entry = manifest.get(manifest_key, {})
+    if not force and manifest_entry:
+        if manifest_entry.get("sha256") == sha256:
+            return 0
+        # Backward compatibility for existing mtime-only manifest entries.
+        if "sha256" not in manifest_entry and manifest_entry.get("mtime", "") == mtime:
+            return 0
+
     chunks = smart_chunk(text, rel_path)
     total = len(chunks)
 
-    # Eski chunk'ları sil
     old_ids = manifest.get(manifest_key, {}).get("ids", [])
-    delete_ids(old_ids, namespace, dry_run)
 
     if dry_run:
-        logger.info(f"[DRY-RUN] {rel_path} -> {namespace} ({total} chunk)")
+        logger.info(f"[DRY-RUN] {rel_path} -> {namespace} ({total} chunk, would embed via Pinecone E5)")
         return total
 
-    vectors_raw = embed_batch_local([f"passage: {c}" for c in chunks], is_query=False)
+    vectors_raw = embed_batch_pinecone_e5([f"passage: {c}" for c in chunks], is_query=False)
 
     new_ids = []
     upsert_list = []
@@ -303,7 +332,10 @@ def process_file(filepath: Path, root: Path, manifest: Dict[str, Any],
 
     upsert_chunks(upsert_list, namespace, dry_run)
 
-    manifest[manifest_key] = {"mtime": mtime, "ids": new_ids, "namespace": namespace}
+    stale_ids = [old_id for old_id in old_ids if old_id not in new_ids]
+    delete_ids(stale_ids, namespace, dry_run)
+
+    manifest[manifest_key] = {"mtime": mtime, "sha256": sha256, "ids": new_ids, "namespace": namespace}
     logger.info(f"[OK] {rel_path} -> {namespace} ({total} chunk)")
     return total
 

@@ -1,7 +1,7 @@
 # 🧠 DUS Mentörü — Proje Rehberi (README)
 
 > **⚠️ LLM ONBOARDING:** Bu proje, DUS 2026 sınavına hazırlanan öğrenciler için geliştirilmiş, **mekanizma odaklı** bir tıp/diş hekimliği eğitim asistanıdır. Proje, tamamen **local-first** (yerel öncelikli) bir RAG (Retrieval-Augmented Generation) mimarisi üzerine kuruludur.
-> **Güncellenme:** 2026-04-27 | **Versiyon:** v8.2 (S5 Pipeline Standardizasyonu)
+> **Güncellenme:** 2026-05-03 | **Versiyon:** v8.9 (Hibrit Mimari Standardizasyonu)
 
 ---
 
@@ -75,6 +75,11 @@ Pinecone/
 -   **`/cikmis-ekle`**: Yeni sınav PDF'lerini sisteme dahil etme süreci.
 -   **`/hafiza-kaydet`**: Oturum notlarını kalıcı belleğe (Pinecone) mühürleme.
 -   **`/debug`**: Sistem hatalarını ve veri tutarsızlıklarını giderme.
+-   **`/test-olustur`**: Ders ve konu bazlı anlam odaklı test oluşturma.
+-   **`/anki-update`**: Yeni Anki kartlarının ön kontrol ve dedup taraması.
+-   **`/olum-maci`**: Benzer kartlar arasında LLM destekli eleme turnuvası.
+-   **`/kalite-kontrol`**: Olum maci ciktilari icin 5 kriterli kalite denetimi ve Anki-ready dosya uretimi.
+-   **`/cloze-uret`**: Cloze formatında özgün Anki kartı üretimi.
 
 ---
 *Bu README, LLM'lerin projeyi saniyeler içinde anlayabilmesi için yapılandırılmıştır.*

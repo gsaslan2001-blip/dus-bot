@@ -1,72 +1,50 @@
 # 📖 Ders Çalışma Protokolü (DUS Mentörü)
-> Son güncelleme: 2026-04-28 | v8.0 — Yerel Vektörleme Zorunluluğu: MCP `search-records` kesinlikle yasaklandı, tüm aramalar yerel E5 + `run_command` ile yapılır. Kısa/özet yanıt yasağı korundu.
+> Son güncelleme: 2026-05-09 | v9.0 — **Pinecone-First Mimari**: Arama ve yükleme Pinecone Inference E5, Anki OpenAI 3-large (3072), dusbankasi OpenAI 3-small (1536). Kısa/özet yanıt yasağı kesindir.
 
 > **⚠️ TALİMAT:** Bir konu anlatımı veya soru çözümü talebi geldiğinde bu protokol EKSİKSİZ uygulanmalıdır. YANIT ASLA KISA OLAMAZ.
+
+> **🔀 Mod Seçimi (Otomatik):**
+> - Kullanıcı mesajında **"kısaca"** kelimesi varsa → **S2 Modu**: FAZ 1 (topK=10, topN=3), FAZ 2 Bölüm 1 + özet Bölüm 2, 3 soru.
+> - Diğer tüm durumlarda → **S5 Full Pipeline**: Bu protokolün tamamı uygulanır.
 
 ---
 
 ## ⛔ MUTLAK YASAKLAR (Tüm Adımlardan Öncelikli)
 
 1. **KISA YANIT YASAĞI:** Yanıtlar ASLA kısa, özetlenmiş veya sığ olamaz. Her yanıt, kaynaktan gelen bilginin TAMAMINI kapsamak zorundadır. Kısa yanıt vermek bu protokolün EN AĞIR İHLALİDİR.
-2. **SIFIR ÖZET & SIFIR KISALTMA:** Kaynak verileri asla özetlenemez, kısaltılamaz veya "temsili" olarak sunulamaz. Kaynakta ne varsa tam metin olarak sunulmalıdır.
+2. **SIFUR ÖZET & SIFIR KISALTMA:** Kaynak verileri asla özetlenemez, kısaltılamaz veya "temsili" olarak sunulamaz. Kaynakta ne varsa tam metin olarak sunulmalıdır.
 3. **BELİRSİZ İFADE YASAĞI:** "gibi", "vb.", "vs.", "bazı belirtiler", "çeşitli nedenler", "birçok faktör", "diğerleri" gibi kestirme, muğlak ve belirsiz ifadeler KESİNLİKLE YASAKLANMIŞTIR. Bulunan tüm varyantlar, tipler, belirtiler, nedenler ve faktörler tek tek, madde madde, eksiksiz olarak yazılmak zorundadır.
-4. **SIFIR HALÜSINASYON:** Pinecone'dan gelmeyen, kaynakta yer almayan bilgiler üretilemez. Sorgulanmayan frekanslar için tahmini sayı verilemez. Emin olunmayan bilgi için "Bilmiyorum, doğrulayalım" denmelidir.
+4. **SIFIR HALÜSİNASYON:** Pinecone'dan gelmeyen, kaynakta yer almayan bilgiler üretilemez. Sorgulanmayan frekanslar için tahmini sayı verilemez. Emin olunmayan bilgi için "Bilmiyorum, doğrulayalım" denmelidir.
 5. **MEKANİZMA ŞARTI:** Mekanizmasız (A → B → C zinciri olmadan) bilgi vermek yasaktır. Her süreç, en az 3 basamaklı bir nedensellik zinciriyle açıklanmalıdır.
 
 ---
 
-## 🔴 PINECONE ARAMA YASAĞI — KRİTİK KURAL
+## 🟢 PINECONE ENTEGRE ARAMA (Integrated Search) — GÜNCEL KURAL
 
-> **Pinecone bulut embedding kotası (multilingual-e5-large, 5M token/ay) DOLMUŞTUR.**
-> Aşağıdaki yöntemler kesinlikle YASAKLANMIŞTIR çünkü bulut embedding tetiklerler:
->
-> - ❌ `mcp_pinecone-mcp-server_search-records` (MCP aracı — inputs.text parametresi Pinecone bulut embedding kullanır)
-> - ❌ `mcp_pinecone-mcp-server_cascading-search` (MCP aracı — aynı nedenle)
-> - ❌ `index.search(query={"inputs": {"text": "..."}})` (Python SDK — aynı nedenle)
->
-> **ZORUNLU ALTERNATİF:** Tüm aramalar aşağıdaki yerel vektörleme akışı ile yapılır:
-> 1. Sorguyu **yerel E5-Large** ile vektörle → `run_command` ile `search_engine.py` çalıştır
-> 2. Veya doğrudan `index.query(vector=[...], top_k=15)` kullan (ham vektör gönderimi)
->
-> **İZİN VERİLEN MCP ARAÇLARI:**
-> - ✅ `mcp_pinecone-mcp-server_rerank-documents` (Reranker — bulut embedding KULLANMAZ)
-> - ✅ `mcp_pinecone-mcp-server_describe-index-stats` (İstatistik — embedding KULLANMAZ)
-> - ✅ `mcp_pinecone-mcp-server_upsert-records` (Kayıt yazma — yerel vektörle birlikte kullanılır)
-> - ✅ `mcp_pinecone-mcp-server_list-indexes` (Listeleme — embedding KULLANMAZ)
+> **Arama performansını artırmak için Integrated Inference (Managed E5) sistemi BİRİNCİL yöntemdir.** Yerel model yükleme gecikmesi (10sn+) bu sayede ortadan kaldırılmıştır.
+
+**Uygulama Yöntemi (Sırasıyla):**
+1. ✅ **MCP Kullanımı:** `mcp_pinecone-mcp-server_search-records` tool'u ile doğrudan Integrated Search.
+   - `query.inputs.text` alanına sorguyu yaz.
+   - Pinecone bulutta vektörleyip sonucu döndürür (500ms).
+2. ✅ **CLI Kullanımı:** `python scripts/search_engine.py` (Arka planda Integrated E5 tetikler).
+3. ✅ **Reranker Şartı:** Aramadan gelen sonuçlar her zaman `bge-reranker-v2-m3` ile tekrar sıralanmalıdır.
+
+**NOT:** `upsert` (veri yükleme) işlemleri `dus_uploader.py` üzerinden Pinecone Inference E5 API ile yapılır.
 
 ---
 
-## ── FAZ 1: VERİ TOPLAMA (S5 Pipeline — Yerel Vektörleme ZORUNLU) ────
+## ── FAZ 1: VERİ TOPLAMA (S5 Pipeline) ────
 
-### Adım 1: Yerel Vektörleme & Pinecone Ham Vektör Araması
-
-**Uygulama yöntemi (İKİ SEÇENEKten biri ZORUNLU kullanılır):**
-
-**Seçenek A — `scripts/search_engine.py` CLI Kullanımı (ZORUNLU):**
-```bash
-# Tek Namespace Arama (Varsayılan - Sadece myppdfs):
-python scripts/search_engine.py "KONU_ADI" --index myppdfs --ns radyoloji --top_k 15 --top_n 5
-
-# Çoklu Namespace (Paralel) Arama (Sadece myppdfs):
-python scripts/search_engine.py "KONU_ADI" --index myppdfs --ns radyoloji patoloji --top_k 15 --top_n 5
-
-# JSON Çıktısı (Ajanlar için):
-python scripts/search_engine.py "KONU_ADI" --ns radyoloji --json
-```
-
-**Seçenek B — Scratch Script (Ortam değişkenleri yüklü değilse):**
-```python
-# .env'den API key oku → Yerel E5 ile vektörle → index.query(vector=...) → rerank
-# Bkz: scratch/study_search_v2.py şablonu
-```
+### Adım 1: Integrated Arama & Reranking
 
 **ADIM SIRASI:**
-1. Kullanıcının konusunu al
-2. Konuyu `get_local_embedder().embed_text(query, is_query=True)` ile vektörle (YEREL CPU/GPU)
-3. `index.query(vector=vektör, namespace="radyoloji", top_k=15, include_metadata=True)` ile Pinecone'a ham vektör gönder
-4. Çoklu namespace varsa paralel arama yap (asyncio.gather veya sıralı)
-5. Dönen sonuçları `pc.inference.rerank(model="bge-reranker-v2-m3", ...)` ile sırala → `top_n=5`
-6. Gelen 5 parçanın metinleri HİÇ kırpılmadan, özetlenmeden Faz 2'ye geçirilir
+1. Kullanıcının konusunu al.
+2. `search-records` tool'u ile Integrated Search yap (`top_k=15`).
+   - `index: myppdfs`
+   - `namespace: [branş]` (radyoloji, patoloji vb.)
+3. Dönen sonuçları `pc.inference.rerank` veya MCP Reranker tool'u ile sırala (`top_n=5`).
+4. Gelen 5 parçanın metinleri HİÇ kırpılmadan, özetlenmeden Faz 2'ye geçirilir.
 
 **Kısıtlama:** Konu anlatımı sürecinde sadece `myppdfs` indeksi taranır. Akademik güvenilirlik için ana kaynak PDF verileridir. `mybrain` indeksi sadece kullanıcı spesifik notlarını sorduğunda iş akışına dahil edilir.
   - Örnek disiplin eşleşmeleri (myppdfs içinde): cerrahi ↔ anatomi, patoloji ↔ radyoloji, farmakoloji ↔ mikrobiyoloji.
@@ -149,4 +127,4 @@ Kullanıcı bir soru getirdiğinde, Faz 2'nin üç bölümüne ek olarak şu ana
 
 ---
 
-*Ders Çalışma Protokolü v8.0 | DUS Mentörü Projesi | 2026-04-28*
+*Ders Çalışma Protokolü v9.0 | DUS Mentörü Projesi | 2026-05-09*

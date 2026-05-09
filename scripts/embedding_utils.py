@@ -5,6 +5,15 @@ import functools
 from openai import OpenAI
 from pinecone import Pinecone
 
+PROVIDER_PINECONE = "pinecone"
+PROVIDER_OPENAI = "openai"
+PROVIDER_GEMINI = "gemini"
+PROVIDER_LOCAL_ALIAS = "local"
+
+OPENAI_EMBED_BATCH_SIZE = 500
+PINECONE_EMBED_BATCH_SIZE = 96
+EMBED_RETRIES = 3
+
 # ─── OPENAI EMBEDDER ───
 
 class OpenAIEmbedder:
@@ -29,16 +38,19 @@ class OpenAIEmbedder:
         if not texts: return []
 
         all_embeddings = []
-        batch_size = 500 # OpenAI için güvenli bir batch boyutu
+        batch_size = OPENAI_EMBED_BATCH_SIZE
 
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
             sys.stderr.write(f"[openai] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
 
-            response = self.client.embeddings.create(
-                model=self.model_name,
-                input=batch,
-                dimensions=self.dimensionality
+            response = _retry_embed_call(
+                lambda: self.client.embeddings.create(
+                    model=self.model_name,
+                    input=batch,
+                    dimensions=self.dimensionality,
+                ),
+                provider="openai",
             )
             all_embeddings.extend([item.embedding for item in response.data])
 
@@ -84,16 +96,19 @@ class PineconeEmbedder:
         self._ensure_client()
         input_type = "query" if is_query else "passage"
         all_embeddings = []
-        batch_size = 100  # Pinecone inference batch limit
+        batch_size = PINECONE_EMBED_BATCH_SIZE  # Pinecone inference batch limit
 
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
             sys.stderr.write(f"[pinecone-embed] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
             inputs = [{"text": t} for t in batch]
-            result = self._pc.inference.embed(
-                model=self.model_name,
-                inputs=inputs,
-                parameters={"input_type": input_type}
+            result = _retry_embed_call(
+                lambda: self._pc.inference.embed(
+                    model=self.model_name,
+                    inputs=inputs,
+                    parameters={"input_type": input_type},
+                ),
+                provider="pinecone-embed",
             )
             all_embeddings.extend([d.values for d in result.data])
 
@@ -101,6 +116,9 @@ class PineconeEmbedder:
 
 # ─── GEMINI EMBEDDER ───
 
+# GeminiEmbedder: Yedek sağlayıcı. Aktif workflow'larda kullanılmıyor.
+# Aktive etmek için get_embedder("gemini") kullan.
+# UYARI: embed_batch içinde 65sn hardcoded sleep var (Free Tier limiti). Büyük batch'lerde yavaştır.
 class GeminiEmbedder:
     def __init__(self, model_name="models/gemini-embedding-2"):
         import google.generativeai as genai
@@ -169,13 +187,20 @@ def get_embedder(provider="pinecone", dimension=None):
       - "openai"   → OpenAI (varsayılan 3072-dim), anki indeksi için zorunlu
       - "local"    → Pinecone Inference'a yönlendirir (geriye dönük uyumluluk)
     """
-    if provider in ("pinecone", "local"):
+    provider = (provider or PROVIDER_PINECONE).lower()
+
+    if provider == PROVIDER_LOCAL_ALIAS:
+        sys.stderr.write("[embedder] UYARI: provider='local' deprecated alias; Pinecone Inference kullaniliyor.\n")
+        provider = PROVIDER_PINECONE
+
+    if provider == PROVIDER_PINECONE:
         return PineconeEmbedder()
-    elif provider == "openai":
+    elif provider == PROVIDER_OPENAI:
         dim = dimension if dimension else 3072
         return OpenAIEmbedder(dimensionality=dim)
-    else:
+    elif provider == PROVIDER_GEMINI:
         return GeminiEmbedder()
+    raise ValueError(f"Bilinmeyen embedding provider: {provider!r}")
 
 # Geriye dönük uyumluluk — yeni kodda get_embedder() kullanın
 def get_local_embedder(provider="pinecone", dimension=None):
@@ -183,9 +208,25 @@ def get_local_embedder(provider="pinecone", dimension=None):
     warnings.warn("get_local_embedder() deprecated, get_embedder() kullanın", DeprecationWarning, stacklevel=2)
     return get_embedder(provider=provider, dimension=dimension)
 
+
+def _retry_embed_call(call, provider: str):
+    last_error = None
+    for attempt in range(EMBED_RETRIES):
+        try:
+            return call()
+        except Exception as e:
+            last_error = e
+            if attempt == EMBED_RETRIES - 1:
+                break
+            wait = 2 ** attempt
+            sys.stderr.write(f"[{provider}] embedding hata, retry {attempt + 1}/{EMBED_RETRIES} ({wait}s): {e}\n")
+            time.sleep(wait)
+    raise last_error
+
 if __name__ == "__main__":
     from dotenv import load_dotenv
     load_dotenv()
     print("Testing OpenAI...")
-    v = get_local_embedder("openai").embed_text("Test")
+    v = get_embedder("openai").embed_text("Test")
     print(f"OpenAI Dim: {len(v)}")
+

@@ -1,10 +1,12 @@
+# DEPRECATED: Kullanım için run_death_match.py tercih edilmeli.
 import os
 import sys
 import time
 import json
-import torch
 import asyncio
 import logging
+import argparse
+import torch
 from pathlib import Path
 from dotenv import load_dotenv
 from tenacity import retry, wait_exponential, stop_after_attempt
@@ -14,7 +16,7 @@ from openai import OpenAI
 PROJECT_DIR = Path(__file__).parent.parent
 sys.path.append(str(PROJECT_DIR))
 
-from scripts.embedding_utils import get_local_embedder
+from scripts.embedding_utils import get_embedder
 
 # Logging ayarları
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
@@ -115,7 +117,13 @@ def select_card_to_delete(pair):
     return pair['kart_a_guid'] if len_a > len_b else pair['kart_b_guid']
 
 def main():
-    file_path = Path(r"C:\Users\FURKAN\Desktop\Projeler\anki\endo full.txt")
+    parser = argparse.ArgumentParser(description="Anki smart dedup (DEPRECATED: run_death_match.py tercih edilmeli)")
+    parser.add_argument("--txt", required=True, help="Anki export .txt dosyası")
+    parser.add_argument("--threshold", type=float, default=0.84, help="Benzerlik eşiği (default: 0.84)")
+    parser.add_argument("--out-dir", default=None, help="Rapor çıktı dizini (default: anki_jsonlar/)")
+    args = parser.parse_args()
+
+    file_path = Path(args.txt)
     if not file_path.exists():
         logger.error(f"Dosya bulunamadı: {file_path}")
         sys.exit(1)
@@ -123,7 +131,7 @@ def main():
     cards = parse_anki_txt(file_path)
     logger.info(f"{len(cards)} kart yüklendi. Vektörleme başlıyor...")
 
-    embedder = get_local_embedder("openai")
+    embedder = get_embedder("openai")
     vmetinler = [c["vektorlenecek_metin"] for c in cards]
 
     start_time = time.time()
@@ -134,7 +142,7 @@ def main():
     # Matris çarpımı ile benzerlik skorları
     sim_matrix = torch.mm(vectors, vectors.t()).cpu().numpy()
 
-    SEMANTIC_LOW = 0.94
+    SEMANTIC_LOW = args.threshold
     candidate_pairs = []
     seen_pairs = set()
 
@@ -164,7 +172,7 @@ def main():
         return
 
     # Raporlama
-    REPORT_DIR = PROJECT_DIR / "anki_jsonlar"
+    REPORT_DIR = Path(args.out_dir) if args.out_dir else PROJECT_DIR / "anki_jsonlar"
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     base_name = file_path.stem.replace(" ", "_")
     

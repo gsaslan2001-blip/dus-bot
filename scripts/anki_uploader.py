@@ -1,7 +1,7 @@
 """
 anki_uploader.py — Anki JSON → Pinecone `anki` indeksi
 GUID tabanlı manifest: sadece yeni/değişen kartları yükler.
-Yerel Multilingual-E5-Large embedding kullanır (bulut embedding YASAK).
+OpenAI text-embedding-3-large (3072-dim) ile embedding üretir. anki indeksi uyumu için zorunlu.
 
 Kullanım:
     python scripts/anki_uploader.py --json anki_jsonlar/protez_dis_morfolojisi.json --ns protez
@@ -33,7 +33,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 
 # Local modules
 try:
-    from embedding_utils import get_local_embedder
+    from embedding_utils import get_embedder
 except ImportError:
     logger.error("embedding_utils bulunamadı. scripts/ dizininde mi?")
     sys.exit(1)
@@ -45,15 +45,32 @@ ANKI_HOST = os.environ.get("ANKI_HOST", "anki-0crkhvy.svc.aped-4627-b74a.pinecon
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "")
 ANKI_JSONLAR = PROJECT_DIR / "anki_jsonlar"
 MANIFEST_PATH = SCRIPT_DIR / "anki_manifest.json"
-BATCH_SIZE = 50
+BATCH_SIZE = 96
+REPORT_NAME_MARKERS = (
+    "_dedup_report",
+    "_internal_dedup_report",
+    "_smart_dedup_report",
+    "_fast_dedup_report",
+    "_death_match",
+    "_to_delete",
+    "_temiz",
+    "deneme_analizi",
+)
 
-# --- Pinecone client ---
-if not PINECONE_API_KEY:
-    logger.error("PINECONE_API_KEY .env'de tanımlı değil.")
-    sys.exit(1)
+# --- Pinecone client (lazy) ---
+_pc = None
+_index = None
 
-pc = Pinecone(api_key=PINECONE_API_KEY)
-index = pc.Index(host=ANKI_HOST)
+
+def get_pinecone_index():
+    global _pc, _index
+    if _index is None:
+        if not PINECONE_API_KEY:
+            logger.error("PINECONE_API_KEY .env'de tanımlı değil.")
+            sys.exit(1)
+        _pc = Pinecone(api_key=PINECONE_API_KEY)
+        _index = _pc.Index(host=ANKI_HOST)
+    return _index
 
 
 # --- Retry decorator ---
@@ -94,15 +111,36 @@ def card_hash(card: dict) -> str:
     return hashlib.md5(key.encode("utf-8")).hexdigest()
 
 
+def is_card_source_json(path: Path) -> bool:
+    """Return True only for normalized Anki card JSON files, never reports/analysis outputs."""
+    stem = path.stem.lower()
+    if any(marker in stem for marker in REPORT_NAME_MARKERS):
+        return False
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        logger.warning(f"[skip] JSON okunamadi: {path.name} ({e})")
+        return False
+    if not isinstance(data, list) or not data:
+        return False
+    sample = data[0]
+    required = {"guid", "vektorlenecek_metin", "kart_tipi"}
+    if not isinstance(sample, dict) or not required.issubset(sample):
+        logger.info(f"[skip] Anki kaynak JSON degil: {path.name}")
+        return False
+    return True
+
+
 # --- Pinecone ops ---
 @retry_operation(retries=3, delay=2.0)
 def upsert_batch(vectors: List[Dict[str, Any]], namespace: str):
-    index.upsert(vectors=vectors, namespace=namespace)
+    get_pinecone_index().upsert(vectors=vectors, namespace=namespace)
 
 
 @retry_operation(retries=3, delay=2.0)
 def delete_ids_from_pinecone(ids: List[str], namespace: str):
-    index.delete(ids=ids, namespace=namespace)
+    get_pinecone_index().delete(ids=ids, namespace=namespace)
 
 
 # --- Build vector record ---
@@ -176,7 +214,7 @@ def upload_json(json_path: Path, namespace: str, force: bool = False, dry_run: b
         return len(to_upload)
 
     # Embed et (batch)
-    embedder = get_local_embedder()
+    embedder = get_embedder("openai")
     texts = [card["vektorlenecek_metin"] for card, _, _ in to_upload]
 
     logger.info(f"[{namespace}] Embedding başlıyor ({len(texts)} kart)...")
@@ -257,7 +295,7 @@ def main():
             sys.exit(1)
         json_files = sorted(ANKI_JSONLAR.glob("*.json"))
         # dedup rapor dosyalarını atla
-        json_files = [f for f in json_files if not f.name.endswith("_dedup_report.json")]
+        json_files = [f for f in json_files if is_card_source_json(f)]
         if not json_files:
             logger.warning("anki_jsonlar/ dizininde JSON dosyası bulunamadı.")
             sys.exit(0)

@@ -47,29 +47,28 @@ record = {
 }
 ```
 
-### 3. Pinecone'a Upsert Et
-- **Index:** `mybrain`
-- **Namespace:** `dus-data`
-- **Model:** multilingual-e5-large (integrated — text direkt gönder)
+### 3. Pinecone'a Aktar (Staging & Sync)
+DUS Mentörü mimarisi gereği doğrudan `upsert-records` yerine staging mekanizması kullanılır:
 
-```python
-# MCP tool: upsert-records
-# name: mybrain
-# namespace: dus-data
-# records: [record]
-```
+1. **Staging:** Hazırlanan içeriği `.md` dosyası olarak `vektörlenecek/` klasörüne kaydet.
+   - Dosya adı formatı: `YYYYMMDD_konu_ozeti.md`
+2. **Sync:** `scripts/dus_uploader.py --chathistory` komutunu çalıştır.
+   - Bu işlem Pinecone Inference E5 (`get_embedder("pinecone")`) kullanarak veriyi `chathistory` namespace'ine mühürler.
+3. **Akademik Not ise:** Eğer kaydedilen bilgi bir ders notu ise `memory/` klasörüne kaydet ve `dus_uploader.py` (flagsiz) çalıştırarak `dus-memory`'ye aktar.
 
 ### 4. Doğrula
-Kaydın başarılı olduğunu `search-records` ile doğrula:
+Kaydın başarılı olduğunu Integrated Search ile sorgula:
 ```python
-# Arama: record id veya içerik özeti
-# Sonuç döndüyse → ✅ Kayıt başarılı
+# mcp_pinecone-mcp-server_search-records
+# name: mybrain
+# namespace: chathistory
+# query: <kaydedilen konu özeti>
 ```
 
 ### 5. Gemini.MD'yi Güncelle
-Önemli değişiklik kaydedildiyse `Gemini.MD`'nin ilgili bölümünü güncelle.
+Eğer mimari veya stratejik bir karar alındıysa `Gemini.MD`'nin ilgili bölümünü ve versiyon numarasını güncelle.
 
 ---
 
 ## Tamamlanma Kriteri
-İçerik hazırlandı + Pinecone'a upsert edildi + doğrulandı = TAMAMLANDI
+İçerik staging klasörüne yazıldı + `dus_uploader.py` ile Pinecone'a sync edildi + doğrulandı = TAMAMLANDI

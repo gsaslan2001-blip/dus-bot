@@ -59,7 +59,7 @@ Her soru kaydı şu metadata alanlarını içermelidir:
 
 - PDF dosyasını `C:\Users\FURKAN\Desktop\DUS\Çıkmış\dus çıkmış\dus eski\` altına yerleştir.
 - Dosya adı formatı: `DUS {YYYY} {N}. Dönem Orijinal Sorular.pdf`
-- Yıl ve dönem bilgisini belirle: **1. Dönem → Bahar**, **2. Dönem → Sonbahar**
+- Yıl ve dönem bilgisini belirle: **1. Dönem → Bahar**, **2. Dönem → Sonbahar**, **3. Dönem → Kış**
 - PDF sayfa sayısını ve cevap anahtarı sayfası varlığını kontrol et.
 
 ## Adım 2: PDF Parse
@@ -88,9 +88,9 @@ Parse sonrası çıktıyı değerlendir:
 - **95–110** → Görsel/tablo sorular eksik olabilir; kabul edilebilir
 - **< 95** → Hata var, PDF yapısı farklı olabilir; debug et
 
-Eksik şıklı soruları belirle:
+Eksik şıklı soruları belirle (tam yol gereklidir):
 ```bash
-python scripts/cikmis_ekle.py --audit 2025-3-dus.json
+python scripts/cikmis_ekle.py --audit dus_jsonlari/2025-3-dus.json
 ```
 
 ## Adım 4: MD Patch (Opsiyonel)
@@ -104,13 +104,12 @@ python scripts/cikmis_ekle.py \
 
 ## Adım 5: Pinecone'a Yükleme
 
-JSON hazır olduktan sonra `myppdfs` veya `dusbankasi` indeksine yükle:
+JSON hazır olduktan sonra `myppdfs/cikmis` namespace'ine yükle:
 ```bash
-python scripts/cikmis_ekle.py \
-  --upload dus_jsonlari/2025-3-dus.json \
-  --index dusbankasi \
-  --namespace cikmis-2025
+python scripts/cikmis_ekle.py --upload dus_jsonlari/2025-3-dus.json
 ```
+**Not:** Yükleme her zaman `myppdfs/cikmis` namespace'ine Pinecone Inference E5 (1024-dim) ile yapılır.
+`--index` ve `--namespace` flag'leri mevcut değildir; hedef sabittir.
 
 ---
 
@@ -121,7 +120,7 @@ python scripts/cikmis_ekle.py \
 | Kaynak PDF'ler | `C:\Users\FURKAN\Desktop\DUS\Çıkmış\dus çıkmış\dus eski\` |
 | Üretilen JSON'lar | `C:\Users\FURKAN\Desktop\Projeler\Pinecone\dus_jsonlari\` |
 | Parse scripti | `C:\Users\FURKAN\Desktop\Projeler\Pinecone\scripts\cikmis_ekle.py` |
-| Build scriptleri (geliştirme) | `C:\Users\FURKAN\.gemini\antigravity\scratch\` |
+| Build scriptleri | `scripts/cikmis_ekle.py` (tek kaynak, eski scratch dizini kaldırıldı) |
 
 ---
 
@@ -133,5 +132,5 @@ python scripts/cikmis_ekle.py \
 - Mevcut JSON formatını kesinlikle değiştirme; tüm sürümler aynı şemaya uymalıdır.
 
 ---
-*Bu protokol `build_2025_from_pdf.py` + `patch_2025_from_md.py` deneyiminden türetilmiştir.*
-*Güncelleme: 2026-04-26 | DUS Mentörü v7.1*
+*Bu protokol `build_2025_from_pdf.py` + `patch_2025_from_md.py` deneyiminden türetilmiştir. Aktif script: `scripts/cikmis_ekle.py`*
+*Güncelleme: 2026-05-09 | DUS Mentörü v9.0*

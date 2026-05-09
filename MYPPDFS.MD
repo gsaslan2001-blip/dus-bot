@@ -71,7 +71,7 @@ search_records(name="myppdfs", namespace="patoloji", query={"inputs": {"text": "
 | Adım | İşlem | Araç |
 |------|-------|------|
 | 1 | Kullanıcıdan konu/soru al | — |
-| 2 | **Yerel Vektörleme** — Multilingual-E5-Large ile CPU'da embed | `scripts/search_engine.py` |
+| 2 | **Pinecone Inference E5** — Multilingual-E5-Large ile Pinecone Inference API'de embed | `scripts/search_engine.py` |
 | 3 | **Pinecone Araması** — Ham vektörü `myppdfs`'e gönder, top_k=15 al | Pinecone Remote |
 | 4 | **Reranking** — `bge-reranker-v2-m3` ile en iyi 5–10'u seç | Pinecone Rerank API |
 | 5 | **Sentez** — PDF metinlerini DUS formatına dönüştür (Adım 0–6 kaskadı) | LLM (Gemini) |
@@ -92,7 +92,7 @@ search_records(name="myppdfs", namespace="patoloji", query={"inputs": {"text": "
 
 | Katman | Yöntem | Açıklama |
 |--------|--------|----------|
-| **L0** | **Local Embedding** | Soruyu `multilingual-e5-large` ile yerel CPU'da vektörle. |
+| **L0** | **Pinecone Inference E5** | Soruyu `multilingual-e5-large` ile Pinecone Inference API'de vektörle. |
 | **L1** | **Parallel Search** | `search_multi_ns` ile ilgili branşları (örn: pato+rad) eş zamanlı sorgula. |
 | **L2** | Multi-Query Expansion | Sorguyu 3 farklı klinik/temel bilim perspektifine genişlet. |
 | **L3** | Remote Vector Search | Oluşan vektörleri Pinecone `myppdfs` indeksine gönder. |

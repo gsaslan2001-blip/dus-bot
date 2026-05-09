@@ -25,5 +25,6 @@ Herhangi bir metin verisini (markdown, düz metin) Pinecone'a chunk'layarak yük
 - `search-records` ile aranabilir
 
 ## Notlar
-- `mybrain` ve `myppdfs`: Integrated inference — text direkt gönder, embedding otomatik üretilir
-- `dusbankasi`: Integrated inference YOK — OpenAI ile önce embed üret
+- `mybrain` ve `myppdfs` **arama:** Integrated Inference — text direkt gönder, embedding otomatik üretilir
+- `mybrain` ve `myppdfs` **yükleme:** Yerel E5 (`get_embedder("local")`) — 0 token maliyeti
+- `dusbankasi`: OpenAI `text-embedding-3-small` (1536-dim) ile önce embed üret, sonra Pinecone'a gönder

@@ -1,3 +1,7 @@
 {
-    "openai_api_key": "OPENAI_API_KEY_BURAYA"
+    "openai_api_key": "OPENAI_API_KEY_BURAYA",
+    "pinecone_api_key": "PINECONE_API_KEY_BURAYA",
+    "pinecone_index_host": "anki-0crkhvy.svc.aped-4627-b74a.pinecone.io",
+    "similarity_threshold": 0.84,
+    "allowed_models": ["cloze-maxx", "basic-anking"]
 }

@@ -110,33 +110,22 @@ def parse_anki_txt(file_path: Path):
                 })
     return cards
 
-def main():
-    file_path = Path(r"C:\Users\FURKAN\Desktop\Projeler\anki\1-fizyobasic.txt")
-    if not file_path.exists():
-        logger.error(f"Dosya bulunamadı: {file_path}")
-        sys.exit(1)
-
+def run_analysis(file_path: Path, out_dir: Path, overlap_threshold: float, jaccard_threshold: float):
     cards = parse_anki_txt(file_path)
     logger.info(f"{len(cards)} kart yüklendi. Hızlı token kıyaslaması başlıyor...")
 
     duplicate_pairs = []
-    
-    # Eşik değerleri
-    OVERLAP_THRESHOLD = 0.65  # Asymmetric overlap
-    JACCARD_THRESHOLD = 0.50  # Jaccard overlap
-
     total_pairs = len(cards) * (len(cards) - 1) // 2
     logger.info(f"Toplam {total_pairs:,} ikili karşılaştırma yapılacak...")
 
     for c1, c2 in combinations(cards, 2):
         if not c1["tokens_q"] or not c2["tokens_q"]:
             continue
-            
+
         overlap_q = asymmetric_similarity(c1["tokens_q"], c2["tokens_q"])
         jaccard_q = jaccard(c1["tokens_q"], c2["tokens_q"])
-        
-        # Eğer soru kökleri çok benzerse
-        if overlap_q >= OVERLAP_THRESHOLD or jaccard_q >= JACCARD_THRESHOLD:
+
+        if overlap_q >= overlap_threshold or jaccard_q >= jaccard_threshold:
             duplicate_pairs.append({
                 "overlap_score": round(overlap_q, 4),
                 "jaccard_score": round(jaccard_q, 4),
@@ -153,18 +142,18 @@ def main():
 
     duplicate_pairs.sort(key=lambda x: x["overlap_score"], reverse=True)
 
-    REPORT_DIR = PROJECT_DIR / "anki_jsonlar"
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    
-    report_json = REPORT_DIR / "1-fizyobasic_fast_dedup_report.json"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    stem = file_path.stem
+
+    report_json = out_dir / f"{stem}_fast_dedup_report.json"
     with open(report_json, "w", encoding="utf-8") as f:
         json.dump(duplicate_pairs, f, ensure_ascii=False, indent=2)
 
-    report_txt = REPORT_DIR / "1-fizyobasic_fast_dedup_report.txt"
+    report_txt = out_dir / f"{stem}_fast_dedup_report.txt"
     with open(report_txt, "w", encoding="utf-8") as f:
         f.write(f"# Dahili Hızlı Benzerlik Raporu (Token Bazlı)\n")
-        f.write(f"# Dosya: 1-fizyobasic.txt\n")
-        f.write(f"# Overlap Eşik: {OVERLAP_THRESHOLD} | Jaccard Eşik: {JACCARD_THRESHOLD}\n")
+        f.write(f"# Dosya: {file_path.name}\n")
+        f.write(f"# Overlap Eşik: {overlap_threshold} | Jaccard Eşik: {jaccard_threshold}\n")
         f.write(f"# Toplam Benzer Çift: {len(duplicate_pairs)}\n")
         f.write("=" * 80 + "\n\n")
 
@@ -182,9 +171,27 @@ def main():
             f.write("-" * 80 + "\n\n")
 
     logger.info(f"Analiz bitti. {len(duplicate_pairs)} kopya çift bulundu.")
-    print(f"\n✅ Raporlar oluşturuldu:")
+    print(f"\nRaporlar oluşturuldu:")
     print(f"   - JSON: {report_json}")
     print(f"   - TXT:  {report_txt}")
+    return len(duplicate_pairs)
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Hızlı token tabanlı Anki kart benzerlik analizi")
+    parser.add_argument("--txt", required=True, help="Anki .txt dosyası yolu")
+    parser.add_argument("--out-dir", default=str(PROJECT_DIR / "anki_jsonlar"), help="Rapor çıktı dizini")
+    parser.add_argument("--overlap-threshold", type=float, default=0.65, help="Asymmetric overlap eşiği (varsayılan: 0.65)")
+    parser.add_argument("--jaccard-threshold", type=float, default=0.50, help="Jaccard eşiği (varsayılan: 0.50)")
+    args = parser.parse_args()
+
+    file_path = Path(args.txt)
+    if not file_path.exists():
+        logger.error(f"Dosya bulunamadı: {file_path}")
+        sys.exit(1)
+
+    run_analysis(file_path, Path(args.out_dir), args.overlap_threshold, args.jaccard_threshold)
 
 if __name__ == "__main__":
     main()
