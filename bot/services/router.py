@@ -13,7 +13,7 @@ ROUTER_PROMPT = """Kullanicinin mesajini su kategorilerden birine siniflandir:
 - genel: Selamlasma, sohbet (ornek: 'selam')
 
 SADECE su formatta JSON dondur, baska hicbir sey yazma:
-{"intent": "kategori_adi"}
+{{"intent": "kategori_adi"}}
 
 Kullanici mesaji: {message}
 
