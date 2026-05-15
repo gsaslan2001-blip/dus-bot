@@ -49,6 +49,7 @@ class TestDetectDers:
 
 PATCH_PINECONE = "bot.services.orchestrator.pinecone_search"
 PATCH_MULTI = "bot.services.orchestrator.search_multi_ns"
+PATCH_ANKI_MULTI = "bot.services.orchestrator.search_anki_multi_ns"
 PATCH_QUESTIONS = "bot.services.orchestrator.search_questions"
 
 
@@ -156,7 +157,7 @@ class TestOrchestrateSearch:
         """Anki: bilinmeyen branş namespace'i → tüm Anki namespace'lerinde ara."""
         with (
             patch(PATCH_PINECONE, return_value=[]) as mock_p,
-            patch(PATCH_MULTI, new=AsyncMock(return_value=[{"text": "card"}])) as mock_m,
+            patch(PATCH_ANKI_MULTI, new=AsyncMock(return_value=[{"text": "card"}])) as mock_a,
             patch(PATCH_QUESTIONS, return_value=[]),
         ):
             result = await orchestrate_search(
@@ -164,7 +165,7 @@ class TestOrchestrateSearch:
             )
 
         assert "anki" in result
-        assert mock_m.called  # multi-ns kullanıldı
+        assert mock_a.called  # search_anki_multi_ns kullanıldı (tüm NS'ler)
 
     async def test_speed_mode_fast_with_detected_ders_uses_single_ns(self):
         with (

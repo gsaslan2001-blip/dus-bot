@@ -34,10 +34,17 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
     # Step 0: Tek geçişte yönlendirme
     intent_override, forced_index, cleaned_text, is_prefix_only = route_message(text)
 
-    # Prefix tek başına gönderildi → arama yapma, yardım mesajı göster
+    # Prefix tek başına gönderildi → arama yapma, yardım mesajı göster ve aktif mod olarak kaydet
     if is_prefix_only:
+        context["active_intent"] = intent_override
+        context["active_index"] = forced_index
         await send(chat_id, get_prefix_help(forced_index), parse_mode="")
         return
+
+    # Eğer prefix verilmemişse ama aktif bir mod varsa onu kullan
+    if not intent_override and "active_intent" in context:
+        intent_override = context["active_intent"]
+        forced_index = context["active_index"]
 
     # Step 1: Intent — prefix belirlediyse DeepSeek çağrısını atla
     if intent_override:
@@ -72,33 +79,60 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
 
     # Step 4: Response generation
     prior_history = context.get("history", [])
+    reasoning_content = None
 
     # /soru intent: Format Pinecone questions directly (no agent synthesis)
     if intent == "soru_sor":
         questions = search_results.get("questions", [])
         if not questions:
-            response = "Pinecone soru bankasında bu sorgu için uygun soru bulunamadi."
+            response = "Soru bankasinda bu sorgu icin uygun soru bulunamadi. Farkli anahtar kelimelerle deneyin."
         else:
-            # Format max 5 questions from Pinecone dusbankasi
-            lines = []
-            for i, q in enumerate(questions[:5], 1):
-                lines.append(f"**SORU {i}:**\n{q.get('question', '')}\n")
-                lines.append(f"A) {q.get('option_a', '')}")
-                lines.append(f"B) {q.get('option_b', '')}")
-                lines.append(f"C) {q.get('option_c', '')}")
-                lines.append(f"D) {q.get('option_d', '')}")
-                lines.append(f"E) {q.get('option_e', '')}\n")
-                lines.append(f"**Cevap:** {q.get('correct_answer', '')}")
-                lines.append(f"**Açıklama:** {q.get('explanation', '')}\n")
+            lines = [f"'{cleaned_text}' ile ilgili sorular:\n"]
+            seen_questions = set()
+            count = 0
+            for q in questions:
+                q_text = q.get("question", "").strip()
+                if not q_text or q_text in seen_questions:
+                    continue
+                seen_questions.add(q_text)
+                count += 1
+
+                lines.append(f"SORU {count}:")
+                lines.append(f"{q_text}\n")
+
+                options_str = ""
+                for opt in ["a", "b", "c", "d", "e"]:
+                    val = q.get(f"option_{opt}", "").strip()
+                    if val:
+                        options_str += f"{opt.upper()}) {val}\n"
+                if options_str:
+                    lines.append(options_str)
+
+                lines.append(f"Cevap: {q.get('correct_answer', 'Belirtilmemis')}")
+                if q.get("explanation"):
+                    lines.append(f"Aciklama: {q.get('explanation')}")
+                lines.append("-" * 15 + "\n")
+
+                if count >= 5:
+                    break
+
             response = "\n".join(lines)
     else:
-        # Other intents: Use agent synthesis
-        response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history, intent=intent)
+        # Agent synthesis — returns {"content": str, "reasoning_content": str|None}
+        agent_result = await run_agent(
+            cleaned_text, search_results, settings=settings,
+            history=prior_history, intent=intent,
+        )
+        response = agent_result["content"]
+        reasoning_content = agent_result.get("reasoning_content")
 
-    # Step 5: Konuşma geçmişini güncelle
+    # Step 5: Konuşma geçmişini güncelle — reasoning_content'i sakla
     history = context.get("history", [])
     history.append({"role": "user", "content": cleaned_text})
-    history.append({"role": "assistant", "content": response})
+    assistant_turn = {"role": "assistant", "content": response}
+    if reasoning_content:
+        assistant_turn["reasoning_content"] = reasoning_content
+    history.append(assistant_turn)
     context["history"] = history[-20:]
 
     # Step 6: Yanıtı gönder — placeholder varsa edit, yoksa yeni mesaj

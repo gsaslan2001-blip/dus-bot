@@ -37,10 +37,11 @@ def _parse_dsml_tool_calls(content: str) -> list[dict]:
 
 MAX_RETRIES = 2
 RETRY_DELAY = 1.5  # seconds
+DEFAULT_MAX_TOKENS = 4000  # Ajan sentezi için yeterli (3500 karakter sınırı + thinking overhead)
 
 
 async def chat(messages: list[dict], tools: list[dict] | None = None,
-               max_tokens: int = 1400, model: str = None) -> dict:
+               max_tokens: int = DEFAULT_MAX_TOKENS, model: str = None) -> dict:
     """DeepSeek API çağrısı — OpenAI-compatible format, retry destekli.
 
     Returns dict:
@@ -106,7 +107,7 @@ async def chat(messages: list[dict], tools: list[dict] | None = None,
     raise last_error
 
 
-async def chat_stream(messages: list[dict], model: str = None, max_tokens: int = 1400) -> dict:
+async def chat_stream(messages: list[dict], model: str = None, max_tokens: int = DEFAULT_MAX_TOKENS) -> dict:
     """DeepSeek streaming API — content + reasoning_content döner.
 
     Returns dict:

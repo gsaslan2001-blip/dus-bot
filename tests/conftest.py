@@ -48,7 +48,20 @@ sys.modules.setdefault("fitz", MagicMock())
 mock_search_engine = MagicMock()
 mock_search_engine.pinecone_search = MagicMock(return_value=[])
 mock_search_engine.search_multi_ns = AsyncMock(return_value=[])
+mock_search_engine.search_anki_multi_ns = AsyncMock(return_value=[])
 mock_search_engine.search_questions = MagicMock(return_value=[])
+mock_search_engine.SEARCH_TIMEOUT = 15.0
+mock_search_engine.RERANK_TIMEOUT = 10.0
+mock_search_engine.EMBED_TIMEOUT = 8.0
+
+async def _mock_with_timeout(coro, timeout, label="search"):
+    """Gerçek _with_timeout davranışını taklit eder — coro'yu timeout ile await eder."""
+    try:
+        return await coro
+    except Exception:
+        return []
+
+mock_search_engine._with_timeout = _mock_with_timeout
 
 # Register as both the bare module and as a scripts sub-module
 sys.modules.setdefault("scripts", MagicMock())
@@ -80,4 +93,5 @@ sys.modules.setdefault("bot.prompts", mock_prompts)
 sys.modules.setdefault("bot.prompts.system_prompt", MagicMock(
     SYSTEM_PROMPT="system prompt",
     SYSTEM_PROMPT_FAST="fast system prompt",
+    SYSTEM_PROMPT_SORU="soru system prompt",
 ))

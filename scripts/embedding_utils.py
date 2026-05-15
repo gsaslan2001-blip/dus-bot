@@ -1,16 +1,19 @@
 import os
 import sys
 import time
+import logging
 import functools
 from openai import OpenAI
 from pinecone import Pinecone
+
+logger = logging.getLogger(__name__)
 
 PROVIDER_PINECONE = "pinecone"
 PROVIDER_OPENAI = "openai"
 PROVIDER_GEMINI = "gemini"
 PROVIDER_LOCAL_ALIAS = "local"
 
-OPENAI_EMBED_BATCH_SIZE = 500
+OPENAI_EMBED_BATCH_SIZE = 128  # Token güvenliği için 500'den düşürüldü
 PINECONE_EMBED_BATCH_SIZE = 96
 EMBED_RETRIES = 3
 
@@ -21,16 +24,21 @@ class OpenAIEmbedder:
         self.model_name = model_name
         api_key = os.environ.get("OPENAI_API_KEY")
         if not api_key:
-            sys.stderr.write("[openai] UYARI: OPENAI_API_KEY bulunamadı.\n")
+            logger.warning("[openai] OPENAI_API_KEY bulunamadı.")
         self.client = OpenAI(api_key=api_key)
         self.dimensionality = dimensionality
-        sys.stderr.write(f"[openai] OpenAI Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
+        logger.info("[openai] OpenAI Embedder hazır (%s, dim: %d).", self.model_name, self.dimensionality)
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
-        response = self.client.embeddings.create(
-            model=self.model_name,
-            input=[text],
-            dimensions=self.dimensionality
+        if not text or not text.strip():
+            raise ValueError("[openai] Embedding için boş metin verilemez.")
+        response = _retry_embed_call(
+            lambda: self.client.embeddings.create(
+                model=self.model_name,
+                input=[text],
+                dimensions=self.dimensionality,
+            ),
+            provider="openai",
         )
         return response.data[0].embedding
 
@@ -42,7 +50,7 @@ class OpenAIEmbedder:
 
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
-            sys.stderr.write(f"[openai] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
+            logger.info("[openai] Batch işleniyor: %d-%d / %d", i, i + len(batch), len(texts))
 
             response = _retry_embed_call(
                 lambda: self.client.embeddings.create(
@@ -69,25 +77,30 @@ class PineconeEmbedder:
         if api_key:
             try:
                 self._pc = Pinecone(api_key=api_key)
-                sys.stderr.write(f"[pinecone-embed] Pinecone Inference Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
+                logger.info("[pinecone-embed] Pinecone Inference Embedder hazır (%s, dim: %d).", self.model_name, self.dimensionality)
             except Exception as e:
                 self._init_error = str(e)
-                sys.stderr.write(f"[pinecone-embed] UYARI: Pinecone client baslatilamadi: {e}\n")
+                logger.warning("[pinecone-embed] Pinecone client başlatılamadı: %s", e)
         else:
             self._init_error = "PINECONE_API_KEY bulunamadı"
-            sys.stderr.write("[pinecone-embed] UYARI: PINECONE_API_KEY bulunamadı.\n")
+            logger.warning("[pinecone-embed] PINECONE_API_KEY bulunamadı.")
 
     def _ensure_client(self):
         if self._pc is None:
             raise RuntimeError(f"Pinecone embedder kullanılamıyor: {self._init_error}")
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
+        if not text or not text.strip():
+            raise ValueError("[pinecone-embed] Embedding için boş metin verilemez.")
         self._ensure_client()
         input_type = "query" if is_query else "passage"
-        result = self._pc.inference.embed(
-            model=self.model_name,
-            inputs=[{"text": text}],
-            parameters={"input_type": input_type}
+        result = _retry_embed_call(
+            lambda: self._pc.inference.embed(
+                model=self.model_name,
+                inputs=[{"text": text}],
+                parameters={"input_type": input_type},
+            ),
+            provider="pinecone-embed",
         )
         return result.data[0].values
 
@@ -100,7 +113,7 @@ class PineconeEmbedder:
 
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
-            sys.stderr.write(f"[pinecone-embed] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
+            logger.info("[pinecone-embed] Batch işleniyor: %d-%d / %d", i, i + len(batch), len(texts))
             inputs = [{"text": t} for t in batch]
             result = _retry_embed_call(
                 lambda: self._pc.inference.embed(
@@ -127,7 +140,7 @@ class GeminiEmbedder:
         self._genai = genai
         self.model_name = model_name
         self.dimensionality = 1024
-        sys.stderr.write(f"[gemini] Gemini Embedder hazır ({self.model_name}, dim: {self.dimensionality}).\n")
+        logger.info("[gemini] Gemini Embedder hazır (%s, dim: %d).", self.model_name, self.dimensionality)
 
     def embed_text(self, text: str, is_query: bool = False) -> list[float]:
         task_type = "RETRIEVAL_QUERY" if is_query else "RETRIEVAL_DOCUMENT"
@@ -142,14 +155,14 @@ class GeminiEmbedder:
     def embed_batch(self, texts: list[str], is_query: bool = False) -> list[list[float]]:
         if not texts: return []
         task_type = "RETRIEVAL_QUERY" if is_query else "RETRIEVAL_DOCUMENT"
-        
+
         all_embeddings = []
-        batch_size = 90 # Free Tier koruması
-        
+        batch_size = 90  # Free Tier koruması
+
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
-            sys.stderr.write(f"[gemini] Batch işleniyor: {i}-{i+len(batch)} / {len(texts)}\n")
-            
+            logger.info("[gemini] Batch işleniyor: %d-%d / %d", i, i + len(batch), len(texts))
+
             try:
                 result = self._genai.embed_content(
                     model=self.model_name,
@@ -160,7 +173,7 @@ class GeminiEmbedder:
                 all_embeddings.extend(result['embedding'])
             except Exception as e:
                 if "429" in str(e):
-                    sys.stderr.write("[gemini] 429 Quota Exceeded! 65s bekleniyor...\n")
+                    logger.warning("[gemini] 429 Quota Exceeded! 65s bekleniyor...")
                     time.sleep(65)
                     result = self._genai.embed_content(
                         model=self.model_name,
@@ -170,10 +183,10 @@ class GeminiEmbedder:
                     )
                     all_embeddings.extend(result['embedding'])
                 else: raise e
-            
+
             if i + batch_size < len(texts):
                 time.sleep(65)
-                
+
         return all_embeddings
 
 @functools.lru_cache(maxsize=4)
@@ -190,7 +203,7 @@ def get_embedder(provider="pinecone", dimension=None):
     provider = (provider or PROVIDER_PINECONE).lower()
 
     if provider == PROVIDER_LOCAL_ALIAS:
-        sys.stderr.write("[embedder] UYARI: provider='local' deprecated alias; Pinecone Inference kullaniliyor.\n")
+        logger.warning("[embedder] provider='local' deprecated alias; Pinecone Inference kullanılıyor.")
         provider = PROVIDER_PINECONE
 
     if provider == PROVIDER_PINECONE:
@@ -219,14 +232,14 @@ def _retry_embed_call(call, provider: str):
             if attempt == EMBED_RETRIES - 1:
                 break
             wait = 2 ** attempt
-            sys.stderr.write(f"[{provider}] embedding hata, retry {attempt + 1}/{EMBED_RETRIES} ({wait}s): {e}\n")
+            logger.warning("[%s] embedding hata, retry %d/%d (%ds): %s", provider, attempt + 1, EMBED_RETRIES, wait, e)
             time.sleep(wait)
     raise last_error
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
     from dotenv import load_dotenv
     load_dotenv()
     print("Testing OpenAI...")
     v = get_embedder("openai").embed_text("Test")
     print(f"OpenAI Dim: {len(v)}")
-

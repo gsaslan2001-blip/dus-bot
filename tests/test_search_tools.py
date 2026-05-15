@@ -15,6 +15,7 @@ from bot.tools.search_tools import execute_tool
 
 PATCH_PINECONE = "bot.tools.search_tools.pinecone_search"
 PATCH_MULTI = "bot.tools.search_tools.search_multi_ns"
+PATCH_ANKI_MULTI = "bot.tools.search_tools.search_anki_multi_ns"
 PATCH_QUESTIONS = "bot.tools.search_tools.search_questions"
 
 
@@ -45,9 +46,9 @@ class TestExecuteToolDispatch:
         assert isinstance(result, str)
 
     async def test_search_anki_dispatched(self):
-        with patch(PATCH_PINECONE, return_value=[]) as mock_p:
+        with patch(PATCH_ANKI_MULTI, new=AsyncMock(return_value=[])) as mock_a:
             result = await execute_tool("search_anki", {"query": "protez", "ders": "protez"})
-        assert mock_p.called
+        assert mock_a.called
         assert isinstance(result, str)
 
 
@@ -128,11 +129,16 @@ class TestSearchSoruBankasi:
             result = await execute_tool("search_soru_bankasi", {"query": "xyz"})
         assert "bulunamad" in result.lower()
 
-    async def test_optional_ders_parameter_passed_through(self):
+    async def test_optional_ders_parameter_not_used_for_filtering(self):
+        """Ders filtresi pure semantic search'te kullanılmaz — reranker konu alaka düzeyini belirler."""
         with patch(PATCH_QUESTIONS, return_value=[]) as mock_q:
             await execute_tool("search_soru_bankasi", {"query": "SCC", "ders": "patoloji"})
-        call_args = mock_q.call_args
-        assert "patoloji" in call_args.args or "patoloji" in str(call_args)
+        # search_questions ikinci argümanla çağrılır — ders None olarak geçilir
+        assert mock_q.called
+        # İlk argüman query, ikinci argüman None (lesson filtresi yok)
+        call_args = mock_q.call_args[0] if mock_q.call_args else []
+        assert call_args[0] == "SCC"  # query doğru geçildi mi?
+        assert call_args[1] is None   # ders filtresi yok — pure semantic
 
     async def test_exception_returns_error_string(self):
         with patch(PATCH_QUESTIONS, side_effect=RuntimeError("db error")):
@@ -146,17 +152,17 @@ class TestSearchAnki:
 
     async def test_returns_card_text_with_header(self):
         hits = [{"text": "Protez kron nedir: tam porselen"}]
-        with patch(PATCH_PINECONE, return_value=hits):
+        with patch(PATCH_ANKI_MULTI, new=AsyncMock(return_value=hits)):
             result = await execute_tool("search_anki", {"query": "protez", "ders": "protez"})
         assert "PROTEZ" in result
         assert "Protez kron nedir" in result
 
     async def test_empty_results_return_not_found_message(self):
-        with patch(PATCH_PINECONE, return_value=[]):
+        with patch(PATCH_ANKI_MULTI, new=AsyncMock(return_value=[])):
             result = await execute_tool("search_anki", {"query": "xyz", "ders": "protez"})
         assert "bulunamad" in result.lower()
 
     async def test_exception_returns_error_string(self):
-        with patch(PATCH_PINECONE, side_effect=RuntimeError("timeout")):
+        with patch(PATCH_ANKI_MULTI, new=AsyncMock(side_effect=RuntimeError("timeout"))):
             result = await execute_tool("search_anki", {"query": "x", "ders": "protez"})
         assert "hata" in result.lower()

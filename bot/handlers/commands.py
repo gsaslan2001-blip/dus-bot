@@ -1,5 +1,5 @@
 import logging
-from bot.deps import mybrain_idx, myppdfs_idx, anki_idx, supabase
+from bot.deps import mybrain_idx, myppdfs_idx, anki_idx, dusbankasi_idx
 from bot.settings import DEEPSEEK_MODEL, AVAILABLE_MODELS, SPEED_MODE_CONFIG
 
 log = logging.getLogger(__name__)
@@ -33,38 +33,69 @@ async def cmd_help(chat_id: int, send) -> None:
     await cmd_start(chat_id, send)
 
 
+def _ns_count(ns_dict: dict, key: str) -> int:
+    """Pinecone describe_index_stats namespaces dict'ten kayit sayisi al."""
+    ns = ns_dict.get(key, {})
+    if isinstance(ns, dict):
+        return ns.get("vector_count", ns.get("recordCount", 0))
+    return getattr(ns, "vector_count", getattr(ns, "record_count", 0))
+
+
+def _total_count(stats) -> str:
+    if isinstance(stats, dict):
+        return str(stats.get("total_vector_count", stats.get("totalRecordCount", "?")))
+    return str(getattr(stats, "total_vector_count", getattr(stats, "total_record_count", "?")))
+
+
+def _get_namespaces(stats) -> dict:
+    if isinstance(stats, dict):
+        return stats.get("namespaces", {})
+    return getattr(stats, "namespaces", {}) or {}
+
+
 async def cmd_stats(chat_id: int, send) -> None:
     try:
         sm = mybrain_idx.describe_index_stats()
         sp = myppdfs_idx.describe_index_stats()
         sa = anki_idx.describe_index_stats()
-        sq = supabase.table("questions").select("id", count="exact").limit(1).execute()
+        sd = dusbankasi_idx.describe_index_stats()
 
-        ns_m = sm.get("namespaces", {})
-        ns_p = sp.get("namespaces", {})
-        ns_a = sa.get("namespaces", {})
+        ns_m = _get_namespaces(sm)
+        ns_p = _get_namespaces(sp)
+        ns_a = _get_namespaces(sa)
+        ns_d = _get_namespaces(sd)
+
+        # dusbankasi default namespace (bos string key)
+        q_count = _ns_count(ns_d, "") or _ns_count(ns_d, "__default__")
 
         text = (
-            "📊 *Sistem Durumu*\n\n"
-            f"🧠 *mybrain:* {sm.get('total_vector_count','?')} kayit\n"
-            f"  dus-data: {ns_m.get('dus-data',{}).get('vector_count',0)}\n"
-            f"  dus-memory: {ns_m.get('dus-memory',{}).get('vector_count',0)}\n"
-            f"  dus-progress: {ns_m.get('dus-progress',{}).get('vector_count',0)}\n"
-            f"  chathistory: {ns_m.get('chathistory',{}).get('vector_count',0)}\n\n"
-            f"🔬 *myppdfs:* {sp.get('total_vector_count','?')} kayit\n"
-            f"  patoloji: {ns_p.get('patoloji',{}).get('vector_count',0)}\n"
-            f"  radyoloji: {ns_p.get('radyoloji',{}).get('vector_count',0)}\n"
-            f"  endodonti: {ns_p.get('endodonti',{}).get('vector_count',0)}\n"
-            f"  protez: {ns_p.get('protez',{}).get('vector_count',0)}\n"
-            f"  periodontoloji: {ns_p.get('periodontoloji',{}).get('vector_count',0)}\n\n"
-            f"🃏 *anki:* {sa.get('total_vector_count','?')} kart\n"
-            f"  protez: {ns_a.get('protez',{}).get('vector_count',0)}\n"
-            f"  radyoloji: {ns_a.get('radyoloji',{}).get('vector_count',0)}\n\n"
-            f"❓ *Soru Bankasi:* {sq.count} soru\n"
-            f"🤖 *Model:* {DEEPSEEK_MODEL}\n"
-            f"☁️ *Platform:* Railway"
+            "Sistem Durumu\n\n"
+            f"mybrain: {_total_count(sm)} kayit\n"
+            f"  dus-memory: {_ns_count(ns_m, 'dus-memory')}\n"
+            f"  dus-progress: {_ns_count(ns_m, 'dus-progress')}\n"
+            f"  chathistory: {_ns_count(ns_m, 'chathistory')}\n"
+            f"  telos: {_ns_count(ns_m, 'telos')}\n"
+            f"  claude-profile: {_ns_count(ns_m, 'claude-profile')}\n\n"
+            f"myppdfs: {_total_count(sp)} kayit\n"
+            f"  patoloji: {_ns_count(ns_p, 'patoloji')}\n"
+            f"  radyoloji: {_ns_count(ns_p, 'radyoloji')}\n"
+            f"  endodonti: {_ns_count(ns_p, 'endodonti')}\n"
+            f"  protez: {_ns_count(ns_p, 'protez')}\n"
+            f"  periodontoloji: {_ns_count(ns_p, 'periodontoloji')}\n"
+            f"  pedodonti: {_ns_count(ns_p, 'pedodonti')}\n"
+            f"  cikmis: {_ns_count(ns_p, 'cikmis')}\n\n"
+            f"anki: {_total_count(sa)} kart\n"
+            f"  patoloji: {_ns_count(ns_a, 'patoloji')}\n"
+            f"  endodonti: {_ns_count(ns_a, 'endodonti')}\n"
+            f"  fizyoloji: {_ns_count(ns_a, 'fizyoloji')}\n"
+            f"  periodontoloji: {_ns_count(ns_a, 'periodontoloji')}\n"
+            f"  protez: {_ns_count(ns_a, 'protez')}\n"
+            f"  radyoloji: {_ns_count(ns_a, 'radyoloji')}\n\n"
+            f"Soru Bankasi (dusbankasi): {q_count} soru\n"
+            f"Model: {DEEPSEEK_MODEL}\n"
+            f"Platform: Railway"
         )
-        await send(chat_id, text, parse_mode="Markdown")
+        await send(chat_id, text, parse_mode="")
     except Exception as e:
         await send(chat_id, f"Istatistik hatasi: {e}", parse_mode="")
 

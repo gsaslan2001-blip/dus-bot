@@ -295,7 +295,7 @@ async def startup():
 
     # Persistent HTTP client başlat
     get_http_client()
-    log.info("HTTP client baslатildi (connection pool aktif)")
+    log.info("HTTP client baslatildi (connection pool aktif)")
 
     # Set webhook on startup
     base_url = os.environ.get("BASE_URL", "").rstrip("/")

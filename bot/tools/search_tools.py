@@ -1,6 +1,6 @@
 import asyncio
 import logging
-from scripts.search_engine import pinecone_search, search_multi_ns, search_questions
+from scripts.search_engine import pinecone_search, search_multi_ns, search_anki_multi_ns, search_questions
 
 log = logging.getLogger(__name__)
 
@@ -74,7 +74,7 @@ TOOL_DEFINITIONS = [
                     "query": {"type": "string", "description": "Arama sorgusu"},
                     "ders": {
                         "type": "string",
-                        "enum": ["protez", "radyoloji"],
+                        "enum": ["histoloji", "periodontoloji", "protez", "fizyoloji", "radyoloji", "patoloji", "endodonti"],
                         "description": "Ders adi"
                     }
                 },
@@ -135,11 +135,12 @@ async def _search_hafiza(query: str) -> str:
 
 
 async def _search_soru_bankasi(query: str, ders: str | None) -> str:
-    log.info(f"[tool] search_soru_bankasi: ders={ders} query={query[:60]}")
+    log.info(f"[tool] search_soru_bankasi: query={query[:60]}")
     try:
-        results = await asyncio.to_thread(search_questions, query, ders, 5)
+        # Pure semantic search — ders filtresi yok, reranker konu alaka düzeyini belirler
+        results = await asyncio.to_thread(search_questions, query, None, 5)
         if not results:
-            return f"'{ders or 'genel'}' soru bankasinda eslesen soru bulunamadi."
+            return "Soru bankasinda eslesen soru bulunamadi."
         out = "--- DUS Soru Bankasi ---\n"
         for i, q in enumerate(results):
             out += (f"\n[ Soru {i+1} ]\n"
@@ -154,7 +155,7 @@ async def _search_soru_bankasi(query: str, ders: str | None) -> str:
 async def _search_anki(query: str, ders: str) -> str:
     log.info(f"[tool] search_anki: ders={ders} query={query[:60]}")
     try:
-        results = await asyncio.to_thread(pinecone_search, query, "anki", ders, 10, 3)
+        results = await search_anki_multi_ns(query, [ders], top_k=10, rerank_top_n=5)
         if not results:
             return f"'{ders}' Anki kartlarinda eslesen kart bulunamadi."
         out = f"--- {ders.upper()} Anki Kartlari ---\n"

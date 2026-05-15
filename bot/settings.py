@@ -25,6 +25,7 @@ PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
 MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 MYPPDFS_HOST = os.environ.get("MYPPDFS_HOST", "myppdfs-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 ANKI_HOST = os.environ.get("ANKI_HOST", "anki-0crkhvy.svc.aped-4627-b74a.pinecone.io")
+DUSBANKASI_HOST = os.environ.get("DUSBANKASI_HOST", "dusbankasi-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 
 # --- OpenAI (fallback embedding + anki/dusbankasi) ---
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
