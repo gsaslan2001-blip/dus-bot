@@ -215,7 +215,41 @@ async def search_multi_ns(query: str, index_name: str, namespaces: List[str], to
             return res.get("result", {}).get("hits", [])
         except Exception as e:
             logger.warning(f"[search] NS {ns} için integrated search hatası: {e}")
-            return []
+            # Fallback: Embedding tabanlı vector search (pinecone_search ile aynı mantık)
+            try:
+                if index_name in ["mybrain", "myppdfs"]:
+                    embedder = get_embedder(provider="pinecone")
+                elif index_name == "anki":
+                    embedder = get_embedder(provider="openai", dimension=3072)
+                else:
+                    embedder = get_embedder(provider="openai", dimension=1536)
+                vector = embedder.embed_text(query, is_query=True)
+                res2 = await asyncio.to_thread(
+                    index.query,
+                    namespace=ns,
+                    vector=vector,
+                    top_k=top_k,
+                    include_metadata=True,
+                )
+                matches = res2.get("matches", [])
+                return [
+                    {
+                        "_id": m.get("id", ""),
+                        "_score": m.get("score", 0),
+                        "fields": {
+                            "text": m.get("metadata", {}).get("text", ""),
+                            "source": m.get("metadata", {}).get("source"),
+                            "file": m.get("metadata", {}).get("file"),
+                            "page": m.get("metadata", {}).get("page"),
+                            "chunk_index": m.get("metadata", {}).get("chunk_index"),
+                            "title": m.get("metadata", {}).get("title"),
+                        },
+                    }
+                    for m in matches
+                ]
+            except Exception as fe:
+                logger.warning(f"[search] NS {ns} fallback de hatasi: {fe}")
+                return []
 
     tasks = [_single_ns_search(ns) for ns in namespaces]
     results = await asyncio.gather(*tasks)
