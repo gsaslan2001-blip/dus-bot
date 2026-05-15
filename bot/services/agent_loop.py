@@ -3,7 +3,7 @@ import json
 import logging
 from bot.services.deepseek_client import chat, chat_stream
 from bot.tools.search_tools import execute_tool, TOOL_DEFINITIONS
-from bot.prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_FAST
+from bot.prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_FAST, SYSTEM_PROMPT_SORU
 from bot.settings import MAX_AGENT_ITERATIONS
 
 log = logging.getLogger(__name__)
@@ -51,7 +51,7 @@ def _context_is_rich(search_results: dict) -> bool:
     return total >= 3
 
 
-async def run_agent(user_message: str, search_results: dict, settings: dict | None = None, history: list | None = None) -> str:
+async def run_agent(user_message: str, search_results: dict, settings: dict | None = None, history: list | None = None, intent: str | None = None) -> str:
     """DeepSeek sentez motoru. Context doluysa tool loop atlanır (Direct Synthesis)."""
     if settings is None:
         settings = {}
@@ -63,7 +63,12 @@ async def run_agent(user_message: str, search_results: dict, settings: dict | No
     context = _format_context(search_results)
     rich = _context_is_rich(search_results)
 
-    if speed_mode == "fast":
+    # Intent-specific prompts
+    if intent == "soru_sor":
+        prompt = SYSTEM_PROMPT_SORU
+        use_tools = False  # Soru modu: direkt sentez (sadece 5 soru)
+        log.info(f"[agent] soru modu — 5 soru output")
+    elif speed_mode == "fast":
         prompt = SYSTEM_PROMPT_FAST
         use_tools = False  # Fast: her zaman direkt sentez
     elif rich:

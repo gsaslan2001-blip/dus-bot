@@ -72,7 +72,7 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
 
     # Step 4: DeepSeek sentezi
     prior_history = context.get("history", [])
-    response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history)
+    response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history, intent=intent)
 
     # Step 5: Konuşma geçmişini güncelle
     history = context.get("history", [])
