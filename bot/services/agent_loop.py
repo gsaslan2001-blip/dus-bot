@@ -87,6 +87,7 @@ async def run_agent(
     settings: dict | None = None,
     history: list | None = None,
     intent: str | None = None,
+    forced_index: str | None = None,
 ) -> dict:
     """DeepSeek sentez motoru.
 
@@ -111,6 +112,12 @@ async def run_agent(
     elif speed_mode == "fast":
         prompt = SYSTEM_PROMPT_FAST
         use_tools = False
+    elif forced_index:
+        # Exclusive modda (/mypdf, /brain, /anki, /dusbankasi) tool loop atla —
+        # kullanıcı zaten hedef index'i seçti, ek arama anlamsız ve webhook timeout'u yapar
+        prompt = SYSTEM_PROMPT
+        use_tools = False
+        log.info(f"[agent] direkt sentez — exclusive mod ({forced_index})")
     elif rich:
         prompt = SYSTEM_PROMPT
         use_tools = False

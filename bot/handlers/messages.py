@@ -122,6 +122,7 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
         agent_result = await run_agent(
             cleaned_text, search_results, settings=settings,
             history=prior_history, intent=intent,
+            forced_index=forced_index,
         )
         response = agent_result["content"]
         reasoning_content = agent_result.get("reasoning_content")

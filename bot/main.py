@@ -52,6 +52,9 @@ search_cache = cachetools.TTLCache(maxsize=200, ttl=300)
 # --- Persistent httpx client (connection pooling — TCP/TLS her istekte yeniden kurulmasın) ---
 _http_client: httpx.AsyncClient | None = None
 
+# --- Update ID deduplikasyonu — Telegram retry aynı mesajı tekrar işlemesin ---
+_last_update_id: int = 0
+
 
 def get_http_client() -> httpx.AsyncClient:
     global _http_client
@@ -166,6 +169,7 @@ def is_allowed(chat_id: int) -> bool:
 # --- Webhook Endpoint ---
 @app.post("/webhook")
 async def webhook(request: Request):
+    global _last_update_id
     chat_id = None
     try:
         data = await request.json()
@@ -191,6 +195,13 @@ async def webhook(request: Request):
         message = data.get("message") or data.get("edited_message", {})
         if not message:
             return Response(status_code=200)
+
+        # Dedup: Telegram retry aynı update'i tekrar gönderirse işleme
+        update_id = data.get("update_id", 0)
+        if update_id and update_id <= _last_update_id:
+            log.info(f"[webhook] duplicate update_id={update_id} — atlandi")
+            return Response(status_code=200)
+        _last_update_id = update_id
 
         chat = message.get("chat", {})
         chat_id = chat.get("id")
