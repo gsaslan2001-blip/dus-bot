@@ -1,0 +1,257 @@
+# Benzerlik Raporu — Namespace: radyoloji
+# Eşik: 0.84 | Toplam çift: 23
+================================================================================
+
+[1] SCORE: 0.9255
+  KART A (cloze) | GUID: hash_99e4f7db9c35cfed
+  Başlık: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri
+  Metin : Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Fokal spot–film mesafesi arttıkça radyografik dansite azalır
+
+  KART B (cloze) | GUID: hash_fd6ae2aa99dd453c
+  Başlık: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri
+  Metin : Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Radyografide fokal spot-film mesafesi arttıkça x-ışını demetinin şiddeti düşeceğinden radyografik dansite azalır.
+
+--------------------------------------------------------------------------------
+
+[2] SCORE: 0.9126
+  KART A (cloze) | GUID: hash_bf1c3bbd2cf7dd73
+  Başlık: Radyoloji - Karanlık Oda - Sıcaklık Sınırı
+  Metin : Radyoloji - Karanlık Oda - Sıcaklık Sınırı | Banyo karanlık odasında fog (sis) oluşumunu engellemek için oda sıcaklığı en fazla 32.5 °C olmalıdır
+
+  KART B (cloze) | GUID: hash_df23a6ac82dc0b65
+  Başlık: Radyoloji - Banyo İşlemleri - Karanlık Oda
+  Metin : Radyoloji - Banyo İşlemleri - Karanlık Oda | Karanlık odada fog oluşumunu engellemek için oda sıcaklığı maksimum 32.5⁰C (90⁰F) olmalıdır.
+
+--------------------------------------------------------------------------------
+
+[3] SCORE: 0.9084
+  KART A (cloze) | GUID: hash_141fcc38347087de
+  Başlık: Radyoloji - Görüntü Özellikleri - Detay
+  Metin : Radyoloji - Görüntü Özellikleri - Detay | Film emülsiyonundaki gümüş granüllerinin boyutu detayı etkiler; yavaş filmlerde detay iyi, hızlı filmlerde detay kötüdür
+
+  KART B (cloze) | GUID: hash_d6c526608acd7b95
+  Başlık: Radyoloji - Görüntü Özellikleri - Detay ve Netlik
+  Metin : Radyoloji - Görüntü Özellikleri - Detay ve Netlik | Röntgen filmi emülsiyonundaki gümüş granüllerinin boyutu ile netlik ilişkisinde; yavaş filmlerde detay iyi iken, hızlı filmlerde detay kötüdür.
+
+--------------------------------------------------------------------------------
+
+[4] SCORE: 0.8973
+  KART A (cloze) | GUID: hash_8b00195e887db9f6
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Developer solüsyonu için tavsiye edilen ideal sıcaklık 23°C'dir
+
+  KART B (cloze) | GUID: hash_db4e4d5fe6ece1f2
+  Başlık: Radyoloji - Banyo İşlemleri - Sıcaklık
+  Metin : Radyoloji - Banyo İşlemleri - Sıcaklık | Birinci banyo (developer) solüsyonu için tavsiye edilen ideal çalışma sıcaklığı 23⁰C'dir.
+
+--------------------------------------------------------------------------------
+
+[5] SCORE: 0.8929
+  KART A (cloze) | GUID: hash_e901edd842082bdc
+  Başlık: Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri
+  Metin : Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri | Developer solüsyonu için tavsiye edilen ideal sıcaklık 23°C'dir
+
+  KART B (cloze) | GUID: hash_db4e4d5fe6ece1f2
+  Başlık: Radyoloji - Banyo İşlemleri - Sıcaklık
+  Metin : Radyoloji - Banyo İşlemleri - Sıcaklık | Birinci banyo (developer) solüsyonu için tavsiye edilen ideal çalışma sıcaklığı 23⁰C'dir.
+
+--------------------------------------------------------------------------------
+
+[6] SCORE: 0.8891
+  KART A (cloze) | GUID: hash_5aaf98de4cd18008
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre | İkinci banyo (fiksaj) süresi, birinci banyonun yaklaşık 2 katı kadar olmalıdır
+
+  KART B (cloze) | GUID: hash_b925776d0c2f2166
+  Başlık: Radyoloji - Banyo İşlemleri - Banyo Süreleri
+  Metin : Radyoloji - Banyo İşlemleri - Banyo Süreleri | Röntgen filmi banyosunda ikinci banyonun (fiksatör) süresi, birinci banyonun süresinin 2 katı olmalıdır.
+
+--------------------------------------------------------------------------------
+
+[7] SCORE: 0.8832
+  KART A (cloze) | GUID: hash_48e1ad40006812c6
+  Başlık: Radyoloji - Film Özellikleri - Hız ve Netlik İlişkisi
+  Metin : Radyoloji - Film Özellikleri - Hız ve Netlik İlişkisi | Röntgen filminin yapısındaki gümüş granüllerinin boyutu büyüdükçe filmin hızı artarken, elde edilen görüntünün detayı (netliği) azalır
+
+  KART B (cloze) | GUID: hash_d6c526608acd7b95
+  Başlık: Radyoloji - Görüntü Özellikleri - Detay ve Netlik
+  Metin : Radyoloji - Görüntü Özellikleri - Detay ve Netlik | Röntgen filmi emülsiyonundaki gümüş granüllerinin boyutu ile netlik ilişkisinde; yavaş filmlerde detay iyi iken, hızlı filmlerde detay kötüdür.
+
+--------------------------------------------------------------------------------
+
+[8] SCORE: 0.8821
+  KART A (cloze) | GUID: hash_33438a646df33c78
+  Başlık: Radyoloji - Banyo Tekniği - Banyo Süresi
+  Metin : Radyoloji - Banyo Tekniği - Banyo Süresi | İkinci banyonun süresi birinci banyonun süresinin 2 katıdır
+
+  KART B (cloze) | GUID: hash_b925776d0c2f2166
+  Başlık: Radyoloji - Banyo İşlemleri - Banyo Süreleri
+  Metin : Radyoloji - Banyo İşlemleri - Banyo Süreleri | Röntgen filmi banyosunda ikinci banyonun (fiksatör) süresi, birinci banyonun süresinin 2 katı olmalıdır.
+
+--------------------------------------------------------------------------------
+
+[9] SCORE: 0.8788
+  KART A (cloze) | GUID: hash_9dbfa0fb7412783c
+  Başlık: Radyoloji - Görüntü Özellikleri - Baz ve Fog Dansitesi
+  Metin : Radyoloji - Görüntü Özellikleri - Baz ve Fog Dansitesi | Işınlanmamış bir film banyo edildiğinde bazın doğal yoğunluğundan kaynaklanan minimum kararmaya "baz artı fog" denir ve optik değeri 0.2 - 0.3 
+
+  KART B (cloze) | GUID: hash_5e949b7afd03fc5b
+  Başlık: Radyoloji - Görüntü Özellikleri - Dansite
+  Metin : Radyoloji - Görüntü Özellikleri - Dansite | Maruz kalmamış film işlendiğinde bazın doğal yoğunluğundan kaynaklanan minimum optik dansiteye baz artı fog denir ve değeri tipik olarak 0.2 ila 0.3 aralığı
+
+--------------------------------------------------------------------------------
+
+[10] SCORE: 0.8742
+  KART A (cloze) | GUID: hash_efff72e622c9dd7e
+  Başlık: Radyoloji - Banyo Solüsyonları - Sıcaklık Eşikleri
+  Metin : Radyoloji - Banyo Solüsyonları - Sıcaklık Eşikleri | Birinci banyo solüsyonu (developer) geliştiricisi olan hidrokinon 15 °C'nin altında inaktifken, banyo işlemi için tavsiye edilen ideal sıcaklık 23 
+
+  KART B (cloze) | GUID: hash_db4e4d5fe6ece1f2
+  Başlık: Radyoloji - Banyo İşlemleri - Sıcaklık
+  Metin : Radyoloji - Banyo İşlemleri - Sıcaklık | Birinci banyo (developer) solüsyonu için tavsiye edilen ideal çalışma sıcaklığı 23⁰C'dir.
+
+--------------------------------------------------------------------------------
+
+[11] SCORE: 0.8719
+  KART A (cloze) | GUID: hash_1ed87b4b33ffc64f
+  Başlık: Radyoloji - Banyo - Süre Protokolü
+  Metin : Radyoloji - Banyo - Süre Protokolü | Röntgen filminin manuel banyo aşamalarında ikinci banyoda (fiksatör) kalma süresi, birinci banyoda (developer) kalma süresinin 2 katıdır
+
+  KART B (cloze) | GUID: hash_b925776d0c2f2166
+  Başlık: Radyoloji - Banyo İşlemleri - Banyo Süreleri
+  Metin : Radyoloji - Banyo İşlemleri - Banyo Süreleri | Röntgen filmi banyosunda ikinci banyonun (fiksatör) süresi, birinci banyonun süresinin 2 katı olmalıdır.
+
+--------------------------------------------------------------------------------
+
+[12] SCORE: 0.8632
+  KART A (cloze) | GUID: hash_b1532b60b2154bd3
+  Başlık: Radyoloji - Banyo Tekniği - Otomatik Cihaz
+  Metin : Radyoloji - Banyo Tekniği - Otomatik Cihaz | Otomatik banyo cihazında elde edilen radyografinin kalitesinin manuel banyoya göre daha düşük olması dezavantajdır
+
+  KART B (cloze) | GUID: hash_d9699d1266bae8f0
+  Başlık: Radyoloji - Banyo İşlemleri - Otomatik Banyo
+  Metin : Radyoloji - Banyo İşlemleri - Otomatik Banyo | Otomatik banyo cihazlarıyla elde edilen radyografik görüntünün kalitesi, manuel banyoya kıyasla daha düşüktür ve filmde daha fazla gren görülür.
+
+--------------------------------------------------------------------------------
+
+[13] SCORE: 0.8584
+  KART A (cloze) | GUID: hash_439ca421aab464b7
+  Başlık: Radyoloji - Görüntü Özellikleri - Dansite
+  Metin : Radyoloji - Görüntü Özellikleri - Dansite | İşlenmiş film üzerinde maruz kalmamış gümüş halojenür kristallerinin gelişmesinden kaynaklanan minimum yoğunluk değerine baz artı fog adı verilir
+
+  KART B (cloze) | GUID: hash_5e949b7afd03fc5b
+  Başlık: Radyoloji - Görüntü Özellikleri - Dansite
+  Metin : Radyoloji - Görüntü Özellikleri - Dansite | Maruz kalmamış film işlendiğinde bazın doğal yoğunluğundan kaynaklanan minimum optik dansiteye baz artı fog denir ve değeri tipik olarak 0.2 ila 0.3 aralığı
+
+--------------------------------------------------------------------------------
+
+[14] SCORE: 0.8584
+  KART A (cloze) | GUID: hash_3cb955a1740ab1b0
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Otomatik Banyo
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Otomatik Banyo | Otomatik banyo cihazlarının dezavantajları: manuel banyoya göre daha düşük kalite, daha fazla gren, yüksek ekipman ve bakım maliyeti
+
+  KART B (cloze) | GUID: hash_d9699d1266bae8f0
+  Başlık: Radyoloji - Banyo İşlemleri - Otomatik Banyo
+  Metin : Radyoloji - Banyo İşlemleri - Otomatik Banyo | Otomatik banyo cihazlarıyla elde edilen radyografik görüntünün kalitesi, manuel banyoya kıyasla daha düşüktür ve filmde daha fazla gren görülür.
+
+--------------------------------------------------------------------------------
+
+[15] SCORE: 0.8583
+  KART A (cloze) | GUID: hash_acb9b5a35a0973ba
+  Başlık: Radyoloji - Karanlık Oda - Özellikleri
+  Metin : Radyoloji - Karanlık Oda - Özellikleri | Karanlık oda sıcaklığı 90°F (yaklaşık 32,5°C) üzerine çıkarsa fog oluşur
+
+  KART B (cloze) | GUID: hash_df23a6ac82dc0b65
+  Başlık: Radyoloji - Banyo İşlemleri - Karanlık Oda
+  Metin : Radyoloji - Banyo İşlemleri - Karanlık Oda | Karanlık odada fog oluşumunu engellemek için oda sıcaklığı maksimum 32.5⁰C (90⁰F) olmalıdır.
+
+--------------------------------------------------------------------------------
+
+[16] SCORE: 0.8571
+  KART A (cloze) | GUID: hash_4aa81d15cee0859c
+  Başlık: Radyoloji - Işınlama Parametreleri - kVp Etkisi
+  Metin : Radyoloji - Işınlama Parametreleri - kVp Etkisi | X-ışını cihazında kullanılan kVp değeri artırıldığında doku kontrastı azalır ve görüntüde uzun gri skala izlenir
+
+  KART B (?) | GUID: p&6Z/V.v0w
+  Başlık: 
+  Metin : X-ışını cihazında kullanılan kVp değeri artırıldığında doku kontrastı azalır ve görüntüde uzun gri skala oluşur.
+
+--------------------------------------------------------------------------------
+
+[17] SCORE: 0.8568
+  KART A (cloze) | GUID: hash_4f23aa1fb3674619
+  Başlık: Radyoloji - Ekipman Özellikleri - Skrin Hızı
+  Metin : Radyoloji - Ekipman Özellikleri - Skrin Hızı | Radyografik çekimde kullanılan skrinlerin (ranforsatör) hızı arttıkça radyogramın detayı ve netliği azalır (olumsuz etkilenir)
+
+  KART B (cloze) | GUID: hash_ac779a62227d7d21
+  Başlık: Radyoloji - Görüntü Özellikleri - Detay ve Netlik
+  Metin : Radyoloji - Görüntü Özellikleri - Detay ve Netlik | Ekstraoral radyografide kullanılan skrinlerin (ranforsatörlerin) hızı arttıkça radyogramdaki detay olumsuz yönde etkilenir.
+
+--------------------------------------------------------------------------------
+
+[18] SCORE: 0.8534
+  KART A (cloze) | GUID: hash_3ac1fd03a9194589
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odanın sıcaklığı 90°F (32.5°C) üzerine çıkmamalıdır
+
+  KART B (cloze) | GUID: hash_df23a6ac82dc0b65
+  Başlık: Radyoloji - Banyo İşlemleri - Karanlık Oda
+  Metin : Radyoloji - Banyo İşlemleri - Karanlık Oda | Karanlık odada fog oluşumunu engellemek için oda sıcaklığı maksimum 32.5⁰C (90⁰F) olmalıdır.
+
+--------------------------------------------------------------------------------
+
+[19] SCORE: 0.8527
+  KART A (cloze) | GUID: hash_bf085aa2bec7c0d5
+  Başlık: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri
+  Metin : Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyogramda görülen gri gölgelerin çoğunu oluşturan geliştirici ajan elon (metol) olarak adlandırılır
+
+  KART B (?) | GUID: B(%g]d[?&$
+  Başlık: 
+  Metin : Birinci banyo solüsyonunda radyogramdaki gri gölgelerin çoğunu oluşturan ve ısıya duyarlı olmayan geliştirici ajan elon (metol)'dur.
+
+--------------------------------------------------------------------------------
+
+[20] SCORE: 0.8492
+  KART A (cloze) | GUID: hash_7a0972c0e2de858c
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | X-ışını tüpü anotundaki eğim nedeniyle radyografik detayın bozulmasına topuk etkisi (heel effect) adı verilir
+
+  KART B (cloze) | GUID: hash_8ae84c0f1e81fbb7
+  Başlık: Radyoloji - Görüntü Özellikleri - Detay ve Netlik
+  Metin : Radyoloji - Görüntü Özellikleri - Detay ve Netlik | Radyografide detayı olumsuz etkileyen ve anottan çıkan x-ışınlarının şiddetinin katot tarafında daha yüksek olmasına bağlı oluşan duruma topuk etkis
+
+--------------------------------------------------------------------------------
+
+[21] SCORE: 0.8484
+  KART A (cloze) | GUID: hash_fca8b69509fb9532
+  Başlık: Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri
+  Metin : Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri | Hidrokinon, developer solüsyonunda 15°C altında inaktif hale gelir
+
+  KART B (cloze) | GUID: hash_76e8905c784a5ab8
+  Başlık: Radyoloji - Banyo İşlemleri - Geliştirici Ajanlar
+  Metin : Radyoloji - Banyo İşlemleri - Geliştirici Ajanlar | Birinci banyo solüsyonundaki geliştirici ajanlardan hidrokinon 15⁰C'nin altındaki sıcaklıklarda inaktiftir.
+
+--------------------------------------------------------------------------------
+
+[22] SCORE: 0.8446
+  KART A (cloze) | GUID: hash_81b2c083d9524924
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Işınlanmamış bir film işlendiğinde ortaya çıkan minimum dansiteye baz artı fog denir ve tipik değeri 0.2-0.3'tür
+
+  KART B (cloze) | GUID: hash_5e949b7afd03fc5b
+  Başlık: Radyoloji - Görüntü Özellikleri - Dansite
+  Metin : Radyoloji - Görüntü Özellikleri - Dansite | Maruz kalmamış film işlendiğinde bazın doğal yoğunluğundan kaynaklanan minimum optik dansiteye baz artı fog denir ve değeri tipik olarak 0.2 ila 0.3 aralığı
+
+--------------------------------------------------------------------------------
+
+[23] SCORE: 0.8427
+  KART A (cloze) | GUID: hash_30f70d65fced0332
+  Başlık: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri
+  Metin : Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda gri tonları oluşturan ve ısıya duyarlı olmayan geliştirici ajan elon (metol)dur
+
+  KART B (?) | GUID: B(%g]d[?&$
+  Başlık: 
+  Metin : Birinci banyo solüsyonunda radyogramdaki gri gölgelerin çoğunu oluşturan ve ısıya duyarlı olmayan geliştirici ajan elon (metol)'dur.
+
+--------------------------------------------------------------------------------
+

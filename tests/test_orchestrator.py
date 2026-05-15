@@ -46,7 +46,6 @@ class TestDetectDers:
 
 
 # ─── orchestrate_search ───────────────────────────────────────────────────────
-# Helper: patch the three search functions in the orchestrator namespace.
 
 PATCH_PINECONE = "bot.services.orchestrator.pinecone_search"
 PATCH_MULTI = "bot.services.orchestrator.search_multi_ns"
@@ -63,11 +62,8 @@ class TestOrchestrateSearch:
         ):
             result = await orchestrate_search("patoloji anlat", "ders_calis")
 
-        # pdfs searched (patoloji detected → single-ns pinecone path)
         assert mock_p.called or mock_m.called
-        # questions searched
         assert mock_q.called
-        # brain NOT searched
         assert "brain" not in result
 
     async def test_hafiza_searches_brain_only(self):
@@ -93,27 +89,82 @@ class TestOrchestrateSearch:
         assert mock_m.called
         assert mock_q.called is False
 
-    async def test_forced_index_mybrain_always_searches_brain(self):
+    async def test_forced_index_mybrain_exclusive(self):
+        """forced_index=mybrain → SADECE mybrain aranır, pdfs ve questions aranmaz."""
         with (
-            patch(PATCH_PINECONE, return_value=[]),
+            patch(PATCH_PINECONE, return_value=[]) as mock_p,
             patch(PATCH_MULTI, new=AsyncMock(return_value=[{"text": "note"}])) as mock_m,
-            patch(PATCH_QUESTIONS, return_value=[]),
+            patch(PATCH_QUESTIONS, return_value=[]) as mock_q,
         ):
             result = await orchestrate_search("notlarim", "ders_calis", forced_index="mybrain")
 
         assert mock_m.called
         assert "brain" in result
+        assert "pdfs" not in result
+        assert "questions" not in result
 
-    async def test_forced_index_myppdfs_searches_pdfs(self):
+    async def test_forced_index_myppdfs_exclusive(self):
+        """forced_index=myppdfs → SADECE myppdfs aranır, brain ve questions aranmaz."""
         with (
             patch(PATCH_PINECONE, return_value=[]) as mock_p,
             patch(PATCH_MULTI, new=AsyncMock(return_value=[])) as mock_m,
-            patch(PATCH_QUESTIONS, return_value=[]),
+            patch(PATCH_QUESTIONS, return_value=[]) as mock_q,
         ):
             result = await orchestrate_search("genel konu", "genel", forced_index="myppdfs")
 
         assert mock_p.called or mock_m.called
         assert "pdfs" in result
+        assert "brain" not in result
+        assert "questions" not in result
+
+    async def test_forced_index_dusbankasi_exclusive(self):
+        """Kritik: forced_index=dusbankasi → SADECE soru bankası aranır (/soru komutu)."""
+        with (
+            patch(PATCH_PINECONE, return_value=[]) as mock_p,
+            patch(PATCH_MULTI, new=AsyncMock(return_value=[])) as mock_m,
+            patch(PATCH_QUESTIONS, return_value=[{"question": "test"}]) as mock_q,
+        ):
+            result = await orchestrate_search(
+                "patoloji sorusu", "soru_sor", forced_index="dusbankasi"
+            )
+
+        assert mock_q.called
+        assert "questions" in result
+        assert "pdfs" not in result
+        assert "brain" not in result
+        assert mock_p.called is False
+        assert mock_m.called is False
+
+    async def test_forced_index_anki_exclusive(self):
+        """forced_index=anki → SADECE Anki kartları aranır."""
+        with (
+            patch(PATCH_PINECONE, return_value=[{"text": "anki card"}]) as mock_p,
+            patch(PATCH_MULTI, new=AsyncMock(return_value=[])) as mock_m,
+            patch(PATCH_QUESTIONS, return_value=[]) as mock_q,
+        ):
+            result = await orchestrate_search(
+                "protez kartlari", "ders_calis", forced_index="anki"
+            )
+
+        assert "anki" in result
+        assert "pdfs" not in result
+        assert "brain" not in result
+        assert "questions" not in result
+        assert mock_q.called is False
+
+    async def test_forced_index_anki_unknown_ders_uses_multi_ns(self):
+        """Anki: bilinmeyen branş namespace'i → tüm Anki namespace'lerinde ara."""
+        with (
+            patch(PATCH_PINECONE, return_value=[]) as mock_p,
+            patch(PATCH_MULTI, new=AsyncMock(return_value=[{"text": "card"}])) as mock_m,
+            patch(PATCH_QUESTIONS, return_value=[]),
+        ):
+            result = await orchestrate_search(
+                "genel bir kart ara", "ders_calis", forced_index="anki"
+            )
+
+        assert "anki" in result
+        assert mock_m.called  # multi-ns kullanıldı
 
     async def test_speed_mode_fast_with_detected_ders_uses_single_ns(self):
         with (
@@ -126,7 +177,6 @@ class TestOrchestrateSearch:
                 settings={"speed_mode": "fast"}
             )
 
-        # Fast mode with detected ders → single-namespace pinecone, not multi-ns
         assert mock_p.called
         assert mock_m.called is False
 
@@ -151,15 +201,3 @@ class TestOrchestrateSearch:
 
         assert isinstance(result, dict)
         assert "pdfs" in result or "questions" in result
-
-    async def test_anki_searched_for_forced_index_anki(self):
-        with (
-            patch(PATCH_PINECONE, return_value=[{"text": "anki card"}]) as mock_p,
-            patch(PATCH_MULTI, new=AsyncMock(return_value=[])),
-            patch(PATCH_QUESTIONS, return_value=[]),
-        ):
-            result = await orchestrate_search(
-                "protez kartlari", "ders_calis", forced_index="anki"
-            )
-
-        assert "anki" in result

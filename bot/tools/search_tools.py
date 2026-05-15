@@ -120,7 +120,7 @@ async def _search_hafiza(query: str) -> str:
     log.info(f"[tool] search_hafiza: query={query[:60]}")
     try:
         brain_ns = ["dus-memory", "dus-progress", "dus-strategy", "chathistory"]
-        results = await asyncio.to_thread(search_multi_ns, query, "mybrain", brain_ns, 10, 5)
+        results = await search_multi_ns(query, "mybrain", brain_ns, 10, 5)
         if not results:
             return "Hafizanda bu konuyla ilgili bir kayit bulunamadi."
         out = "--- Furkan'in Hafizasi ---\n"

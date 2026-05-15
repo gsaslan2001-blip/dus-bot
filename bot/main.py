@@ -80,8 +80,11 @@ def update_settings(chat_id: int, new_settings: dict) -> None:
     user_settings[chat_id] = new_settings
 
 
-def get_search_cache_key(query: str, intent: str, forced_index: str | None) -> str:
-    return f"{query[:100]}|{intent}|{forced_index or ''}"
+def get_search_cache_key(query: str, intent: str, forced_index: str | None,
+                         settings: dict | None = None) -> str:
+    speed = (settings or {}).get("speed_mode", "balanced")
+    depth = (settings or {}).get("search_depth", 5)
+    return f"{query[:100]}|{intent}|{forced_index or ''}|{speed}|{depth}"
 
 
 # --- Telegram Helpers ---

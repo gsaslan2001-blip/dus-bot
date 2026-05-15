@@ -8,25 +8,23 @@ log = logging.getLogger(__name__)
 async def cmd_start(chat_id: int, send) -> None:
     await send(chat_id,
         "Selam Furkan! Ben Atlas, DUS Mentorun.\n\n"
-        "✅ Tum ders notlarina erisebilirim\n"
-        "✅ Hafizani sorgulayabilirim\n"
-        "✅ 16.000+ DUS sorusu bankasinda arama yapabilirim\n"
-        "✅ Anki kartlarina ulasabilirim\n\n"
-        "Ne yapmak istersin?\n"
-        "- Konu anlatimi: \"SCC patogenezini anlat\"\n"
-        "- Soru cozumu: \"Periodontoloji sorularina bakalim\"\n"
-        "- Ilerleme: \"En son ne calismistim?\"\n"
-        "- Cikmis analiz: \"Patolojide en cok cikan konular\"\n\n"
-        "Prefix komutlari:\n"
-        "/mypdf - Dogrudan ders notlarinda ara\n"
-        "/brain - Dogrudan hafizada ara\n"
-        "/soru - Dogrudan soru coz\n"
-        "/anki - Dogrudan Anki kartlarinda ara\n"
-        "/cikmis - Dogrudan cikmis analizi yap\n\n"
-        "/ayarlar - Bot ayarlari\n"
-        "/stats - Sistem durumu\n"
-        "/dersler - Brans listesi\n"
-        "/sifirla - Sohbeti temizle",
+        "Dogrudan soru sorabilirsin:\n"
+        "  \"SCC patogenezini anlat\"\n"
+        "  \"Periodontoloji sorularina bakalim\"\n"
+        "  \"En son ne calismistim?\"\n\n"
+        "Index yonlendirme komutlari (nerede arayacagimi belirtir):\n"
+        "  /mypdf [konu]  - Ders notlarinda ara (myppdfs)\n"
+        "  /brain [konu]  - Hafizada ara (mybrain)\n"
+        "  /soru [konu]   - Soru bankasinda ara (16.000+ soru)\n"
+        "  /anki [konu]   - Anki kartlarinda ara\n"
+        "  /cikmis [ders] - Cikmis soru analizi\n\n"
+        "Ornek: \"/soru amiloblastom\" -> sadece soru bankasinda arar\n"
+        "Ornek: \"/mypdf periodontit\" -> sadece ders notlarinda arar\n\n"
+        "Diger komutlar:\n"
+        "  /ayarlar - Hiz modu, model, arama derinligi\n"
+        "  /stats   - Index istatistikleri\n"
+        "  /dersler - Brans listesi\n"
+        "  /sifirla - Sohbeti temizle",
         parse_mode=""
     )
 
@@ -100,7 +98,7 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
     """Show settings menu with inline keyboard."""
     settings = get_settings(chat_id)
     speed_mode = settings.get("speed_mode", "balanced")
-    model = settings.get("model", "deepseek-chat")
+    model = settings.get("model", "deepseek-v4-pro")
     depth = settings.get("search_depth", 5)
 
     spd_label = SPEED_MODE_CONFIG.get(speed_mode, {}).get("label", speed_mode)
@@ -111,8 +109,7 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
         "⚙️ *Atlas Bot Ayarlari*\n\n"
         f"🚀 *Hiz Modu:* {spd_label}\n"
         f"🤖 *Model:* {model_label}\n"
-        f"🔍 *Arama Derinligi:* {depth} sonuc\n"
-        f"📊 *Reranking:* {rerank_status}\n\n"
+        f"🔍 *Arama Derinligi:* {depth} sonuc\n\n"
         "Asagidaki dugmelerden ayarlari degistirebilirsin:"
     )
 
@@ -125,14 +122,13 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
             ],
             [
                 {"text": "🧠 Reasoner (Doğru)", "callback_data": "settings:model:deepseek-reasoner"},
-                {"text": "⚡ V4 Pro (Hızlı)", "callback_data": "settings:model:deepseek-chat"},
+                {"text": "⚡ V4 Pro (Hızlı)", "callback_data": "settings:model:deepseek-v4-pro"},
             ],
             [
                 {"text": "🔍 -1 Derinlik", "callback_data": "settings:depth:down"},
                 {"text": "🔍 +1 Derinlik", "callback_data": "settings:depth:up"},
             ],
             [
-                {"text": "📊 Rerank: Aç/Kapat", "callback_data": "settings:toggle:rerank"},
                 {"text": "🔄 Sıfırla", "callback_data": "settings:reset"},
             ],
             [

@@ -1,7 +1,27 @@
+import asyncio
 import logging
-from bot.services.router import classify_intent, get_prefix_routing
+from datetime import datetime
+from pathlib import Path
+from bot.services.router import route_message, get_prefix_help, classify_intent
 from bot.services.orchestrator import orchestrate_search
 from bot.services.agent_loop import run_agent
+
+VEKTORLENECEK = Path(__file__).parent.parent.parent / "vektörlenecek"
+
+async def _persist_chat_turn(chat_id: int, intent: str, user_text: str, assistant_text: str) -> None:
+    try:
+        VEKTORLENECEK.mkdir(exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filepath = VEKTORLENECEK / f"chat_{chat_id}_{ts}.md"
+        content = (
+            f"# Chat Turn — {ts}\n\n"
+            f"**intent:** {intent}\n\n"
+            f"**user:** {user_text}\n\n"
+            f"**assistant:** {assistant_text}\n"
+        )
+        filepath.write_text(content, encoding="utf-8")
+    except Exception as e:
+        logging.getLogger(__name__).warning(f"[chathistory] persist başarısız: {e}")
 
 log = logging.getLogger(__name__)
 
@@ -9,19 +29,27 @@ log = logging.getLogger(__name__)
 async def handle_message(chat_id: int, text: str, send, send_action, context: dict,
                          get_settings, search_cache, get_search_cache_key,
                          send_placeholder=None, edit_message=None) -> None:
-    """Main message handler: route -> search -> agent -> respond."""
-    # Step 0: Prefix routing
-    forced_index, cleaned_text = get_prefix_routing(text)
-    if forced_index:
-        log.info(f"[handler] prefix route: forced_index={forced_index}")
+    """Ana mesaj işleyici: route → search → agent → respond."""
 
-    # Step 1: Intent
-    intent = await classify_intent(text)
-    log.info(f"[handler] chat={chat_id} intent={intent} forced_index={forced_index} msg={text[:80]}")
+    # Step 0: Tek geçişte yönlendirme
+    intent_override, forced_index, cleaned_text, is_prefix_only = route_message(text)
+
+    # Prefix tek başına gönderildi → arama yapma, yardım mesajı göster
+    if is_prefix_only:
+        await send(chat_id, get_prefix_help(forced_index), parse_mode="")
+        return
+
+    # Step 1: Intent — prefix belirlediyse DeepSeek çağrısını atla
+    if intent_override:
+        intent = intent_override
+        log.info(f"[handler] prefix route: intent={intent} forced={forced_index} msg={cleaned_text[:80]}")
+    else:
+        intent = await classify_intent(cleaned_text)
+        log.info(f"[handler] classified: intent={intent} msg={cleaned_text[:80]}")
 
     settings = get_settings(chat_id)
 
-    # Step 2: Placeholder mesajı gönder (kullanıcı hemen bir şey görür)
+    # Step 2: Placeholder gönder (kullanıcı hemen bir şey görür)
     placeholder_msg_id = None
     if send_placeholder:
         placeholder_msg_id = await send_placeholder(chat_id)
@@ -29,7 +57,7 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
         await send_action(chat_id, "typing")
 
     # Step 3: Cache kontrolü
-    cache_key = get_search_cache_key(cleaned_text, intent, forced_index)
+    cache_key = get_search_cache_key(cleaned_text, intent, forced_index, settings)
     cached = search_cache.get(cache_key)
     if cached:
         log.info(f"[handler] cache hit: {cache_key[:80]}")
@@ -42,11 +70,11 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
         )
         search_cache[cache_key] = search_results
 
-    # Step 4: Agent
+    # Step 4: DeepSeek sentezi
     prior_history = context.get("history", [])
     response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history)
 
-    # Step 5: Geçmişi güncelle
+    # Step 5: Konuşma geçmişini güncelle
     history = context.get("history", [])
     history.append({"role": "user", "content": cleaned_text})
     history.append({"role": "assistant", "content": response})
@@ -59,3 +87,6 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
             await send(chat_id, response, parse_mode="")
     else:
         await send(chat_id, response, parse_mode="")
+
+    # Step 7: chathistory staging (non-blocking)
+    asyncio.create_task(_persist_chat_turn(chat_id, intent, cleaned_text, response))

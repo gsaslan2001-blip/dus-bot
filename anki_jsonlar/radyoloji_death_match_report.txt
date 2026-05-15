@@ -1,0 +1,718 @@
+# DEATH MATCH REPORT: radyoloji_dedup_report.json
+
+[1] Score: 0.954 | Decision: ERROR
+  A: Radyoloji - Banyo İşlemleri - 1. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 1. banyo solüsyonunda kalma süresi artırıldığında radyografik dansite artar
+  B: Radyoloji - Banyo İşlemleri - 2. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 2. banyo solüsyonunda (fiksatör) kalma süresi artırıldığında radyografik dansite azalır
+--------------------------------------------------
+[2] Score: 0.9422 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Banyo Sırası | Röntgen filmi banyo aşamalarının doğru sırası 1. banyo (developer) – yıkama – fiksasyon – yıkama – kurutma şeklindedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Banyo Aşamaları | Röntgen filmi banyo aşamaları sırasıyla: developer (1. banyo), yıkama, fiksaj (2. banyo), yıkama, kurutma
+--------------------------------------------------
+[3] Score: 0.939 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Güvenlik Lambası | Karanlık odada güvenlik lambasının etkinliğini test etmek için kullanılan yönteme coin testi (para testi) adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odada güvenlik lambasının etkinliğini değerlendirmek için uygulanan test para testi (coin test) olarak adlandırılır
+--------------------------------------------------
+[4] Score: 0.935 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Güvenlik Lambası | Karanlık oda güvenlik lambasının banyo yapılan alana minimum uzaklığı 120 cm olarak belirtilmektedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odadaki güvenlik lambası, banyo yapılan alana en az 120 cm uzaklıkta konumlandırılmalıdır
+--------------------------------------------------
+[5] Score: 0.9343 | Decision: ERROR
+  A: Radyoloji - Banyo - Yıkama Sıcaklığı | Röntgen banyosu ara yıkama işleminde, suyun derecesi 16 derecenin altında olursa yıkama etkinliği hızla düşer
+  B: Radyoloji - Banyo Tekniği - Yıkama | Yıkama suyunun sıcaklığı 16°C derecenin altına düşerse yıkama etkinliği hızla düşer
+--------------------------------------------------
+[6] Score: 0.9336 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre röntgen filmindeki gümüş bromür kristallerinde x-ışını etkisiyle salınan elektronlar, hassas bölgeye ulaşarak negatif yük verirler
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisine göre, bir x-ışını fotonu gümüş bromür kristaline çarptığında ilk olarak bromür iyonundan elektron salınmasına neden olur
+--------------------------------------------------
+[7] Score: 0.933 | Decision: ERROR
+  A: Radyoloji - Film Görüntüleme - Latent İmaj | Röntgen film banyosunda latent imaj oluşumunu açıklayan teori Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde gözle görülmeyen gizli görüntünün oluşumunu açıklayan teori Gurney-Mott teorisidir
+--------------------------------------------------
+[8] Score: 0.9328 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Diğer ışınlama faktörleri sabitken odak-film mesafesi artırıldığında filme ulaşan foton sayısı azalacağı için radyografik dansite azalır.
+  B: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Diğer faktörler sabitken objenin kalınlığı artırıldığında x-ışını zayıflaması (atenüasyon) artacağı için radyografik dansite azalır.
+--------------------------------------------------
+[9] Score: 0.9296 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Koruyucu (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) fikse edici ajanların bozulmasını önleyen koruyucu madde amonyum sülfit'tir
+  B: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda fiksatif ajanların bozulmasını önleyen koruyucu bileşik amonyum sülfit olarak adlandırılır
+--------------------------------------------------
+[10] Score: 0.9296 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Latitude ve Kontrast İlişkisi | Geniş görüntüleme aralığına (latitude) sahip röntgen filmlerinin görüntü kontrastı, dar aralıklı filmlere göre daha düşüktür
+  B: Radyoloji - Görüntü Özellikleri - Latitude | Geniş görüntüleme aralıklı filmler dar görüntüleme aralıklı filmlerden daha düşük kontrasta sahiptir
+--------------------------------------------------
+[11] Score: 0.9282 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Temel Kavramlar | Röntgen filminde latent imajın görünür ve kalıcı hale getirilmesi için yapılan kimyasal işlem dizisine röntgen banyosu adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde latent imajı görünür ve kalıcı hale getiren kimyasal işlemler dizisine röntgen banyosu (manifest görüntü dönemi) adı verilir
+--------------------------------------------------
+[12] Score: 0.9277 | Decision: ERROR
+  A: Radyoloji - Film Görüntüleme - Latent İmaj | Röntgen film banyosunda latent imaj oluşumunu açıklayan teori Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - Latent İmaj | Latent imaj oluşumunu açıklayan teorinin adı Gurney-Mott teorisi olarak adlandırılır
+--------------------------------------------------
+[13] Score: 0.9272 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Karanlık Oda | Karanlık odada intraoral ve ekstraoral röntgen filmlerinin işlenmesinde güvenlik ışığı filtresi olarak kırmızı GBX-2 filtre kullanılması önerilir.
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | İntraoral filmlerin işlendiği karanlık odada güvenlik ışığı filtresi olarak önerilen filtre kırmızı GBX-2'dir
+--------------------------------------------------
+[14] Score: 0.924 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Bir radyografın gösterdiği koyuluk derecesine radyografik dansite adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Bir radyografın gösterdiği koyuluk derecesine radyografik dansite (optik yoğunluk) adı verilir
+--------------------------------------------------
+[15] Score: 0.9232 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Güvenlik Lambası | Karanlık odada intraoral veya ekstraoral filmler için önerilen güvenlik filtresi kırmızı GBX-2 filtre olarak belirtilmektedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | İntraoral filmlerin işlendiği karanlık odada güvenlik ışığı filtresi olarak önerilen filtre kırmızı GBX-2'dir
+--------------------------------------------------
+[16] Score: 0.9227 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Otomatik Cihaz | Otomatik banyo cihazında elde edilen radyografinin kalitesinin manuel banyoya göre daha düşük olması dezavantajdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Otomatik Banyo | Otomatik banyo cihazlarının dezavantajları: manuel banyoya göre daha düşük kalite, daha fazla gren, yüksek ekipman ve bakım maliyeti
+--------------------------------------------------
+[17] Score: 0.9197 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Doku Dansitesi | Dansite sıralamasında oral kavitedeki yapılar açıktan koyuya doğru sırasıyla mine, dentin, sement, kemik, yumuşak doku, yağ ve hava şeklindedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Oral kavitedeki yapıların radyografik dansite sıralaması açıktan koyuya doğru: mine, dentin, sement, kemik, yumuşak doku, yağ, hava
+--------------------------------------------------
+[18] Score: 0.9137 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Görüntü Oluşumu | Röntgen filminde ışın alan kısımlar siyah, daha az ışın alan kısımlar gri tonlarda görülür
+  B: Radyoloji - Banyo Tekniği - Görüntü Oluşumu | Röntgen filminde ışın almayan kısımlar beyaz renkte görülür
+--------------------------------------------------
+[19] Score: 0.9129 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Birinci banyo süresi uzadıkça radyografik dansite artar
+  B: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Diğer faktörler sabit tutulup ikinci banyoda kalma süresi artırılırsa radyografik dansite azalır
+--------------------------------------------------
+[20] Score: 0.9109 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot boyutu küçüldükçe radyogramın netliği artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot-obje mesafesi arttıkça radyografik detay iyi olur
+--------------------------------------------------
+[21] Score: 0.9081 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Yıkama | Yıkama suyunun sıcaklığı 16°C derecenin altına düşerse yıkama etkinliği hızla düşer
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Yıkama ve Kurutma | Yıkama suyunun sıcaklığı 160°F'nin altına düşerse yıkama etkinliği hızla azalır
+--------------------------------------------------
+[22] Score: 0.9071 | Decision: ERROR
+  A: Radyoloji - Banyo - Görüntü Oluşumu | Röntgen film banyosu sonrasında x-ışını alan kısımlar siyah (radyolusent), ışın almayan kısımlar ise beyaz (radyoopak) renkte görülür
+  B: Radyoloji - Banyo Tekniği - Görüntü Oluşumu | Röntgen filminde ışın alan kısımlar siyah, daha az ışın alan kısımlar gri tonlarda görülür
+--------------------------------------------------
+[23] Score: 0.9064 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (1. Banyo) | Birinci banyo solüsyonunda (developer) film emülsiyonundaki jelatinin aşırı şişmesini önleyen sertleştirici ajan glutaraldehit bileşiğidir
+  B: Radyoloji - Banyo Solüsyonları - Sertleştirici Kıyası | Film banyo solüsyonlarında emülsiyon şişmesini önleyen sertleştirici ajan 1. banyoda glutaraldehit iken, 2. banyoda alüminyum sülfat'tır
+--------------------------------------------------
+[24] Score: 0.9064 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Latent imaj oluşumunu açıklayan teorinin adı Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde gözle görülmeyen gizli görüntünün oluşumunu açıklayan teori Gurney-Mott teorisidir
+--------------------------------------------------
+[25] Score: 0.9052 | Decision: ERROR
+  A: Radyoloji - Banyo - Görüntü Oluşumu | Röntgen film banyosu sonrasında x-ışını alan kısımlar siyah (radyolusent), ışın almayan kısımlar ise beyaz (radyoopak) renkte görülür
+  B: Radyoloji - Banyo Tekniği - Görüntü Oluşumu | Röntgen filminde ışın almayan kısımlar beyaz renkte görülür
+--------------------------------------------------
+[26] Score: 0.9048 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri | Hidrokinon, developer solüsyonunda 15°C altında inaktif hale gelir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Hidrokinon 15°C'nin altında inaktif, 28°C'nin üzerinde ise aşırı aktiftir
+--------------------------------------------------
+[27] Score: 0.9044 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre röntgen filmindeki gümüş bromür kristallerinde x-ışını etkisiyle salınan elektronlar, hassas bölgeye ulaşarak negatif yük verirler
+  B: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre latent imaj bölgelerini oluşturan atom nötr gümüş atomları olarak adlandırılır
+--------------------------------------------------
+[28] Score: 0.904 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Standardizasyonu | Radyogramların dansitometrik değerlendirmesi ve standardizasyonunda kullanılan "step-wedge", x-ışını absorbsiyonu kemik ile eşdeğer olan alüminyum materyalinden üretilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Dansite standardizasyonu için farklı kalınlıklarda basamaklardan oluşan alüminyum alete step-wedge (genetrometer) adı verilir
+--------------------------------------------------
+[29] Score: 0.9037 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Latitude | Ekspojur latitude sıralaması en geniş olandan en dara doğru PSP > CCD = CMOS > film şeklindedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntüleme Aralığı | Ekspojur latitude sıralaması (en genişten en dara): PSP >> CCD = CMOS > Film
+--------------------------------------------------
+[30] Score: 0.9024 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Karanlık Oda | Karanlık odada intraoral ve ekstraoral röntgen filmlerinin işlenmesinde güvenlik ışığı filtresi olarak kırmızı GBX-2 filtre kullanılması önerilir.
+  B: Radyoloji - Karanlık Oda - Güvenlik Lambası | Karanlık odada intraoral veya ekstraoral filmler için önerilen güvenlik filtresi kırmızı GBX-2 filtre olarak belirtilmektedir
+--------------------------------------------------
+[31] Score: 0.9019 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot boyutu küçüldükçe radyogramın netliği artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Obje-film mesafesi kısaldıkça radyogramın netliği artar
+--------------------------------------------------
+[32] Score: 0.9005 | Decision: ERROR
+  A: Radyoloji - Banyo İşlemleri - 2. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 2. banyo solüsyonunda (fiksatör) kalma süresi artırıldığında radyografik dansite azalır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | İkinci banyoda kalma süresi uzadıkça radyografik dansite azalır
+--------------------------------------------------
+[33] Score: 0.9004 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Birinci banyo süresi uzadıkça radyografik dansite artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | Birinci banyo süresi uzadıkça radyografik dansite artar
+--------------------------------------------------
+[34] Score: 0.8985 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Detay | Fokal spot–obje mesafesi artarsa detay iyileşir; obje–film mesafesi kısalırsa netlik artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot-obje mesafesi arttıkça radyografik detay iyi olur
+--------------------------------------------------
+[35] Score: 0.8983 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Uzaklaştırıcı | İkinci banyo solüsyonunda (fiksatör) ışın almamış gümüş bromid ile reaksiyona girerek onu filmden uzaklaştıran ajan Na-Amonyum tiosülfat'tır
+  B: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda ışın almamış gümüş bromürü filmden uzaklaştıran bileşik Na-amonyum tiyosülfat olarak adlandırılır
+--------------------------------------------------
+[36] Score: 0.8981 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Temel Kavramlar | Röntgen filmi banyo işleminin latent görüntüyü görünür kıldığı döneme manifest görüntü dönemi adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde latent imajı görünür ve kalıcı hale getiren kimyasal işlemler dizisine röntgen banyosu (manifest görüntü dönemi) adı verilir
+--------------------------------------------------
+[37] Score: 0.8971 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunun temel kimyasal bileşen grupları: Geliştirici (indirgeyici), Aktivatör, Koruyucu ve Sertleştirici ajanlardır.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo (fikser) solüsyonunun temel kimyasal bileşen grupları: Uzaklaştırıcı, Koruyucu, Sertleştirici ve Asit tampon sistemidir.
+--------------------------------------------------
+[38] Score: 0.8971 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre röntgen filmindeki gümüş bromür kristallerinde x-ışını etkisiyle salınan elektronlar, hassas bölgeye ulaşarak negatif yük verirler
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisinde serbest kalan interstisyel gümüş iyonları, negatif yüklenen hassas bölgeye çekilir ve nötr gümüş atomlarına dönüşür
+--------------------------------------------------
+[39] Score: 0.8971 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan geliştirici ajan hidrokinon olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda siyah tonları ve keskin kontrastı oluşturan geliştirici ajan hidrokinondur
+--------------------------------------------------
+[40] Score: 0.897 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Detay | Fokal spotun boyutu küçüldükçe filmin netliği artar
+  B: Radyoloji - Görüntü Özellikleri - Detay | Fokal spot–obje mesafesi artarsa detay iyileşir; obje–film mesafesi kısalırsa netlik artar
+--------------------------------------------------
+[41] Score: 0.8966 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Aydınlatma Kriteri | Karanlık odada banyo yapılan alana en az 120 cm uzaklıkta konumlandırılması gereken buzlu ampulün maksimum gücü 15 watt olmalıdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odada kullanılan buzlu ampül en fazla 15 watt, parlak ampül ise en fazla 7.5 watt gücünde olmalıdır
+--------------------------------------------------
+[42] Score: 0.8961 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri | Developer solüsyonu için tavsiye edilen ideal sıcaklık 23°C'dir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Developer solüsyonu için tavsiye edilen ideal sıcaklık 23°C'dir
+--------------------------------------------------
+[43] Score: 0.8957 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda fiksatif ajanların bozulmasını önleyen koruyucu bileşik amonyum sülfit olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda fikser ajanların bozulmasını önleyen koruyucu amonyum sülfittir
+--------------------------------------------------
+[44] Score: 0.895 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Diğer faktörler sabit tutulup ikinci banyoda kalma süresi artırılırsa radyografik dansite azalır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | İkinci banyoda kalma süresi uzadıkça radyografik dansite azalır
+--------------------------------------------------
+[45] Score: 0.8948 | Decision: ERROR
+  A: Radyoloji - Banyo - Yıkama Sıcaklığı | Röntgen banyosu ara yıkama işleminde, suyun derecesi 16 derecenin altında olursa yıkama etkinliği hızla düşer
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Yıkama ve Kurutma | Yıkama suyunun sıcaklığı 160°F'nin altına düşerse yıkama etkinliği hızla azalır
+--------------------------------------------------
+[46] Score: 0.8942 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisine göre, bir x-ışını fotonu gümüş bromür kristaline çarptığında ilk olarak bromür iyonundan elektron salınmasına neden olur
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisinde serbest kalan interstisyel gümüş iyonları, negatif yüklenen hassas bölgeye çekilir ve nötr gümüş atomlarına dönüşür
+--------------------------------------------------
+[47] Score: 0.8929 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Standardizasyonu | Radyogramların dansitometrik değerlendirmesi ve standardizasyonunda kullanılan "step-wedge", x-ışını absorbsiyonu kemik ile eşdeğer olan alüminyum materyalinden üretilir
+  B: Radyoloji - Görüntü Özellikleri - Dansite | Radyografik dansitenin standardizasyonunda step-wedge ile birlikte obje ışınlanarak materyalin yoğunluğunu ifade eden araç step-wedge (genetrometer) olarak adlandırılır
+--------------------------------------------------
+[48] Score: 0.8929 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Baz ve Fog Dansitesi | Işınlanmamış bir film banyo edildiğinde bazın doğal yoğunluğundan kaynaklanan minimum kararmaya "baz artı fog" denir ve optik değeri 0.2 - 0.3 aralığındadır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Işınlanmamış bir film işlendiğinde ortaya çıkan minimum dansiteye baz artı fog denir ve tipik değeri 0.2-0.3'tür
+--------------------------------------------------
+[49] Score: 0.8926 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Radyografik dansitenin standardizasyonunda step-wedge ile birlikte obje ışınlanarak materyalin yoğunluğunu ifade eden araç step-wedge (genetrometer) olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Dansite standardizasyonu için farklı kalınlıklarda basamaklardan oluşan alüminyum alete step-wedge (genetrometer) adı verilir
+--------------------------------------------------
+[50] Score: 0.8923 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot-obje mesafesi arttıkça radyografik detay iyi olur
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Obje-film mesafesi kısaldıkça radyogramın netliği artar
+--------------------------------------------------
+[51] Score: 0.8922 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sıcaklık Eşikleri | Birinci banyo solüsyonu (developer) geliştiricisi olan hidrokinon 15 °C'nin altında inaktifken, banyo işlemi için tavsiye edilen ideal sıcaklık 23 °C'dir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Developer solüsyonu için tavsiye edilen ideal sıcaklık 23°C'dir
+--------------------------------------------------
+[52] Score: 0.8921 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Fog | Film üzerinde kalan x-ışını demeti dışındaki nedenlerden kaynaklanan dansite artışına fog adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fog Nedenleri | X-ışını demetinin ışınlaması dışındaki nedenlerle radyografide dansite artışına fog adı verilir
+--------------------------------------------------
+[53] Score: 0.8906 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre | İkinci banyo (fiksaj) süresi, birinci banyonun yaklaşık 2 katı kadar olmalıdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre | Film ikinci banyoya konduktan sonra ışık açılmadan önce en az 15-30 saniye beklenmelidir
+--------------------------------------------------
+[54] Score: 0.8904 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Saçılan Radyasyon | Saçılan radyasyonu azaltmanın en iyi yolu düşük kVp kullanmak ve ışın demetini film boyutuna göre sınırlandırmaktır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Saçılan radyasyonu azaltmanın en iyi yolu görece düşük kVp kullanmak ve ışın demetini ilgili bölgeyle sınırlamaktır
+--------------------------------------------------
+[55] Score: 0.8904 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | Birinci banyo süresi uzadıkça radyografik dansite artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | Birinci banyo sıcaklığı 20-23°C üzerine çıktıkça radyografik dansite artar
+--------------------------------------------------
+[56] Score: 0.8902 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Latent imaj oluşumunu açıklayan teorinin adı Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre latent imaj bölgelerini oluşturan atom nötr gümüş atomları olarak adlandırılır
+--------------------------------------------------
+[57] Score: 0.8878 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre latent imaj bölgelerini oluşturan atom nötr gümüş atomları olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisinde serbest kalan interstisyel gümüş iyonları, negatif yüklenen hassas bölgeye çekilir ve nötr gümüş atomlarına dönüşür
+--------------------------------------------------
+[58] Score: 0.8877 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Detay | Fokal spotun boyutu küçüldükçe filmin netliği artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot boyutu küçüldükçe radyogramın netliği artar
+--------------------------------------------------
+[59] Score: 0.8867 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Doku Dansitesi | Dansite sıralamasında oral kavitedeki yapılar açıktan koyuya doğru sırasıyla mine, dentin, sement, kemik, yumuşak doku, yağ ve hava şeklindedir
+  B: Radyoloji - Görüntü Özellikleri - Doku Dansitesi | Dansite sıralamasında oral kavitedeki yapılar arasında en düşük densiteye sahip olan havadır
+--------------------------------------------------
+[60] Score: 0.8856 | Decision: ERROR
+  A: Radyoloji - Görüntüleme Reseptörleri - Latitude Sıralaması | Radyografik görüntüleme reseptörleri ekspojur latitude (görüntüleme aralığı) genişliğine göre: PSP, CCD = CMOS ve Film şeklinde sıralanır
+  B: Radyoloji - Görüntü Özellikleri - Latitude | Ekspojur latitude sıralaması en geniş olandan en dara doğru PSP > CCD = CMOS > film şeklindedir
+--------------------------------------------------
+[61] Score: 0.884 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Diğer ışınlama faktörleri sabitken odak-film mesafesi artırıldığında filme ulaşan foton sayısı azalacağı için radyografik dansite azalır.
+  B: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Diğer ışınlama faktörleri sabitken birinci banyo (developer) süresi uzarsa redüksiyon işlemi devam edeceği için radyografik dansite artar.
+--------------------------------------------------
+[62] Score: 0.8836 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (1. Banyo) | Birinci banyo solüsyonunda (developer) film emülsiyonundaki jelatinin aşırı şişmesini önleyen sertleştirici ajan glutaraldehit bileşiğidir
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo solüsyonunda emülsiyonun (jelatinin) aşırı şişmesini önleyerek mekanik direnç sağlayan sertleştirici ajan glutaraldehit maddesidir.
+--------------------------------------------------
+[63] Score: 0.8831 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı ve şişmeyi azaltan sertleştirici ajan alüminyum sülfat'tır
+  B: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo solüsyonunda jelatini sertleştirip şişmeyi azaltan ve kuruma süresini kısaltan bileşik alüminyum sülfat olarak adlandırılır
+--------------------------------------------------
+[64] Score: 0.8831 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Diğer faktörler sabitken objenin kalınlığı artırıldığında x-ışını zayıflaması (atenüasyon) artacağı için radyografik dansite azalır.
+  B: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Diğer ışınlama faktörleri sabitken birinci banyo (developer) süresi uzarsa redüksiyon işlemi devam edeceği için radyografik dansite artar.
+--------------------------------------------------
+[65] Score: 0.8827 | Decision: ERROR
+  A: Radyoloji - Banyo İşlemleri - 2. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 2. banyo solüsyonunda (fiksatör) kalma süresi artırıldığında radyografik dansite azalır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | Birinci banyo süresi uzadıkça radyografik dansite artar
+--------------------------------------------------
+[66] Score: 0.8827 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Otomatik Cihaz | Otomatik banyo cihazlarında tüm işlem süresinin manuel banyoya kıyasla daha kısa (4-7 dakikadan az) olması avantajdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Otomatik Banyo | Otomatik banyo cihazında işlem süresi yaklaşık 4-7 dakikadır
+--------------------------------------------------
+[67] Score: 0.8824 | Decision: ERROR
+  A: Radyoloji - Işınlama Parametreleri - kVp Etkisi | X-ışını cihazında kullanılan kVp değeri artırıldığında doku kontrastı azalır ve görüntüde uzun gri skala izlenir
+  B: Radyoloji - Görüntü Özellikleri - Kontrast | X-ışını kVp değeri arttıkça doku kontrastı azalır
+--------------------------------------------------
+[68] Score: 0.8823 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Saçılan Radyasyon | Radyografide saçılan radyasyonun neden olduğu iki olumsuz etki fog oluşumu ve radyografik kontrast kaybı olarak belirtilmektedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Saçılan radyasyonun radyografide oluşturduğu başlıca etkiler fog oluşumu ve radyografik kontrast kaybıdır
+--------------------------------------------------
+[69] Score: 0.8817 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Sıcaklık Sınırı | Banyo karanlık odasında fog (sis) oluşumunu engellemek için oda sıcaklığı en fazla 32.5 °C olmalıdır
+  B: Radyoloji - Karanlık Oda - Özellikleri | Karanlık oda sıcaklığı 90°F (yaklaşık 32,5°C) üzerine çıkarsa fog oluşur
+--------------------------------------------------
+[70] Score: 0.8816 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Fog | Ekstraoral tekniklerde kasetin ince arka kapağından yansıyarak film emülsiyonunu tekrar etkileyen ışınların oluşturduğu foga halasyon adı verilir.
+  B: Radyoloji - Görüntü Özellikleri - Fog | Ekstraoral kaset arka yüzeyinden yansıyan ışınların filmi tekrar etkilemesiyle oluşan fog türüne halasyon adı verilir
+--------------------------------------------------
+[71] Score: 0.8813 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film পুনরায় - Solüsyon Kimyası | Birinci banyo solüsyonunda oksitlenmeyi önleyerek filmin boyanmasını ve sisli görünümü engelleyen inorganik koruyucu madde sodyum sülfit bileşiğidir.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda fikse edici ajanların bozulmasını engelleyen koruyucu madde amonyum sülfit bileşiğidir.
+--------------------------------------------------
+[72] Score: 0.8801 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Film optik dansitesi ile ışınlama arasındaki ilişkinin grafiğine karakteristik eğri (Hurter-Driffield eğrisi) adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Film optik dansitesi ile ışınlamanın logaritması arasındaki ilişkiyi gösteren eğri Hurter-Driffield (karakteristik) eğrisi olarak bilinir
+--------------------------------------------------
+[73] Score: 0.8791 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Tek başına kullanıldığında belli belirsiz gri görüntü oluştururken, tek başına hidrokinon siyah ve beyaz olarak görünen bir görüntü oluşturur
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Hidrokinon tek başına kullanıldığında radyogramda siyah ve beyaz tonlar oluşurken, elon tek başına kullanıldığında ayırt edilemeyen gri bir görüntü oluşur
+--------------------------------------------------
+[74] Score: 0.879 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Karanlık Oda | Karanlık odada x-ışını filmleri için güvenlik ışığının (emniyet ışığı) etkinliğini test etmek amacıyla para testi (coin test) uygulanır.
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odada güvenlik lambasının etkinliğini değerlendirmek için uygulanan test para testi (coin test) olarak adlandırılır
+--------------------------------------------------
+[75] Score: 0.8782 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Fiksatör pH Eşiği | İkinci banyo solüsyonunda (fiksatör) film emülsiyonundaki artık geliştirici ajanı inaktive etmek için asetik asit tampon sisteminin sağladığı pH değeri 4-4.5 aralığındadır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda pH'ı 4-4.5 arasında sabit tutarak artık geliştirici ajanı inaktive eden bileşen asetik asittir
+--------------------------------------------------
+[76] Score: 0.8774 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Sıcaklık Sınırı | Banyo karanlık odasında fog (sis) oluşumunu engellemek için oda sıcaklığı en fazla 32.5 °C olmalıdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odanın sıcaklığı 90°F (32.5°C) üzerine çıkmamalıdır
+--------------------------------------------------
+[77] Score: 0.8774 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda geliştirici ajanların oksijenle birleşmesini önleyerek solüsyonun uzun süre kullanılmasını sağlayan bileşik sodyum sülfit olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda geliştirici ajanların oksidasyonunu önleyerek solüsyonun uzun süre kullanılmasını sağlayan koruyucu sodyum sülfittir
+--------------------------------------------------
+[78] Score: 0.8768 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Banyo Süresi | İkinci banyonun süresi birinci banyonun süresinin 2 katıdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre | İkinci banyo (fiksaj) süresi, birinci banyonun yaklaşık 2 katı kadar olmalıdır
+--------------------------------------------------
+[79] Score: 0.8758 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (1. Banyo) | Birinci banyo solüsyonunda (developer) film emülsiyonundaki jelatinin aşırı şişmesini önleyen sertleştirici ajan glutaraldehit bileşiğidir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda jelatinin şişmesini önlemek için kullanılan sertleştirici glutaraldehittir
+--------------------------------------------------
+[80] Score: 0.8758 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Özellikleri | Karanlık oda sıcaklığı 90°F (yaklaşık 32,5°C) üzerine çıkarsa fog oluşur
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odanın sıcaklığı 90°F (32.5°C) üzerine çıkmamalıdır
+--------------------------------------------------
+[81] Score: 0.8758 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Fog | Film üzerinde kalan x-ışını demeti dışındaki nedenlerden kaynaklanan dansite artışına fog adı verilir
+  B: Radyoloji - Görüntü Özellikleri - Fog | Ekstraoral kaset arka yüzeyinden yansıyan ışınların filmi tekrar etkilemesiyle oluşan fog türüne halasyon adı verilir
+--------------------------------------------------
+[82] Score: 0.8745 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo solüsyonunda jelatini sertleştirip şişmeyi azaltan ve kuruma süresini kısaltan bileşik alüminyum sülfat olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda jelatini sertleştirip şişmeyi ve mekanik hasarı azaltan madde alüminyum sülfattır
+--------------------------------------------------
+[83] Score: 0.8744 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan geliştirici ajan hidrokinon olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyogramda görülen gri gölgelerin çoğunu oluşturan geliştirici ajan elon (metol) olarak adlandırılır
+--------------------------------------------------
+[84] Score: 0.8738 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Koruyucu (1. Banyo) | Birinci banyo solüsyonunda oksitlenmeyi önleyerek filmin boyanmasını ve sisli (fog) görünümünü engelleyen koruyucu inorganik antioksidan sodyum sülfit'tir
+  B: Radyoloji - Banyo Solüsyonları - Koruyucu (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) fikse edici ajanların bozulmasını önleyen koruyucu madde amonyum sülfit'tir
+--------------------------------------------------
+[85] Score: 0.873 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda gümüş bromür kristallerini siyah metalik gümüşe indirgeyen ajanlara developing (geliştirici) ajan adı verilir
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan geliştirici ajan hidrokinon olarak adlandırılır
+--------------------------------------------------
+[86] Score: 0.8718 | Decision: ERROR
+  A: Radyoloji - Görüntüleme Reseptörleri - Latitude Sıralaması | Radyografik görüntüleme reseptörleri ekspojur latitude (görüntüleme aralığı) genişliğine göre: PSP, CCD = CMOS ve Film şeklinde sıralanır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntüleme Aralığı | Ekspojur latitude sıralaması (en genişten en dara): PSP >> CCD = CMOS > Film
+--------------------------------------------------
+[87] Score: 0.8706 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda ışın almamış gümüş bromürü filmden uzaklaştıran bileşik Na-amonyum tiyosülfat olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda ışın almamış gümüş bromidi çözünebilir komplekse dönüştürerek filmden uzaklaştıran tespit edici madde sodyum/amonyum tiosülfattır
+--------------------------------------------------
+[88] Score: 0.8702 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı ve şişmeyi azaltan sertleştirici ajan alüminyum sülfat'tır
+  B: Radyoloji - Banyo Solüsyonları - Sertleştirici Kıyası | Film banyo solüsyonlarında emülsiyon şişmesini önleyen sertleştirici ajan 1. banyoda glutaraldehit iken, 2. banyoda alüminyum sülfat'tır
+--------------------------------------------------
+[89] Score: 0.8698 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Kontrast | Karakteristik (Hurter-Driffield) eğrisinde doğrusal teşhis bölgesindeki eğim (slope) arttıkça film kontrastı artar.
+  B: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Kontrast | Karakteristik eğrisi uzun ve sığ bir eğime sahip olan geniş görüntüleme aralıklı (latitude) filmler, dar aralıklı filmlere kıyasla daha düşük kontrasta sahiptir.
+--------------------------------------------------
+[90] Score: 0.8688 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Uzaklaştırıcı | İkinci banyo solüsyonunda (fiksatör) ışın almamış gümüş bromid ile reaksiyona girerek onu filmden uzaklaştıran ajan Na-Amonyum tiosülfat'tır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda ışın almamış gümüş bromidi çözünebilir komplekse dönüştürerek filmden uzaklaştıran tespit edici madde sodyum/amonyum tiosülfattır
+--------------------------------------------------
+[91] Score: 0.8687 | Decision: ERROR
+  A: Radyoloji - Film Görüntüleme - Latent İmaj | Röntgen film banyosunda latent imaj oluşumunu açıklayan teori Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre latent imaj bölgelerini oluşturan atom nötr gümüş atomları olarak adlandırılır
+--------------------------------------------------
+[92] Score: 0.8681 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı ve şişmeyi azaltan sertleştirici ajan alüminyum sülfat'tır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı önleyen ve kuruma süresini kısaltan sertleştirici ajan alüminyum sülfat bileşiğidir.
+--------------------------------------------------
+[93] Score: 0.8678 | Decision: ERROR
+  A: Radyoloji - Banyo - Süre Protokolü | Röntgen filminin manuel banyo aşamalarında ikinci banyoda (fiksatör) kalma süresi, birinci banyoda (developer) kalma süresinin 2 katıdır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Protokol | Manuel röntgen banyosunda filmin ikinci banyoda (fikser) kalma süresi, birinci banyoda kalma süresinin 2 katı kadardır.
+--------------------------------------------------
+[94] Score: 0.8675 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo (fikser) solüsyonunun temel kimyasal bileşen grupları: Uzaklaştırıcı, Koruyucu, Sertleştirici ve Asit tampon sistemidir.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda asidik ortam (pH 4-4.5) sağlayarak emülsiyondaki geliştirici ajanı inaktive eden madde asetik asit tamponudur.
+--------------------------------------------------
+[95] Score: 0.8675 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Fog | Ekstraoral kaset arka yüzeyinden yansıyan ışınların filmi tekrar etkilemesiyle oluşan fog türüne halasyon adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fog Nedenleri | Kasetin arka kapağının ince olmasına bağlı ışın yansımasıyla oluşan fog türüne halasyon denir
+--------------------------------------------------
+[96] Score: 0.8673 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (1. Banyo) | Birinci banyo solüsyonunda (developer) film emülsiyonundaki jelatinin aşırı şişmesini önleyen sertleştirici ajan glutaraldehit bileşiğidir
+  B: Radyoloji - Banyo Solüsyonları - Sertleştirici (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı ve şişmeyi azaltan sertleştirici ajan alüminyum sülfat'tır
+--------------------------------------------------
+[97] Score: 0.8671 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sıcaklık Eşikleri | Birinci banyo solüsyonu (developer) geliştiricisi olan hidrokinon 15 °C'nin altında inaktifken, banyo işlemi için tavsiye edilen ideal sıcaklık 23 °C'dir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Hidrokinon 15°C'nin altında inaktif, 28°C'nin üzerinde ise aşırı aktiftir
+--------------------------------------------------
+[98] Score: 0.8671 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Birinci banyo süresi uzadıkça radyografik dansite artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | İkinci banyoda kalma süresi uzadıkça radyografik dansite azalır
+--------------------------------------------------
+[99] Score: 0.8669 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Radyografide kVp artırıldığında kontrast azalır (düşük kontrast), dansite artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Radyografide mA değişikliği radyografik dansiteyi değiştirir, ancak kontrastta gözle görülür bir değişiklik oluşturmaz
+--------------------------------------------------
+[100] Score: 0.8665 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - İdeal Dansite | Radyografik filmlerde ilgili anatomik yapıların teşhis açısından en büyük tanısal değere sahip olduğu optik dansite aralığı 0.6 - 3.0 değerleri arasıdır
+  B: Radyoloji - Görüntü Özellikleri - Dansite | Karakteristik eğride tanısal açıdan en değerli optik yoğunluk aralığı 0,6 – 3,0 birimi arasındadır
+--------------------------------------------------
+[101] Score: 0.866 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre röntgen filmindeki gümüş bromür kristallerinde x-ışını etkisiyle salınan elektronlar, hassas bölgeye ulaşarak negatif yük verirler
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde gözle görülmeyen gizli görüntünün oluşumunu açıklayan teori Gurney-Mott teorisidir
+--------------------------------------------------
+[102] Score: 0.8654 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre latent imaj bölgelerini oluşturan atom nötr gümüş atomları olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisine göre, bir x-ışını fotonu gümüş bromür kristaline çarptığında ilk olarak bromür iyonundan elektron salınmasına neden olur
+--------------------------------------------------
+[103] Score: 0.8652 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunun temel kimyasal bileşen grupları: Geliştirici (indirgeyici), Aktivatör, Koruyucu ve Sertleştirici ajanlardır.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan temel geliştirici ajan hidrokinon bileşiğidir.
+--------------------------------------------------
+[104] Score: 0.865 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | Birinci banyo sıcaklığı 20-23°C üzerine çıktıkça radyografik dansite artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | İkinci banyoda kalma süresi uzadıkça radyografik dansite azalır
+--------------------------------------------------
+[105] Score: 0.8649 | Decision: ERROR
+  A: Radyoloji - Banyo İşlemleri - 1. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 1. banyo solüsyonunda kalma süresi artırıldığında radyografik dansite artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Dansiteyi Etkileyen Faktörler | İkinci banyoda kalma süresi uzadıkça radyografik dansite azalır
+--------------------------------------------------
+[106] Score: 0.8643 | Decision: ERROR
+  A: Radyoloji - Film Görüntüleme - Latent İmaj | Röntgen film banyosunda latent imaj oluşumunu açıklayan teori Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre röntgen filmindeki gümüş bromür kristallerinde x-ışını etkisiyle salınan elektronlar, hassas bölgeye ulaşarak negatif yük verirler
+--------------------------------------------------
+[107] Score: 0.8642 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Fog | Film üzerinde kalan x-ışını demeti dışındaki nedenlerden kaynaklanan dansite artışına fog adı verilir
+  B: Radyoloji - Görüntü Özellikleri - Fog | Fog oluşturan yaygın nedenler arasında uygun olmayan güvenlik aydınlatması, filmlerin yüksek sıcaklıkta depolanması, son kullanma tarihi geçmiş film ve aşırı sıcaklıkta film gelişimi yer alır
+--------------------------------------------------
+[108] Score: 0.8639 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda siyah tonları ve keskin kontrastı oluşturan geliştirici ajan hidrokinondur
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Hidrokinon tek başına kullanıldığında radyogramda siyah ve beyaz tonlar oluşurken, elon tek başına kullanıldığında ayırt edilemeyen gri bir görüntü oluşur
+--------------------------------------------------
+[109] Score: 0.8638 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sıcaklık Eşikleri | Birinci banyo solüsyonu (developer) geliştiricisi olan hidrokinon 15 °C'nin altında inaktifken, banyo işlemi için tavsiye edilen ideal sıcaklık 23 °C'dir
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Parametreleri | Hidrokinon, developer solüsyonunda 15°C altında inaktif hale gelir
+--------------------------------------------------
+[110] Score: 0.8637 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre latent imaj bölgelerini oluşturan atom nötr gümüş atomları olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde gözle görülmeyen gizli görüntünün oluşumunu açıklayan teori Gurney-Mott teorisidir
+--------------------------------------------------
+[111] Score: 0.8634 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Banyo Süresi | İkinci banyonun süresi birinci banyonun süresinin 2 katıdır
+  B: Radyoloji - Banyo Tekniği - Banyo Süresi | Birinci banyodan sonra filmin ara yıkama süresi 30 saniye olarak belirtilmektedir
+--------------------------------------------------
+[112] Score: 0.8632 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Geliştirici Kıyası | Birinci banyo solüsyonu geliştiricilerinden Hidrokinon radyografik imajın siyah tonlarını ve keskin kontrastını oluştururken, Elon radyogramda görülen gri gölgeleri oluşturur
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Hidrokinon tek başına kullanıldığında radyogramda siyah ve beyaz tonlar oluşurken, elon tek başına kullanıldığında ayırt edilemeyen gri bir görüntü oluşur
+--------------------------------------------------
+[113] Score: 0.8632 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo solüsyonunda emülsiyonun (jelatinin) aşırı şişmesini önleyerek mekanik direnç sağlayan sertleştirici ajan glutaraldehit maddesidir.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı önleyen ve kuruma süresini kısaltan sertleştirici ajan alüminyum sülfat bileşiğidir.
+--------------------------------------------------
+[114] Score: 0.8627 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Koruyucu (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) fikse edici ajanların bozulmasını önleyen koruyucu madde amonyum sülfit'tir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda fikser ajanların bozulmasını önleyen koruyucu amonyum sülfittir
+--------------------------------------------------
+[115] Score: 0.8627 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Oluşumu - Manifest İmaj | Röntgen banyosu sonrasında latent imajın kimyasal işlemlerle gözle görünür hale geldiği döneme manifest görüntü dönemi adı verilir.
+  B: Radyoloji - Banyo Tekniği - Temel Kavramlar | Röntgen filmi banyo işleminin latent görüntüyü görünür kıldığı döneme manifest görüntü dönemi adı verilir
+--------------------------------------------------
+[116] Score: 0.8624 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Fog Nedenleri | X-ışını demetinin ışınlaması dışındaki nedenlerle radyografide dansite artışına fog adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fog Nedenleri | Kasetin arka kapağının ince olmasına bağlı ışın yansımasıyla oluşan fog türüne halasyon denir
+--------------------------------------------------
+[117] Score: 0.8623 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Optik dansitesi 0,6'nın altında olan radyograflar açık olarak değerlendirilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Radyografik dansite 0.6'dan düşükse radyograf açık, 3.0'dan yüksekse radyograf koyu olarak değerlendirilir
+--------------------------------------------------
+[118] Score: 0.8619 | Decision: ERROR
+  A: Radyoloji - Artefaktlar - Kaset Hataları | Ekstraoral tekniklerde kasetin arka kapağının ince olması nedeniyle yansıyan x-ışınlarının filmi etkileyip fog (sis) oluşturmasına halasyon adı verilir
+  B: Radyoloji - Görüntü Özellikleri - Fog | Ekstraoral kaset arka yüzeyinden yansıyan ışınların filmi tekrar etkilemesiyle oluşan fog türüne halasyon adı verilir
+--------------------------------------------------
+[119] Score: 0.8616 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Oral kavitedeki yapıların radyografik dansite sıralaması açıktan koyuya doğru: mine, dentin, sement, kemik, yumuşak doku, yağ, hava
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Radyografik dansitesi en yüksek (en koyu) oral yapı hava iken, en düşük (en açık) oral yapı minedir
+--------------------------------------------------
+[120] Score: 0.8615 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite Standardizasyonu | Radyogramların dansitometrik değerlendirmesi ve standardizasyonunda kullanılan "step-wedge", x-ışını absorbsiyonu kemik ile eşdeğer olan alüminyum materyalinden üretilir
+  B: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Dansite | Radyogramların dansitometrik analizinde standardizasyon sağlamak amacıyla kullanılan, ışın absorbe etme kapasitesi kemiğe eşdeğer olan referans aletine alüminyum step-wedge (penetrometre) denir.
+--------------------------------------------------
+[121] Score: 0.861 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Latent İmaj | Latent imaj oluşumunu açıklayan teorinin adı Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - Latent İmaj | Gurney-Mott teorisine göre röntgen filmindeki gümüş bromür kristallerinde x-ışını etkisiyle salınan elektronlar, hassas bölgeye ulaşarak negatif yük verirler
+--------------------------------------------------
+[122] Score: 0.8608 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo (fikser) solüsyonunun temel kimyasal bileşen grupları: Uzaklaştırıcı, Koruyucu, Sertleştirici ve Asit tampon sistemidir.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyoda (fikser) ışın almamış gümüş bromidi çözünebilir hale getirerek filmden uzaklaştıran tespit edici ajan sodyum (veya amonyum) tiosülfat bileşiğidir.
+--------------------------------------------------
+[123] Score: 0.8599 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Kemik dokusunun dansitometrik değerlendirmesinde referans materyal olarak alüminyum kullanılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Kemik dokusunun radyografik değerlendirilmesinde eşdeğer materyal olarak alüminyum kullanılır
+--------------------------------------------------
+[124] Score: 0.8598 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Koruyucu (1. Banyo) | Birinci banyo solüsyonunda oksitlenmeyi önleyerek filmin boyanmasını ve sisli (fog) görünümünü engelleyen koruyucu inorganik antioksidan sodyum sülfit'tir
+  B: Ağız, Diş ve Çene Radyolojisi - Film পুনরায় - Solüsyon Kimyası | Birinci banyo solüsyonunda oksitlenmeyi önleyerek filmin boyanmasını ve sisli görünümü engelleyen inorganik koruyucu madde sodyum sülfit bileşiğidir.
+--------------------------------------------------
+[125] Score: 0.8596 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) sabitleme sırasında jelatin ile kompleks oluşturarak mekanik hasarı ve şişmeyi azaltan sertleştirici ajan alüminyum sülfat'tır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda jelatini sertleştirip şişmeyi ve mekanik hasarı azaltan madde alüminyum sülfattır
+--------------------------------------------------
+[126] Score: 0.859 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Densite ve Kontrast | Röntgen filmlerinin optik dansitesi (yoğunluğu) ile rölatif ışınlama logaritması arasındaki ilişkiyi gösteren grafiğe Hurter-Driffield (karakteristik) eğrisi adı verilir.
+  B: Ağız, Diş ve Çene Radyolojisi - Görüntü Kalitesi - Kontrast | Karakteristik (Hurter-Driffield) eğrisinde doğrusal teşhis bölgesindeki eğim (slope) arttıkça film kontrastı artar.
+--------------------------------------------------
+[127] Score: 0.8582 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Fiksatör pH Eşiği | İkinci banyo solüsyonunda (fiksatör) film emülsiyonundaki artık geliştirici ajanı inaktive etmek için asetik asit tampon sisteminin sağladığı pH değeri 4-4.5 aralığındadır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda asidik ortam (pH 4-4.5) sağlayarak emülsiyondaki geliştirici ajanı inaktive eden madde asetik asit tamponudur.
+--------------------------------------------------
+[128] Score: 0.8581 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda geliştirici ajanların oksijenle birleşmesini önleyerek solüsyonun uzun süre kullanılmasını sağlayan bileşik sodyum sülfit olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda fiksatif ajanların bozulmasını önleyen koruyucu bileşik amonyum sülfit olarak adlandırılır
+--------------------------------------------------
+[129] Score: 0.8577 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Kontrast ve Dansite | mAs değeri radyografik dansite üzerinde ana kontrol faktörüdür; ancak mA değişikliği kontrastı belirgin biçimde değiştirmez
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Radyografide mA değişikliği radyografik dansiteyi değiştirir, ancak kontrastta gözle görülür bir değişiklik oluşturmaz
+--------------------------------------------------
+[130] Score: 0.857 | Decision: ERROR
+  A: Radyoloji - Banyo - Süre Protokolü | Röntgen filminin manuel banyo aşamalarında ikinci banyoda (fiksatör) kalma süresi, birinci banyoda (developer) kalma süresinin 2 katıdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre | İkinci banyo (fiksaj) süresi, birinci banyonun yaklaşık 2 katı kadar olmalıdır
+--------------------------------------------------
+[131] Score: 0.8566 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Uzaklaştırıcı | İkinci banyo solüsyonunda (fiksatör) ışın almamış gümüş bromid ile reaksiyona girerek onu filmden uzaklaştıran ajan Na-Amonyum tiosülfat'tır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyoda (fikser) ışın almamış gümüş bromidi çözünebilir hale getirerek filmden uzaklaştıran tespit edici ajan sodyum (veya amonyum) tiosülfat bileşiğidir.
+--------------------------------------------------
+[132] Score: 0.8556 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda gümüş bromür kristallerini siyah metalik gümüşe indirgeyen ajanlara developing (geliştirici) ajan adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer | Film banyosunda ışınlanmış gümüş bromidi siyah metalik gümüşe indirgeyen ilk banyo solüsyonu developer olarak adlandırılır
+--------------------------------------------------
+[133] Score: 0.8543 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan temel geliştirici ajan hidrokinon bileşiğidir.
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan geliştirici ajan hidrokinon olarak adlandırılır
+--------------------------------------------------
+[134] Score: 0.8537 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Röntgen filminde gözle görülmeyen gizli görüntünün oluşumunu açıklayan teori Gurney-Mott teorisidir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisine göre, bir x-ışını fotonu gümüş bromür kristaline çarptığında ilk olarak bromür iyonundan elektron salınmasına neden olur
+--------------------------------------------------
+[135] Score: 0.8536 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Sertleştirici Kıyası | Film banyo solüsyonlarında emülsiyon şişmesini önleyen sertleştirici ajan 1. banyoda glutaraldehit iken, 2. banyoda alüminyum sülfat'tır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo solüsyonunda emülsiyonun (jelatinin) aşırı şişmesini önleyerek mekanik direnç sağlayan sertleştirici ajan glutaraldehit maddesidir.
+--------------------------------------------------
+[136] Score: 0.8533 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyogramdaki gri gölgeleri oluşturan geliştirici ajan elon (metol) bileşiğidir.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Developer solüsyonunda kullanılan geliştirici ajanlardan hidrokinon 15°C altında inaktif olacak kadar ısıya duyarlıyken, elon (metol) ısıya duyarlı değildir.
+--------------------------------------------------
+[137] Score: 0.8533 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Kontrast | X-ışını kVp değeri arttıkça doku kontrastı azalır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Radyografide kVp artırıldığında kontrast azalır (düşük kontrast), dansite artar
+--------------------------------------------------
+[138] Score: 0.8532 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Kalite Kontrol | Karanlık odada kullanılan kırmızı güvenlik ışığının (GBX-2) etkinliğini ve sızdırmazlığını test etmek için uygulanan değerlendirme yöntemi para testi (coin test) olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odada güvenlik lambasının etkinliğini değerlendirmek için uygulanan test para testi (coin test) olarak adlandırılır
+--------------------------------------------------
+[139] Score: 0.8522 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Banyo Hataları | İkinci banyoda filmin gümüş bromürden iyi temizlenememesi sonucunda filmin iki yüzünde ışığın yansımasına bağlı farklı renkler görülmesine digroik fog (dichroic fog) denir.
+  B: Radyoloji - Banyo Tekniği - Banyo Hataları | Işının yansıması veya kırılmasına bağlı olarak filmin iki yüzünde farklı renkler görülmesi olgusuna dikroik fog (Dichroic Fog) adı verilir
+--------------------------------------------------
+[140] Score: 0.8512 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Banyo Aşamaları | Röntgen filmi banyo işlemlerinin aşamaları sırasıyla: Islatma ve developman, Fiksasyon, Yıkama ve Kurutma şeklindedir.
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Banyo Aşamaları | Röntgen filmi banyo aşamaları sırasıyla: developer (1. banyo), yıkama, fiksaj (2. banyo), yıkama, kurutma
+--------------------------------------------------
+[141] Score: 0.8507 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda ışın almamış gümüş bromürü filmden uzaklaştıran bileşik Na-amonyum tiyosülfat olarak adlandırılır
+  B: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda fiksatif ajanların bozulmasını önleyen koruyucu bileşik amonyum sülfit olarak adlandırılır
+--------------------------------------------------
+[142] Score: 0.85 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Geliştirici Kıyası | Birinci banyo solüsyonu geliştiricilerinden Hidrokinon radyografik imajın siyah tonlarını ve keskin kontrastını oluştururken, Elon radyogramda görülen gri gölgeleri oluşturur
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan geliştirici ajan hidrokinon olarak adlandırılır
+--------------------------------------------------
+[143] Score: 0.8499 | Decision: ERROR
+  A: Radyoloji - Artefaktlar - Kaset Hataları | Ekstraoral tekniklerde kasetin arka kapağının ince olması nedeniyle yansıyan x-ışınlarının filmi etkileyip fog (sis) oluşturmasına halasyon adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fog Nedenleri | Kasetin arka kapağının ince olmasına bağlı ışın yansımasıyla oluşan fog türüne halasyon denir
+--------------------------------------------------
+[144] Score: 0.8497 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda geliştirici ajanların oksidasyonunu önleyerek solüsyonun uzun süre kullanılmasını sağlayan koruyucu sodyum sülfittir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda fikser ajanların bozulmasını önleyen koruyucu amonyum sülfittir
+--------------------------------------------------
+[145] Score: 0.8493 | Decision: ERROR
+  A: Radyoloji - Artefaktlar - Banyo Hataları | İkinci banyoda gümüş bromürün iyi temizlenememesi sonucu oluşan ve ışığın yansımasıyla iki film yüzeyinde farklı renkler (sarı-kahve/yeşil) gösteren radyografik artefakt Digroik Fog olarak adlandırılır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Banyo Hataları | İkinci banyoda filmin gümüş bromürden iyi temizlenememesi sonucunda filmin iki yüzünde ışığın yansımasına bağlı farklı renkler görülmesine digroik fog (dichroic fog) denir.
+--------------------------------------------------
+[146] Score: 0.8493 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyoda (fikser) ışın almamış gümüş bromidi çözünebilir hale getirerek filmden uzaklaştıran tespit edici ajan sodyum (veya amonyum) tiosülfat bileşiğidir.
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda ışın almamış gümüş bromidi çözünebilir komplekse dönüştürerek filmden uzaklaştıran tespit edici madde sodyum/amonyum tiosülfattır
+--------------------------------------------------
+[147] Score: 0.8492 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Otomatik Cihaz | Otomatik banyo cihazlarında tüm işlem süresinin manuel banyoya kıyasla daha kısa (4-7 dakikadan az) olması avantajdır
+  B: Radyoloji - Banyo Tekniği - Otomatik Cihaz | Otomatik banyo cihazında elde edilen radyografinin kalitesinin manuel banyoya göre daha düşük olması dezavantajdır
+--------------------------------------------------
+[148] Score: 0.8487 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Karakteristik eğride tanısal açıdan en değerli optik yoğunluk aralığı 0,6 – 3,0 birimi arasındadır
+  B: Radyoloji - Görüntü Özellikleri - Dansite | Optik dansitesi 0,6'nın altında olan radyograflar açık olarak değerlendirilir
+--------------------------------------------------
+[149] Score: 0.8486 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Banyo Süresi | Birinci banyodan sonra filmin ara yıkama süresi 30 saniye olarak belirtilmektedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Yıkama ve Kurutma | Röntgen filmi yıkama sonrasında su içerisinde 30 dakikadan fazla bırakılmamalıdır
+--------------------------------------------------
+[150] Score: 0.848 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunun temel kimyasal bileşen grupları: Geliştirici (indirgeyici), Aktivatör, Koruyucu ve Sertleştirici ajanlardır.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyogramdaki gri gölgeleri oluşturan geliştirici ajan elon (metol) bileşiğidir.
+--------------------------------------------------
+[151] Score: 0.8474 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan temel geliştirici ajan hidrokinon bileşiğidir.
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda siyah tonları ve keskin kontrastı oluşturan geliştirici ajan hidrokinondur
+--------------------------------------------------
+[152] Score: 0.8473 | Decision: ERROR
+  A: Radyoloji - Banyo İşlemleri - 2. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 2. banyo solüsyonunda (fiksatör) kalma süresi artırıldığında radyografik dansite azalır
+  B: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Diğer faktörler sabit tutulup ikinci banyoda kalma süresi artırılırsa radyografik dansite azalır
+--------------------------------------------------
+[153] Score: 0.8472 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Karanlık Oda | Karanlık odadaki güvenlik ışığı (ampul) ile banyo işleminin yapıldığı tezgah arasında en az 120 cm (4 feet) mesafe bulunmalıdır.
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odadaki güvenlik lambası, banyo yapılan alana en az 120 cm uzaklıkta konumlandırılmalıdır
+--------------------------------------------------
+[154] Score: 0.8465 | Decision: ERROR
+  A: Radyoloji - Film Özellikleri - Hız ve Netlik İlişkisi | Röntgen filminin yapısındaki gümüş granüllerinin boyutu büyüdükçe filmin hızı artarken, elde edilen görüntünün detayı (netliği) azalır
+  B: Radyoloji - Görüntü Özellikleri - Detay | Film emülsiyonundaki gümüş granüllerinin boyutu detayı etkiler; yavaş filmlerde detay iyi, hızlı filmlerde detay kötüdür
+--------------------------------------------------
+[155] Score: 0.8459 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Latitude ve Kontrast İlişkisi | Geniş görüntüleme aralığına (latitude) sahip röntgen filmlerinin görüntü kontrastı, dar aralıklı filmlere göre daha düşüktür
+  B: Radyoloji - Görüntü Özellikleri - Latitude | Film görüntüleme aralığı (latitude) olarak adlandırılan özellik, film üzerinde ayırt edilebilir yoğunluk olarak kaydedilebilen pozlama aralığının ölçüsüdür
+--------------------------------------------------
+[156] Score: 0.8449 | Decision: ERROR
+  A: Radyoloji - Banyo İşlemleri - 1. Banyo ve Dansite | Çekim parametreleri sabit tutulup, röntgen filminin 1. banyo solüsyonunda kalma süresi artırıldığında radyografik dansite artar
+  B: Radyoloji - Görüntü Özellikleri - Dansite Faktörleri | Birinci banyo süresi uzadıkça radyografik dansite artar
+--------------------------------------------------
+[157] Score: 0.8448 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyogramda görülen gri gölgelerin çoğunu oluşturan geliştirici ajan elon (metol) olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Bileşenleri | Developer solüsyonunda gri tonları oluşturan ve ısıya duyarlı olmayan geliştirici ajan elon (metol)dur
+--------------------------------------------------
+[158] Score: 0.8446 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - İndirgeyici Ajanlar | Birinci banyo solüsyonunda (developer) x-ışınları etkisinde kalan gümüş halid kristallerini siyah metalik gümüşe indirgeyen kimyasal bileşikler Hidrokinon ve Elon (Fenidon) maddeleridir
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda gümüş bromür kristallerini siyah metalik gümüşe indirgeyen ajanlara developing (geliştirici) ajan adı verilir
+--------------------------------------------------
+[159] Score: 0.8446 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Aydınlatma Kriteri | Karanlık odada banyo yapılan alana en az 120 cm uzaklıkta konumlandırılması gereken buzlu ampulün maksimum gücü 15 watt olmalıdır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Karanlık Oda | Karanlık odadaki güvenlik lambası, banyo yapılan alana en az 120 cm uzaklıkta konumlandırılmalıdır
+--------------------------------------------------
+[160] Score: 0.8445 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyografik imajın siyah tonlarını ve keskin kontrastını oluşturan temel geliştirici ajan hidrokinon bileşiğidir.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunda radyogramdaki gri gölgeleri oluşturan geliştirici ajan elon (metol) bileşiğidir.
+--------------------------------------------------
+[161] Score: 0.8444 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Temel Kavramlar | Röntgen filminde latent imajın görünür ve kalıcı hale getirilmesi için yapılan kimyasal işlem dizisine röntgen banyosu adı verilir
+  B: Radyoloji - Banyo Tekniği - Temel Kavramlar | Röntgen filmi banyo işleminin latent görüntüyü görünür kıldığı döneme manifest görüntü dönemi adı verilir
+--------------------------------------------------
+[162] Score: 0.8444 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | En yüksek tanısal değere sahip optik yoğunluk aralığı 0.6 ile 3.0 arasındadır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Radyografik dansite 0.6'dan düşükse radyograf açık, 3.0'dan yüksekse radyograf koyu olarak değerlendirilir
+--------------------------------------------------
+[163] Score: 0.8443 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo (developer) solüsyonunun temel kimyasal bileşen grupları: Geliştirici (indirgeyici), Aktivatör, Koruyucu ve Sertleştirici ajanlardır.
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | Birinci banyo solüsyonunda pH'ı alkali (~10) yaparak jelatini şişiren aktivatör madde sodyum (veya potasyum) hidroksit tuzudur.
+--------------------------------------------------
+[164] Score: 0.8432 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Detay | Fokal spot–obje mesafesi artarsa detay iyileşir; obje–film mesafesi kısalırsa netlik artar
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Detay ve Netlik | Fokal spot boyutu küçüldükçe radyogramın netliği artar
+--------------------------------------------------
+[165] Score: 0.8429 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Latitude | Film görüntüleme aralığı (latitude) olarak adlandırılan özellik, film üzerinde ayırt edilebilir yoğunluk olarak kaydedilebilen pozlama aralığının ölçüsüdür
+  B: Radyoloji - Görüntü Özellikleri - Latitude | Geniş görüntüleme aralıklı filmler dar görüntüleme aralıklı filmlerden daha düşük kontrasta sahiptir
+--------------------------------------------------
+[166] Score: 0.8425 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Kontrast-Dansite İlişkisi | Kontrast değiştiğinde dansite de değişirken, yalnızca dansite değiştirildiğinde kontrast belirgin biçimde değişmez
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Kontrast ve Dansite | Radyografide mA değişikliği radyografik dansiteyi değiştirir, ancak kontrastta gözle görülür bir değişiklik oluşturmaz
+--------------------------------------------------
+[167] Score: 0.8422 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda fikse edici ajanların bozulmasını engelleyen koruyucu madde amonyum sülfit bileşiğidir.
+  B: Radyoloji - Banyo Tekniği - 2. Banyo Bileşenleri | İkinci banyo (fiksasyon) solüsyonunda fiksatif ajanların bozulmasını önleyen koruyucu bileşik amonyum sülfit olarak adlandırılır
+--------------------------------------------------
+[168] Score: 0.842 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Bir radyografın gösterdiği koyuluk derecesine radyografik dansite adı verilir
+  B: Radyoloji - Görüntü Özellikleri - Dansite | Film optik dansitesi ile ışınlama arasındaki ilişkinin grafiğine karakteristik eğri (Hurter-Driffield eğrisi) adı verilir
+--------------------------------------------------
+[169] Score: 0.842 | Decision: ERROR
+  A: Radyoloji - Görüntü Özellikleri - Dansite | Karakteristik eğride tanısal açıdan en değerli optik yoğunluk aralığı 0,6 – 3,0 birimi arasındadır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | En yüksek tanısal değere sahip optik yoğunluk aralığı 0.6 ile 3.0 arasındadır
+--------------------------------------------------
+[170] Score: 0.8419 | Decision: ERROR
+  A: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Karanlık Oda | Karanlık odada x-ışını filmleri için güvenlik ışığının (emniyet ışığı) etkinliğini test etmek amacıyla para testi (coin test) uygulanır.
+  B: Radyoloji - Karanlık Oda - Güvenlik Lambası | Karanlık odada güvenlik lambasının etkinliğini test etmek için kullanılan yönteme coin testi (para testi) adı verilir
+--------------------------------------------------
+[171] Score: 0.8413 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda jelatini sertleştirip şişmeyi ve mekanik hasarı azaltan madde alüminyum sülfattır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Bileşenleri | Fiksaj solüsyonunda fikser ajanların bozulmasını önleyen koruyucu amonyum sülfittir
+--------------------------------------------------
+[172] Score: 0.841 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Banyo Sırası | Film banyosunda birinci banyo işleminin ardından ikinci banyoya geçmeden önce yapılan ara işlem su ile yıkama olarak belirtilmektedir
+  B: Radyoloji - Banyo Tekniği - Banyo Süresi | Birinci banyodan sonra filmin ara yıkama süresi 30 saniye olarak belirtilmektedir
+--------------------------------------------------
+[173] Score: 0.8408 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda gümüş bromür kristallerini siyah metalik gümüşe indirgeyen ajanlara developing (geliştirici) ajan adı verilir
+  B: Radyoloji - Banyo Tekniği - 1. Banyo Bileşenleri | Birinci banyo solüsyonunda radyogramda görülen gri gölgelerin çoğunu oluşturan geliştirici ajan elon (metol) olarak adlandırılır
+--------------------------------------------------
+[174] Score: 0.8408 | Decision: ERROR
+  A: Radyoloji - Banyo Tekniği - Banyo Süresi | Birinci banyodan sonra filmin ara yıkama süresi 30 saniye olarak belirtilmektedir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Fiksaj Süre | Film ikinci banyoya konduktan sonra ışık açılmadan önce en az 15-30 saniye beklenmelidir
+--------------------------------------------------
+[175] Score: 0.8407 | Decision: ERROR
+  A: Radyoloji - Film Görüntüleme - Latent İmaj | Röntgen film banyosunda latent imaj oluşumunu açıklayan teori Gurney-Mott teorisi olarak adlandırılır
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Latent Görüntü | Gurney-Mott teorisine göre, bir x-ışını fotonu gümüş bromür kristaline çarptığında ilk olarak bromür iyonundan elektron salınmasına neden olur
+--------------------------------------------------
+[176] Score: 0.8406 | Decision: ERROR
+  A: Radyoloji - Karanlık Oda - Sıcaklık Sınırı | Banyo karanlık odasında fog (sis) oluşumunu engellemek için oda sıcaklığı en fazla 32.5 °C olmalıdır
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Karanlık Oda | Karanlık odada sıcaklığa bağlı fog oluşumunu önlemek için oda sıcaklığı maksimum 32.5°C (90°F) seviyesinde tutulmalıdır.
+--------------------------------------------------
+[177] Score: 0.8404 | Decision: ERROR
+  A: Radyoloji - Banyo Solüsyonları - Koruyucu (2. Banyo) | İkinci banyo solüsyonunda (fiksatör) fikse edici ajanların bozulmasını önleyen koruyucu madde amonyum sülfit'tir
+  B: Ağız, Diş ve Çene Radyolojisi - Film Banyosu - Solüsyon Kimyası | İkinci banyo solüsyonunda fikse edici ajanların bozulmasını engelleyen koruyucu madde amonyum sülfit bileşiğidir.
+--------------------------------------------------
+[178] Score: 0.8404 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Developer solüsyonu için tavsiye edilen ideal sıcaklık 23°C'dir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Developer Sıcaklık ve Süre | Hidrokinon 15°C'nin altında inaktif, 28°C'nin üzerinde ise aşırı aktiftir
+--------------------------------------------------
+[179] Score: 0.8404 | Decision: ERROR
+  A: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Bir radyografın gösterdiği koyuluk derecesine radyografik dansite (optik yoğunluk) adı verilir
+  B: Radyoloji - Radyografi ve Banyo Tekniği - Görüntü Özellikleri | Radyografik dansite 0.6'dan düşükse radyograf açık, 3.0'dan yüksekse radyograf koyu olarak değerlendirilir
+--------------------------------------------------
