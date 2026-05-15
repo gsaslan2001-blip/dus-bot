@@ -70,9 +70,30 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
         )
         search_cache[cache_key] = search_results
 
-    # Step 4: DeepSeek sentezi
+    # Step 4: Response generation
     prior_history = context.get("history", [])
-    response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history, intent=intent)
+
+    # /soru intent: Format Pinecone questions directly (no agent synthesis)
+    if intent == "soru_sor":
+        questions = search_results.get("questions", [])
+        if not questions:
+            response = "Pinecone soru bankasında bu sorgu için uygun soru bulunamadi."
+        else:
+            # Format max 5 questions from Pinecone dusbankasi
+            lines = []
+            for i, q in enumerate(questions[:5], 1):
+                lines.append(f"**SORU {i}:**\n{q.get('question', '')}\n")
+                lines.append(f"A) {q.get('option_a', '')}")
+                lines.append(f"B) {q.get('option_b', '')}")
+                lines.append(f"C) {q.get('option_c', '')}")
+                lines.append(f"D) {q.get('option_d', '')}")
+                lines.append(f"E) {q.get('option_e', '')}\n")
+                lines.append(f"**Cevap:** {q.get('correct_answer', '')}")
+                lines.append(f"**Açıklama:** {q.get('explanation', '')}\n")
+            response = "\n".join(lines)
+    else:
+        # Other intents: Use agent synthesis
+        response = await run_agent(cleaned_text, search_results, settings=settings, history=prior_history, intent=intent)
 
     # Step 5: Konuşma geçmişini güncelle
     history = context.get("history", [])
