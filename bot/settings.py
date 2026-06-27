@@ -4,30 +4,31 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- Telegram ---
-TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
+# İki isim de desteklenir (TELEGRAM_TOKEN | TELEGRAM_BOT_TOKEN) — env-isim çakışması crash yapmasın
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN") or os.environ["TELEGRAM_BOT_TOKEN"]
 ALLOWED_CHAT_IDS = set(
     int(x.strip()) for x in os.environ.get("ALLOWED_CHAT_IDS", "").split(",") if x.strip()
 )
+# Ayarlanırsa webhook'ta Telegram secret-token doğrulaması aktif olur (sahte POST'lara karşı)
+WEBHOOK_SECRET = os.environ.get("WEBHOOK_SECRET", "")
 
 # --- DeepSeek ---
 DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
-DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+DEEPSEEK_BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
 DEEPSEEK_MODEL = "deepseek-v4-pro"       # V4 Pro: en güçlü model, varsayılan
-DEEPSEEK_CHAT = "deepseek-v4-pro"        # V4 Pro: en güçlü chat modeli, hızlı
+DEEPSEEK_CHAT = "deepseek-chat"          # V4 Flash: hızlı chat modeli
 
 AVAILABLE_MODELS = {
-    "deepseek-reasoner": "DeepSeek Reasoner (Doğru)",
-    "deepseek-v4-pro": "DeepSeek V4 Pro (Hızlı)",
+    "deepseek-v4-pro": "DeepSeek V4 Pro (Güçlü)",
+    "deepseek-chat": "DeepSeek V4 Flash (Hızlı)",
 }
 
 # --- Pinecone ---
 PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
-MYBRAIN_HOST = os.environ.get("MYBRAIN_HOST", "mybrain-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 MYPPDFS_HOST = os.environ.get("MYPPDFS_HOST", "myppdfs-0crkhvy.svc.aped-4627-b74a.pinecone.io")
-ANKI_HOST = os.environ.get("ANKI_HOST", "anki-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 DUSBANKASI_HOST = os.environ.get("DUSBANKASI_HOST", "dusbankasi-0crkhvy.svc.aped-4627-b74a.pinecone.io")
 
-# --- OpenAI (fallback embedding + anki/dusbankasi) ---
+# --- OpenAI (fallback embedding + dusbankasi) ---
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 
 # --- Supabase ---

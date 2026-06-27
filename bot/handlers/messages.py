@@ -1,27 +1,7 @@
-import asyncio
 import logging
-from datetime import datetime
-from pathlib import Path
 from bot.services.router import route_message, get_prefix_help, classify_intent
 from bot.services.orchestrator import orchestrate_search
 from bot.services.agent_loop import run_agent
-
-VEKTORLENECEK = Path(__file__).parent.parent.parent / "vektörlenecek"
-
-async def _persist_chat_turn(chat_id: int, intent: str, user_text: str, assistant_text: str) -> None:
-    try:
-        VEKTORLENECEK.mkdir(exist_ok=True)
-        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filepath = VEKTORLENECEK / f"chat_{chat_id}_{ts}.md"
-        content = (
-            f"# Chat Turn — {ts}\n\n"
-            f"**intent:** {intent}\n\n"
-            f"**user:** {user_text}\n\n"
-            f"**assistant:** {assistant_text}\n"
-        )
-        filepath.write_text(content, encoding="utf-8")
-    except Exception as e:
-        logging.getLogger(__name__).warning(f"[chathistory] persist başarısız: {e}")
 
 log = logging.getLogger(__name__)
 
@@ -136,13 +116,29 @@ async def handle_message(chat_id: int, text: str, send, send_action, context: di
     history.append(assistant_turn)
     context["history"] = history[-20:]
 
-    # Step 6: Yanıtı gönder — placeholder varsa edit, yoksa yeni mesaj
-    if placeholder_msg_id and edit_message and len(response) <= 4000:
-        ok = await edit_message(chat_id, placeholder_msg_id, response)
+    # Step 6: Yanıtı gönder — uzun yanıtı satır sınırında parçala (token ortadan bölünmesin),
+    # ilk parçayı placeholder'a yaz, kalanını ayrı mesajlarla gönder (yetim "..." kalmasın)
+    MAX_PART = 4000
+
+    def _split_parts(t: str) -> list[str]:
+        out, s = [], 0
+        while s < len(t):
+            e = s + MAX_PART
+            if e < len(t):
+                nl = t.rfind("\n", s, e)
+                if nl != -1 and nl > s + MAX_PART // 2:
+                    e = nl
+            out.append(t[s:e])
+            s = e
+        return out or [t]
+
+    if placeholder_msg_id and edit_message:
+        parts = _split_parts(response)
+        ok = await edit_message(chat_id, placeholder_msg_id, parts[0])
         if not ok:
             await send(chat_id, response, parse_mode="")
+        else:
+            for part in parts[1:]:
+                await send(chat_id, part, parse_mode="")
     else:
         await send(chat_id, response, parse_mode="")
-
-    # Step 7: chathistory staging (non-blocking)
-    asyncio.create_task(_persist_chat_turn(chat_id, intent, cleaned_text, response))

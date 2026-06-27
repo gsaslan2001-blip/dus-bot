@@ -3,7 +3,7 @@ from openai import AsyncOpenAI, OpenAI
 from supabase import create_client, Client
 
 from bot.settings import (
-    PINECONE_API_KEY, MYBRAIN_HOST, MYPPDFS_HOST, ANKI_HOST, DUSBANKASI_HOST,
+    PINECONE_API_KEY, MYPPDFS_HOST, DUSBANKASI_HOST,
     DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL,
     OPENAI_API_KEY, SUPABASE_URL, SUPABASE_KEY,
 )
@@ -17,9 +17,7 @@ def _get_index(host: str):
         raise RuntimeError("Pinecone client baslatilamadi.")
     return pc.Index(host=host)
 
-mybrain_idx = _get_index(MYBRAIN_HOST) if pc else None
 myppdfs_idx = _get_index(MYPPDFS_HOST) if pc else None
-anki_idx = _get_index(ANKI_HOST) if pc else None
 dusbankasi_idx = _get_index(DUSBANKASI_HOST) if pc else None
 
 # --- DeepSeek Client (Async) ---

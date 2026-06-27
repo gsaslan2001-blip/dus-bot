@@ -6,13 +6,11 @@ from bot.deps import deepseek
 log = logging.getLogger(__name__)
 
 
-VALID_INTENTS = ("ders_calis", "soru_sor", "cikmis_analiz", "hafiza", "genel")
+VALID_INTENTS = ("ders_calis", "soru_sor", "genel")
 
 ROUTER_PROMPT = """Kullanicinin mesajini su kategorilerden birine siniflandir:
 - ders_calis: Konu anlatimi veya ders calisma (ornek: 'SCC patogenezini anlat')
 - soru_sor: DUS sorusu cozme (ornek: 'bu soruyu cozer misin?')
-- cikmis_analiz: Sinav pattern veya cikmis soru analizi (ornek: 'en cok cikan konular')
-- hafiza: Kullanicinin kendi notlari/ilerlemesi (ornek: 'en son ne calismistim?')
 - genel: Selamlasma, sohbet (ornek: 'selam')
 
 SADECE su formatta JSON dondur, baska hicbir sey yazma:
@@ -26,10 +24,7 @@ Cevap:"""
 # forced_index: hangi Pinecone index'ine OZEL gidecegi — orchestrator bu prefix varsa SADECE o index'i arar
 PREFIX_ROUTES: list[tuple[list[str], str, str | None]] = [
     (["/mypdf", "/pdfs", "/pdf", "/ders", "/not"], "ders_calis", "myppdfs"),
-    (["/brain", "/hafiza", "/memory", "/ilerleme"], "hafiza", "mybrain"),
     (["/soru", "/test", "/quiz", "/coz"], "soru_sor", "dusbankasi"),
-    (["/anki", "/kart", "/flashcard"], "ders_calis", "anki"),
-    (["/cikmis", "/sinav"], "cikmis_analiz", None),
 ]
 
 # Kullanıcı prefix'i tek başına gönderince gösterilecek yardım mesajları
@@ -39,25 +34,10 @@ PREFIX_HELP: dict[str | None, str] = {
         "Ne aramak istiyorsun?\n"
         "Ornek: SCC patogenezi, periodontit tedavisi, amiloblastom"
     ),
-    "mybrain": (
-        "Hafiza modu aktif.\n\n"
-        "Ne aramak istiyorsun?\n"
-        "Ornek: en son ne calistim, radyoloji ilerlemem, gecen hafta notlarim"
-    ),
     "dusbankasi": (
-        "Soru bankasi modu aktif. (16.000+ DUS sorusu)\n\n"
+        "Soru bankasi modu aktif. (~20.000 DUS sorusu)\n\n"
         "Hangi konuda soru cozmek istiyorsun?\n"
         "Ornek: patoloji sorularina bakalim, amiloblastom sorusu, radyoloji MCQ"
-    ),
-    "anki": (
-        "Anki karti modu aktif. (Mevcut: Protez, Radyoloji)\n\n"
-        "Ne aramak istiyorsun?\n"
-        "Ornek: protez karti ara, radyoloji flash card"
-    ),
-    None: (
-        "Cikmis analiz modu aktif.\n\n"
-        "Hangi dersin cikmis sorularini analiz edelim?\n"
-        "Ornek: patoloji cikmis, radyoloji sik konular"
     ),
 }
 
@@ -80,6 +60,9 @@ DERS_CALIS_KEYWORDS = [
     "ülser", "ulser", "abse", "granülom", "granulom",
     "tip 1", "tip 2", "tip 3", "tip 4", "tip i", "tip ii", "tip iii",
     "evre", "derece", "grade", "stage", "sınıf", "sinif", "alt tip", "varyant",
+    "ankraj", "maloklüzyon", "malokluzyon", "sefalometri", "braket", "headgear",
+    "pekiştirme", "retansiyon", "sınıf 2", "sınıf 3", "angle", "sürme",
+    "ortodontik", "apareyy", "aktivatör",
     "patoloji", "radyoloji", "endodonti", "protez", "histoloji",
     "fizyoloji", "periodontoloji", "cerrahi", "farmakoloji",
     "pedodonti", "restoratif", "biyokimya", "mikrobiyoloji", "ortodonti",
@@ -92,12 +75,6 @@ SORU_KEYWORDS = [
     "soru", "çöz", "cevap", "doğru", "yanlış", "hangisi", "aşağıdakilerden",
     "sınav", "test", "hangisidir", "değildir", "aşağıdakiler",
 ]
-
-HAFIZA_KEYWORDS = [
-    "en son", "çalıştım", "ilerleme", "nerede", "kaldım", "notlarım",
-    "hafıza", "kaydet", "hatırla", "ne zaman", "kaçıncı",
-]
-
 
 def _prefix_intent(message: str) -> tuple[str, str | None, str, bool] | None:
     """Prefix tabanlı yönlendirme. (intent, forced_index, cleaned_text, is_prefix_only) döner.
@@ -121,9 +98,6 @@ def _keyword_intent(message: str) -> str | None:
         if any(w in msg_lower for w in ["selam", "merhaba", "hey", "sa", "slm", "nasılsın"]):
             return "genel"
         return None
-
-    if any(kw in msg_lower for kw in HAFIZA_KEYWORDS):
-        return "hafiza"
 
     if any(kw in msg_lower for kw in SORU_KEYWORDS):
         return "soru_sor"

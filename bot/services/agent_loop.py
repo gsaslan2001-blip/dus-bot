@@ -19,25 +19,11 @@ def _format_context(search_results: dict, max_per_source: int = 5) -> str:
                 parts.append(r.get("text", ""))
             else:
                 parts.append(str(r))
-    if search_results.get("brain"):
-        parts.append("--- HAFIZA (mybrain) ---")
-        for r in search_results["brain"][:max_per_source]:
-            if isinstance(r, dict):
-                parts.append(r.get("text", ""))
-            else:
-                parts.append(str(r))
     if search_results.get("questions"):
         parts.append("--- DUS SORULARI ---")
         q_limit = max(3, max_per_source - 2)
         for q in search_results["questions"][:q_limit]:
             parts.append(q.get("question_text", q.get("question", str(q))))
-    if search_results.get("anki"):
-        parts.append("--- ANKI KARTLARI ---")
-        for r in search_results["anki"][:max_per_source]:
-            if isinstance(r, dict):
-                parts.append(r.get("text", ""))
-            else:
-                parts.append(str(r))
     return "\n\n".join(parts)
 
 
@@ -45,9 +31,7 @@ def _context_is_rich(search_results: dict) -> bool:
     """Orchestrator'dan gelen sonuçlar yeterliyse True — tool loop atlanır."""
     total = (
         len(search_results.get("pdfs", [])) +
-        len(search_results.get("brain", [])) +
-        len(search_results.get("questions", [])) +
-        len(search_results.get("anki", []))
+        len(search_results.get("questions", []))
     )
     return total >= 3
 
@@ -113,7 +97,7 @@ async def run_agent(
         prompt = SYSTEM_PROMPT_FAST
         use_tools = False
     elif forced_index:
-        # Exclusive modda (/mypdf, /brain, /anki, /dusbankasi) tool loop atla —
+        # Exclusive modda (/mypdf, /soru) tool loop atla —
         # kullanıcı zaten hedef index'i seçti, ek arama anlamsız ve webhook timeout'u yapar
         prompt = SYSTEM_PROMPT
         use_tools = False

@@ -1,5 +1,5 @@
 import logging
-from bot.deps import mybrain_idx, myppdfs_idx, anki_idx, dusbankasi_idx
+from bot.deps import myppdfs_idx, dusbankasi_idx
 from bot.settings import DEEPSEEK_MODEL, AVAILABLE_MODELS, SPEED_MODE_CONFIG
 
 log = logging.getLogger(__name__)
@@ -10,14 +10,10 @@ async def cmd_start(chat_id: int, send) -> None:
         "Selam Furkan! Ben Atlas, DUS Mentorun.\n\n"
         "Dogrudan soru sorabilirsin:\n"
         "  \"SCC patogenezini anlat\"\n"
-        "  \"Periodontoloji sorularina bakalim\"\n"
-        "  \"En son ne calismistim?\"\n\n"
+        "  \"Periodontoloji sorularina bakalim\"\n\n"
         "Index yonlendirme komutlari (nerede arayacagimi belirtir):\n"
         "  /mypdf [konu]  - Ders notlarinda ara (myppdfs)\n"
-        "  /brain [konu]  - Hafizada ara (mybrain)\n"
-        "  /soru [konu]   - Soru bankasinda ara (16.000+ soru)\n"
-        "  /anki [konu]   - Anki kartlarinda ara\n"
-        "  /cikmis [ders] - Cikmis soru analizi\n\n"
+        "  /soru [konu]   - Soru bankasinda ara (~20.000 soru)\n\n"
         "Ornek: \"/soru amiloblastom\" -> sadece soru bankasinda arar\n"
         "Ornek: \"/mypdf periodontit\" -> sadece ders notlarinda arar\n\n"
         "Diger komutlar:\n"
@@ -55,14 +51,10 @@ def _get_namespaces(stats) -> dict:
 
 async def cmd_stats(chat_id: int, send) -> None:
     try:
-        sm = mybrain_idx.describe_index_stats()
         sp = myppdfs_idx.describe_index_stats()
-        sa = anki_idx.describe_index_stats()
         sd = dusbankasi_idx.describe_index_stats()
 
-        ns_m = _get_namespaces(sm)
         ns_p = _get_namespaces(sp)
-        ns_a = _get_namespaces(sa)
         ns_d = _get_namespaces(sd)
 
         # dusbankasi default namespace (bos string key)
@@ -70,27 +62,19 @@ async def cmd_stats(chat_id: int, send) -> None:
 
         text = (
             "Sistem Durumu\n\n"
-            f"mybrain: {_total_count(sm)} kayit\n"
-            f"  dus-memory: {_ns_count(ns_m, 'dus-memory')}\n"
-            f"  dus-progress: {_ns_count(ns_m, 'dus-progress')}\n"
-            f"  chathistory: {_ns_count(ns_m, 'chathistory')}\n"
-            f"  telos: {_ns_count(ns_m, 'telos')}\n"
-            f"  claude-profile: {_ns_count(ns_m, 'claude-profile')}\n\n"
             f"myppdfs: {_total_count(sp)} kayit\n"
             f"  patoloji: {_ns_count(ns_p, 'patoloji')}\n"
             f"  radyoloji: {_ns_count(ns_p, 'radyoloji')}\n"
             f"  endodonti: {_ns_count(ns_p, 'endodonti')}\n"
             f"  protez: {_ns_count(ns_p, 'protez')}\n"
+            f"  histoloji: {_ns_count(ns_p, 'histoloji')}\n"
+            f"  fizyoloji: {_ns_count(ns_p, 'fizyoloji')}\n"
             f"  periodontoloji: {_ns_count(ns_p, 'periodontoloji')}\n"
+            f"  cerrahi: {_ns_count(ns_p, 'cerrahi')}\n"
+            f"  farmakoloji: {_ns_count(ns_p, 'farmakoloji')}\n"
             f"  pedodonti: {_ns_count(ns_p, 'pedodonti')}\n"
+            f"  ortodonti: {_ns_count(ns_p, 'ortodonti')}\n"
             f"  cikmis: {_ns_count(ns_p, 'cikmis')}\n\n"
-            f"anki: {_total_count(sa)} kart\n"
-            f"  patoloji: {_ns_count(ns_a, 'patoloji')}\n"
-            f"  endodonti: {_ns_count(ns_a, 'endodonti')}\n"
-            f"  fizyoloji: {_ns_count(ns_a, 'fizyoloji')}\n"
-            f"  periodontoloji: {_ns_count(ns_a, 'periodontoloji')}\n"
-            f"  protez: {_ns_count(ns_a, 'protez')}\n"
-            f"  radyoloji: {_ns_count(ns_a, 'radyoloji')}\n\n"
             f"Soru Bankasi (dusbankasi): {q_count} soru\n"
             f"Model: {DEEPSEEK_MODEL}\n"
             f"Platform: Railway"
@@ -113,8 +97,9 @@ async def cmd_dersler(chat_id: int, send) -> None:
         "8. Agiz Dis Cene Cerrahisi\n"
         "9. Farmakoloji\n"
         "10. Pedodonti\n"
-        "11. Restoratif Dis Tedavisi\n"
-        "12. Anatomi\n\n"
+        "11. Ortodonti\n"
+        "12. Restoratif Dis Tedavisi\n"
+        "13. Anatomi\n\n"
         "Ornek: \"Patoloji calismak istiyorum\" veya \"SCC patogenezini anlat\""
     )
     await send(chat_id, text, parse_mode="")
@@ -122,7 +107,7 @@ async def cmd_dersler(chat_id: int, send) -> None:
 
 async def cmd_sifirla(chat_id: int, send, clear_context) -> None:
     clear_context(chat_id)
-    await send(chat_id, "Sohbet temizlendi, hafiza sifirlandi.")
+    await send(chat_id, "Sohbet temizlendi.")
 
 
 async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> None:
@@ -134,7 +119,6 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
 
     spd_label = SPEED_MODE_CONFIG.get(speed_mode, {}).get("label", speed_mode)
     model_label = AVAILABLE_MODELS.get(model, model)
-    rerank_status = "✅" if settings.get("rerank_enabled", True) else "❌"
 
     text = (
         "⚙️ *Atlas Bot Ayarlari*\n\n"
@@ -152,12 +136,15 @@ async def cmd_settings(chat_id: int, send, get_settings, update_settings) -> Non
                 {"text": "🔬 Kapsamlı", "callback_data": "settings:speed:comprehensive"},
             ],
             [
-                {"text": "🧠 Reasoner (Doğru)", "callback_data": "settings:model:deepseek-reasoner"},
-                {"text": "⚡ V4 Pro (Hızlı)", "callback_data": "settings:model:deepseek-v4-pro"},
+                {"text": "⚡ V4 Pro (Güçlü)", "callback_data": "settings:model:deepseek-v4-pro"},
+                {"text": "🪶 V4 Flash (Hızlı)", "callback_data": "settings:model:deepseek-chat"},
             ],
             [
                 {"text": "🔍 -1 Derinlik", "callback_data": "settings:depth:down"},
                 {"text": "🔍 +1 Derinlik", "callback_data": "settings:depth:up"},
+            ],
+            [
+                {"text": f"🔁 Rerank: {'AÇIK' if settings.get('rerank_enabled', True) else 'KAPALI'}", "callback_data": "settings:toggle:rerank"},
             ],
             [
                 {"text": "🔄 Sıfırla", "callback_data": "settings:reset"},

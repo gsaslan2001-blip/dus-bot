@@ -7,6 +7,7 @@ v9.2: Ayarlar menusu, hiz optimizasyonlari, cache, rerank iyilestirmeleri
 
 import sys
 import os
+import asyncio
 import logging
 import httpx
 import cachetools
@@ -17,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from bot.settings import (
     TELEGRAM_TOKEN, ALLOWED_CHAT_IDS, CONVERSATION_TTL_SECONDS,
-    DEEPSEEK_MODEL, USER_SETTINGS_DEFAULTS,
+    DEEPSEEK_MODEL, USER_SETTINGS_DEFAULTS, WEBHOOK_SECRET,
 )
 from bot.handlers.commands import (
     cmd_start, cmd_help, cmd_stats, cmd_dersler, cmd_sifirla,
@@ -103,6 +104,14 @@ async def send(chat_id: int, text: str, parse_mode: str = "Markdown", reply_mark
         if reply_markup and i == 0:
             payload["reply_markup"] = reply_markup
         resp = await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
+        # 429 flood-control: retry_after kadar bekle, parçayı tekrar gönder (yanıt yarıda kalmasın)
+        if resp.status_code == 429:
+            try:
+                retry_after = int(resp.json().get("parameters", {}).get("retry_after", 1))
+            except Exception:
+                retry_after = 1
+            await asyncio.sleep(min(retry_after, 10))
+            resp = await client.post(f"{TELEGRAM_API}/sendMessage", json=payload)
         if resp.status_code != 200:
             log.error(f"Telegram send hatasi: {resp.status_code} {resp.text[:200]}")
             if parse_mode:
@@ -171,6 +180,10 @@ def is_allowed(chat_id: int) -> bool:
 async def webhook(request: Request):
     global _last_update_id
     chat_id = None
+    # Sahte POST koruması: WEBHOOK_SECRET ayarlıysa Telegram secret-token header'ı doğrulanır
+    if WEBHOOK_SECRET and request.headers.get("X-Telegram-Bot-Api-Secret-Token") != WEBHOOK_SECRET:
+        log.warning("Webhook secret-token uyusmadi — istek reddedildi")
+        return Response(status_code=403)
     try:
         data = await request.json()
 
@@ -278,8 +291,8 @@ async def health():
 @app.get("/health")
 async def health_detailed():
     try:
-        from bot.deps import mybrain_idx, supabase, deepseek
-        sm = mybrain_idx.describe_index_stats()
+        from bot.deps import myppdfs_idx, supabase, deepseek
+        sm = myppdfs_idx.describe_index_stats()
         pinecone_ok = sm.get("total_vector_count", 0) > 0
     except Exception:
         pinecone_ok = False
@@ -313,10 +326,10 @@ async def startup():
     if base_url:
         webhook_url = f"{base_url}/webhook"
         client = get_http_client()
-        resp = await client.post(
-            f"{TELEGRAM_API}/setWebhook",
-            json={"url": webhook_url, "allowed_updates": ["message", "edited_message", "callback_query"]},
-        )
+        wh_payload = {"url": webhook_url, "allowed_updates": ["message", "edited_message", "callback_query"]}
+        if WEBHOOK_SECRET:
+            wh_payload["secret_token"] = WEBHOOK_SECRET
+        resp = await client.post(f"{TELEGRAM_API}/setWebhook", json=wh_payload)
         result = resp.json()
         if result.get("ok"):
             log.info(f"Webhook basariyla kuruldu: {webhook_url}")

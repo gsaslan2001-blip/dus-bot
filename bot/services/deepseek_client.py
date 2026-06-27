@@ -37,7 +37,7 @@ def _parse_dsml_tool_calls(content: str) -> list[dict]:
 
 MAX_RETRIES = 2
 RETRY_DELAY = 1.5  # seconds
-DEFAULT_MAX_TOKENS = 4000  # Ajan sentezi için yeterli (3500 karakter sınırı + thinking overhead)
+DEFAULT_MAX_TOKENS = 8000  # ~7000 karakter (2 Telegram mesajı) + thinking overhead — yanıt yarıda kesilmesin
 
 
 async def chat(messages: list[dict], tools: list[dict] | None = None,
