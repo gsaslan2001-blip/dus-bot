@@ -36,7 +36,7 @@ logging.basicConfig(
 log = logging.getLogger("atlas_bot")
 
 # --- FastAPI ---
-app = FastAPI(title="Atlas DUS Mentoru", version="9.3")
+app = FastAPI(title="Atlas DUS Mentoru", version="10.0")
 
 # --- Telegram API ---
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
@@ -283,7 +283,7 @@ async def health():
     return {
         "status": "ok",
         "bot": "Atlas DUS Mentoru",
-        "version": "9.3",
+        "version": "10.0",
         "model": DEEPSEEK_MODEL,
     }
 
