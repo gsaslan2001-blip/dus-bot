@@ -313,7 +313,7 @@ async def health_detailed():
 # --- Startup ---
 @app.on_event("startup")
 async def startup():
-    log.info(f"Atlas Bot v9.3 baslatiliyor... Model: {DEEPSEEK_MODEL}")
+    log.info(f"Atlas Bot v{app.version} baslatiliyor... Model: {DEEPSEEK_MODEL}")
     if ALLOWED_CHAT_IDS:
         log.info(f"Whitelist: {ALLOWED_CHAT_IDS}")
 
