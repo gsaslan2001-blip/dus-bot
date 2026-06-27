@@ -17,7 +17,7 @@ docs/
 artifacts/
 logs/
 *.md
-!requirements-bot.txt
 smart_dedup_addon/
 *.bat
 *.txt
+!requirements-bot.txt
